@@ -21,3 +21,5 @@ ERROR - 2025-06-03 18:56:57 --> 404 Page Not Found: Assets/img
 ERROR - 2025-06-03 18:56:59 --> 404 Page Not Found: Assets/img
 ERROR - 2025-06-03 18:57:07 --> 404 Page Not Found: Assets/img
 ERROR - 2025-06-03 18:57:16 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 19:33:23 --> Severity: error --> Exception: Unable to locate the model you have specified: Norma85Model C:\xampp2\htdocs\videsa_app\system\core\Loader.php 348
+ERROR - 2025-06-03 19:35:16 --> 404 Page Not Found: Assets/js
