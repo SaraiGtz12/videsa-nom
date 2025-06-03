@@ -228,3 +228,174 @@ ERROR - 2025-06-03 20:41:37 --> Severity: Notice --> Undefined variable: menus C
 ERROR - 2025-06-03 20:41:37 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
 ERROR - 2025-06-03 20:41:37 --> 404 Page Not Found: Assets/img
 >>>>>>> 0cb049edb20f025674840aa25a6f4680fe03c2fa
+ERROR - 2025-06-03 20:46:44 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:46:44 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:46:44 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:46:44 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:46:44 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:46:44 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:46:44 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:46:44 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:46:44 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 20:48:56 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:48:56 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:48:56 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:48:56 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:48:56 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 20:49:05 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:49:05 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:49:05 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:49:05 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:49:20 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:49:20 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:49:20 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:49:20 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:49:20 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 20:49:55 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:49:55 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:49:55 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:49:55 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:49:55 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 20:53:46 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:53:46 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:53:46 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:53:46 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:53:46 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 20:55:01 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:55:01 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:55:01 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:55:01 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:55:01 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 20:55:13 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 20:58:52 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:58:52 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 20:58:52 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:58:52 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 20:58:52 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:01:10 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:01:10 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:01:10 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:01:10 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:01:10 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:01:34 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:01:34 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:01:34 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:01:34 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:01:34 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:01:49 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:01:49 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:01:49 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:01:49 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:01:49 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:02:00 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:02:00 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:02:00 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:02:00 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:02:00 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:02:39 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:02:39 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:02:39 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:02:39 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:02:39 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:04:19 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:04:19 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:04:19 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:04:19 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:04:19 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:04:47 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:04:47 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:04:47 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:04:47 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:04:47 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:05:24 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:05:24 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:05:24 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:05:24 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:05:24 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:05:42 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:05:42 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:05:42 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:05:42 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:05:42 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:06:12 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:06:12 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:06:12 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:06:12 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:06:12 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:07:33 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:07:33 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:07:33 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:07:33 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:07:33 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:08:12 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:08:12 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:08:12 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:08:12 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:08:12 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:08:13 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:08:13 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:08:13 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:08:13 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:08:13 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:08:16 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:08:16 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:08:16 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:08:16 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:08:17 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:09:51 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:09:51 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:09:51 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:09:51 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:09:51 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:09:57 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:09:57 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:09:57 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:09:57 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:09:57 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:11:37 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:11:37 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:11:37 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:11:37 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:11:37 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:11:40 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:11:40 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:11:40 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:11:40 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:11:40 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:11:55 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:11:55 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:11:55 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:11:55 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:11:55 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:13:51 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:13:51 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:13:51 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:13:51 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:13:51 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:13:55 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:13:55 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:13:55 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:13:55 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:13:55 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:14:02 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:14:02 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:14:02 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:14:02 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:14:02 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:14:24 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:14:38 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:14:38 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:14:38 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:14:38 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:14:38 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:14:51 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:14:51 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:14:51 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:14:51 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:14:51 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:15:02 --> 404 Page Not Found: Assets/css
+ERROR - 2025-06-03 21:15:15 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:15:15 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:15:15 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:15:15 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:15:15 --> 404 Page Not Found: Assets/img
