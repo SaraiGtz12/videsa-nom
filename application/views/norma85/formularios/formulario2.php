@@ -15,6 +15,7 @@
                             <th>Temp, En el Conducto C°</th>
                         </tr>
                     </thead>
+                    Alacranes Musical
                     <tbody id="CamposRegistros">
                         
                     </tbody>
