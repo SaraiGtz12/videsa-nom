@@ -4,6 +4,7 @@
 		function __construct(){
 			parent::__construct();
 			$this->load->helper('form');
+			$this->load->database('corre');
 			$this->load->model(array(
 			    'login_model'
 			));
