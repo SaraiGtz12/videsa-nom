@@ -399,3 +399,63 @@ ERROR - 2025-06-03 21:15:15 --> Severity: Warning --> foreach() argument must be
 ERROR - 2025-06-03 21:15:15 --> Severity: Warning --> Undefined variable $menus C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
 ERROR - 2025-06-03 21:15:15 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\xampp\htdocs\videsa_app\application\views\template\header.php 231
 ERROR - 2025-06-03 21:15:15 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:21:44 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:21:44 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:21:44 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:21:44 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:21:44 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:23:40 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:23:40 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:23:40 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:23:40 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:23:40 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:24:37 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:24:37 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:24:37 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:24:37 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:24:37 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:24:54 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:24:54 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:24:54 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:24:54 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:24:54 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:28:47 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:28:47 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:28:47 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:28:47 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:28:48 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:29:07 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:29:07 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:29:07 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:29:07 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:29:07 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:30:06 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:30:06 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:30:06 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:30:06 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:30:06 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:30:08 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:30:08 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:30:08 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:30:08 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:30:08 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:33:37 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:33:37 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:33:37 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:33:37 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:33:37 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:34:03 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:34:03 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:34:03 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:34:03 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:34:03 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:34:21 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:34:21 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:34:21 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:34:21 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:34:21 --> 404 Page Not Found: Assets/img
+ERROR - 2025-06-03 21:36:04 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:36:04 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 191
+ERROR - 2025-06-03 21:36:04 --> Severity: Notice --> Undefined variable: menus C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:36:04 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp2\htdocs\videsa_app\application\views\template\header.php 231
+ERROR - 2025-06-03 21:36:04 --> 404 Page Not Found: Assets/img
