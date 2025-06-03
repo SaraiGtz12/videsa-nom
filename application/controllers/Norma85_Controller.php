@@ -9,6 +9,9 @@ class Norma85_Controller extends CI_Controller {
     }
 
     public function index() {
-        $this->load->view('norma85/moduloNorma85');
-    }
+    $this->load->view('template/header');  
+    $this->load->view('norma85/moduloNorma85');  
+    $this->load->view('template/footer'); 
+}
+
 }
