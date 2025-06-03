@@ -6,8 +6,8 @@
     <title>Captura de Datos de Campo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
-<body>
-    <div class="container rounded shadow mt-3 mb-3 p-4 bg-light">
+<body class="bg-secondary">
+    <div class="container rounded mt-3 mb-3 p-4 bg-white">
         <div class="text-center mb-3">
             <h3>Captura de Datos de Campo</h3>
         </div>
@@ -15,7 +15,7 @@
             <div class="table-responsive">
                 <table class="table">
                     <thead>
-                        <tr>
+                        <tr class="text-center">
                             <th>N°</th>
                             <th>Nox(ppmv)</th>
                             <th>CO (ppmv)</th>
@@ -27,10 +27,17 @@
                     <tbody id="CamposRegistros">
                         
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td colspan="2">
+                                <div class="d-grid">
+                                    <input type="submit" value="Agregar" class="btn btn-primary">
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
-                <div class="d-grid">
-                    <input type="submit" value="Agregar" class="btn btn-primary">
-                </div>
             </div>
         </form>
     </div>
