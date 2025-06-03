@@ -1,11 +1,10 @@
 $(document).ready(function(){
-    var clickbtn = 60;
-    var contador = 0;
+    $("#CamposRegistros").empty();
 
-    function agregarFila(){ 
+    for(let i=0;i<60; i++){
         let campo = ` 
             <tr> 
-                <td>${contador}</td> 
+                <td>${i+1}</td> 
                 <td><input type="number" class="form-control" name="Nox" step="0.01"/></td> 
                 <td><input type="number" class="form-control" name="CO"/></td> 
                 <td><input type="number" class="form-control" name="O2" step="0.01"/></td> 
@@ -15,17 +14,5 @@ $(document).ready(function(){
 
         $("#CamposRegistros").append(campo);
     }
-
-    for(let i=0;i<clickbtn; i++){
-        contador ++;
-        agregarFila();
-    }
-
-    $("#AgregarFila").click(function(){ 
-        if(clickbtn < 60){ 
-            clickbtn++; 
-            contador ++;
-            agregarFila();
-        }
-    }); 
+    
 });

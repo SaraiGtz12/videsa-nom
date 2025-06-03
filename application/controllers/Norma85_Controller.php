@@ -11,4 +11,8 @@ class Norma85_Controller extends CI_Controller {
     public function index() {
         $this->load->view('norma85/moduloNorma85');
     }
+
+    public function nom085mgml(){
+        $this->load->view('norma85/formularios/formulario2');
+    }
 }
