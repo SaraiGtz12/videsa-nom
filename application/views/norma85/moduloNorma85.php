@@ -141,8 +141,8 @@
         const TEMP = document.getElementById('inputTEMP').value;
 
         console.log({ CO, O2, CO2, TEMP });
-        // modalAgregar.hide();
-        // this.reset();
+         modalAgregar.hide();
+         this.reset();
         });
     });
 </script>
