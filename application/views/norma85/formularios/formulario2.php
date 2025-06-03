@@ -1,39 +1,24 @@
 <main id="main-container">
     <div class="content">
         <div class="container rounded mb-3 p-4 bg-white">
-            <div class="text-center mb-3">
+            <div class="text-center mb-3 mt-3">
                 <h3>Captura de Datos de Campo</h3>
             </div>
-            <form action="">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr class="text-center">
-                                <th>N°</th>
-                                <th>Nox(ppmv)</th>
-                                <th>CO (ppmv)</th>
-                                <th>O2(%)</th>
-                                <th>CO<sub>2</sub> %</th>
-                                <th>Temp, En el Conducto C°</th>
-                            </tr>
-                        </thead>
-                        Alacranes Musical
-                        <tbody id="CamposRegistros">
-                            
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="4"></td>
-                                <td colspan="2">
-                                    <div class="d-grid">
-                                        <input type="submit" value="Agregar" class="btn btn-primary">
-                                    </div>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
+            <div>
+                <div class="mb-3">
+                    <label for="normaSelect" class="form-label" >Norma</label>
+                        <select  class="form-select w-50" id="Norma">
+                            <option value="">-- Elige --</option>
+                            <option value="085MG">085MG</option>
+                            <option value="085G">085G</option>
+                            <option value="085L">085L</option>
+                            <option value="085ML">085ML</option>
+                        </select>
                 </div>
-            </form>
+            </div>
+            <div id="tablas">
+
+            </div>
         </div>
         
     </div>
