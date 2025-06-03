@@ -3,7 +3,7 @@
     $version = $data_session['version'];
     $tienda = strtoupper($data_session['tienda']);
 ?>
-<!DOCTYPE>
+<!DOCTYPE html>
 <!--[if IE 9]>         <html class="ie9 no-focus"> <![endif]-->
 <!--[if gt IE 9]><!-->
 <html class="no-focus">
