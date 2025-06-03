@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+    $('#normaSelect').select2({
+        placeholder: "Selecciona una opción",
+        width: '100%'
+    });
+
     let tabla = `
         <form action="">
             <div class="table-responsive">
@@ -32,8 +37,8 @@ $(document).ready(function(){
         </form>
     `;
 
-    $("#Norma").change(function(){
-        let opcion = $("#Norma").val();
+    $("#normaSelect").change(function(){
+        let opcion = $("#normaSelect").val();
         if(opcion == "085MG" || opcion == "085ML"){
             $('#tablas').html(tabla);
             filas();
