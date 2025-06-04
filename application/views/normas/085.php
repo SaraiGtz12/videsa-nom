@@ -5,7 +5,7 @@
 <div class="row">
 <div class="col-md-12">
 <div id="div1">
-      <form>
+      <form  id="form1">
         <div class="row mb-3">
           <div class="col-md-4">
             <label>Número de Informe:</label>
@@ -77,7 +77,7 @@
       </form>
 </div>
 <div id="div2">
-      <form>
+      <form  id="form2">
         <div class="row mb-3">
           <div class="col-md-6">
             <label>Equipo evaluado:</label>
@@ -259,7 +259,8 @@
 
 <br><br><br> <hr>
 
-<button id="btnGuardar" class="btn btn-success">Guardar</button>
+<button id="btnGuardar" class="btn btn-primary">Guardar</button>
+
 
 </div>
 
@@ -269,19 +270,9 @@
                 </div>
             </main>
 
-            <script type="text/javascript">
+<script type="text/javascript">
 				
-            	$(document).ready(function(){
-                
-                    document.title = 'NOM 085'; // titulo de la pag
-
-                    dashboardAdmin();
-                    
-                });
-
-                
-                $(document).ready(function(){
-
+  $(document).ready(function(){
     $('#normaSelect').select2({
         placeholder: "Selecciona una opción",
         width: '100%'
@@ -351,89 +342,94 @@
         </form>
     `;
 
-    function filas2(){
-        $("#CamposRegistros2").empty();
+      function filas2(){
+          $("#CamposRegistros2").empty();
 
-        for(let i=0;i<60; i++){
-            let campo = ` 
-                <tr> 
-                    <td>${i+1}</td> 
-                    <td><input type="number" class="form-control" name="CO"/></td> 
-                    <td><input type="number" class="form-control" name="O2" step="0.01"/></td> 
-                    <td><input type="number" class="form-control" name="CO2" step="0.01"/></td> 
-                    <td><input type="number" class="form-control" name="Temp" step="0.1"/></td> 
-                </tr>`; 
+          for(let i=0;i<60; i++){
+              let campo = ` 
+                  <tr> 
+                      <td>${i+1}</td> 
+                      <td><input type="number" class="form-control" name="CO"/></td> 
+                      <td><input type="number" class="form-control" name="O2" step="0.01"/></td> 
+                      <td><input type="number" class="form-control" name="CO2" step="0.01"/></td> 
+                      <td><input type="number" class="form-control" name="Temp" step="0.1"/></td> 
+                  </tr>`; 
 
-            $("#CamposRegistros2").append(campo);
+              $("#CamposRegistros2").append(campo);
+          }
+      }
+
+      function filas(){
+          $("#CamposRegistros").empty();
+
+          for(let i=0;i<60; i++){
+              let campo = ` 
+                  <tr> 
+                      <td>${i+1}</td> 
+                      <td><input type="number" class="form-control" name="Nox" step="0.01"/></td> 
+                      <td><input type="number" class="form-control" name="CO"/></td> 
+                      <td><input type="number" class="form-control" name="O2" step="0.01"/></td> 
+                      <td><input type="number" class="form-control" name="CO2" step="0.01"/></td> 
+                      <td><input type="number" class="form-control" name="Temp" step="0.1"/></td> 
+                  </tr>`; 
+
+              $("#CamposRegistros").append(campo);
+          }
+      }
+
+      $("#normaSelect").change(function(){
+          let opcion = $("#normaSelect").val();
+          if(opcion == "085MG" || opcion == "085ML"){
+              $('#tablas').html(tabla);
+              filas();
+          }else if(opcion == "085G" || opcion == "085L"){
+              $('#tablas').html(tabla2);
+              filas2();
+          }
+      });
+      
+  });
+
+  $(document).ready(function () {
+    $('#btnGuardar').on('click', function (e) {
+      e.preventDefault();
+      let datos1 = $('#form1').serializeArray();
+      let datos2 = $('#form2').serializeArray();
+      
+      let tablaDatos = [];
+      $('#div3 tbody tr').each(function () {
+        let fila = {
+          marcado: $(this).find('td:eq(0) input').val(),
+          concentracion: $(this).find('td:eq(1) input').val(),
+          estratificacion: $(this).find('td:eq(2) input').val(),
+          ppm: $(this).find('td:eq(3) input').val()
+        };
+        tablaDatos.push(fila);
+      });
+
+      let datosCompletos = {
+        form1: datos1,
+        form2: datos2,
+        tabla: tablaDatos
+      };
+
+      $.ajax({
+        url: 'Nom_085/guardar', 
+        type: 'POST',
+        data: {
+          datosCompletos: datosCompletos
+        },
+        success: function (respuesta) {
+        
+          alert('Guardado correctamente');
+          console.log(respuesta);
+        },
+        error: function (xhr, status, error) {
+          console.error('Error al guardar:', error);
+          alert('Hubo un error al guardar');
         }
-    }
-
-    function filas(){
-        $("#CamposRegistros").empty();
-
-        for(let i=0;i<60; i++){
-            let campo = ` 
-                <tr> 
-                    <td>${i+1}</td> 
-                    <td><input type="number" class="form-control" name="Nox" step="0.01"/></td> 
-                    <td><input type="number" class="form-control" name="CO"/></td> 
-                    <td><input type="number" class="form-control" name="O2" step="0.01"/></td> 
-                    <td><input type="number" class="form-control" name="CO2" step="0.01"/></td> 
-                    <td><input type="number" class="form-control" name="Temp" step="0.1"/></td> 
-                </tr>`; 
-
-            $("#CamposRegistros").append(campo);
-        }
-    }
-
-    $("#normaSelect").change(function(){
-        let opcion = $("#normaSelect").val();
-        if(opcion == "085MG" || opcion == "085ML"){
-            $('#tablas').html(tabla);
-            filas();
-        }else if(opcion == "085G" || opcion == "085L"){
-            $('#tablas').html(tabla2);
-            filas2();
-        }
+      });
     });
-    
-});
+  });
 
-document.getElementById("btnGuardar").addEventListener("click", function () {
-  const datos = {
-    numero_informe: document.querySelector('[name="numero_informe"]').value,
-    orden_servicio: document.querySelector('[name="orden_servicio"]').value,
-    fecha_evaluacion: document.querySelector('[name="fecha_evaluacion"]').value,
-    recepcion: document.querySelector('[name="recepcion"]').value,
-    fecha_informe: document.querySelector('[name="fecha_informe"]').value,
-    razon_social: document.querySelector('[name="razon_social"]').value,
-    calle: document.querySelector('[name="calle"]').value,
-    colonia: document.querySelector('[name="colonia"]').value,
-    alcaldia: document.querySelector('[name="alcaldia"]').value,
-    estado: document.querySelector('[name="estado"]').value,
-    cp: document.querySelector('[name="cp"]').value,
-    responsable: document.querySelector('[name="responsable"]').value,
-    cargo: document.querySelector('[name="cargo"]').value,
-    telefono: document.querySelector('[name="telefono"]').value,
-    equipo_evaluado: document.querySelector('[name="equipo_evaluado"]').value,
-    marca: document.querySelector('[name="marca"]').value,
-    combustible: document.querySelector('[name="combustible"]').value,
-    capacidad_termica: document.querySelector('[name="capacidad_termica"]').value,
-    altura: document.querySelector('[name="altura"]').value,
-    presion: document.querySelector('[name="presion"]').value,
-    anio: document.querySelector('[name="anio"]').value,
-    presion_barometrica: document.querySelector('[name="presion_barometrica"]').value,
-    geometria_conductor: document.querySelector('[name="geometria_conductor"]').value,
-    diametro_interior_conducto: document.querySelector('[name="diametro_interior_conducto"]').value,
-    diametro_equivalente: document.querySelector('[name="diametro_equivalente"]').value,
-    L1: document.querySelector('[name="L1"]').value,
-    L2: document.querySelector('[name="L2"]').value,
-    no_puertos: document.querySelector('[name="no_puertos"]').value,
-  };
-  console.log(datos);
-  
-
-
-});
-
-            </script>
+</script>
