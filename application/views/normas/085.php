@@ -420,13 +420,20 @@
           datosCompletos: datosCompletos
         },
         success: function (respuesta) {
-        
-          alert('Guardado correctamente');
-          console.log(respuesta);
+          
+            Swal.fire({
+              icon: 'success',
+              title: '¡Éxito!',
+              text: 'Guardado correctamente'
+            });
         },
         error: function (xhr, status, error) {
           console.error('Error al guardar:', error);
-          alert('Hubo un error al guardar');
+           Swal.fire({
+            icon: 'error',
+            title: 'Error!',
+            text: error
+          });
         }
       });
     });
