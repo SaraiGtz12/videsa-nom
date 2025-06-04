@@ -26,28 +26,31 @@
 
 		public function guardar() {
 			$datosCompletos = $this->input->post('datosCompletos');
-			
 			if (!$datosCompletos) {
 				echo json_encode(['error' => 'No se recibieron datos']);
 				return;
 			}
-
-
 			$form1 = $datosCompletos['form1'];
 			$form2 = $datosCompletos['form2'];
 			$tabla = $datosCompletos['tabla'];
 			$tipo_formato = $datosCompletos['normaSelect'];
+			$registrosCampos = $datosCompletos['registrosCampos'];
+			$registrosCampos2 = $datosCompletos['registrosCampos2'];
+
 
 			$form1_data = $this->convertir_a_array($form1);
 			$form2_data = $this->convertir_a_array($form2);
-
+			
+			
 			echo json_encode([
 				'form1' => $form1_data,
 				'form2' => $form2_data,
 				'tabla' => $tabla,
-				'tipo_formato' => $tipo_formato
+				'tipo_formato' => $tipo_formato,
+				'registrosCampos' => $registrosCampos,
+				'registrosCampos2' => $registrosCampos2
 			]);
-
+			
 
 			}
 			private function convertir_a_array($array) {
@@ -57,7 +60,24 @@
 				}
 				return $resultado;
 			}
+		
+		public function generar_pdf() {
+			$form1 = $this->input->post('form1');
+			$form2 = $this->input->post('form2');
+			$tabla = $this->input->post('tabla');
+			$tipo_formato = $this->input->post('tipo_formato');
+			$registrosCampos = $this->input->post('registrosCampos');
+			$registrosCampos2 = $this->input->post('registrosCampos2');
 
+
+			 echo json_encode([
+				'form1' => $form1,
+				'form2' => $form2,
+				'tabla' => $tabla,
+				'registrosCampos' => $registrosCampos,
+				'registrosCampos2' => $registrosCampos2
+			]);
+		}
 
 
 
