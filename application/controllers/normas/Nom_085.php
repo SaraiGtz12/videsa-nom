@@ -23,6 +23,20 @@
 				$this->load->view('template/footer');
 
 		}
+
+		public function guardar() {
+			$json = file_get_contents('php://input');
+			$datos = json_decode($json, true);
+
+			// Accede a los datos como array asociativo:
+			$numero_informe = $datos['numero_informe'];
+			$orden_servicio = $datos['orden_servicio'];
+			print_r("llegue aqui: ",$numero_informe);
+
+			echo json_encode(['status' => 'ok']);
+			}
+
+
 	
 
 
