@@ -25,15 +25,35 @@
 		}
 
 		public function guardar() {
-			$json = file_get_contents('php://input');
-			$datos = json_decode($json, true);
+			$datosCompletos = $this->input->post('datosCompletos');
+			//print_r($datosCompletos);
+			if (!$datosCompletos) {
+				echo json_encode(['error' => 'No se recibieron datos']);
+				return;
+			}
 
-			// Accede a los datos como array asociativo:
-			$numero_informe = $datos['numero_informe'];
-			$orden_servicio = $datos['orden_servicio'];
-			print_r("llegue aqui: ",$numero_informe);
 
-			echo json_encode(['status' => 'ok']);
+			$form1 = $datosCompletos['form1'];
+			$form2 = $datosCompletos['form2'];
+			$tabla = $datosCompletos['tabla'];
+
+			$form1_data = $this->convertir_a_array($form1);
+			$form2_data = $this->convertir_a_array($form2);
+
+			echo json_encode([
+				'form1' => $form1_data,
+				'form2' => $form2_data,
+				'tabla' => $tabla
+			]);
+
+
+			}
+			private function convertir_a_array($array) {
+				$resultado = [];
+				foreach ($array as $item) {
+					$resultado[$item['name']] = $item['value'];
+				}
+				return $resultado;
 			}
 
 
