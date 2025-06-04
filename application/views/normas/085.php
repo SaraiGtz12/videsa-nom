@@ -673,9 +673,8 @@
       
   });
 
-  $(document).ready(function () {
+ $(document).ready(function () {
     $('#btnGuardar').on('click', function (e) {
-      console.log("click");
       e.preventDefault();
       let normaSelect = $('#normaSelect').val();
       let datos1 = $('#form1').serializeArray();
@@ -709,19 +708,7 @@
         });
      
       });
-      
-      
-
-      let datosCompletos = {
-        form1: datos1,
-        form2: datos2,
-        tabla: tablaDatos,
-        normaSelect : normaSelect
-      };
-
-     
-
-
+    
       let registrosCampos = [];
         $('#CamposRegistros tr').each(function () {
           let fila = $(this);
@@ -750,7 +737,7 @@
         });
 
 
-        if (camposVacios.length > 0 || tablaInvalida ) {
+        if (camposVacios.length > 0 || tablaInvalida || (registrosCampos.length === 0 && registrosCampos2.length === 0) ) {
         Swal.fire({
           icon: 'warning',
           title: 'Campos incompletos',
@@ -758,6 +745,15 @@
         });
         return;
       }
+
+      let datosCompletos = {
+        form1: datos1,
+        form2: datos2,
+        tabla: tablaDatos,
+        normaSelect : normaSelect,
+        registrosCampos : registrosCampos,
+        registrosCampos2 : registrosCampos2,
+      };
 
       
       $.ajax({
@@ -767,12 +763,37 @@
           datosCompletos: datosCompletos
         },
         success: function (respuesta) {
-          
             Swal.fire({
               icon: 'success',
               title: '¡Éxito!',
-              text: 'Guardado correctamente'
+              text: 'Guardado correctamente. ¿Deseas generar el PDF?',
+              showCancelButton: true,
+              confirmButtonText: 'Sí, generar PDF',
+              cancelButtonText: 'No'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                $.ajax({
+                  url: 'Nom_085/generar_pdf',
+                  type: 'POST',
+                  data: JSON.parse(respuesta),
+             
+                  success: function (data) {
+                
+                  },
+                  error: function (xhr, status, error) {
+                    console.error('Error al generar PDF:', error);
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Error',
+                      text: 'No se pudo generar el PDF'
+                    });
+                  }
+                });
+              } else {
+                Swal.fire('Guardado sin generar PDF');
+              }
             });
+          
         },
         error: function (xhr, status, error) {
           console.error('Error al guardar:', error);
@@ -785,5 +806,4 @@
       });
     });
   });
-
 </script>
