@@ -425,14 +425,7 @@
         });
      
       });
-      if (camposVacios.length > 0 || tablaInvalida) {
-        Swal.fire({
-          icon: 'warning',
-          title: 'Campos incompletos',
-          text: 'Por favor llena todos los campos antes de guardar.'
-        });
-        return;
-      }
+      
       
 
       let datosCompletos = {
@@ -441,6 +434,46 @@
         tabla: tablaDatos,
         normaSelect : normaSelect
       };
+
+     
+
+
+      let registrosCampos = [];
+        $('#CamposRegistros tr').each(function () {
+          let fila = $(this);
+          let nox = fila.find('input[name="Nox"]').val();
+          let co = fila.find('input[name="CO"]').val();
+          let o2 = fila.find('input[name="O2"]').val();
+          let co2 = fila.find('input[name="CO2"]').val();
+          let temp = fila.find('input[name="Temp"]').val();
+
+          if (nox || co || o2 || co2 || temp) {
+            registrosCampos.push({ nox, co, o2, co2, temp });
+          }
+        });
+
+        let registrosCampos2 = [];
+        $('#CamposRegistros2 tr').each(function () {
+          let fila = $(this);
+          let co = fila.find('input[name="CO"]').val();
+          let o2 = fila.find('input[name="O2"]').val();
+          let co2 = fila.find('input[name="CO2"]').val();
+          let temp = fila.find('input[name="Temp"]').val();
+
+          if (co || o2 || co2 || temp) {
+            registrosCampos2.push({ co, o2, co2, temp });
+          }
+        });
+
+
+        if (camposVacios.length > 0 || tablaInvalida ) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Campos incompletos',
+          text: 'Por favor llena todos los campos antes de guardar.'
+        });
+        return;
+      }
 
       
       $.ajax({
