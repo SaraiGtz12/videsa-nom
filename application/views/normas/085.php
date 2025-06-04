@@ -1,4 +1,4 @@
- <main id="main-container">
+<main id="main-container">
  <div class="content"> 
 <h1>Captura de Norma 085</h1>
 <hr>
@@ -95,95 +95,95 @@
           </div>
           <div class="col-md-6">
             <label>Capacidad térmica nominal:</label>
-            <input type="text" name="capacidad_termica" class="form-control" >
+            <input type="text" name="capacidad_termica" class="form-control" value="Gas Natural">
           </div>
         </div>
         <div class="row mb-3">
           <div class="col-md-4">
             <label>Altura msnm:</label>
-            <input type="text" name="altura" class="form-control">
+            <input type="text" name="altura" class="form-control" value="2">
           </div>
           <div class="col-md-4">
             <label>Presión estática:</label>
-            <input type="text" name="presion" class="form-control">
+            <input type="text" name="presion" class="form-control"  value="2">
           </div>
           <div class="col-md-4">
             <label>Año:</label>
-            <input type="text" name="anio" class="form-control">
+            <input type="text" name="anio" class="form-control"  value="2">
           </div>
         </div>
         <div class="row mb-3">
           <div class="col-md-4">
             <label>Presión Barométrica:</label>
-            <input type="text" name="presion_barometrica" class="form-control">
+            <input type="text" name="presion_barometrica" class="form-control"  value="2">
           </div>
           <div class="col-md-4">
             <label>Geometría del conducto:</label>
-            <input type="text" name="geometria_conductor" class="form-control">
+            <input type="text" name="geometria_conductor" class="form-control"  value="2">
           </div>
           <div class="col-md-4">
             <label>Diámetro interior del conducto, Dch:</label>
-            <input type="text" name="diametro_interior_conducto" class="form-control">
+            <input type="text" name="diametro_interior_conducto" class="form-control"  value="2">
           </div>
         </div>
         <div class="row mb-3">
           <div class="col-md-4">
             <label>Diámetro equivalente, Deq:</label>
-            <input type="text" name="diametro_equivalente" class="form-control">
+            <input type="text" name="diametro_equivalente" class="form-control"  value="2">
           </div>
           <div class="col-md-4">
             <label>Largo transversal, L1:</label>
-            <input type="text" name="L1" class="form-control">
+            <input type="text" name="L1" class="form-control"value="2">  
           </div>
           <div class="col-md-4">
             <label>Ancho transversal, L2:</label>
-            <input type="text" name="L2" class="form-control">
+            <input type="text" name="L2" class="form-control"  value="2">
           </div>
         </div>
 <!-- aqui -->
         <div class="row mb-3">
           <div class="col-md-4">
             <label>Número de puertos:</label>
-            <input type="text" name="no_puertos" class="form-control">
+            <input type="text" name="no_puertos" class="form-control"  value="2">
           </div>
           <div class="col-md-4">
             <label>Distancia en A:</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control"  value="2">
           </div>
           <div class="col-md-4">
             <label>Distancia en B:</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control"  value="2">
           </div>
         </div>
 
         <div class="row mb-3">
           <div class="col-md-4">
             <label>Distancia en C:</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control"  value="2">
           </div>
           <div class="col-md-4">
             <label>Extensión del puerto, epm:</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control"  value="2">
           </div>
         </div>
         <div class="row mb-3">
           <div class="col-md-4">
             <label>Número de diámetros en A:</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control"  value="2">
           </div>
           <div class="col-md-4">
             <label>Número de diámetros en B:</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control"  value="2">
           </div>
           <div class="col-md-4">
             <label>Número de diámetros en C:</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control"  value="2">
           </div>
         </div>
         <div class="row mb-3">
           <div class="col-md-6">
             <label>Número de puntos seleccionados para medición de gases:</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control"  value="2">
           </div>
         </div>
       </form>
@@ -220,15 +220,18 @@
       <td><input type="number" step="0.01" value="5.12"></td>
       <td><input type="number" step="0.01" value="0.43"></td>
     </tr>
-    <tr>
+  
+  </tbody>
+  <tfoot>
+      <tr>
       <td><strong>Promedio</strong></td>
-      <td><input type="number" step="0.01" value="8.47"></td>
+      <td><input type="number" step="0.01" value="8.40"></td>
       <td><strong>Máximo</strong></td>
       <td>
         <input type="number" step="0.01" value="0.43">
       </td>
     </tr>
-  </tbody>
+  </tfoot>
 </table>
 
 </div>
@@ -299,9 +302,7 @@
                         <tr>
                             <td colspan="5"></td>
                             <td colspan="1">
-                                <div class="d-grid">
-                                    <input type="submit" value="Agregar" class="btn btn-primary">
-                                </div>
+                           
                             </td>
                         </tr>
                     </tfoot>
@@ -331,9 +332,7 @@
                         <tr>
                             <td colspan="4"></td>
                             <td colspan="1">
-                                <div class="d-grid">
-                                    <input type="submit" value="Agregar" class="btn btn-primary">
-                                </div>
+                             
                             </td>
                         </tr>
                     </tfoot>
@@ -395,17 +394,43 @@
       e.preventDefault();
       let datos1 = $('#form1').serializeArray();
       let datos2 = $('#form2').serializeArray();
+
+       let camposVacios = [];
+        [...datos1, ...datos2].forEach(campo => {
+          if (!campo.value || campo.value.trim() === '') {
+            camposVacios.push(campo.name);
+          }
+        });
       
       let tablaDatos = [];
-      $('#div3 tbody tr').each(function () {
-        let fila = {
-          marcado: $(this).find('td:eq(0) input').val(),
-          concentracion: $(this).find('td:eq(1) input').val(),
-          estratificacion: $(this).find('td:eq(2) input').val(),
-          ppm: $(this).find('td:eq(3) input').val()
-        };
-        tablaDatos.push(fila);
+      let tablaInvalida = false;
+
+       $('#div3 tbody tr').each(function () {
+        let marcado = $(this).find('td:eq(0) input').val();
+        let concentracion = $(this).find('td:eq(1) input').val();
+        let estratificacion = $(this).find('td:eq(2) input').val();
+        let ppm = $(this).find('td:eq(3) input').val();
+
+        if ( !marcado || !concentracion || !estratificacion || !ppm) {
+          tablaInvalida = true;
+        }
+
+        tablaDatos.push({
+          marcado,
+          concentracion,
+          estratificacion,
+          ppm
+        });
+     
       });
+      if (camposVacios.length > 0 || tablaInvalida) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Campos incompletos',
+          text: 'Por favor llena todos los campos antes de guardar.'
+        });
+        return;
+      }
 
       let datosCompletos = {
         form1: datos1,
