@@ -68,6 +68,7 @@
 			$tipo_formato = $this->input->post('tipo_formato');
 			$registrosCampos = $this->input->post('registrosCampos');
 			$registrosCampos2 = $this->input->post('registrosCampos2');
+<<<<<<< HEAD
 
 			
 
@@ -99,6 +100,19 @@
 		}
 
 
+=======
+
+
+			 echo json_encode([
+				'form1' => $form1,
+				'form2' => $form2,
+				'tabla' => $tabla,
+				'registrosCampos' => $registrosCampos,
+				'registrosCampos2' => $registrosCampos2
+			]);
+		}
+
+>>>>>>> 6007add26cb8910a324892d6f1735686faf815c2
 
 
 		
