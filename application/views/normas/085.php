@@ -545,7 +545,6 @@
     <div id="div4">
       <h2>Captura de datos de campo</h2>
       <div class="text-center mb-3 mt-3">
-        <h3>Captura de Datos de Campo</h3>
       </div>
       <div>
         <div>
