@@ -391,6 +391,7 @@
 
   $(document).ready(function () {
     $('#btnGuardar').on('click', function (e) {
+      console.log("click");
       e.preventDefault();
       let normaSelect = $('#normaSelect').val();
       let datos1 = $('#form1').serializeArray();
@@ -438,7 +439,7 @@
         form1: datos1,
         form2: datos2,
         tabla: tablaDatos,
-        tipoFormato = normaSelect;
+        normaSelect : normaSelect
       };
 
       

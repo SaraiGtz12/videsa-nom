@@ -26,7 +26,7 @@
 
 		public function guardar() {
 			$datosCompletos = $this->input->post('datosCompletos');
-			//print_r($datosCompletos);
+			
 			if (!$datosCompletos) {
 				echo json_encode(['error' => 'No se recibieron datos']);
 				return;
@@ -36,6 +36,7 @@
 			$form1 = $datosCompletos['form1'];
 			$form2 = $datosCompletos['form2'];
 			$tabla = $datosCompletos['tabla'];
+			$tipo_formato = $datosCompletos['normaSelect'];
 
 			$form1_data = $this->convertir_a_array($form1);
 			$form2_data = $this->convertir_a_array($form2);
@@ -43,7 +44,8 @@
 			echo json_encode([
 				'form1' => $form1_data,
 				'form2' => $form2_data,
-				'tabla' => $tabla
+				'tabla' => $tabla,
+				'tipo_formato' => $tipo_formato
 			]);
 
 
@@ -58,9 +60,9 @@
 
 		public function laboratorios(){
 			$this->load->view('template/header');
-			$this->load->view('norma85/Laboratorios');
-			$this->load->view('template/footer');
-		}
+		 	$this->load->view('norma85/Laboratorios');
+		 	$this->load->view('template/footer');
+		 }
 
 
 	
