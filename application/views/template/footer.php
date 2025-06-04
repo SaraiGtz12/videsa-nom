@@ -228,8 +228,6 @@
 		<script src="<?=asset_url()?>js/plugins/excelexportjs/excelexportjs.js"></script>
 		<!-- buttonLoader -->
 		<script src="<?=asset_url()?>js/plugins/buttonLoader/jquery.buttonLoader.min.js"></script>
-		<!--tableNom085mlmg-->
-		<script src="<?=asset_url()?>js/norma85/forms/formulario2.js"></script>
 		
 		<!-- bootgrid-master 
 		<script src="<?=asset_url()?>js/plugins/jquery-bootgrid-master/jquery.bootgrid.min.js"></script>
