@@ -70,13 +70,31 @@
 				$registrosCampos2 = $this->input->post('registrosCampos2');
 
 
-				echo json_encode([
-					'form1' => $form1,
-					'form2' => $form2,
-					'tabla' => $tabla,
-					'registrosCampos' => $registrosCampos,
-					'registrosCampos2' => $registrosCampos2
-				]);
+				// echo json_encode([
+				// 	'form1' => $form1,
+				// 	'form2' => $form2,
+				// 	'tabla' => $tabla,
+				// 	'registrosCampos' => $registrosCampos,
+				// 	'registrosCampos2' => $registrosCampos2
+				// ]);
+				  $data = [
+					'numero_informe' => $form1['numero_informe'],
+					'orden_servicio' => $form1['orden_servicio'],
+					'fecha_evaluacion' => $form1['fecha_evaluacion'],
+					'recepcion' => $form1['recepcion'],
+					'fecha_informe' => $form1['fecha_informe'],
+					// Agrega aquí cualquier otro dato necesario
+				];
+
+				// Cargar la vista como HTML
+				$html = $this->load->view('pdf/plantilla_nom_085', $data, true);
+
+				// Aquí generas el PDF con dompdf, mPDF, etc.
+				// Ejemplo con dompdf:
+				$this->load->library('pdf'); // si tienes una librería configurada
+				$this->pdf->loadHtml($html);
+				$this->pdf->render();
+				$this->pdf->stream("informe_nom_085.pdf", ["Attachment" => true]);
 			}
 
 
