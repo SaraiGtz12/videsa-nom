@@ -414,7 +414,7 @@
       };
 
       $.ajax({
-        url: 'Nom_085/guardar', 
+        url:  'guardar', 
         type: 'POST',
         data: {
           datosCompletos: datosCompletos
