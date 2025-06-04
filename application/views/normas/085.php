@@ -392,6 +392,7 @@
   $(document).ready(function () {
     $('#btnGuardar').on('click', function (e) {
       e.preventDefault();
+      let normaSelect = $('#normaSelect').val();
       let datos1 = $('#form1').serializeArray();
       let datos2 = $('#form2').serializeArray();
 
@@ -431,13 +432,16 @@
         });
         return;
       }
+      
 
       let datosCompletos = {
         form1: datos1,
         form2: datos2,
-        tabla: tablaDatos
+        tabla: tablaDatos,
+        tipoFormato = normaSelect;
       };
 
+      
       $.ajax({
         url: 'Nom_085/guardar', 
         type: 'POST',
