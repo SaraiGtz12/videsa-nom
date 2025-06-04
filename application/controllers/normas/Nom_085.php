@@ -49,26 +49,16 @@
 			]);
 
 
-			}
-			private function convertir_a_array($array) {
-				$resultado = [];
-				foreach ($array as $item) {
-					$resultado[$item['name']] = $item['value'];
-				}
-				return $resultado;
-			}
-
-		public function laboratorios(){
-			$this->load->view('template/header');
-		 	$this->load->view('norma85/Laboratorios');
-		 	$this->load->view('template/footer');
-		 }
-
-
-	
-
-
+		}
 		
-	}	
+		private function convertir_a_array($array) {
+			$resultado = [];
+			foreach ($array as $item) {
+				$resultado[$item['name']] = $item['value'];
+			}
+			return $resultado;
+		}
+		
+		}	
 		
 ?>
