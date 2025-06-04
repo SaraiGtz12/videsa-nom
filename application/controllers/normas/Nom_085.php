@@ -56,6 +56,12 @@
 				return $resultado;
 			}
 
+		public function laboratorios(){
+			$this->load->view('template/header');
+			$this->load->view('norma85/Laboratorios');
+			$this->load->view('template/footer');
+		}
+
 
 	
 

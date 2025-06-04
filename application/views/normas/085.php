@@ -203,22 +203,22 @@
   </thead>
   <tbody>
     <tr>
-      <td><input type="number" step="0.001" value="0.03"></td>
-      <td><input type="number" step="0.01" value="8.1"></td>
-      <td><input type="number" step="0.01" value="4.33"></td>
-      <td><input type="number" step="0.01" value="0.37"></td>
+      <td><input type="number" step="0.001" value="0.03" class="form-control"></td>
+      <td><input type="number" step="0.01" value="8.1" class="form-control"></td>
+      <td><input type="number" step="0.01" value="4.33" class="form-control"></td>
+      <td><input type="number" step="0.01" value="0.37" class="form-control"></td>
     </tr>
     <tr>
-      <td><input type="number" step="0.001" value="0.075"></td>
-      <td><input type="number" step="0.01" value="8.4"></td>
-      <td><input type="number" step="0.01" value="0.79"></td>
-      <td><input type="number" step="0.01" value="0.07"></td>
+      <td><input type="number" step="0.001" value="0.075" class="form-control"></td>
+      <td><input type="number" step="0.01" value="8.4" class="form-control"></td>
+      <td><input type="number" step="0.01" value="0.79" class="form-control"></td>
+      <td><input type="number" step="0.01" value="0.07" class="form-control"></td>
     </tr>
     <tr>
-      <td><input type="number" step="0.001" value="0.13"></td>
-      <td><input type="number" step="0.01" value="8.9"></td>
-      <td><input type="number" step="0.01" value="5.12"></td>
-      <td><input type="number" step="0.01" value="0.43"></td>
+      <td><input type="number" step="0.001" value="0.13" class="form-control"></td>
+      <td><input type="number" step="0.01" value="8.9" class="form-control"></td>
+      <td><input type="number" step="0.01" value="5.12" class="form-control"></td>
+      <td><input type="number" step="0.01" value="0.43" class="form-control"></td>
     </tr>
   
   </tbody>
@@ -228,7 +228,7 @@
       <td><input type="number" step="0.01" value="8.40"></td>
       <td><strong>Máximo</strong></td>
       <td>
-        <input type="number" step="0.01" value="0.43">
+        <input type="number" step="0.01" value="0.43" class="form-control">
       </td>
     </tr>
   </tfoot>
