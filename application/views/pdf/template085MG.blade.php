@@ -122,7 +122,7 @@
 </head>
 
 <body>
-    @if ($modo === 'web')
+    <!-- @if ($modo === 'web')
         <form id="formImagenesGraficas" action="{{ url('/generate085MG') }}" method="POST" style="text-align: right; position: relative; z-index: 10;">
             @csrf
             <input type="hidden" name="descargar" value="1">
@@ -132,7 +132,7 @@
             <button type="submit">Descargar PDF</button>
         </form>
 
-    @endif
+    @endif -->
     <main>
         @include('pdf.recursos.headerCaratula')
         <div class="company-name">
@@ -166,7 +166,7 @@
             </tr>
         </table>
 
-    
+<!--     
         <table class="evaluated-equipment-table">
             <tr>
                 <th colspan="6" style = "text-align: center">Equipo evaluado</th>
@@ -259,7 +259,7 @@
             <p>Firma Electrónica</p>
              {!! $qr !!}
             <p>Escanea para verificar</p>
-        </div>
+        </div> -->
 
     @include('pdf.recursos.footerCaratula')
 
