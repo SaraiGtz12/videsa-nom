@@ -85,7 +85,7 @@
 <script src="<?=asset_url()?>js/core/js.cookie.min.js"></script>
 <script src="<?=asset_url()?>js/core/jquery.hotkeys.js"></script>
 <script src="<?=asset_url()?>js/app.js"></script>
-
+<script>const base_url = "<?= base_url(); ?>";</script>
 <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
 <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
 <!-- END Stylesheets -->

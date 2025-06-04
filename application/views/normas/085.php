@@ -757,7 +757,7 @@
 
       
       $.ajax({
-        url: 'Nom_085/guardar', 
+        url: base_url + 'normas/Nom_085/guardar', 
         type: 'POST',
         data: {
           datosCompletos: datosCompletos
@@ -773,7 +773,7 @@
             }).then((result) => {
               if (result.isConfirmed) {
                 $.ajax({
-                  url: 'Nom_085/generar_pdf',
+                  url: base_url + 'normas/Nom_085/generar_pdf', 
                   type: 'POST',
                   data: JSON.parse(respuesta),
              
