@@ -249,9 +249,9 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><input type="number" step="0.001" value="0.03" class="form-control"></td>
-                  <td><input type="number" step="0.01" value="8.1" class="form-control"></td>
-                  <td><input type="number" step="0.01" value="4.33" class="form-control"></td>
+                  <td><input type="number" name="Concentracion1" step="0.001" value="0.03" class="form-control" placeholder="Valor 1"></td>
+                  <td><input type="number" name="Concentracion2" step="0.01" value="8.1" class="form-control" placeholder="Valor 2"></td>
+                  <td><input type="number" name="Concentracion3" step="0.01" value="4.33" class="form-control" placeholder="Valor 3"></td>
                 </tr>
               </tbody>
             </table>
@@ -682,7 +682,7 @@
         let estratificacion = $(this).find('td:eq(2) input').val();
         let ppm = $(this).find('td:eq(3) input').val();
 
-        if ( !marcado || !concentracion || !estratificacion || !ppm) {
+        if ( !concentracion) {
           tablaInvalida = true;
         }
 
@@ -692,7 +692,7 @@
           estratificacion,
           ppm
         });
-     
+
       });
     
       let registrosCampos = [];
