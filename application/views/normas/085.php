@@ -23,6 +23,13 @@
         padding: 10px;
         background-color: #fff;
       }
+
+      .select{
+        background: #fff;
+        border: 2px solidrgb(240, 240, 240);
+        padding: 5px;
+        border-radius: 5px
+      }
     </style>
     <div class="acordeon">
       <div class="acordeon-item">
@@ -153,7 +160,12 @@
                 </div>
                 <div class="col-md-4">
                   <label>Geometría del conducto:</label>
-                  <input type="text" name="geometria_conductor" class="form-control" value="2">
+                  <select name="geometria_conductor" class="form-control">
+                    <option value="">Selecciona una opción</option>
+                    <option value="Cuadrada">Cuadrada</option>
+                    <option value="Circular" selected>Circular</option>
+                    <option value="Rectangular">Rectangular</option>
+                  </select>
                 </div>
                 <div class="col-md-4">
                   <label>Diámetro interior del conducto, Dch:</label>
@@ -232,10 +244,7 @@
               <caption><strong>Analito: NOx</strong></caption>
               <thead>
                 <tr>
-                  <th>Marcado de la sonda (m)</th>
-                  <th>Concentración (ppm o %vol.)</th>
-                  <th>% Estratificación</th>
-                  <th>ppm</th>
+                  <th colspan="3">Concentración (ppm o %vol.)</th>
                 </tr>
               </thead>
               <tbody>
@@ -243,32 +252,8 @@
                   <td><input type="number" step="0.001" value="0.03" class="form-control"></td>
                   <td><input type="number" step="0.01" value="8.1" class="form-control"></td>
                   <td><input type="number" step="0.01" value="4.33" class="form-control"></td>
-                  <td><input type="number" step="0.01" value="0.37" class="form-control"></td>
                 </tr>
-                <tr>
-                  <td><input type="number" step="0.001" value="0.075" class="form-control"></td>
-                  <td><input type="number" step="0.01" value="8.4" class="form-control"></td>
-                  <td><input type="number" step="0.01" value="0.79" class="form-control"></td>
-                  <td><input type="number" step="0.01" value="0.07" class="form-control"></td>
-                </tr>
-                <tr>
-                  <td><input type="number" step="0.001" value="0.13" class="form-control"></td>
-                  <td><input type="number" step="0.01" value="8.9" class="form-control"></td>
-                  <td><input type="number" step="0.01" value="5.12" class="form-control"></td>
-                  <td><input type="number" step="0.01" value="0.43" class="form-control"></td>
-                </tr>
-
               </tbody>
-              <tfoot>
-                <tr>
-                  <td><strong>Promedio</strong></td>
-                  <td><input type="number" step="0.01" value="8.40" class="form-control"></td>
-                  <td><strong>Máximo</strong></td>
-                  <td>
-                    <input type="number" step="0.01" value="0.43" class="form-control">
-                  </td>
-                </tr>
-              </tfoot>
             </table>
           </div>
         </div>
