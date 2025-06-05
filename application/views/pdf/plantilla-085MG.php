@@ -192,10 +192,10 @@
             </tr>
             <tr>
                 <td>Óxido de Nitrógeno (NOx)</td>
-                <td><?= $concentracion?></td>
+                <td><?= $concentracion1?></td>
                 <td>No Aplica</td>
-                <td><?= $estratificacion?></td>
-                <td><?= $ppm?></td>
+                <td><?= $concentracion1?></td>
+                <td><?= $concentracion1?></td>
             </tr>
             <!-- <tr>
                 <td>Óxido de Nitrógeno (NOx)</td>
