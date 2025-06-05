@@ -1,5 +1,6 @@
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
+	
 	class Nom_085 extends CI_Controller{
 		function __construct(){
 			parent::__construct();
@@ -83,18 +84,14 @@
 					'fecha_evaluacion' => $form1['fecha_evaluacion'],
 					'recepcion' => $form1['recepcion'],
 					'fecha_informe' => $form1['fecha_informe'],
-					// Agrega aquí cualquier otro dato necesario
 				];
 
-				// Cargar la vista como HTML
-				$html = $this->load->view('pdf/plantilla_nom_085', $data, true);
+				$html = $this->load->view('pdf/plantilla', $data, true);
 
-				// Aquí generas el PDF con dompdf, mPDF, etc.
-				// Ejemplo con dompdf:
-				$this->load->library('pdf'); // si tienes una librería configurada
 				$this->pdf->loadHtml($html);
 				$this->pdf->render();
 				$this->pdf->stream("informe_nom_085.pdf", ["Attachment" => true]);
+
 			}
 
 
