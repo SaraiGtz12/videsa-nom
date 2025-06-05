@@ -777,8 +777,11 @@
                   url: base_url + 'normas/Nom_085/generar_pdf', 
                   type: 'POST',
                   data: JSON.parse(respuesta),
+                
              
                   success: function (data) {
+                  window.open('Nom_085/generar_pdf', '_blank');
+
                 
                   },
                   error: function (xhr, status, error) {

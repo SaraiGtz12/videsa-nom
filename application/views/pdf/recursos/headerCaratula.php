@@ -33,11 +33,11 @@
 <div class="top-section">
 
     <div class="logo">
-        @if ($modo === 'pdf')
+        <!-- @if ($modo === 'pdf') -->
             <img style="width: 100px;" src="{{ public_path('img/logo.png') }}">
-        @else       
+        <!-- @else       
            <img src="{{ asset('img/logo.png') }}" width="100">
-        @endif
+        @endif -->
     </div>
 
     <div class="title">Informe de Resultados</div>        
