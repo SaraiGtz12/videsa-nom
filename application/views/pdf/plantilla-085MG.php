@@ -362,6 +362,8 @@
             Método 7 EPA-2008&nbsp;Determinación de óxidos de nitrógeno, en los gases que fluyen por un conducto.
             Método de quimiluminiscencia
         </div>
+
+        
         <?php $this->load->view('pdf/recursos/footerCaratula'); ?>
 
 
