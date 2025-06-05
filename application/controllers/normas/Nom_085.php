@@ -93,7 +93,15 @@
 				'concentracion' =>$tabla[0]['concentracion'],
 				'estratificacion' =>$tabla[0]['estratificacion'],
 				'ppm' =>$tabla[0]['ppm'],
+
+				//tabla
+				'registrosCampos' => $registrosCampos,
+
 			];
+
+
+	
+
 
 			$html = $this->load->view('pdf/plantilla-085MG', $data, true);
 

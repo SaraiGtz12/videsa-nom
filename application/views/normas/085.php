@@ -552,6 +552,9 @@
     </div>
   </div>
 </main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
 
 <script>
         document.querySelectorAll('.acordeon-header').forEach(header => {
@@ -744,6 +747,7 @@
       };
 
       
+      
       $.ajax({
         url: base_url + 'normas/Nom_085/guardar', 
         type: 'POST',
@@ -760,8 +764,9 @@
               cancelButtonText: 'No'
             }).then((result) => {
               if (result.isConfirmed) {
+
                 const datos = JSON.parse(respuesta);
-                console.log(datos);
+      
                 let form = $('<form>', {
                   action: 'Nom_085/generar_pdf',
                   method: 'POST',
