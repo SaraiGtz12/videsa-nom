@@ -541,28 +541,29 @@
         </div>
       </div>
     </div>
-
-    <div id="div4">
-      <h2>Captura de datos de campo</h2>
-      <div class="text-center mb-3 mt-3">
-      </div>
-      <div>
-        <div>
-          <label for="normaSelect" class="form-label">Elige el tipo de formato que deseas</label>
-          <select id="normaSelect" class="form-select w-100">
-            <option value="">-- Selecciona una opcion --</option>
-            <option value="085MG">085MG</option>
-            <option value="085G">085G</option>
-            <option value="085L">085L</option>
-            <option value="085ML">085ML</option>
-          </select>
+    <div class="acordeon-item">
+      <div class="acordeon-header">Captura de datos de campo</div>
+      <div class="acordeon-content">
+        <div id="div4">
+          <div>
+            <div>
+              <label for="normaSelect" class="form-label">Elige el tipo de formato que deseas</label>
+              <select id="normaSelect" class="form-select w-100">
+                <option value="">-- Selecciona una opcion --</option>
+                <option value="085MG">085MG</option>
+                <option value="085G">085G</option>
+                <option value="085L">085L</option>
+                <option value="085ML">085ML</option>
+              </select>
+            </div>
+          </div>
+          <div id="tablas">
+          </div>
+          <br><br><br>
+          <hr>
+          <button id="btnGuardar" class="btn btn-primary">Guardar</button>
         </div>
       </div>
-      <div id="tablas">
-      </div>
-      <br><br><br>
-      <hr>
-      <button id="btnGuardar" class="btn btn-primary">Guardar</button>
     </div>
   </div>
 </main>
@@ -759,7 +760,7 @@
 
       
       $.ajax({
-        url: 'Nom_085/guardar', 
+        url: base_url + 'normas/Nom_085/guardar', 
         type: 'POST',
         data: {
           datosCompletos: datosCompletos
