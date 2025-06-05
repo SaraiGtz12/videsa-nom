@@ -29,7 +29,7 @@
 <div class="top-section">
 
     <div class="logo">
-            <img style="width: 100px;" src="{{ public_path('assets/img/logo.png') }}">
+        <img style="width: 100px;" src="<?= base_url('assets/img/logo.png') ?>">
     </div>
 
     <div class="title">Informe de Resultados</div>        
