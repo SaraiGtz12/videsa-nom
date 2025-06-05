@@ -680,17 +680,16 @@
         let marcado = $(this).find('td:eq(0) input').val();
         let concentracion = $(this).find('td:eq(1) input').val();
         let estratificacion = $(this).find('td:eq(2) input').val();
-        let ppm = $(this).find('td:eq(3) input').val();
+     
 
-        if ( !marcado || !concentracion || !estratificacion || !ppm) {
+        if ( !marcado || !concentracion || !estratificacion ) {
           tablaInvalida = true;
         }
 
         tablaDatos.push({
           marcado,
           concentracion,
-          estratificacion,
-          ppm
+          estratificacion
         });
      
       });
@@ -726,6 +725,7 @@
 
 
         if (camposVacios.length > 0 || tablaInvalida || (registrosCampos.length === 0 && registrosCampos2.length === 0) ) {
+          
         Swal.fire({
           icon: 'warning',
           title: 'Campos incompletos',
