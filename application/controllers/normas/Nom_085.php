@@ -72,7 +72,7 @@
 			$tipo_formato = $this->input->post('tipo_formato');
 			$registrosCampos = json_decode($this->input->post('registrosCampos'), true);
 			$registrosCampos2 = json_decode($this->input->post('registrosCampos2'), true);
-
+			
 			$data = [
 				'numero_informe' => $form1['numero_informe'],
 				'orden_servicio' => $form1['orden_servicio'],
@@ -89,9 +89,13 @@
 				'equipo_evaluado' =>$form2['equipo_evaluado'],
 				'marca' =>$form2['marca'],
 				'combustible' =>$form2['combustible'],
+
+				'concentracion' =>$tabla[0]['concentracion'],
+				'estratificacion' =>$tabla[0]['estratificacion'],
+				'ppm' =>$tabla[0]['ppm'],
 			];
 
-			$html = $this->load->view('pdf/plantilla', $data, true);
+			$html = $this->load->view('pdf/plantilla-085MG', $data, true);
 
 			$options = new Options();
 			$options->set('isRemoteEnabled', true); 

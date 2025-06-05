@@ -179,7 +179,105 @@
             </tr>
         </table>
 
+         <table class="result-table ">
+            <tr>
+                <th colspan="5" style = "text-align: center">Resultados</th>
+            </tr>
+            <tr>
+                <td>Parámetros Evaluados</td>
+                <td>Concentración (ppmv)</td>
+                <td>Limite Máximo Permisible (ppmv)</td>
+                <td>Comparación (L.M.P.)</td>
+                <td>&plusmn; uE (ppmv)</td>
+            </tr>
+            <tr>
+                <td>Óxido de Nitrógeno (NOx)</td>
+                <td><?= $concentracion?></td>
+                <td>No Aplica</td>
+                <td><?= $estratificacion?></td>
+                <td><?= $ppm?></td>
+            </tr>
+            <!-- <tr>
+                <td>Óxido de Nitrógeno (NOx)</td>
+                <td>21.73</td>
+                <td>No Aplica</td>
+                <td>No Aplica</td>
+                <td>0.12</td>
+            </tr> -->
+        </table>
+
+        <div style="margin-top: 20px; font-size: 7px;">
+            NOTA 1: La incertidumbre estimada UE para CO es 1.86% y para NOx es 0.54%, se expresa con un factor de cobertura k=2 que corresponde aproximadamente 
+            a un nivel de confianza del 95%. Se calcula basandose en la guia para la expresion de incertidumbre en los resultados de las mediciones (NMX-CH-140-IMNC-202)
+            <br>
+            NOTA 2: Para este caso, la zona geografica para el Monoxido de Carbono (CO) se considera: Resto del Pais (RP).
+            <br>
+            NOTA 3:Para este caso, la zona geografica para los Oxidos de Nitrogeno (NOx) se considera: Resto del Pais (RP).
+            <br>
+            NOTA 4: ppmv Partes por millon volumen, igual a micromol por mol 
+            <br>
+            GJ/has      Giga Joules por hora
+            <br>
+            C.C         Caballos Caldera 
+            <br>
+            *Para este caso de CO NOx los limites se establecen como concentraciones en volumen y 
+            base seca, en condiciones de refrencia de 25&deg;C, 101 325 pascales (1 atm) y 5% de (O2)
+        </div>
+
+        <table class="evaluated-equipment-table">
+            <tr>
+                <th colspan="6" style = "text-align: center">CONCLUSION</th>
+            </tr>
+            <tr>
+                <td colspan="6" style = "text-align: center; font-size: 8px;">
+                    Debido a que el equipo evaluado no es un equipo de calentamiendo indirecto,
+                    la NOM-085-SEMARNAT-2011 no le aplica, se inclutye el resultado de la contratacion
+                    de los parametros evaluados, unicamente con el objetivo de proporcionar infomracion
+                    relativa a los resultados obtenidos. La evaluacion se realiza a solictud del cliente.
+                </td>
+            </tr>
+        
+        </table>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <p>Firma Electrónica</p>
+             {!! $qr !!}
+            <p>Escanea para verificar</p>
+        </div>
         <?php $this->load->view('pdf/recursos/footerCaratula'); ?>
+
+
+        <div style="page-break-before: always;"></div>
+        <?php $this->load->view('pdf/recursos/headerCaratula'); ?>
+        <?php $this->load->view('pdf/recursos/footerCaratula'); ?>
+
+
+        <div style="page-break-before: always;"></div>
+        <?php $this->load->view('pdf/recursos/headerGeneral'); ?>
+        <?php $this->load->view('pdf/recursos/footerGeneral'); ?>
+
+
+         <div style="page-break-before: always;"></div>
+        <?php $this->load->view('pdf/recursos/headerGeneral'); ?>
+        <?php $this->load->view('pdf/recursos/footerGeneral'); ?>
+
+
+         <div style="page-break-before: always;"></div>
+        <?php $this->load->view('pdf/recursos/headerGeneral'); ?>
+        <?php $this->load->view('pdf/recursos/footerGeneral'); ?>
+
+
+         <div style="page-break-before: always;"></div>
+        <?php $this->load->view('pdf/recursos/headerGeneral'); ?>
+        <?php $this->load->view('pdf/recursos/footerGeneral'); ?>
+
+        
+         <div style="page-break-before: always;"></div>
+        <?php $this->load->view('pdf/recursos/headerGeneral'); ?>
+        <?php $this->load->view('pdf/recursos/footerGeneral'); ?>
+
+
+
     </main>
 </body>
 </html>

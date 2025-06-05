@@ -1,11 +1,8 @@
 <table width="100%" style="border-collapse: collapse; margin-bottom: 10px;">
     <tr>
         <td style="width: 120px;">
-            @if ($modo === 'pdf')
-                <img style="width: 100px;" src="{{ public_path('img/logo.png') }}">
-            @else       
-                <img src="{{ asset('img/logo.png') }}" width="100">
-            @endif
+                <img style="width: 100px;" src="<?= base_url('assets/img/logo.png') ?>">
+          
         </td>
 
         <td style="vertical-align: top;">

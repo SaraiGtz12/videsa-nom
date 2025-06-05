@@ -249,9 +249,9 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><input type="number" step="0.001" value="0.03" class="form-control"></td>
-                  <td><input type="number" step="0.01" value="8.1" class="form-control"></td>
-                  <td><input type="number" step="0.01" value="4.33" class="form-control"></td>
+                  <td><input type="number" step="0.001" value="0.03" name="concentracion" class="form-control"></td>
+                  <td><input type="number" step="0.01" value="8.1" name="estratificacion"  class="form-control"></td>
+                  <td><input type="number" step="0.01" value="4.33" name="ppm"  class="form-control"></td>
                 </tr>
               </tbody>
             </table>
@@ -677,17 +677,17 @@
       let tablaInvalida = false;
 
        $('#div3 tbody tr').each(function () {
-        let marcado = $(this).find('td:eq(0) input').val();
         let concentracion = $(this).find('td:eq(1) input').val();
         let estratificacion = $(this).find('td:eq(2) input').val();
+        let ppm = $(this).find('td:eq(0) input').val();
      
 
-        if ( !marcado || !concentracion || !estratificacion ) {
+        if ( !ppm || !concentracion || !estratificacion ) {
           tablaInvalida = true;
         }
 
         tablaDatos.push({
-          marcado,
+          ppm,
           concentracion,
           estratificacion
         });
@@ -761,7 +761,7 @@
             }).then((result) => {
               if (result.isConfirmed) {
                 const datos = JSON.parse(respuesta);
-
+                console.log(datos);
                 let form = $('<form>', {
                   action: 'Nom_085/generar_pdf',
                   method: 'POST',
