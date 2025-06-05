@@ -1,11 +1,7 @@
 <style>
      .top-section {
             text-align: left;
-            @if ($modo === 'web')
             margin-top: 10px;
-            @else
-            margin-top: 10px;
-            @endif
         }
 
         .logo {
@@ -33,11 +29,7 @@
 <div class="top-section">
 
     <div class="logo">
-        <!-- @if ($modo === 'pdf') -->
-            <img style="width: 100px;" src="{{ public_path('img/logo.png') }}">
-        <!-- @else       
-           <img src="{{ asset('img/logo.png') }}" width="100">
-        @endif -->
+        <img style="width: 100px;" src="<?= base_url('assets/img/logo.png') ?>">
     </div>
 
     <div class="title">Informe de Resultados</div>        
