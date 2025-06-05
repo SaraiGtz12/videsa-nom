@@ -64,38 +64,7 @@
 				}
 				return $resultado;
 			}
-		
-			// public function generar_pdf() {
-			// 	$form1 = $this->input->post('form1');
-			// 	$form2 = $this->input->post('form2');
-			// 	$tabla = $this->input->post('tabla');
-			// 	$tipo_formato = $this->input->post('tipo_formato');
-			// 	$registrosCampos = $this->input->post('registrosCampos');
-			// 	$registrosCampos2 = $this->input->post('registrosCampos2');
-
-
-			// 	// echo json_encode([
-			// 	// 	'form1' => $form1,
-			// 	// 	'form2' => $form2,
-			// 	// 	'tabla' => $tabla,
-			// 	// 	'registrosCampos' => $registrosCampos,
-			// 	// 	'registrosCampos2' => $registrosCampos2
-			// 	// ]);
-			// 	  $data = [
-			// 		'numero_informe' => $form1['numero_informe'],
-			// 		'orden_servicio' => $form1['orden_servicio'],
-			// 		'fecha_evaluacion' => $form1['fecha_evaluacion'],
-			// 		'recepcion' => $form1['recepcion'],
-			// 		'fecha_informe' => $form1['fecha_informe'],
-			// 	];
-
-			// 	$html = $this->load->view('pdf/plantilla', $data, true);
-
-			// 	$this->pdf->loadHtml($html);
-			// 	$this->pdf->render();
-			// 	$this->pdf->stream("informe_nom_085.pdf", ["Attachment" => true]);
-
-			// }
+	
 			public function generar_pdf() {
 		
 
