@@ -112,144 +112,149 @@
 			
 		}
 
+		//Función para generar el arreglo de los datos
 		private function generarDatos($dataCampo, $dataEquipo, $dataConcentracion){
 			// Recuperar datos del equipo
 			$extencionPuerto = $dataEquipo['extencionPuerto'];
 			$diametroIntC = $dataEquipo['diametro_interior_conducto'];
 
 			// Obtención del promedio para los datos de campo
-			$total_muestras = count($dataCampo);
-			$suma_nox = 0;
-			$suma_co = 0;
-			$suma_o2 = 0;
-			$suma_co2 = 0;
-			$suma_temp = 0;
-
-			foreach($dataCampo as $muestra) {
-				$suma_nox += $muestra['nox'];
-				$suma_co += $muestra['co'];
-				$suma_o2 += $muestra['o2'];
-				$suma_co2 += $muestra['co2'];
-				$suma_temp += $muestra['temp'];
-			}
-
-			$promedios = [
-				'nox' => $suma_nox / $total_muestras,
-				'co' => $suma_co / $total_muestras,
-				'o2' => $suma_o2 / $total_muestras,
-				'co2' => $suma_co2 / $total_muestras,
-				'temp' => $suma_temp / $total_muestras
-			];
+			$promediosDatosCampo = $this->calcularPromediosCampo($dataCampo);
 
 			// Calculos para la Tabla de "Determinación de la Estratificación"
-			$marcado1 = number_format((($diametroIntC*(1/6))+$extencionPuerto), 2);
-			$marcado2 = number_format((($diametroIntC*(1/2))+$extencionPuerto), 2);
-			$marcado3 = number_format((($diametroIntC*(5/6))+$extencionPuerto), 2);
+			$marcadoSonda = $this->calcularMarcadoSonda($diametroIntC, $extencionPuerto);
 
-			$ConcentracionPpm1 = $dataConcentracion[0]['concentracion1'];
-			$ConcentracionPpm2 = $dataConcentracion[0]['concentracion2'];
-			$ConcentracionPpm3 = $dataConcentracion[0]['concentracion3'];
-
-			$ConcentracionPromedio = number_format(($ConcentracionPpm1 + $ConcentracionPpm2 + $ConcentracionPpm3) / 3,2);
-
-			$estratificacion1 = number_format(($ConcentracionPromedio == 0) ? 0 : abs(($ConcentracionPromedio - $ConcentracionPpm1) / $ConcentracionPromedio) * 100,2);
-			$estratificacion2 = number_format(($ConcentracionPromedio == 0) ? 0 : abs(($ConcentracionPromedio - $ConcentracionPpm2) / $ConcentracionPromedio) * 100,2);
-			$estratificacion3 = number_format(($ConcentracionPromedio == 0) ? 0 : abs(($ConcentracionPromedio - $ConcentracionPpm3) / $ConcentracionPromedio) * 100,2);
-			$estratMax = max($estratificacion1, $estratificacion2, $estratificacion3);
-
-			$ppm1 = number_format(abs($ConcentracionPromedio - $ConcentracionPpm1), 2);
-			$ppm2 = number_format(abs($ConcentracionPromedio - $ConcentracionPpm2), 2);
-			$ppm3 = number_format(abs($ConcentracionPromedio - $ConcentracionPpm3), 2);
-			$ppmMax = max($ppm1, $ppm2, $ppm3);
+			$resultadosEstratificacion = $this->calcularEstratificacion($dataConcentracion);
 
 
 			//tabla de conclusiones
-			#--- Puntos para la estratificacion ---#
-			$estratPts1 = 0;
-			$estratPts2 = 0;
-			$estratPts3 = 0;
-
-			if($estratMax <= 5){
-				$estratPts1 = 1;
-			}
-			if($estratMax <=10 && $estratMax >= 5){
-				$estratPts2 = 3;
-			}
-			if($estratMax >= 10){
-				$estratPts3 = 12;
-			}
-
-			$puntosMaxEstrat = max ($estratPts1, $estratPts2, $estratPts3);
-
-			#--- Puntos para el ppm ---#
-			$ppmPts1 = 0;
-			$ppmPts1 = 0;
-			$ppmPts1 = 0;
-
-			if($ppmMax <= .5){
-				$ppmPts1 = 1;
-			}
-			if($ppmMax > .5 && $ppmMax<= 1 ){
-				$ppmPts2 = 3;
-			}
-			if($ppmMax > 1){
-				$ppmPts3 = 12;
-			}
-
-			$puntosMaxPpm = min($ppmPts1, $ppmPts2, $ppmPts3);
-
-			#--- Puntos finales ---#
-			$puntosFinales = min($puntosMaxEstrat, $puntosMaxPpm);
-
-			#--- Logica de la conclusión ---#
-			$conclusion = "";
-			if($puntosFinales == 1){
-				$conclusion == "No Estratificada";
-			}elseif($puntosFinales == 3){
-				$conclusion == "Minimamente Estratificada";
-			}elseif($puntosFinales == 12){
-				$conclusion == "Estratificada";
-			}
+			$conclusiones = $this->determinarConclusiones(
+				$resultadosEstratificacion['estratificacion']['estratMaxima'],
+				$resultadosEstratificacion['ppm']['ppmMaxima']
+			);
 
 			#--- Armado del arreglo ---#
 
 			$datos = [
-				'promedios_campo' => $promedios,
+				'promedios_campo' => $promediosDatosCampo,
 				'equipo' => [
 					'geometriaConducto' => $dataEquipo['geometriaConducto'],
 					'diametro_equivalente' => $dataEquipo['diametro_equivalente']
 				],
-				'tablaEstra' => [
-					'marcado_sonda' => [
-						'marcado1' => $marcado1,
-						'marcado2' => $marcado2,
-						'marcado3' => $marcado3
-					],
-					'concentraciones' => [
-						'concentracion1' => $ConcentracionPpm1,
-						'concentracion2' => $ConcentracionPpm2,
-						'concentracion3' => $ConcentracionPpm3,
-						'promedio' => $ConcentracionPromedio
-					],
-					'estratificacion' => [
-						'estratificacion1' => $estratificacion1,
-						'estratificacion2' => $estratificacion2,
-						'estratificacion3' => $estratificacion3,
-						'estratMaxima' => $estratMax
-					],
-					'ppm' => [
-						'ppm1' => $ppm1,
-						'ppm2' => $ppm2,
-						'ppm3' => $ppm3,
-						'ppmMaxima' => $ppmMax
-					]
-				]
+				'tablaEstra' => array_merge(
+					['marcado_sonda' => $marcadoSonda],
+					$resultadosEstratificacion
+				), 'conclusiones' => $conclusiones
 			];
 
 			$informacion = json_encode($datos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 			log_message('error', 'Datos de la función: '.$informacion);
 
 			return $datos;
+		}
+
+		//Función para los datos de la sonda
+		private function calcularMarcadoSonda($diametroIntC, $extencionPuerto) {
+			return [
+				'marcado1' => number_format((($diametroIntC*(1/6))+$extencionPuerto), 2),
+				'marcado2' => number_format((($diametroIntC*(1/2))+$extencionPuerto), 2),
+				'marcado3' => number_format((($diametroIntC*(5/6))+$extencionPuerto), 2)
+			];
+		}
+
+		//Función para calcular los datps promedios de campo
+		private function calcularPromediosCampo($dataCampo) {
+			$total_muestras = count($dataCampo);
+			$sumas = [
+				'nox' => 0,
+				'co' => 0,
+				'o2' => 0,
+				'co2' => 0,
+				'temp' => 0
+			];
+
+			foreach($dataCampo as $muestra) {
+				$sumas['nox'] += $muestra['nox'];
+				$sumas['co'] += $muestra['co'];
+				$sumas['o2'] += $muestra['o2'];
+				$sumas['co2'] += $muestra['co2'];
+				$sumas['temp'] += $muestra['temp'];
+			}
+
+			return [
+				'nox' => $sumas['nox'] / $total_muestras,
+				'co' => $sumas['co'] / $total_muestras,
+				'o2' => $sumas['o2'] / $total_muestras,
+				'co2' => $sumas['co2'] / $total_muestras,
+				'temp' => $sumas['temp'] / $total_muestras
+			];
+		}
+
+		//Función para calcular los datos de estratificacion
+		private function calcularEstratificacion($concentraciones) {
+			$ConcentracionPpm1 = $concentraciones[0]['concentracion1'];
+			$ConcentracionPpm2 = $concentraciones[0]['concentracion2'];
+			$ConcentracionPpm3 = $concentraciones[0]['concentracion3'];
+
+			$ConcentracionPromedio = number_format(($ConcentracionPpm1 + $ConcentracionPpm2 + $ConcentracionPpm3) / 3, 2);
+
+			$estratificacion1 = number_format(($ConcentracionPromedio == 0) ? 0 : abs(($ConcentracionPromedio - $ConcentracionPpm1) / $ConcentracionPromedio) * 100, 2);
+			$estratificacion2 = number_format(($ConcentracionPromedio == 0) ? 0 : abs(($ConcentracionPromedio - $ConcentracionPpm2) / $ConcentracionPromedio) * 100, 2);
+			$estratificacion3 = number_format(($ConcentracionPromedio == 0) ? 0 : abs(($ConcentracionPromedio - $ConcentracionPpm3) / $ConcentracionPromedio) * 100, 2);
+
+			$ppm1 = number_format(abs($ConcentracionPromedio - $ConcentracionPpm1), 2);
+			$ppm2 = number_format(abs($ConcentracionPromedio - $ConcentracionPpm2), 2);
+			$ppm3 = number_format(abs($ConcentracionPromedio - $ConcentracionPpm3), 2);
+
+			return [
+				'concentraciones' => [
+					'concentracion1' => $ConcentracionPpm1,
+					'concentracion2' => $ConcentracionPpm2,
+					'concentracion3' => $ConcentracionPpm3,
+					'promedio' => $ConcentracionPromedio
+				],
+				'estratificacion' => [
+					'estratificacion1' => $estratificacion1,
+					'estratificacion2' => $estratificacion2,
+					'estratificacion3' => $estratificacion3,
+					'estratMaxima' => max($estratificacion1, $estratificacion2, $estratificacion3)
+				],
+				'ppm' => [
+					'ppm1' => $ppm1,
+					'ppm2' => $ppm2,
+					'ppm3' => $ppm3,
+					'ppmMaxima' => max($ppm1, $ppm2, $ppm3)
+				]
+			];
+		}
+
+		//Función para determinar las conclusiones con base a los puntos obtenidos
+		private function determinarConclusiones($estratMax, $ppmMax) {
+			// Puntos para estratificación
+			$puntosEstrat = ($estratMax <= 5) ? 1 : 
+						(($estratMax <= 10) ? 3 : 12);
+			
+			// Puntos para ppm
+			$puntosPpm = ($ppmMax <= 0.5) ? 1 : 
+						(($ppmMax <= 1) ? 3 : 12);
+			
+			$puntosFinales = min($puntosEstrat, $puntosPpm);
+			
+			$conclusion = "No Estratificada";
+			if($puntosFinales == 3) {
+				$conclusion = "Minimamente Estratificada";
+			} elseif($puntosFinales == 12) {
+				$conclusion = "Estratificada";
+			}
+			
+			return [
+				'puntosFinales' => $puntosFinales,
+				'conclusion' => $conclusion
+			];
+		}
+
+		private function distribucionPuntosEstratificacion(){
+			
 		}
 
 	}	
