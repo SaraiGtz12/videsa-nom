@@ -677,22 +677,20 @@
       let tablaInvalida = false;
 
        $('#div3 tbody tr').each(function () {
-        let marcado = $(this).find('td:eq(0) input').val();
         let concentracion = $(this).find('td:eq(1) input').val();
         let estratificacion = $(this).find('td:eq(2) input').val();
-        let ppm = $(this).find('td:eq(3) input').val();
+        let ppm = $(this).find('td:eq(0) input').val();
+     
 
         if ( !concentracion) {
           tablaInvalida = true;
         }
 
         tablaDatos.push({
-          marcado,
+          ppm,
           concentracion,
-          estratificacion,
-          ppm
+          estratificacion
         });
-
       });
     
       let registrosCampos = [];
@@ -704,9 +702,10 @@
           let co2 = fila.find('input[name="CO2"]').val();
           let temp = fila.find('input[name="Temp"]').val();
 
-          if (nox || co || o2 || co2 || temp) {
+          if (co && o2 && co2 && temp) {
             registrosCampos.push({ nox, co, o2, co2, temp });
           }
+
         });
 
         let registrosCampos2 = [];
@@ -717,13 +716,15 @@
           let co2 = fila.find('input[name="CO2"]').val();
           let temp = fila.find('input[name="Temp"]').val();
 
-          if (co || o2 || co2 || temp) {
-            registrosCampos2.push({ co, o2, co2, temp });
+          if (nox && co && o2 && co2 && temp) {
+            registrosCampos2.push({ nox, co, o2, co2, temp });
           }
+
         });
 
 
         if (camposVacios.length > 0 || tablaInvalida || (registrosCampos.length === 0 && registrosCampos2.length === 0) ) {
+          
         Swal.fire({
           icon: 'warning',
           title: 'Campos incompletos',
@@ -758,29 +759,55 @@
               cancelButtonText: 'No'
             }).then((result) => {
               if (result.isConfirmed) {
-                $.ajax({
-                  url: base_url + 'normas/Nom_085/generar_pdf', 
-                  type: 'POST',
-                  data: JSON.parse(respuesta),
-                
-             
-                  success: function (data) {
-                  window.open('Nom_085/generar_pdf', '_blank');
-
-                
-                  },
-                  error: function (xhr, status, error) {
-                    console.error('Error al generar PDF:', error);
-                    Swal.fire({
-                      icon: 'error',
-                      title: 'Error',
-                      text: 'No se pudo generar el PDF'
-                    });
-                  }
+                const datos = JSON.parse(respuesta);
+                console.log(datos);
+                let form = $('<form>', {
+                  action: 'Nom_085/generar_pdf',
+                  method: 'POST',
+                  target: '_blank'
                 });
-              } else {
-                Swal.fire('Guardado sin generar PDF');
+
+                form.append($('<input>', {
+                  type: 'hidden',
+                  name: 'form1',
+                  value: JSON.stringify(datos.form1)
+                }));
+
+                form.append($('<input>', {
+                  type: 'hidden',
+                  name: 'form2',
+                  value: JSON.stringify(datos.form2)
+                }));
+
+                form.append($('<input>', {
+                  type: 'hidden',
+                  name: 'tabla',
+                  value: JSON.stringify(datos.tabla)
+                }));
+
+                form.append($('<input>', {
+                  type: 'hidden',
+                  name: 'tipo_formato',
+                  value: datos.tipo_formato
+                }));
+
+                form.append($('<input>', {
+                  type: 'hidden',
+                  name: 'registrosCampos',
+                  value: JSON.stringify(datos.registrosCampos)
+                }));
+
+                form.append($('<input>', {
+                  type: 'hidden',
+                  name: 'registrosCampos2',
+                  value: JSON.stringify(datos.registrosCampos2)
+                }));
+
+                $('body').append(form);
+                form.submit();
+                form.remove();
               }
+
             });
           
         },

@@ -63,58 +63,45 @@
 			foreach ($array as $item) {
 				$resultado[$item['name']] = $item['value'];
 			}
-			return $resultado;
-		}
-		
-			// public function generar_pdf() {
-			// 	$form1 = $this->input->post('form1');
-			// 	$form2 = $this->input->post('form2');
-			// 	$tabla = $this->input->post('tabla');
-			// 	$tipo_formato = $this->input->post('tipo_formato');
-			// 	$registrosCampos = $this->input->post('registrosCampos');
-			// 	$registrosCampos2 = $this->input->post('registrosCampos2');
+			private function convertir_a_array($array) {
+				$resultado = [];
+				foreach ($array as $item) {
+					$resultado[$item['name']] = $item['value'];
+				}
+				return $resultado;
+			}
 
-
-			// 	// echo json_encode([
-			// 	// 	'form1' => $form1,
-			// 	// 	'form2' => $form2,
-			// 	// 	'tabla' => $tabla,
-			// 	// 	'registrosCampos' => $registrosCampos,
-			// 	// 	'registrosCampos2' => $registrosCampos2
-			// 	// ]);
-			// 	  $data = [
-			// 		'numero_informe' => $form1['numero_informe'],
-			// 		'orden_servicio' => $form1['orden_servicio'],
-			// 		'fecha_evaluacion' => $form1['fecha_evaluacion'],
-			// 		'recepcion' => $form1['recepcion'],
-			// 		'fecha_informe' => $form1['fecha_informe'],
-			// 	];
-
-			// 	$html = $this->load->view('pdf/plantilla', $data, true);
-
-			// 	$this->pdf->loadHtml($html);
-			// 	$this->pdf->render();
-			// 	$this->pdf->stream("informe_nom_085.pdf", ["Attachment" => true]);
-
-			// }
 		public function generar_pdf() {
-		
-			$form1 = $this->input->post('form1');
-			$form2 = $this->input->post('form2');
-			$tabla = $this->input->post('tabla');
+			$form1 = json_decode($this->input->post('form1'), true);
+			$form2 = json_decode($this->input->post('form2'), true);
+			$tabla = json_decode($this->input->post('tabla'), true);
 			$tipo_formato = $this->input->post('tipo_formato');
-			$registrosCampos = $this->input->post('registrosCampos');
-			$registrosCampos2 = $this->input->post('registrosCampos2');
-
+			$registrosCampos = json_decode($this->input->post('registrosCampos'), true);
+			$registrosCampos2 = json_decode($this->input->post('registrosCampos2'), true);
+			
 			$data = [
 				'numero_informe' => $form1['numero_informe'],
 				'orden_servicio' => $form1['orden_servicio'],
 				'fecha_evaluacion' => $form1['fecha_evaluacion'],
 				'recepcion' => $form1['recepcion'],
 				'fecha_informe' => $form1['fecha_informe'],
+				'razon_social' => $form1['razon_social'],
+				'calle' => $form1['calle'],
+				'colonia' => $form1['colonia'],
+				'alcaldia' => $form1['alcaldia'],
+				'estado' => $form1['estado'],
+				'cp' => $form1['cp'],
+
+				'equipo_evaluado' =>$form2['equipo_evaluado'],
+				'marca' =>$form2['marca'],
+				'combustible' =>$form2['combustible'],
+
+				'concentracion' =>$tabla[0]['concentracion'],
+				'estratificacion' =>$tabla[0]['estratificacion'],
+				'ppm' =>$tabla[0]['ppm'],
 			];
 
-			$html = $this->load->view('pdf/plantilla', $data, true);
+			$html = $this->load->view('pdf/plantilla-085MG', $data, true);
 
 			$options = new Options();
 			$options->set('isRemoteEnabled', true); 
