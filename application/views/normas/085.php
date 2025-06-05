@@ -677,19 +677,19 @@
       let tablaInvalida = false;
 
        $('#div3 tbody tr').each(function () {
-        let concentracion = $(this).find('td:eq(1) input').val();
-        let estratificacion = $(this).find('td:eq(2) input').val();
-        let ppm = $(this).find('td:eq(0) input').val();
+        let concentracion1 = $(this).find('td:eq(1) input').val();
+        let concentracion2 = $(this).find('td:eq(2) input').val();
+        let concentracion3 = $(this).find('td:eq(0) input').val();
      
 
-        if ( !concentracion) {
+        if ( !concentracion1 || !concentracion2 || !concentracion3) {
           tablaInvalida = true;
         }
 
         tablaDatos.push({
-          ppm,
-          concentracion,
-          estratificacion
+          concentracion1,
+          concentracion2,
+          concentracion3
         });
       });
     

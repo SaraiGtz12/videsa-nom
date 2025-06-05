@@ -63,13 +63,8 @@
 			foreach ($array as $item) {
 				$resultado[$item['name']] = $item['value'];
 			}
-			private function convertir_a_array($array) {
-				$resultado = [];
-				foreach ($array as $item) {
-					$resultado[$item['name']] = $item['value'];
-				}
-				return $resultado;
-			}
+			return $resultado;
+		}	
 
 		public function generar_pdf() {
 			$form1 = json_decode($this->input->post('form1'), true);
@@ -96,9 +91,9 @@
 				'marca' =>$form2['marca'],
 				'combustible' =>$form2['combustible'],
 
-				'concentracion' =>$tabla[0]['concentracion'],
-				'estratificacion' =>$tabla[0]['estratificacion'],
-				'ppm' =>$tabla[0]['ppm'],
+				'concentracion1' =>$tabla[0]['concentracion1'],
+				'concentracion2' =>$tabla[0]['concentracion2'],
+				'concentracion3' =>$tabla[0]['concentracion3'],
 			];
 
 			$html = $this->load->view('pdf/plantilla-085MG', $data, true);
@@ -110,8 +105,6 @@
 			$dompdf->setPaper('A4', 'portrait');
 			$dompdf->render();
 			$dompdf->stream("informe_nom_085.pdf", ["Attachment" => true]);
-
-			$informacion = $this->generarDatos($registrosCampos, $form2, $tabla);
 			
 		}
 
