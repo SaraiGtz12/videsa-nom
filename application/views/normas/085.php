@@ -549,6 +549,10 @@
           </div>
         </div>
       </div>
+      <canvas id="grafica_co"></canvas>
+    <canvas id="grafica_o2"></canvas>
+    <canvas id="grafica_co2"></canvas>
+
     </div>
   </div>
 </main>
@@ -663,163 +667,159 @@
   });
 
  $(document).ready(function () {
-    $('#btnGuardar').on('click', function (e) {
-      e.preventDefault();
-      let normaSelect = $('#normaSelect').val();
-      let datos1 = $('#form1').serializeArray();
-      let datos2 = $('#form2').serializeArray();
+  $('#btnGuardar').on('click', function (e) {
+    e.preventDefault();
+    let normaSelect = $('#normaSelect').val();
+    let datos1 = $('#form1').serializeArray();
+    let datos2 = $('#form2').serializeArray();
 
-       let camposVacios = [];
-        [...datos1, ...datos2].forEach(campo => {
-          if (!campo.value || campo.value.trim() === '') {
-            camposVacios.push(campo.name);
-          }
-        });
-      
-      let tablaDatos = [];
-      let tablaInvalida = false;
+    let camposVacios = [];
+    [...datos1, ...datos2].forEach(campo => {
+      if (!campo.value || campo.value.trim() === '') {
+        camposVacios.push(campo.name);
+      }
+    });
 
-       $('#div3 tbody tr').each(function () {
-        let concentracion = $(this).find('td:eq(1) input').val();
-        let estratificacion = $(this).find('td:eq(2) input').val();
-        let ppm = $(this).find('td:eq(0) input').val();
-     
+    let tablaDatos = [];
+    let tablaInvalida = false;
 
-        if ( !ppm || !concentracion || !estratificacion ) {
-          tablaInvalida = true;
-        }
+    $('#div3 tbody tr').each(function () {
+      let ppm = $(this).find('td:eq(0) input').val();
+      let concentracion = $(this).find('td:eq(1) input').val();
+      let estratificacion = $(this).find('td:eq(2) input').val();
 
-        tablaDatos.push({
-          ppm,
-          concentracion,
-          estratificacion
-        });
-     
-      });
-    
-      let registrosCampos = [];
-        $('#CamposRegistros tr').each(function () {
-          let fila = $(this);
-          let nox = fila.find('input[name="Nox"]').val();
-          let co = fila.find('input[name="CO"]').val();
-          let o2 = fila.find('input[name="O2"]').val();
-          let co2 = fila.find('input[name="CO2"]').val();
-          let temp = fila.find('input[name="Temp"]').val();
-
-          if (co && o2 && co2 && temp) {
-            registrosCampos.push({ nox, co, o2, co2, temp });
-          }
-
-        });
-
-        let registrosCampos2 = [];
-        $('#CamposRegistros2 tr').each(function () {
-          let fila = $(this);
-          let co = fila.find('input[name="CO"]').val();
-          let o2 = fila.find('input[name="O2"]').val();
-          let co2 = fila.find('input[name="CO2"]').val();
-          let temp = fila.find('input[name="Temp"]').val();
-
-          if (nox && co && o2 && co2 && temp) {
-            registrosCampos2.push({ nox, co, o2, co2, temp });
-          }
-
-        });
-
-
-        if (camposVacios.length > 0 || tablaInvalida || (registrosCampos.length === 0 && registrosCampos2.length === 0) ) {
-          
-        Swal.fire({
-          icon: 'warning',
-          title: 'Campos incompletos',
-          text: 'Por favor llena todos los campos antes de guardar.'
-        });
-        return;
+      if (!ppm || !concentracion || !estratificacion) {
+        tablaInvalida = true;
       }
 
-      let datosCompletos = {
-        form1: datos1,
-        form2: datos2,
-        tabla: tablaDatos,
-        normaSelect : normaSelect,
-        registrosCampos : registrosCampos,
-        registrosCampos2 : registrosCampos2,
-      };
+      tablaDatos.push({ ppm, concentracion, estratificacion });
+    });
 
-      
-      
+    let registrosCampos = [];
+    $('#CamposRegistros tr').each(function () {
+      let fila = $(this);
+      let nox = fila.find('input[name="Nox"]').val();
+      let co = fila.find('input[name="CO"]').val();
+      let o2 = fila.find('input[name="O2"]').val();
+      let co2 = fila.find('input[name="CO2"]').val();
+      let temp = fila.find('input[name="Temp"]').val();
+
+      if (co && o2 && co2 && temp) {
+        registrosCampos.push({ nox, co, o2, co2, temp });
+      }
+    });
+
+    let registrosCampos2 = [];
+    $('#CamposRegistros2 tr').each(function () {
+      let fila = $(this);
+      let nox = fila.find('input[name="Nox"]').val();
+      let co = fila.find('input[name="CO"]').val();
+      let o2 = fila.find('input[name="O2"]').val();
+      let co2 = fila.find('input[name="CO2"]').val();
+      let temp = fila.find('input[name="Temp"]').val();
+
+      if (nox && co && o2 && co2 && temp) {
+        registrosCampos2.push({ nox, co, o2, co2, temp });
+      }
+    });
+
+    if (camposVacios.length > 0 || tablaInvalida || (registrosCampos.length === 0 && registrosCampos2.length === 0)) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Campos incompletos',
+        text: 'Por favor llena todos los campos antes de guardar.'
+      });
+      return;
+    }
+
+    let datosCompletos = {
+      form1: datos1,
+      form2: datos2,
+      tabla: tablaDatos,
+      normaSelect: normaSelect,
+      registrosCampos: registrosCampos,
+      registrosCampos2: registrosCampos2
+    };
+
+    Promise.all([
+      crearGrafica('coChart', 'CO', registrosCampos.map(r => r.co)),
+      crearGrafica('o2Chart', 'O2', registrosCampos.map(r => r.o2)),
+      crearGrafica('co2Chart', 'CO2', registrosCampos.map(r => r.co2))
+    ]).then(imagenes => {
+      datosCompletos.grafica_co = imagenes[0];
+      datosCompletos.grafica_o2 = imagenes[1];
+      datosCompletos.grafica_co2 = imagenes[2];
+
       $.ajax({
-        url: base_url + 'normas/Nom_085/guardar', 
+        url: base_url + 'normas/Nom_085/guardar',
         type: 'POST',
         data: {
           datosCompletos: datosCompletos
         },
         success: function (respuesta) {
-            Swal.fire({
-              icon: 'success',
-              title: '¡Éxito!',
-              text: 'Guardado correctamente. ¿Deseas generar el PDF?',
-              showCancelButton: true,
-              confirmButtonText: 'Sí, generar PDF',
-              cancelButtonText: 'No'
-            }).then((result) => {
-              if (result.isConfirmed) {
+          console.log("este es mi datos: ", datosCompletos);
 
-                const datos = JSON.parse(respuesta);
-      
-                let form = $('<form>', {
-                  action: 'Nom_085/generar_pdf',
-                  method: 'POST',
-                  target: '_blank'
-                });
+          Swal.fire({
+            icon: 'success',
+            title: '¡Éxito!',
+            text: 'Guardado correctamente. ¿Deseas generar el PDF?',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, generar PDF',
+            cancelButtonText: 'No'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              const datos = JSON.parse(respuesta);
+              let form = $('<form>', {
+                action: 'Nom_085/generar_pdf',
+                method: 'POST',
+                target: '_blank'
+              });
 
-                form.append($('<input>', {
-                  type: 'hidden',
-                  name: 'form1',
-                  value: JSON.stringify(datos.form1)
-                }));
+              form.append($('<input>', {
+                type: 'hidden',
+                name: 'form1',
+                value: JSON.stringify(datos.form1)
+              }));
 
-                form.append($('<input>', {
-                  type: 'hidden',
-                  name: 'form2',
-                  value: JSON.stringify(datos.form2)
-                }));
+              form.append($('<input>', {
+                type: 'hidden',
+                name: 'form2',
+                value: JSON.stringify(datos.form2)
+              }));
 
-                form.append($('<input>', {
-                  type: 'hidden',
-                  name: 'tabla',
-                  value: JSON.stringify(datos.tabla)
-                }));
+              form.append($('<input>', {
+                type: 'hidden',
+                name: 'tabla',
+                value: JSON.stringify(datos.tabla)
+              }));
 
-                form.append($('<input>', {
-                  type: 'hidden',
-                  name: 'tipo_formato',
-                  value: datos.tipo_formato
-                }));
+              form.append($('<input>', {
+                type: 'hidden',
+                name: 'tipo_formato',
+                value: datos.tipo_formato
+              }));
 
-                form.append($('<input>', {
-                  type: 'hidden',
-                  name: 'registrosCampos',
-                  value: JSON.stringify(datos.registrosCampos)
-                }));
+              form.append($('<input>', {
+                type: 'hidden',
+                name: 'registrosCampos',
+                value: JSON.stringify(datos.registrosCampos)
+              }));
 
-                form.append($('<input>', {
-                  type: 'hidden',
-                  name: 'registrosCampos2',
-                  value: JSON.stringify(datos.registrosCampos2)
-                }));
+              form.append($('<input>', {
+                type: 'hidden',
+                name: 'registrosCampos2',
+                value: JSON.stringify(datos.registrosCampos2)
+              }));
 
-                $('body').append(form);
-                form.submit();
-                form.remove();
-              }
-
-            });
-          
+              $('body').append(form);
+              form.submit();
+              form.remove();
+            }
+          });
         },
         error: function (xhr, status, error) {
           console.error('Error al guardar:', error);
-           Swal.fire({
+          Swal.fire({
             icon: 'error',
             title: 'Error!',
             text: error
@@ -828,4 +828,39 @@
       });
     });
   });
+});
+
+function crearGrafica(id, label, datos) {
+  return new Promise(resolve => {
+    const canvas = document.createElement('canvas');
+    canvas.id = id;
+    canvas.width = 400;
+    canvas.height = 200;
+    canvas.style.display = 'none';
+    document.body.appendChild(canvas);
+
+    new Chart(canvas.getContext('2d'), {
+      type: 'line',
+      data: {
+        labels: datos.map((_, i) => i + 1),
+        datasets: [{
+          label: label,
+          data: datos,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 2,
+          fill: false
+        }]
+      },
+      options: { responsive: false, animation: false }
+    });
+
+    setTimeout(() => {
+      html2canvas(canvas).then(canvasCaptured => {
+        resolve(canvasCaptured.toDataURL('image/png')); // <-- CORREGIDO
+        canvas.remove();
+      });
+    }, 500);
+  });
+}
+
 </script>
