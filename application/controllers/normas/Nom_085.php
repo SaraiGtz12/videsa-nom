@@ -96,9 +96,8 @@
 			// 	$this->pdf->stream("informe_nom_085.pdf", ["Attachment" => true]);
 
 			// }
-			public function generar_pdf() {
+		public function generar_pdf() {
 		
-
 			$form1 = $this->input->post('form1');
 			$form2 = $this->input->post('form2');
 			$tabla = $this->input->post('tabla');
@@ -114,6 +113,8 @@
 				'fecha_informe' => $form1['fecha_informe'],
 			];
 
+			generarDatos($registrosCampos, $form2, $tabla);
+
 			$html = $this->load->view('pdf/plantilla', $data, true);
 
 			$options = new Options();
@@ -125,7 +126,14 @@
 			$dompdf->stream("informe_nom_085.pdf", ["Attachment" => true]);
 		}
 
-
+		public function generarDatos($dataCampo, $dataEquipo, $dataConcentracion){
+			$dataEquipment = [
+				'geometriaConducto' => $form2['geometriaConducto'],
+				'diametro_interior_conducto' => $form2['diametro_interior_conducto'],
+				'diametro_equivalente' => $form2['diametro_equivalente'],
+				'extencionPuerto' => $form2['extencionPuerto']
+			];
+		}
 
 		
 	}	

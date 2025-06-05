@@ -160,7 +160,7 @@
                 </div>
                 <div class="col-md-4">
                   <label>Geometría del conducto:</label>
-                  <select name="geometria_conductor" class="form-control">
+                  <select name="geometriaConducto" class="form-control">
                     <option value="">Selecciona una opción</option>
                     <option value="Cuadrada">Cuadrada</option>
                     <option value="Circular" selected>Circular</option>
@@ -209,7 +209,7 @@
                 </div>
                 <div class="col-md-4">
                   <label>Extensión del puerto, epm:</label>
-                  <input type="text" class="form-control" value="2">
+                  <input type="text" class="form-control" name="extencionPuerto" value="2">
                 </div>
               </div>
               <div class="row mb-3">
@@ -618,10 +618,10 @@
               let campo = ` 
                   <tr> 
                       <td>${i+1}</td> 
-                      <td><input type="number" class="form-control" name="CO"/></td> 
-                      <td><input type="number" class="form-control" name="O2" step="0.01"/></td> 
-                      <td><input type="number" class="form-control" name="CO2" step="0.01"/></td> 
-                      <td><input type="number" class="form-control" name="Temp" step="0.1"/></td> 
+                      <td><input type="number" class="form-control" value="1" name="CO"/></td> 
+                      <td><input type="number" class="form-control" value="1" name="O2" step="0.01"/></td> 
+                      <td><input type="number" class="form-control" value="1" name="CO2" step="0.01"/></td> 
+                      <td><input type="number" class="form-control" value="1" name="Temp" step="0.1"/></td> 
                   </tr>`; 
 
               $("#CamposRegistros2").append(campo);
@@ -635,11 +635,11 @@
               let campo = ` 
                   <tr> 
                       <td>${i+1}</td> 
-                      <td><input type="number" class="form-control" name="Nox" step="0.01"/></td> 
-                      <td><input type="number" class="form-control" name="CO"/></td> 
-                      <td><input type="number" class="form-control" name="O2" step="0.01"/></td> 
-                      <td><input type="number" class="form-control" name="CO2" step="0.01"/></td> 
-                      <td><input type="number" class="form-control" name="Temp" step="0.1"/></td> 
+                      <td><input type="number" class="form-control" value="1" name="Nox" step="0.01"/></td> 
+                      <td><input type="number" class="form-control" value="1" name="CO"/></td> 
+                      <td><input type="number" class="form-control" value="1" name="O2" step="0.01"/></td> 
+                      <td><input type="number" class="form-control" value="1" name="CO2" step="0.01"/></td> 
+                      <td><input type="number" class="form-control" value="1" name="Temp" step="0.1"/></td> 
                   </tr>`; 
 
               $("#CamposRegistros").append(campo);
