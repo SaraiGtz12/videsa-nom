@@ -46,13 +46,21 @@
 			$form2_data = $this->convertir_a_array($form2);
 			
 			
+			$grafica_co = $datosCompletos['grafica_co'] ?? '';
+			$grafica_o2 = $datosCompletos['grafica_o2'] ?? '';
+			$grafica_co2 = $datosCompletos['grafica_co2'] ?? '';
+
+
 			echo json_encode([
 				'form1' => $form1_data,
 				'form2' => $form2_data,
 				'tabla' => $tabla,
 				'tipo_formato' => $tipo_formato,
 				'registrosCampos' => $registrosCampos,
-				'registrosCampos2' => $registrosCampos2
+				'registrosCampos2' => $registrosCampos2,
+				'grafica_co' => $grafica_co,
+				'grafica_o2' => $grafica_o2,
+				'grafica_co2' => $grafica_co2
 			]);
 			
 
@@ -72,6 +80,10 @@
 			$tipo_formato = $this->input->post('tipo_formato');
 			$registrosCampos = json_decode($this->input->post('registrosCampos'), true);
 			$registrosCampos2 = json_decode($this->input->post('registrosCampos2'), true);
+
+			$grafica_co = $this->input->post('grafica_co');
+			$grafica_o2 = $this->input->post('grafica_o2');
+			$grafica_co2 = $this->input->post('grafica_co2');
 			
 			$data = [
 				'numero_informe' => $form1['numero_informe'],
@@ -93,7 +105,20 @@
 				'concentracion' =>$tabla[0]['concentracion'],
 				'estratificacion' =>$tabla[0]['estratificacion'],
 				'ppm' =>$tabla[0]['ppm'],
+
+				//tabla
+				'registrosCampos' => $registrosCampos,
+
+				'grafica_co' => $grafica_co,
+				'grafica_o2' => $grafica_o2,
+				'grafica_co2' => $grafica_co2,
+
+
 			];
+
+
+	
+
 
 			$html = $this->load->view('pdf/plantilla-085MG', $data, true);
 

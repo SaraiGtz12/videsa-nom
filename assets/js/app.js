@@ -1,11 +1,14462 @@
-/*!
- * jQuery JavaScript Library v3.7.0
- * https://jquery.com/
- *
- * Copyright OpenJS Foundation and other contributors
- * Released under the MIT license
- * https://jquery.org/license
- *
- * Date: 2023-05-11T18:29Z
- */
-!function(e,t){"use strict";"object"==typeof module&&"object"==typeof module.exports?module.exports=e.document?t(e,!0):function(e){if(!e.document)throw new Error("jQuery requires a window with a document");return t(e)}:t(e)}("undefined"!=typeof window?window:this,(function(e,t){"use strict";var n=[],r=Object.getPrototypeOf,i=n.slice,o=n.flat?function(e){return n.flat.call(e)}:function(e){return n.concat.apply([],e)},a=n.push,s=n.indexOf,u={},l=u.toString,c=u.hasOwnProperty,f=c.toString,p=f.call(Object),d={},h=function(e){return"function"==typeof e&&"number"!=typeof e.nodeType&&"function"!=typeof e.item},g=function(e){return null!=e&&e===e.window},v=e.document,y={type:!0,src:!0,nonce:!0,noModule:!0};function m(e,t,n){var r,i,o=(n=n||v).createElement("script");if(o.text=e,t)for(r in y)(i=t[r]||t.getAttribute&&t.getAttribute(r))&&o.setAttribute(r,i);n.head.appendChild(o).parentNode.removeChild(o)}function x(e){return null==e?e+"":"object"==typeof e||"function"==typeof e?u[l.call(e)]||"object":typeof e}var b="3.7.0",w=/HTML$/i,T=function(e,t){return new T.fn.init(e,t)};function C(e){var t=!!e&&"length"in e&&e.length,n=x(e);return!h(e)&&!g(e)&&("array"===n||0===t||"number"==typeof t&&t>0&&t-1 in e)}function S(e,t){return e.nodeName&&e.nodeName.toLowerCase()===t.toLowerCase()}T.fn=T.prototype={jquery:b,constructor:T,length:0,toArray:function(){return i.call(this)},get:function(e){return null==e?i.call(this):e<0?this[e+this.length]:this[e]},pushStack:function(e){var t=T.merge(this.constructor(),e);return t.prevObject=this,t},each:function(e){return T.each(this,e)},map:function(e){return this.pushStack(T.map(this,(function(t,n){return e.call(t,n,t)})))},slice:function(){return this.pushStack(i.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},even:function(){return this.pushStack(T.grep(this,(function(e,t){return(t+1)%2})))},odd:function(){return this.pushStack(T.grep(this,(function(e,t){return t%2})))},eq:function(e){var t=this.length,n=+e+(e<0?t:0);return this.pushStack(n>=0&&n<t?[this[n]]:[])},end:function(){return this.prevObject||this.constructor()},push:a,sort:n.sort,splice:n.splice},T.extend=T.fn.extend=function(){var e,t,n,r,i,o,a=arguments[0]||{},s=1,u=arguments.length,l=!1;for("boolean"==typeof a&&(l=a,a=arguments[s]||{},s++),"object"==typeof a||h(a)||(a={}),s===u&&(a=this,s--);s<u;s++)if(null!=(e=arguments[s]))for(t in e)r=e[t],"__proto__"!==t&&a!==r&&(l&&r&&(T.isPlainObject(r)||(i=Array.isArray(r)))?(n=a[t],o=i&&!Array.isArray(n)?[]:i||T.isPlainObject(n)?n:{},i=!1,a[t]=T.extend(l,o,r)):void 0!==r&&(a[t]=r));return a},T.extend({expando:"jQuery"+(b+Math.random()).replace(/\D/g,""),isReady:!0,error:function(e){throw new Error(e)},noop:function(){},isPlainObject:function(e){var t,n;return!(!e||"[object Object]"!==l.call(e))&&(!(t=r(e))||"function"==typeof(n=c.call(t,"constructor")&&t.constructor)&&f.call(n)===p)},isEmptyObject:function(e){var t;for(t in e)return!1;return!0},globalEval:function(e,t,n){m(e,{nonce:t&&t.nonce},n)},each:function(e,t){var n,r=0;if(C(e))for(n=e.length;r<n&&!1!==t.call(e[r],r,e[r]);r++);else for(r in e)if(!1===t.call(e[r],r,e[r]))break;return e},text:function(e){var t,n="",r=0,i=e.nodeType;if(i){if(1===i||9===i||11===i)return e.textContent;if(3===i||4===i)return e.nodeValue}else for(;t=e[r++];)n+=T.text(t);return n},makeArray:function(e,t){var n=t||[];return null!=e&&(C(Object(e))?T.merge(n,"string"==typeof e?[e]:e):a.call(n,e)),n},inArray:function(e,t,n){return null==t?-1:s.call(t,e,n)},isXMLDoc:function(e){var t=e&&e.namespaceURI,n=e&&(e.ownerDocument||e).documentElement;return!w.test(t||n&&n.nodeName||"HTML")},merge:function(e,t){for(var n=+t.length,r=0,i=e.length;r<n;r++)e[i++]=t[r];return e.length=i,e},grep:function(e,t,n){for(var r=[],i=0,o=e.length,a=!n;i<o;i++)!t(e[i],i)!==a&&r.push(e[i]);return r},map:function(e,t,n){var r,i,a=0,s=[];if(C(e))for(r=e.length;a<r;a++)null!=(i=t(e[a],a,n))&&s.push(i);else for(a in e)null!=(i=t(e[a],a,n))&&s.push(i);return o(s)},guid:1,support:d}),"function"==typeof Symbol&&(T.fn[Symbol.iterator]=n[Symbol.iterator]),T.each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(" "),(function(e,t){u["[object "+t+"]"]=t.toLowerCase()}));var E=n.pop,k=n.sort,j=n.splice,A="[\\x20\\t\\r\\n\\f]",D=new RegExp("^"+A+"+|((?:^|[^\\\\])(?:\\\\.)*)"+A+"+$","g");T.contains=function(e,t){var n=t&&t.parentNode;return e===n||!(!n||1!==n.nodeType||!(e.contains?e.contains(n):e.compareDocumentPosition&&16&e.compareDocumentPosition(n)))};var N=/([\0-\x1f\x7f]|^-?\d)|^-$|[^\x80-\uFFFF\w-]/g;function q(e,t){return t?"\0"===e?"�":e.slice(0,-1)+"\\"+e.charCodeAt(e.length-1).toString(16)+" ":"\\"+e}T.escapeSelector=function(e){return(e+"").replace(N,q)};var L=v,H=a;!function(){var t,r,o,a,u,l,f,p,h,g,v=H,y=T.expando,m=0,x=0,b=ee(),w=ee(),C=ee(),N=ee(),q=function(e,t){return e===t&&(u=!0),0},O="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",P="(?:\\\\[\\da-fA-F]{1,6}"+A+"?|\\\\[^\\r\\n\\f]|[\\w-]|[^\0-\\x7f])+",R="\\["+A+"*("+P+")(?:"+A+"*([*^$|!~]?=)"+A+"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|("+P+"))|)"+A+"*\\]",M=":("+P+")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|"+R+")*)|.*)\\)|)",I=new RegExp(A+"+","g"),W=new RegExp("^"+A+"*,"+A+"*"),F=new RegExp("^"+A+"*([>+~]|"+A+")"+A+"*"),$=new RegExp(A+"|>"),B=new RegExp(M),_=new RegExp("^"+P+"$"),X={ID:new RegExp("^#("+P+")"),CLASS:new RegExp("^\\.("+P+")"),TAG:new RegExp("^("+P+"|[*])"),ATTR:new RegExp("^"+R),PSEUDO:new RegExp("^"+M),CHILD:new RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\("+A+"*(even|odd|(([+-]|)(\\d*)n|)"+A+"*(?:([+-]|)"+A+"*(\\d+)|))"+A+"*\\)|)","i"),bool:new RegExp("^(?:"+O+")$","i"),needsContext:new RegExp("^"+A+"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\("+A+"*((?:-\\d)?\\d*)"+A+"*\\)|)(?=[^-]|$)","i")},U=/^(?:input|select|textarea|button)$/i,z=/^h\d$/i,V=/^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,G=/[+~]/,Y=new RegExp("\\\\[\\da-fA-F]{1,6}"+A+"?|\\\\([^\\r\\n\\f])","g"),Q=function(e,t){var n="0x"+e.slice(1)-65536;return t||(n<0?String.fromCharCode(n+65536):String.fromCharCode(n>>10|55296,1023&n|56320))},J=function(){ue()},K=pe((function(e){return!0===e.disabled&&S(e,"fieldset")}),{dir:"parentNode",next:"legend"});try{v.apply(n=i.call(L.childNodes),L.childNodes),n[L.childNodes.length].nodeType}catch(e){v={apply:function(e,t){H.apply(e,i.call(t))},call:function(e){H.apply(e,i.call(arguments,1))}}}function Z(e,t,n,r){var i,o,a,s,u,c,f,g=t&&t.ownerDocument,m=t?t.nodeType:9;if(n=n||[],"string"!=typeof e||!e||1!==m&&9!==m&&11!==m)return n;if(!r&&(ue(t),t=t||l,p)){if(11!==m&&(u=V.exec(e)))if(i=u[1]){if(9===m){if(!(a=t.getElementById(i)))return n;if(a.id===i)return v.call(n,a),n}else if(g&&(a=g.getElementById(i))&&Z.contains(t,a)&&a.id===i)return v.call(n,a),n}else{if(u[2])return v.apply(n,t.getElementsByTagName(e)),n;if((i=u[3])&&t.getElementsByClassName)return v.apply(n,t.getElementsByClassName(i)),n}if(!(N[e+" "]||h&&h.test(e))){if(f=e,g=t,1===m&&($.test(e)||F.test(e))){for((g=G.test(e)&&se(t.parentNode)||t)==t&&d.scope||((s=t.getAttribute("id"))?s=T.escapeSelector(s):t.setAttribute("id",s=y)),o=(c=ce(e)).length;o--;)c[o]=(s?"#"+s:":scope")+" "+fe(c[o]);f=c.join(",")}try{return v.apply(n,g.querySelectorAll(f)),n}catch(t){N(e,!0)}finally{s===y&&t.removeAttribute("id")}}}return me(e.replace(D,"$1"),t,n,r)}function ee(){var e=[];return function t(n,i){return e.push(n+" ")>r.cacheLength&&delete t[e.shift()],t[n+" "]=i}}function te(e){return e[y]=!0,e}function ne(e){var t=l.createElement("fieldset");try{return!!e(t)}catch(e){return!1}finally{t.parentNode&&t.parentNode.removeChild(t),t=null}}function re(e){return function(t){return S(t,"input")&&t.type===e}}function ie(e){return function(t){return(S(t,"input")||S(t,"button"))&&t.type===e}}function oe(e){return function(t){return"form"in t?t.parentNode&&!1===t.disabled?"label"in t?"label"in t.parentNode?t.parentNode.disabled===e:t.disabled===e:t.isDisabled===e||t.isDisabled!==!e&&K(t)===e:t.disabled===e:"label"in t&&t.disabled===e}}function ae(e){return te((function(t){return t=+t,te((function(n,r){for(var i,o=e([],n.length,t),a=o.length;a--;)n[i=o[a]]&&(n[i]=!(r[i]=n[i]))}))}))}function se(e){return e&&void 0!==e.getElementsByTagName&&e}function ue(e){var t,n=e?e.ownerDocument||e:L;return n!=l&&9===n.nodeType&&n.documentElement?(f=(l=n).documentElement,p=!T.isXMLDoc(l),g=f.matches||f.webkitMatchesSelector||f.msMatchesSelector,L!=l&&(t=l.defaultView)&&t.top!==t&&t.addEventListener("unload",J),d.getById=ne((function(e){return f.appendChild(e).id=T.expando,!l.getElementsByName||!l.getElementsByName(T.expando).length})),d.disconnectedMatch=ne((function(e){return g.call(e,"*")})),d.scope=ne((function(){return l.querySelectorAll(":scope")})),d.cssHas=ne((function(){try{return l.querySelector(":has(*,:jqfake)"),!1}catch(e){return!0}})),d.getById?(r.filter.ID=function(e){var t=e.replace(Y,Q);return function(e){return e.getAttribute("id")===t}},r.find.ID=function(e,t){if(void 0!==t.getElementById&&p){var n=t.getElementById(e);return n?[n]:[]}}):(r.filter.ID=function(e){var t=e.replace(Y,Q);return function(e){var n=void 0!==e.getAttributeNode&&e.getAttributeNode("id");return n&&n.value===t}},r.find.ID=function(e,t){if(void 0!==t.getElementById&&p){var n,r,i,o=t.getElementById(e);if(o){if((n=o.getAttributeNode("id"))&&n.value===e)return[o];for(i=t.getElementsByName(e),r=0;o=i[r++];)if((n=o.getAttributeNode("id"))&&n.value===e)return[o]}return[]}}),r.find.TAG=function(e,t){return void 0!==t.getElementsByTagName?t.getElementsByTagName(e):t.querySelectorAll(e)},r.find.CLASS=function(e,t){if(void 0!==t.getElementsByClassName&&p)return t.getElementsByClassName(e)},h=[],ne((function(e){var t;f.appendChild(e).innerHTML="<a id='"+y+"' href='' disabled='disabled'></a><select id='"+y+"-\r\\' disabled='disabled'><option selected=''></option></select>",e.querySelectorAll("[selected]").length||h.push("\\["+A+"*(?:value|"+O+")"),e.querySelectorAll("[id~="+y+"-]").length||h.push("~="),e.querySelectorAll("a#"+y+"+*").length||h.push(".#.+[+~]"),e.querySelectorAll(":checked").length||h.push(":checked"),(t=l.createElement("input")).setAttribute("type","hidden"),e.appendChild(t).setAttribute("name","D"),f.appendChild(e).disabled=!0,2!==e.querySelectorAll(":disabled").length&&h.push(":enabled",":disabled"),(t=l.createElement("input")).setAttribute("name",""),e.appendChild(t),e.querySelectorAll("[name='']").length||h.push("\\["+A+"*name"+A+"*="+A+"*(?:''|\"\")")})),d.cssHas||h.push(":has"),h=h.length&&new RegExp(h.join("|")),q=function(e,t){if(e===t)return u=!0,0;var n=!e.compareDocumentPosition-!t.compareDocumentPosition;return n||(1&(n=(e.ownerDocument||e)==(t.ownerDocument||t)?e.compareDocumentPosition(t):1)||!d.sortDetached&&t.compareDocumentPosition(e)===n?e===l||e.ownerDocument==L&&Z.contains(L,e)?-1:t===l||t.ownerDocument==L&&Z.contains(L,t)?1:a?s.call(a,e)-s.call(a,t):0:4&n?-1:1)},l):l}for(t in Z.matches=function(e,t){return Z(e,null,null,t)},Z.matchesSelector=function(e,t){if(ue(e),p&&!N[t+" "]&&(!h||!h.test(t)))try{var n=g.call(e,t);if(n||d.disconnectedMatch||e.document&&11!==e.document.nodeType)return n}catch(e){N(t,!0)}return Z(t,l,null,[e]).length>0},Z.contains=function(e,t){return(e.ownerDocument||e)!=l&&ue(e),T.contains(e,t)},Z.attr=function(e,t){(e.ownerDocument||e)!=l&&ue(e);var n=r.attrHandle[t.toLowerCase()],i=n&&c.call(r.attrHandle,t.toLowerCase())?n(e,t,!p):void 0;return void 0!==i?i:e.getAttribute(t)},Z.error=function(e){throw new Error("Syntax error, unrecognized expression: "+e)},T.uniqueSort=function(e){var t,n=[],r=0,o=0;if(u=!d.sortStable,a=!d.sortStable&&i.call(e,0),k.call(e,q),u){for(;t=e[o++];)t===e[o]&&(r=n.push(o));for(;r--;)j.call(e,n[r],1)}return a=null,e},T.fn.uniqueSort=function(){return this.pushStack(T.uniqueSort(i.apply(this)))},r=T.expr={cacheLength:50,createPseudo:te,match:X,attrHandle:{},find:{},relative:{">":{dir:"parentNode",first:!0}," ":{dir:"parentNode"},"+":{dir:"previousSibling",first:!0},"~":{dir:"previousSibling"}},preFilter:{ATTR:function(e){return e[1]=e[1].replace(Y,Q),e[3]=(e[3]||e[4]||e[5]||"").replace(Y,Q),"~="===e[2]&&(e[3]=" "+e[3]+" "),e.slice(0,4)},CHILD:function(e){return e[1]=e[1].toLowerCase(),"nth"===e[1].slice(0,3)?(e[3]||Z.error(e[0]),e[4]=+(e[4]?e[5]+(e[6]||1):2*("even"===e[3]||"odd"===e[3])),e[5]=+(e[7]+e[8]||"odd"===e[3])):e[3]&&Z.error(e[0]),e},PSEUDO:function(e){var t,n=!e[6]&&e[2];return X.CHILD.test(e[0])?null:(e[3]?e[2]=e[4]||e[5]||"":n&&B.test(n)&&(t=ce(n,!0))&&(t=n.indexOf(")",n.length-t)-n.length)&&(e[0]=e[0].slice(0,t),e[2]=n.slice(0,t)),e.slice(0,3))}},filter:{TAG:function(e){var t=e.replace(Y,Q).toLowerCase();return"*"===e?function(){return!0}:function(e){return S(e,t)}},CLASS:function(e){var t=b[e+" "];return t||(t=new RegExp("(^|"+A+")"+e+"("+A+"|$)"))&&b(e,(function(e){return t.test("string"==typeof e.className&&e.className||void 0!==e.getAttribute&&e.getAttribute("class")||"")}))},ATTR:function(e,t,n){return function(r){var i=Z.attr(r,e);return null==i?"!="===t:!t||(i+="","="===t?i===n:"!="===t?i!==n:"^="===t?n&&0===i.indexOf(n):"*="===t?n&&i.indexOf(n)>-1:"$="===t?n&&i.slice(-n.length)===n:"~="===t?(" "+i.replace(I," ")+" ").indexOf(n)>-1:"|="===t&&(i===n||i.slice(0,n.length+1)===n+"-"))}},CHILD:function(e,t,n,r,i){var o="nth"!==e.slice(0,3),a="last"!==e.slice(-4),s="of-type"===t;return 1===r&&0===i?function(e){return!!e.parentNode}:function(t,n,u){var l,c,f,p,d,h=o!==a?"nextSibling":"previousSibling",g=t.parentNode,v=s&&t.nodeName.toLowerCase(),x=!u&&!s,b=!1;if(g){if(o){for(;h;){for(f=t;f=f[h];)if(s?S(f,v):1===f.nodeType)return!1;d=h="only"===e&&!d&&"nextSibling"}return!0}if(d=[a?g.firstChild:g.lastChild],a&&x){for(b=(p=(l=(c=g[y]||(g[y]={}))[e]||[])[0]===m&&l[1])&&l[2],f=p&&g.childNodes[p];f=++p&&f&&f[h]||(b=p=0)||d.pop();)if(1===f.nodeType&&++b&&f===t){c[e]=[m,p,b];break}}else if(x&&(b=p=(l=(c=t[y]||(t[y]={}))[e]||[])[0]===m&&l[1]),!1===b)for(;(f=++p&&f&&f[h]||(b=p=0)||d.pop())&&(!(s?S(f,v):1===f.nodeType)||!++b||(x&&((c=f[y]||(f[y]={}))[e]=[m,b]),f!==t)););return(b-=i)===r||b%r==0&&b/r>=0}}},PSEUDO:function(e,t){var n,i=r.pseudos[e]||r.setFilters[e.toLowerCase()]||Z.error("unsupported pseudo: "+e);return i[y]?i(t):i.length>1?(n=[e,e,"",t],r.setFilters.hasOwnProperty(e.toLowerCase())?te((function(e,n){for(var r,o=i(e,t),a=o.length;a--;)e[r=s.call(e,o[a])]=!(n[r]=o[a])})):function(e){return i(e,0,n)}):i}},pseudos:{not:te((function(e){var t=[],n=[],r=ye(e.replace(D,"$1"));return r[y]?te((function(e,t,n,i){for(var o,a=r(e,null,i,[]),s=e.length;s--;)(o=a[s])&&(e[s]=!(t[s]=o))})):function(e,i,o){return t[0]=e,r(t,null,o,n),t[0]=null,!n.pop()}})),has:te((function(e){return function(t){return Z(e,t).length>0}})),contains:te((function(e){return e=e.replace(Y,Q),function(t){return(t.textContent||T.text(t)).indexOf(e)>-1}})),lang:te((function(e){return _.test(e||"")||Z.error("unsupported lang: "+e),e=e.replace(Y,Q).toLowerCase(),function(t){var n;do{if(n=p?t.lang:t.getAttribute("xml:lang")||t.getAttribute("lang"))return(n=n.toLowerCase())===e||0===n.indexOf(e+"-")}while((t=t.parentNode)&&1===t.nodeType);return!1}})),target:function(t){var n=e.location&&e.location.hash;return n&&n.slice(1)===t.id},root:function(e){return e===f},focus:function(e){return e===function(){try{return l.activeElement}catch(e){}}()&&l.hasFocus()&&!!(e.type||e.href||~e.tabIndex)},enabled:oe(!1),disabled:oe(!0),checked:function(e){return S(e,"input")&&!!e.checked||S(e,"option")&&!!e.selected},selected:function(e){return e.parentNode&&e.parentNode.selectedIndex,!0===e.selected},empty:function(e){for(e=e.firstChild;e;e=e.nextSibling)if(e.nodeType<6)return!1;return!0},parent:function(e){return!r.pseudos.empty(e)},header:function(e){return z.test(e.nodeName)},input:function(e){return U.test(e.nodeName)},button:function(e){return S(e,"input")&&"button"===e.type||S(e,"button")},text:function(e){var t;return S(e,"input")&&"text"===e.type&&(null==(t=e.getAttribute("type"))||"text"===t.toLowerCase())},first:ae((function(){return[0]})),last:ae((function(e,t){return[t-1]})),eq:ae((function(e,t,n){return[n<0?n+t:n]})),even:ae((function(e,t){for(var n=0;n<t;n+=2)e.push(n);return e})),odd:ae((function(e,t){for(var n=1;n<t;n+=2)e.push(n);return e})),lt:ae((function(e,t,n){var r;for(r=n<0?n+t:n>t?t:n;--r>=0;)e.push(r);return e})),gt:ae((function(e,t,n){for(var r=n<0?n+t:n;++r<t;)e.push(r);return e}))}},r.pseudos.nth=r.pseudos.eq,{radio:!0,checkbox:!0,file:!0,password:!0,image:!0})r.pseudos[t]=re(t);for(t in{submit:!0,reset:!0})r.pseudos[t]=ie(t);function le(){}function ce(e,t){var n,i,o,a,s,u,l,c=w[e+" "];if(c)return t?0:c.slice(0);for(s=e,u=[],l=r.preFilter;s;){for(a in n&&!(i=W.exec(s))||(i&&(s=s.slice(i[0].length)||s),u.push(o=[])),n=!1,(i=F.exec(s))&&(n=i.shift(),o.push({value:n,type:i[0].replace(D," ")}),s=s.slice(n.length)),r.filter)!(i=X[a].exec(s))||l[a]&&!(i=l[a](i))||(n=i.shift(),o.push({value:n,type:a,matches:i}),s=s.slice(n.length));if(!n)break}return t?s.length:s?Z.error(e):w(e,u).slice(0)}function fe(e){for(var t=0,n=e.length,r="";t<n;t++)r+=e[t].value;return r}function pe(e,t,n){var r=t.dir,i=t.next,o=i||r,a=n&&"parentNode"===o,s=x++;return t.first?function(t,n,i){for(;t=t[r];)if(1===t.nodeType||a)return e(t,n,i);return!1}:function(t,n,u){var l,c,f=[m,s];if(u){for(;t=t[r];)if((1===t.nodeType||a)&&e(t,n,u))return!0}else for(;t=t[r];)if(1===t.nodeType||a)if(c=t[y]||(t[y]={}),i&&S(t,i))t=t[r]||t;else{if((l=c[o])&&l[0]===m&&l[1]===s)return f[2]=l[2];if(c[o]=f,f[2]=e(t,n,u))return!0}return!1}}function de(e){return e.length>1?function(t,n,r){for(var i=e.length;i--;)if(!e[i](t,n,r))return!1;return!0}:e[0]}function he(e,t,n,r,i){for(var o,a=[],s=0,u=e.length,l=null!=t;s<u;s++)(o=e[s])&&(n&&!n(o,r,i)||(a.push(o),l&&t.push(s)));return a}function ge(e,t,n,r,i,o){return r&&!r[y]&&(r=ge(r)),i&&!i[y]&&(i=ge(i,o)),te((function(o,a,u,l){var c,f,p,d,h=[],g=[],y=a.length,m=o||function(e,t,n){for(var r=0,i=t.length;r<i;r++)Z(e,t[r],n);return n}(t||"*",u.nodeType?[u]:u,[]),x=!e||!o&&t?m:he(m,h,e,u,l);if(n?n(x,d=i||(o?e:y||r)?[]:a,u,l):d=x,r)for(c=he(d,g),r(c,[],u,l),f=c.length;f--;)(p=c[f])&&(d[g[f]]=!(x[g[f]]=p));if(o){if(i||e){if(i){for(c=[],f=d.length;f--;)(p=d[f])&&c.push(x[f]=p);i(null,d=[],c,l)}for(f=d.length;f--;)(p=d[f])&&(c=i?s.call(o,p):h[f])>-1&&(o[c]=!(a[c]=p))}}else d=he(d===a?d.splice(y,d.length):d),i?i(null,a,d,l):v.apply(a,d)}))}function ve(e){for(var t,n,i,a=e.length,u=r.relative[e[0].type],l=u||r.relative[" "],c=u?1:0,f=pe((function(e){return e===t}),l,!0),p=pe((function(e){return s.call(t,e)>-1}),l,!0),d=[function(e,n,r){var i=!u&&(r||n!=o)||((t=n).nodeType?f(e,n,r):p(e,n,r));return t=null,i}];c<a;c++)if(n=r.relative[e[c].type])d=[pe(de(d),n)];else{if((n=r.filter[e[c].type].apply(null,e[c].matches))[y]){for(i=++c;i<a&&!r.relative[e[i].type];i++);return ge(c>1&&de(d),c>1&&fe(e.slice(0,c-1).concat({value:" "===e[c-2].type?"*":""})).replace(D,"$1"),n,c<i&&ve(e.slice(c,i)),i<a&&ve(e=e.slice(i)),i<a&&fe(e))}d.push(n)}return de(d)}function ye(e,t){var n,i=[],a=[],s=C[e+" "];if(!s){for(t||(t=ce(e)),n=t.length;n--;)(s=ve(t[n]))[y]?i.push(s):a.push(s);s=C(e,function(e,t){var n=t.length>0,i=e.length>0,a=function(a,s,u,c,f){var d,h,g,y=0,x="0",b=a&&[],w=[],C=o,S=a||i&&r.find.TAG("*",f),k=m+=null==C?1:Math.random()||.1,j=S.length;for(f&&(o=s==l||s||f);x!==j&&null!=(d=S[x]);x++){if(i&&d){for(h=0,s||d.ownerDocument==l||(ue(d),u=!p);g=e[h++];)if(g(d,s||l,u)){v.call(c,d);break}f&&(m=k)}n&&((d=!g&&d)&&y--,a&&b.push(d))}if(y+=x,n&&x!==y){for(h=0;g=t[h++];)g(b,w,s,u);if(a){if(y>0)for(;x--;)b[x]||w[x]||(w[x]=E.call(c));w=he(w)}v.apply(c,w),f&&!a&&w.length>0&&y+t.length>1&&T.uniqueSort(c)}return f&&(m=k,o=C),b};return n?te(a):a}(a,i)),s.selector=e}return s}function me(e,t,n,i){var o,a,s,u,l,c="function"==typeof e&&e,f=!i&&ce(e=c.selector||e);if(n=n||[],1===f.length){if((a=f[0]=f[0].slice(0)).length>2&&"ID"===(s=a[0]).type&&9===t.nodeType&&p&&r.relative[a[1].type]){if(!(t=(r.find.ID(s.matches[0].replace(Y,Q),t)||[])[0]))return n;c&&(t=t.parentNode),e=e.slice(a.shift().value.length)}for(o=X.needsContext.test(e)?0:a.length;o--&&(s=a[o],!r.relative[u=s.type]);)if((l=r.find[u])&&(i=l(s.matches[0].replace(Y,Q),G.test(a[0].type)&&se(t.parentNode)||t))){if(a.splice(o,1),!(e=i.length&&fe(a)))return v.apply(n,i),n;break}}return(c||ye(e,f))(i,t,!p,n,!t||G.test(e)&&se(t.parentNode)||t),n}le.prototype=r.filters=r.pseudos,r.setFilters=new le,d.sortStable=y.split("").sort(q).join("")===y,ue(),d.sortDetached=ne((function(e){return 1&e.compareDocumentPosition(l.createElement("fieldset"))})),T.find=Z,T.expr[":"]=T.expr.pseudos,T.unique=T.uniqueSort,Z.compile=ye,Z.select=me,Z.setDocument=ue,Z.escape=T.escapeSelector,Z.getText=T.text,Z.isXML=T.isXMLDoc,Z.selectors=T.expr,Z.support=T.support,Z.uniqueSort=T.uniqueSort}();var O=function(e,t,n){for(var r=[],i=void 0!==n;(e=e[t])&&9!==e.nodeType;)if(1===e.nodeType){if(i&&T(e).is(n))break;r.push(e)}return r},P=function(e,t){for(var n=[];e;e=e.nextSibling)1===e.nodeType&&e!==t&&n.push(e);return n},R=T.expr.match.needsContext,M=/^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i;function I(e,t,n){return h(t)?T.grep(e,(function(e,r){return!!t.call(e,r,e)!==n})):t.nodeType?T.grep(e,(function(e){return e===t!==n})):"string"!=typeof t?T.grep(e,(function(e){return s.call(t,e)>-1!==n})):T.filter(t,e,n)}T.filter=function(e,t,n){var r=t[0];return n&&(e=":not("+e+")"),1===t.length&&1===r.nodeType?T.find.matchesSelector(r,e)?[r]:[]:T.find.matches(e,T.grep(t,(function(e){return 1===e.nodeType})))},T.fn.extend({find:function(e){var t,n,r=this.length,i=this;if("string"!=typeof e)return this.pushStack(T(e).filter((function(){for(t=0;t<r;t++)if(T.contains(i[t],this))return!0})));for(n=this.pushStack([]),t=0;t<r;t++)T.find(e,i[t],n);return r>1?T.uniqueSort(n):n},filter:function(e){return this.pushStack(I(this,e||[],!1))},not:function(e){return this.pushStack(I(this,e||[],!0))},is:function(e){return!!I(this,"string"==typeof e&&R.test(e)?T(e):e||[],!1).length}});var W,F=/^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/;(T.fn.init=function(e,t,n){var r,i;if(!e)return this;if(n=n||W,"string"==typeof e){if(!(r="<"===e[0]&&">"===e[e.length-1]&&e.length>=3?[null,e,null]:F.exec(e))||!r[1]&&t)return!t||t.jquery?(t||n).find(e):this.constructor(t).find(e);if(r[1]){if(t=t instanceof T?t[0]:t,T.merge(this,T.parseHTML(r[1],t&&t.nodeType?t.ownerDocument||t:v,!0)),M.test(r[1])&&T.isPlainObject(t))for(r in t)h(this[r])?this[r](t[r]):this.attr(r,t[r]);return this}return(i=v.getElementById(r[2]))&&(this[0]=i,this.length=1),this}return e.nodeType?(this[0]=e,this.length=1,this):h(e)?void 0!==n.ready?n.ready(e):e(T):T.makeArray(e,this)}).prototype=T.fn,W=T(v);var $=/^(?:parents|prev(?:Until|All))/,B={children:!0,contents:!0,next:!0,prev:!0};function _(e,t){for(;(e=e[t])&&1!==e.nodeType;);return e}T.fn.extend({has:function(e){var t=T(e,this),n=t.length;return this.filter((function(){for(var e=0;e<n;e++)if(T.contains(this,t[e]))return!0}))},closest:function(e,t){var n,r=0,i=this.length,o=[],a="string"!=typeof e&&T(e);if(!R.test(e))for(;r<i;r++)for(n=this[r];n&&n!==t;n=n.parentNode)if(n.nodeType<11&&(a?a.index(n)>-1:1===n.nodeType&&T.find.matchesSelector(n,e))){o.push(n);break}return this.pushStack(o.length>1?T.uniqueSort(o):o)},index:function(e){return e?"string"==typeof e?s.call(T(e),this[0]):s.call(this,e.jquery?e[0]:e):this[0]&&this[0].parentNode?this.first().prevAll().length:-1},add:function(e,t){return this.pushStack(T.uniqueSort(T.merge(this.get(),T(e,t))))},addBack:function(e){return this.add(null==e?this.prevObject:this.prevObject.filter(e))}}),T.each({parent:function(e){var t=e.parentNode;return t&&11!==t.nodeType?t:null},parents:function(e){return O(e,"parentNode")},parentsUntil:function(e,t,n){return O(e,"parentNode",n)},next:function(e){return _(e,"nextSibling")},prev:function(e){return _(e,"previousSibling")},nextAll:function(e){return O(e,"nextSibling")},prevAll:function(e){return O(e,"previousSibling")},nextUntil:function(e,t,n){return O(e,"nextSibling",n)},prevUntil:function(e,t,n){return O(e,"previousSibling",n)},siblings:function(e){return P((e.parentNode||{}).firstChild,e)},children:function(e){return P(e.firstChild)},contents:function(e){return null!=e.contentDocument&&r(e.contentDocument)?e.contentDocument:(S(e,"template")&&(e=e.content||e),T.merge([],e.childNodes))}},(function(e,t){T.fn[e]=function(n,r){var i=T.map(this,t,n);return"Until"!==e.slice(-5)&&(r=n),r&&"string"==typeof r&&(i=T.filter(r,i)),this.length>1&&(B[e]||T.uniqueSort(i),$.test(e)&&i.reverse()),this.pushStack(i)}}));var X=/[^\x20\t\r\n\f]+/g;function U(e){return e}function z(e){throw e}function V(e,t,n,r){var i;try{e&&h(i=e.promise)?i.call(e).done(t).fail(n):e&&h(i=e.then)?i.call(e,t,n):t.apply(void 0,[e].slice(r))}catch(e){n.apply(void 0,[e])}}T.Callbacks=function(e){e="string"==typeof e?function(e){var t={};return T.each(e.match(X)||[],(function(e,n){t[n]=!0})),t}(e):T.extend({},e);var t,n,r,i,o=[],a=[],s=-1,u=function(){for(i=i||e.once,r=t=!0;a.length;s=-1)for(n=a.shift();++s<o.length;)!1===o[s].apply(n[0],n[1])&&e.stopOnFalse&&(s=o.length,n=!1);e.memory||(n=!1),t=!1,i&&(o=n?[]:"")},l={add:function(){return o&&(n&&!t&&(s=o.length-1,a.push(n)),function t(n){T.each(n,(function(n,r){h(r)?e.unique&&l.has(r)||o.push(r):r&&r.length&&"string"!==x(r)&&t(r)}))}(arguments),n&&!t&&u()),this},remove:function(){return T.each(arguments,(function(e,t){for(var n;(n=T.inArray(t,o,n))>-1;)o.splice(n,1),n<=s&&s--})),this},has:function(e){return e?T.inArray(e,o)>-1:o.length>0},empty:function(){return o&&(o=[]),this},disable:function(){return i=a=[],o=n="",this},disabled:function(){return!o},lock:function(){return i=a=[],n||t||(o=n=""),this},locked:function(){return!!i},fireWith:function(e,n){return i||(n=[e,(n=n||[]).slice?n.slice():n],a.push(n),t||u()),this},fire:function(){return l.fireWith(this,arguments),this},fired:function(){return!!r}};return l},T.extend({Deferred:function(t){var n=[["notify","progress",T.Callbacks("memory"),T.Callbacks("memory"),2],["resolve","done",T.Callbacks("once memory"),T.Callbacks("once memory"),0,"resolved"],["reject","fail",T.Callbacks("once memory"),T.Callbacks("once memory"),1,"rejected"]],r="pending",i={state:function(){return r},always:function(){return o.done(arguments).fail(arguments),this},catch:function(e){return i.then(null,e)},pipe:function(){var e=arguments;return T.Deferred((function(t){T.each(n,(function(n,r){var i=h(e[r[4]])&&e[r[4]];o[r[1]]((function(){var e=i&&i.apply(this,arguments);e&&h(e.promise)?e.promise().progress(t.notify).done(t.resolve).fail(t.reject):t[r[0]+"With"](this,i?[e]:arguments)}))})),e=null})).promise()},then:function(t,r,i){var o=0;function a(t,n,r,i){return function(){var s=this,u=arguments,l=function(){var e,l;if(!(t<o)){if((e=r.apply(s,u))===n.promise())throw new TypeError("Thenable self-resolution");l=e&&("object"==typeof e||"function"==typeof e)&&e.then,h(l)?i?l.call(e,a(o,n,U,i),a(o,n,z,i)):(o++,l.call(e,a(o,n,U,i),a(o,n,z,i),a(o,n,U,n.notifyWith))):(r!==U&&(s=void 0,u=[e]),(i||n.resolveWith)(s,u))}},c=i?l:function(){try{l()}catch(e){T.Deferred.exceptionHook&&T.Deferred.exceptionHook(e,c.error),t+1>=o&&(r!==z&&(s=void 0,u=[e]),n.rejectWith(s,u))}};t?c():(T.Deferred.getErrorHook?c.error=T.Deferred.getErrorHook():T.Deferred.getStackHook&&(c.error=T.Deferred.getStackHook()),e.setTimeout(c))}}return T.Deferred((function(e){n[0][3].add(a(0,e,h(i)?i:U,e.notifyWith)),n[1][3].add(a(0,e,h(t)?t:U)),n[2][3].add(a(0,e,h(r)?r:z))})).promise()},promise:function(e){return null!=e?T.extend(e,i):i}},o={};return T.each(n,(function(e,t){var a=t[2],s=t[5];i[t[1]]=a.add,s&&a.add((function(){r=s}),n[3-e][2].disable,n[3-e][3].disable,n[0][2].lock,n[0][3].lock),a.add(t[3].fire),o[t[0]]=function(){return o[t[0]+"With"](this===o?void 0:this,arguments),this},o[t[0]+"With"]=a.fireWith})),i.promise(o),t&&t.call(o,o),o},when:function(e){var t=arguments.length,n=t,r=Array(n),o=i.call(arguments),a=T.Deferred(),s=function(e){return function(n){r[e]=this,o[e]=arguments.length>1?i.call(arguments):n,--t||a.resolveWith(r,o)}};if(t<=1&&(V(e,a.done(s(n)).resolve,a.reject,!t),"pending"===a.state()||h(o[n]&&o[n].then)))return a.then();for(;n--;)V(o[n],s(n),a.reject);return a.promise()}});var G=/^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;T.Deferred.exceptionHook=function(t,n){e.console&&e.console.warn&&t&&G.test(t.name)&&e.console.warn("jQuery.Deferred exception: "+t.message,t.stack,n)},T.readyException=function(t){e.setTimeout((function(){throw t}))};var Y=T.Deferred();function Q(){v.removeEventListener("DOMContentLoaded",Q),e.removeEventListener("load",Q),T.ready()}T.fn.ready=function(e){return Y.then(e).catch((function(e){T.readyException(e)})),this},T.extend({isReady:!1,readyWait:1,ready:function(e){(!0===e?--T.readyWait:T.isReady)||(T.isReady=!0,!0!==e&&--T.readyWait>0||Y.resolveWith(v,[T]))}}),T.ready.then=Y.then,"complete"===v.readyState||"loading"!==v.readyState&&!v.documentElement.doScroll?e.setTimeout(T.ready):(v.addEventListener("DOMContentLoaded",Q),e.addEventListener("load",Q));var J=function(e,t,n,r,i,o,a){var s=0,u=e.length,l=null==n;if("object"===x(n))for(s in i=!0,n)J(e,t,s,n[s],!0,o,a);else if(void 0!==r&&(i=!0,h(r)||(a=!0),l&&(a?(t.call(e,r),t=null):(l=t,t=function(e,t,n){return l.call(T(e),n)})),t))for(;s<u;s++)t(e[s],n,a?r:r.call(e[s],s,t(e[s],n)));return i?e:l?t.call(e):u?t(e[0],n):o},K=/^-ms-/,Z=/-([a-z])/g;function ee(e,t){return t.toUpperCase()}function te(e){return e.replace(K,"ms-").replace(Z,ee)}var ne=function(e){return 1===e.nodeType||9===e.nodeType||!+e.nodeType};function re(){this.expando=T.expando+re.uid++}re.uid=1,re.prototype={cache:function(e){var t=e[this.expando];return t||(t={},ne(e)&&(e.nodeType?e[this.expando]=t:Object.defineProperty(e,this.expando,{value:t,configurable:!0}))),t},set:function(e,t,n){var r,i=this.cache(e);if("string"==typeof t)i[te(t)]=n;else for(r in t)i[te(r)]=t[r];return i},get:function(e,t){return void 0===t?this.cache(e):e[this.expando]&&e[this.expando][te(t)]},access:function(e,t,n){return void 0===t||t&&"string"==typeof t&&void 0===n?this.get(e,t):(this.set(e,t,n),void 0!==n?n:t)},remove:function(e,t){var n,r=e[this.expando];if(void 0!==r){if(void 0!==t){n=(t=Array.isArray(t)?t.map(te):(t=te(t))in r?[t]:t.match(X)||[]).length;for(;n--;)delete r[t[n]]}(void 0===t||T.isEmptyObject(r))&&(e.nodeType?e[this.expando]=void 0:delete e[this.expando])}},hasData:function(e){var t=e[this.expando];return void 0!==t&&!T.isEmptyObject(t)}};var ie=new re,oe=new re,ae=/^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,se=/[A-Z]/g;function ue(e,t,n){var r;if(void 0===n&&1===e.nodeType)if(r="data-"+t.replace(se,"-$&").toLowerCase(),"string"==typeof(n=e.getAttribute(r))){try{n=function(e){return"true"===e||"false"!==e&&("null"===e?null:e===+e+""?+e:ae.test(e)?JSON.parse(e):e)}(n)}catch(e){}oe.set(e,t,n)}else n=void 0;return n}T.extend({hasData:function(e){return oe.hasData(e)||ie.hasData(e)},data:function(e,t,n){return oe.access(e,t,n)},removeData:function(e,t){oe.remove(e,t)},_data:function(e,t,n){return ie.access(e,t,n)},_removeData:function(e,t){ie.remove(e,t)}}),T.fn.extend({data:function(e,t){var n,r,i,o=this[0],a=o&&o.attributes;if(void 0===e){if(this.length&&(i=oe.get(o),1===o.nodeType&&!ie.get(o,"hasDataAttrs"))){for(n=a.length;n--;)a[n]&&0===(r=a[n].name).indexOf("data-")&&(r=te(r.slice(5)),ue(o,r,i[r]));ie.set(o,"hasDataAttrs",!0)}return i}return"object"==typeof e?this.each((function(){oe.set(this,e)})):J(this,(function(t){var n;if(o&&void 0===t)return void 0!==(n=oe.get(o,e))||void 0!==(n=ue(o,e))?n:void 0;this.each((function(){oe.set(this,e,t)}))}),null,t,arguments.length>1,null,!0)},removeData:function(e){return this.each((function(){oe.remove(this,e)}))}}),T.extend({queue:function(e,t,n){var r;if(e)return t=(t||"fx")+"queue",r=ie.get(e,t),n&&(!r||Array.isArray(n)?r=ie.access(e,t,T.makeArray(n)):r.push(n)),r||[]},dequeue:function(e,t){t=t||"fx";var n=T.queue(e,t),r=n.length,i=n.shift(),o=T._queueHooks(e,t);"inprogress"===i&&(i=n.shift(),r--),i&&("fx"===t&&n.unshift("inprogress"),delete o.stop,i.call(e,(function(){T.dequeue(e,t)}),o)),!r&&o&&o.empty.fire()},_queueHooks:function(e,t){var n=t+"queueHooks";return ie.get(e,n)||ie.access(e,n,{empty:T.Callbacks("once memory").add((function(){ie.remove(e,[t+"queue",n])}))})}}),T.fn.extend({queue:function(e,t){var n=2;return"string"!=typeof e&&(t=e,e="fx",n--),arguments.length<n?T.queue(this[0],e):void 0===t?this:this.each((function(){var n=T.queue(this,e,t);T._queueHooks(this,e),"fx"===e&&"inprogress"!==n[0]&&T.dequeue(this,e)}))},dequeue:function(e){return this.each((function(){T.dequeue(this,e)}))},clearQueue:function(e){return this.queue(e||"fx",[])},promise:function(e,t){var n,r=1,i=T.Deferred(),o=this,a=this.length,s=function(){--r||i.resolveWith(o,[o])};for("string"!=typeof e&&(t=e,e=void 0),e=e||"fx";a--;)(n=ie.get(o[a],e+"queueHooks"))&&n.empty&&(r++,n.empty.add(s));return s(),i.promise(t)}});var le=/[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/.source,ce=new RegExp("^(?:([+-])=|)("+le+")([a-z%]*)$","i"),fe=["Top","Right","Bottom","Left"],pe=v.documentElement,de=function(e){return T.contains(e.ownerDocument,e)},he={composed:!0};pe.getRootNode&&(de=function(e){return T.contains(e.ownerDocument,e)||e.getRootNode(he)===e.ownerDocument});var ge=function(e,t){return"none"===(e=t||e).style.display||""===e.style.display&&de(e)&&"none"===T.css(e,"display")};function ve(e,t,n,r){var i,o,a=20,s=r?function(){return r.cur()}:function(){return T.css(e,t,"")},u=s(),l=n&&n[3]||(T.cssNumber[t]?"":"px"),c=e.nodeType&&(T.cssNumber[t]||"px"!==l&&+u)&&ce.exec(T.css(e,t));if(c&&c[3]!==l){for(u/=2,l=l||c[3],c=+u||1;a--;)T.style(e,t,c+l),(1-o)*(1-(o=s()/u||.5))<=0&&(a=0),c/=o;c*=2,T.style(e,t,c+l),n=n||[]}return n&&(c=+c||+u||0,i=n[1]?c+(n[1]+1)*n[2]:+n[2],r&&(r.unit=l,r.start=c,r.end=i)),i}var ye={};function me(e){var t,n=e.ownerDocument,r=e.nodeName,i=ye[r];return i||(t=n.body.appendChild(n.createElement(r)),i=T.css(t,"display"),t.parentNode.removeChild(t),"none"===i&&(i="block"),ye[r]=i,i)}function xe(e,t){for(var n,r,i=[],o=0,a=e.length;o<a;o++)(r=e[o]).style&&(n=r.style.display,t?("none"===n&&(i[o]=ie.get(r,"display")||null,i[o]||(r.style.display="")),""===r.style.display&&ge(r)&&(i[o]=me(r))):"none"!==n&&(i[o]="none",ie.set(r,"display",n)));for(o=0;o<a;o++)null!=i[o]&&(e[o].style.display=i[o]);return e}T.fn.extend({show:function(){return xe(this,!0)},hide:function(){return xe(this)},toggle:function(e){return"boolean"==typeof e?e?this.show():this.hide():this.each((function(){ge(this)?T(this).show():T(this).hide()}))}});var be,we,Te=/^(?:checkbox|radio)$/i,Ce=/<([a-z][^\/\0>\x20\t\r\n\f]*)/i,Se=/^$|^module$|\/(?:java|ecma)script/i;be=v.createDocumentFragment().appendChild(v.createElement("div")),(we=v.createElement("input")).setAttribute("type","radio"),we.setAttribute("checked","checked"),we.setAttribute("name","t"),be.appendChild(we),d.checkClone=be.cloneNode(!0).cloneNode(!0).lastChild.checked,be.innerHTML="<textarea>x</textarea>",d.noCloneChecked=!!be.cloneNode(!0).lastChild.defaultValue,be.innerHTML="<option></option>",d.option=!!be.lastChild;var Ee={thead:[1,"<table>","</table>"],col:[2,"<table><colgroup>","</colgroup></table>"],tr:[2,"<table><tbody>","</tbody></table>"],td:[3,"<table><tbody><tr>","</tr></tbody></table>"],_default:[0,"",""]};function ke(e,t){var n;return n=void 0!==e.getElementsByTagName?e.getElementsByTagName(t||"*"):void 0!==e.querySelectorAll?e.querySelectorAll(t||"*"):[],void 0===t||t&&S(e,t)?T.merge([e],n):n}function je(e,t){for(var n=0,r=e.length;n<r;n++)ie.set(e[n],"globalEval",!t||ie.get(t[n],"globalEval"))}Ee.tbody=Ee.tfoot=Ee.colgroup=Ee.caption=Ee.thead,Ee.th=Ee.td,d.option||(Ee.optgroup=Ee.option=[1,"<select multiple='multiple'>","</select>"]);var Ae=/<|&#?\w+;/;function De(e,t,n,r,i){for(var o,a,s,u,l,c,f=t.createDocumentFragment(),p=[],d=0,h=e.length;d<h;d++)if((o=e[d])||0===o)if("object"===x(o))T.merge(p,o.nodeType?[o]:o);else if(Ae.test(o)){for(a=a||f.appendChild(t.createElement("div")),s=(Ce.exec(o)||["",""])[1].toLowerCase(),u=Ee[s]||Ee._default,a.innerHTML=u[1]+T.htmlPrefilter(o)+u[2],c=u[0];c--;)a=a.lastChild;T.merge(p,a.childNodes),(a=f.firstChild).textContent=""}else p.push(t.createTextNode(o));for(f.textContent="",d=0;o=p[d++];)if(r&&T.inArray(o,r)>-1)i&&i.push(o);else if(l=de(o),a=ke(f.appendChild(o),"script"),l&&je(a),n)for(c=0;o=a[c++];)Se.test(o.type||"")&&n.push(o);return f}var Ne=/^([^.]*)(?:\.(.+)|)/;function qe(){return!0}function Le(){return!1}function He(e,t,n,r,i,o){var a,s;if("object"==typeof t){for(s in"string"!=typeof n&&(r=r||n,n=void 0),t)He(e,s,n,r,t[s],o);return e}if(null==r&&null==i?(i=n,r=n=void 0):null==i&&("string"==typeof n?(i=r,r=void 0):(i=r,r=n,n=void 0)),!1===i)i=Le;else if(!i)return e;return 1===o&&(a=i,i=function(e){return T().off(e),a.apply(this,arguments)},i.guid=a.guid||(a.guid=T.guid++)),e.each((function(){T.event.add(this,t,i,r,n)}))}function Oe(e,t,n){n?(ie.set(e,t,!1),T.event.add(e,t,{namespace:!1,handler:function(e){var n,r=ie.get(this,t);if(1&e.isTrigger&&this[t]){if(r)(T.event.special[t]||{}).delegateType&&e.stopPropagation();else if(r=i.call(arguments),ie.set(this,t,r),this[t](),n=ie.get(this,t),ie.set(this,t,!1),r!==n)return e.stopImmediatePropagation(),e.preventDefault(),n}else r&&(ie.set(this,t,T.event.trigger(r[0],r.slice(1),this)),e.stopPropagation(),e.isImmediatePropagationStopped=qe)}})):void 0===ie.get(e,t)&&T.event.add(e,t,qe)}T.event={global:{},add:function(e,t,n,r,i){var o,a,s,u,l,c,f,p,d,h,g,v=ie.get(e);if(ne(e))for(n.handler&&(n=(o=n).handler,i=o.selector),i&&T.find.matchesSelector(pe,i),n.guid||(n.guid=T.guid++),(u=v.events)||(u=v.events=Object.create(null)),(a=v.handle)||(a=v.handle=function(t){return void 0!==T&&T.event.triggered!==t.type?T.event.dispatch.apply(e,arguments):void 0}),l=(t=(t||"").match(X)||[""]).length;l--;)d=g=(s=Ne.exec(t[l])||[])[1],h=(s[2]||"").split(".").sort(),d&&(f=T.event.special[d]||{},d=(i?f.delegateType:f.bindType)||d,f=T.event.special[d]||{},c=T.extend({type:d,origType:g,data:r,handler:n,guid:n.guid,selector:i,needsContext:i&&T.expr.match.needsContext.test(i),namespace:h.join(".")},o),(p=u[d])||((p=u[d]=[]).delegateCount=0,f.setup&&!1!==f.setup.call(e,r,h,a)||e.addEventListener&&e.addEventListener(d,a)),f.add&&(f.add.call(e,c),c.handler.guid||(c.handler.guid=n.guid)),i?p.splice(p.delegateCount++,0,c):p.push(c),T.event.global[d]=!0)},remove:function(e,t,n,r,i){var o,a,s,u,l,c,f,p,d,h,g,v=ie.hasData(e)&&ie.get(e);if(v&&(u=v.events)){for(l=(t=(t||"").match(X)||[""]).length;l--;)if(d=g=(s=Ne.exec(t[l])||[])[1],h=(s[2]||"").split(".").sort(),d){for(f=T.event.special[d]||{},p=u[d=(r?f.delegateType:f.bindType)||d]||[],s=s[2]&&new RegExp("(^|\\.)"+h.join("\\.(?:.*\\.|)")+"(\\.|$)"),a=o=p.length;o--;)c=p[o],!i&&g!==c.origType||n&&n.guid!==c.guid||s&&!s.test(c.namespace)||r&&r!==c.selector&&("**"!==r||!c.selector)||(p.splice(o,1),c.selector&&p.delegateCount--,f.remove&&f.remove.call(e,c));a&&!p.length&&(f.teardown&&!1!==f.teardown.call(e,h,v.handle)||T.removeEvent(e,d,v.handle),delete u[d])}else for(d in u)T.event.remove(e,d+t[l],n,r,!0);T.isEmptyObject(u)&&ie.remove(e,"handle events")}},dispatch:function(e){var t,n,r,i,o,a,s=new Array(arguments.length),u=T.event.fix(e),l=(ie.get(this,"events")||Object.create(null))[u.type]||[],c=T.event.special[u.type]||{};for(s[0]=u,t=1;t<arguments.length;t++)s[t]=arguments[t];if(u.delegateTarget=this,!c.preDispatch||!1!==c.preDispatch.call(this,u)){for(a=T.event.handlers.call(this,u,l),t=0;(i=a[t++])&&!u.isPropagationStopped();)for(u.currentTarget=i.elem,n=0;(o=i.handlers[n++])&&!u.isImmediatePropagationStopped();)u.rnamespace&&!1!==o.namespace&&!u.rnamespace.test(o.namespace)||(u.handleObj=o,u.data=o.data,void 0!==(r=((T.event.special[o.origType]||{}).handle||o.handler).apply(i.elem,s))&&!1===(u.result=r)&&(u.preventDefault(),u.stopPropagation()));return c.postDispatch&&c.postDispatch.call(this,u),u.result}},handlers:function(e,t){var n,r,i,o,a,s=[],u=t.delegateCount,l=e.target;if(u&&l.nodeType&&!("click"===e.type&&e.button>=1))for(;l!==this;l=l.parentNode||this)if(1===l.nodeType&&("click"!==e.type||!0!==l.disabled)){for(o=[],a={},n=0;n<u;n++)void 0===a[i=(r=t[n]).selector+" "]&&(a[i]=r.needsContext?T(i,this).index(l)>-1:T.find(i,this,null,[l]).length),a[i]&&o.push(r);o.length&&s.push({elem:l,handlers:o})}return l=this,u<t.length&&s.push({elem:l,handlers:t.slice(u)}),s},addProp:function(e,t){Object.defineProperty(T.Event.prototype,e,{enumerable:!0,configurable:!0,get:h(t)?function(){if(this.originalEvent)return t(this.originalEvent)}:function(){if(this.originalEvent)return this.originalEvent[e]},set:function(t){Object.defineProperty(this,e,{enumerable:!0,configurable:!0,writable:!0,value:t})}})},fix:function(e){return e[T.expando]?e:new T.Event(e)},special:{load:{noBubble:!0},click:{setup:function(e){var t=this||e;return Te.test(t.type)&&t.click&&S(t,"input")&&Oe(t,"click",!0),!1},trigger:function(e){var t=this||e;return Te.test(t.type)&&t.click&&S(t,"input")&&Oe(t,"click"),!0},_default:function(e){var t=e.target;return Te.test(t.type)&&t.click&&S(t,"input")&&ie.get(t,"click")||S(t,"a")}},beforeunload:{postDispatch:function(e){void 0!==e.result&&e.originalEvent&&(e.originalEvent.returnValue=e.result)}}}},T.removeEvent=function(e,t,n){e.removeEventListener&&e.removeEventListener(t,n)},T.Event=function(e,t){if(!(this instanceof T.Event))return new T.Event(e,t);e&&e.type?(this.originalEvent=e,this.type=e.type,this.isDefaultPrevented=e.defaultPrevented||void 0===e.defaultPrevented&&!1===e.returnValue?qe:Le,this.target=e.target&&3===e.target.nodeType?e.target.parentNode:e.target,this.currentTarget=e.currentTarget,this.relatedTarget=e.relatedTarget):this.type=e,t&&T.extend(this,t),this.timeStamp=e&&e.timeStamp||Date.now(),this[T.expando]=!0},T.Event.prototype={constructor:T.Event,isDefaultPrevented:Le,isPropagationStopped:Le,isImmediatePropagationStopped:Le,isSimulated:!1,preventDefault:function(){var e=this.originalEvent;this.isDefaultPrevented=qe,e&&!this.isSimulated&&e.preventDefault()},stopPropagation:function(){var e=this.originalEvent;this.isPropagationStopped=qe,e&&!this.isSimulated&&e.stopPropagation()},stopImmediatePropagation:function(){var e=this.originalEvent;this.isImmediatePropagationStopped=qe,e&&!this.isSimulated&&e.stopImmediatePropagation(),this.stopPropagation()}},T.each({altKey:!0,bubbles:!0,cancelable:!0,changedTouches:!0,ctrlKey:!0,detail:!0,eventPhase:!0,metaKey:!0,pageX:!0,pageY:!0,shiftKey:!0,view:!0,char:!0,code:!0,charCode:!0,key:!0,keyCode:!0,button:!0,buttons:!0,clientX:!0,clientY:!0,offsetX:!0,offsetY:!0,pointerId:!0,pointerType:!0,screenX:!0,screenY:!0,targetTouches:!0,toElement:!0,touches:!0,which:!0},T.event.addProp),T.each({focus:"focusin",blur:"focusout"},(function(e,t){function n(e){if(v.documentMode){var n=ie.get(this,"handle"),r=T.event.fix(e);r.type="focusin"===e.type?"focus":"blur",r.isSimulated=!0,n(e),r.target===r.currentTarget&&n(r)}else T.event.simulate(t,e.target,T.event.fix(e))}T.event.special[e]={setup:function(){var r;if(Oe(this,e,!0),!v.documentMode)return!1;(r=ie.get(this,t))||this.addEventListener(t,n),ie.set(this,t,(r||0)+1)},trigger:function(){return Oe(this,e),!0},teardown:function(){var e;if(!v.documentMode)return!1;(e=ie.get(this,t)-1)?ie.set(this,t,e):(this.removeEventListener(t,n),ie.remove(this,t))},_default:function(t){return ie.get(t.target,e)},delegateType:t},T.event.special[t]={setup:function(){var r=this.ownerDocument||this.document||this,i=v.documentMode?this:r,o=ie.get(i,t);o||(v.documentMode?this.addEventListener(t,n):r.addEventListener(e,n,!0)),ie.set(i,t,(o||0)+1)},teardown:function(){var r=this.ownerDocument||this.document||this,i=v.documentMode?this:r,o=ie.get(i,t)-1;o?ie.set(i,t,o):(v.documentMode?this.removeEventListener(t,n):r.removeEventListener(e,n,!0),ie.remove(i,t))}}})),T.each({mouseenter:"mouseover",mouseleave:"mouseout",pointerenter:"pointerover",pointerleave:"pointerout"},(function(e,t){T.event.special[e]={delegateType:t,bindType:t,handle:function(e){var n,r=e.relatedTarget,i=e.handleObj;return r&&(r===this||T.contains(this,r))||(e.type=i.origType,n=i.handler.apply(this,arguments),e.type=t),n}}})),T.fn.extend({on:function(e,t,n,r){return He(this,e,t,n,r)},one:function(e,t,n,r){return He(this,e,t,n,r,1)},off:function(e,t,n){var r,i;if(e&&e.preventDefault&&e.handleObj)return r=e.handleObj,T(e.delegateTarget).off(r.namespace?r.origType+"."+r.namespace:r.origType,r.selector,r.handler),this;if("object"==typeof e){for(i in e)this.off(i,t,e[i]);return this}return!1!==t&&"function"!=typeof t||(n=t,t=void 0),!1===n&&(n=Le),this.each((function(){T.event.remove(this,e,n,t)}))}});var Pe=/<script|<style|<link/i,Re=/checked\s*(?:[^=]|=\s*.checked.)/i,Me=/^\s*<!\[CDATA\[|\]\]>\s*$/g;function Ie(e,t){return S(e,"table")&&S(11!==t.nodeType?t:t.firstChild,"tr")&&T(e).children("tbody")[0]||e}function We(e){return e.type=(null!==e.getAttribute("type"))+"/"+e.type,e}function Fe(e){return"true/"===(e.type||"").slice(0,5)?e.type=e.type.slice(5):e.removeAttribute("type"),e}function $e(e,t){var n,r,i,o,a,s;if(1===t.nodeType){if(ie.hasData(e)&&(s=ie.get(e).events))for(i in ie.remove(t,"handle events"),s)for(n=0,r=s[i].length;n<r;n++)T.event.add(t,i,s[i][n]);oe.hasData(e)&&(o=oe.access(e),a=T.extend({},o),oe.set(t,a))}}function Be(e,t){var n=t.nodeName.toLowerCase();"input"===n&&Te.test(e.type)?t.checked=e.checked:"input"!==n&&"textarea"!==n||(t.defaultValue=e.defaultValue)}function _e(e,t,n,r){t=o(t);var i,a,s,u,l,c,f=0,p=e.length,g=p-1,v=t[0],y=h(v);if(y||p>1&&"string"==typeof v&&!d.checkClone&&Re.test(v))return e.each((function(i){var o=e.eq(i);y&&(t[0]=v.call(this,i,o.html())),_e(o,t,n,r)}));if(p&&(a=(i=De(t,e[0].ownerDocument,!1,e,r)).firstChild,1===i.childNodes.length&&(i=a),a||r)){for(u=(s=T.map(ke(i,"script"),We)).length;f<p;f++)l=i,f!==g&&(l=T.clone(l,!0,!0),u&&T.merge(s,ke(l,"script"))),n.call(e[f],l,f);if(u)for(c=s[s.length-1].ownerDocument,T.map(s,Fe),f=0;f<u;f++)l=s[f],Se.test(l.type||"")&&!ie.access(l,"globalEval")&&T.contains(c,l)&&(l.src&&"module"!==(l.type||"").toLowerCase()?T._evalUrl&&!l.noModule&&T._evalUrl(l.src,{nonce:l.nonce||l.getAttribute("nonce")},c):m(l.textContent.replace(Me,""),l,c))}return e}function Xe(e,t,n){for(var r,i=t?T.filter(t,e):e,o=0;null!=(r=i[o]);o++)n||1!==r.nodeType||T.cleanData(ke(r)),r.parentNode&&(n&&de(r)&&je(ke(r,"script")),r.parentNode.removeChild(r));return e}T.extend({htmlPrefilter:function(e){return e},clone:function(e,t,n){var r,i,o,a,s=e.cloneNode(!0),u=de(e);if(!(d.noCloneChecked||1!==e.nodeType&&11!==e.nodeType||T.isXMLDoc(e)))for(a=ke(s),r=0,i=(o=ke(e)).length;r<i;r++)Be(o[r],a[r]);if(t)if(n)for(o=o||ke(e),a=a||ke(s),r=0,i=o.length;r<i;r++)$e(o[r],a[r]);else $e(e,s);return(a=ke(s,"script")).length>0&&je(a,!u&&ke(e,"script")),s},cleanData:function(e){for(var t,n,r,i=T.event.special,o=0;void 0!==(n=e[o]);o++)if(ne(n)){if(t=n[ie.expando]){if(t.events)for(r in t.events)i[r]?T.event.remove(n,r):T.removeEvent(n,r,t.handle);n[ie.expando]=void 0}n[oe.expando]&&(n[oe.expando]=void 0)}}}),T.fn.extend({detach:function(e){return Xe(this,e,!0)},remove:function(e){return Xe(this,e)},text:function(e){return J(this,(function(e){return void 0===e?T.text(this):this.empty().each((function(){1!==this.nodeType&&11!==this.nodeType&&9!==this.nodeType||(this.textContent=e)}))}),null,e,arguments.length)},append:function(){return _e(this,arguments,(function(e){1!==this.nodeType&&11!==this.nodeType&&9!==this.nodeType||Ie(this,e).appendChild(e)}))},prepend:function(){return _e(this,arguments,(function(e){if(1===this.nodeType||11===this.nodeType||9===this.nodeType){var t=Ie(this,e);t.insertBefore(e,t.firstChild)}}))},before:function(){return _e(this,arguments,(function(e){this.parentNode&&this.parentNode.insertBefore(e,this)}))},after:function(){return _e(this,arguments,(function(e){this.parentNode&&this.parentNode.insertBefore(e,this.nextSibling)}))},empty:function(){for(var e,t=0;null!=(e=this[t]);t++)1===e.nodeType&&(T.cleanData(ke(e,!1)),e.textContent="");return this},clone:function(e,t){return e=null!=e&&e,t=null==t?e:t,this.map((function(){return T.clone(this,e,t)}))},html:function(e){return J(this,(function(e){var t=this[0]||{},n=0,r=this.length;if(void 0===e&&1===t.nodeType)return t.innerHTML;if("string"==typeof e&&!Pe.test(e)&&!Ee[(Ce.exec(e)||["",""])[1].toLowerCase()]){e=T.htmlPrefilter(e);try{for(;n<r;n++)1===(t=this[n]||{}).nodeType&&(T.cleanData(ke(t,!1)),t.innerHTML=e);t=0}catch(e){}}t&&this.empty().append(e)}),null,e,arguments.length)},replaceWith:function(){var e=[];return _e(this,arguments,(function(t){var n=this.parentNode;T.inArray(this,e)<0&&(T.cleanData(ke(this)),n&&n.replaceChild(t,this))}),e)}}),T.each({appendTo:"append",prependTo:"prepend",insertBefore:"before",insertAfter:"after",replaceAll:"replaceWith"},(function(e,t){T.fn[e]=function(e){for(var n,r=[],i=T(e),o=i.length-1,s=0;s<=o;s++)n=s===o?this:this.clone(!0),T(i[s])[t](n),a.apply(r,n.get());return this.pushStack(r)}}));var Ue=new RegExp("^("+le+")(?!px)[a-z%]+$","i"),ze=/^--/,Ve=function(t){var n=t.ownerDocument.defaultView;return n&&n.opener||(n=e),n.getComputedStyle(t)},Ge=function(e,t,n){var r,i,o={};for(i in t)o[i]=e.style[i],e.style[i]=t[i];for(i in r=n.call(e),t)e.style[i]=o[i];return r},Ye=new RegExp(fe.join("|"),"i");function Qe(e,t,n){var r,i,o,a,s=ze.test(t),u=e.style;return(n=n||Ve(e))&&(a=n.getPropertyValue(t)||n[t],s&&a&&(a=a.replace(D,"$1")||void 0),""!==a||de(e)||(a=T.style(e,t)),!d.pixelBoxStyles()&&Ue.test(a)&&Ye.test(t)&&(r=u.width,i=u.minWidth,o=u.maxWidth,u.minWidth=u.maxWidth=u.width=a,a=n.width,u.width=r,u.minWidth=i,u.maxWidth=o)),void 0!==a?a+"":a}function Je(e,t){return{get:function(){if(!e())return(this.get=t).apply(this,arguments);delete this.get}}}!function(){function t(){if(c){l.style.cssText="position:absolute;left:-11111px;width:60px;margin-top:1px;padding:0;border:0",c.style.cssText="position:relative;display:block;box-sizing:border-box;overflow:scroll;margin:auto;border:1px;padding:1px;width:60%;top:1%",pe.appendChild(l).appendChild(c);var t=e.getComputedStyle(c);r="1%"!==t.top,u=12===n(t.marginLeft),c.style.right="60%",a=36===n(t.right),i=36===n(t.width),c.style.position="absolute",o=12===n(c.offsetWidth/3),pe.removeChild(l),c=null}}function n(e){return Math.round(parseFloat(e))}var r,i,o,a,s,u,l=v.createElement("div"),c=v.createElement("div");c.style&&(c.style.backgroundClip="content-box",c.cloneNode(!0).style.backgroundClip="",d.clearCloneStyle="content-box"===c.style.backgroundClip,T.extend(d,{boxSizingReliable:function(){return t(),i},pixelBoxStyles:function(){return t(),a},pixelPosition:function(){return t(),r},reliableMarginLeft:function(){return t(),u},scrollboxSize:function(){return t(),o},reliableTrDimensions:function(){var t,n,r,i;return null==s&&(t=v.createElement("table"),n=v.createElement("tr"),r=v.createElement("div"),t.style.cssText="position:absolute;left:-11111px;border-collapse:separate",n.style.cssText="border:1px solid",n.style.height="1px",r.style.height="9px",r.style.display="block",pe.appendChild(t).appendChild(n).appendChild(r),i=e.getComputedStyle(n),s=parseInt(i.height,10)+parseInt(i.borderTopWidth,10)+parseInt(i.borderBottomWidth,10)===n.offsetHeight,pe.removeChild(t)),s}}))}();var Ke=["Webkit","Moz","ms"],Ze=v.createElement("div").style,et={};function tt(e){var t=T.cssProps[e]||et[e];return t||(e in Ze?e:et[e]=function(e){for(var t=e[0].toUpperCase()+e.slice(1),n=Ke.length;n--;)if((e=Ke[n]+t)in Ze)return e}(e)||e)}var nt=/^(none|table(?!-c[ea]).+)/,rt={position:"absolute",visibility:"hidden",display:"block"},it={letterSpacing:"0",fontWeight:"400"};function ot(e,t,n){var r=ce.exec(t);return r?Math.max(0,r[2]-(n||0))+(r[3]||"px"):t}function at(e,t,n,r,i,o){var a="width"===t?1:0,s=0,u=0,l=0;if(n===(r?"border":"content"))return 0;for(;a<4;a+=2)"margin"===n&&(l+=T.css(e,n+fe[a],!0,i)),r?("content"===n&&(u-=T.css(e,"padding"+fe[a],!0,i)),"margin"!==n&&(u-=T.css(e,"border"+fe[a]+"Width",!0,i))):(u+=T.css(e,"padding"+fe[a],!0,i),"padding"!==n?u+=T.css(e,"border"+fe[a]+"Width",!0,i):s+=T.css(e,"border"+fe[a]+"Width",!0,i));return!r&&o>=0&&(u+=Math.max(0,Math.ceil(e["offset"+t[0].toUpperCase()+t.slice(1)]-o-u-s-.5))||0),u+l}function st(e,t,n){var r=Ve(e),i=(!d.boxSizingReliable()||n)&&"border-box"===T.css(e,"boxSizing",!1,r),o=i,a=Qe(e,t,r),s="offset"+t[0].toUpperCase()+t.slice(1);if(Ue.test(a)){if(!n)return a;a="auto"}return(!d.boxSizingReliable()&&i||!d.reliableTrDimensions()&&S(e,"tr")||"auto"===a||!parseFloat(a)&&"inline"===T.css(e,"display",!1,r))&&e.getClientRects().length&&(i="border-box"===T.css(e,"boxSizing",!1,r),(o=s in e)&&(a=e[s])),(a=parseFloat(a)||0)+at(e,t,n||(i?"border":"content"),o,r,a)+"px"}function ut(e,t,n,r,i){return new ut.prototype.init(e,t,n,r,i)}T.extend({cssHooks:{opacity:{get:function(e,t){if(t){var n=Qe(e,"opacity");return""===n?"1":n}}}},cssNumber:{animationIterationCount:!0,aspectRatio:!0,borderImageSlice:!0,columnCount:!0,flexGrow:!0,flexShrink:!0,fontWeight:!0,gridArea:!0,gridColumn:!0,gridColumnEnd:!0,gridColumnStart:!0,gridRow:!0,gridRowEnd:!0,gridRowStart:!0,lineHeight:!0,opacity:!0,order:!0,orphans:!0,scale:!0,widows:!0,zIndex:!0,zoom:!0,fillOpacity:!0,floodOpacity:!0,stopOpacity:!0,strokeMiterlimit:!0,strokeOpacity:!0},cssProps:{},style:function(e,t,n,r){if(e&&3!==e.nodeType&&8!==e.nodeType&&e.style){var i,o,a,s=te(t),u=ze.test(t),l=e.style;if(u||(t=tt(s)),a=T.cssHooks[t]||T.cssHooks[s],void 0===n)return a&&"get"in a&&void 0!==(i=a.get(e,!1,r))?i:l[t];"string"===(o=typeof n)&&(i=ce.exec(n))&&i[1]&&(n=ve(e,t,i),o="number"),null!=n&&n==n&&("number"!==o||u||(n+=i&&i[3]||(T.cssNumber[s]?"":"px")),d.clearCloneStyle||""!==n||0!==t.indexOf("background")||(l[t]="inherit"),a&&"set"in a&&void 0===(n=a.set(e,n,r))||(u?l.setProperty(t,n):l[t]=n))}},css:function(e,t,n,r){var i,o,a,s=te(t);return ze.test(t)||(t=tt(s)),(a=T.cssHooks[t]||T.cssHooks[s])&&"get"in a&&(i=a.get(e,!0,n)),void 0===i&&(i=Qe(e,t,r)),"normal"===i&&t in it&&(i=it[t]),""===n||n?(o=parseFloat(i),!0===n||isFinite(o)?o||0:i):i}}),T.each(["height","width"],(function(e,t){T.cssHooks[t]={get:function(e,n,r){if(n)return!nt.test(T.css(e,"display"))||e.getClientRects().length&&e.getBoundingClientRect().width?st(e,t,r):Ge(e,rt,(function(){return st(e,t,r)}))},set:function(e,n,r){var i,o=Ve(e),a=!d.scrollboxSize()&&"absolute"===o.position,s=(a||r)&&"border-box"===T.css(e,"boxSizing",!1,o),u=r?at(e,t,r,s,o):0;return s&&a&&(u-=Math.ceil(e["offset"+t[0].toUpperCase()+t.slice(1)]-parseFloat(o[t])-at(e,t,"border",!1,o)-.5)),u&&(i=ce.exec(n))&&"px"!==(i[3]||"px")&&(e.style[t]=n,n=T.css(e,t)),ot(0,n,u)}}})),T.cssHooks.marginLeft=Je(d.reliableMarginLeft,(function(e,t){if(t)return(parseFloat(Qe(e,"marginLeft"))||e.getBoundingClientRect().left-Ge(e,{marginLeft:0},(function(){return e.getBoundingClientRect().left})))+"px"})),T.each({margin:"",padding:"",border:"Width"},(function(e,t){T.cssHooks[e+t]={expand:function(n){for(var r=0,i={},o="string"==typeof n?n.split(" "):[n];r<4;r++)i[e+fe[r]+t]=o[r]||o[r-2]||o[0];return i}},"margin"!==e&&(T.cssHooks[e+t].set=ot)})),T.fn.extend({css:function(e,t){return J(this,(function(e,t,n){var r,i,o={},a=0;if(Array.isArray(t)){for(r=Ve(e),i=t.length;a<i;a++)o[t[a]]=T.css(e,t[a],!1,r);return o}return void 0!==n?T.style(e,t,n):T.css(e,t)}),e,t,arguments.length>1)}}),T.Tween=ut,ut.prototype={constructor:ut,init:function(e,t,n,r,i,o){this.elem=e,this.prop=n,this.easing=i||T.easing._default,this.options=t,this.start=this.now=this.cur(),this.end=r,this.unit=o||(T.cssNumber[n]?"":"px")},cur:function(){var e=ut.propHooks[this.prop];return e&&e.get?e.get(this):ut.propHooks._default.get(this)},run:function(e){var t,n=ut.propHooks[this.prop];return this.options.duration?this.pos=t=T.easing[this.easing](e,this.options.duration*e,0,1,this.options.duration):this.pos=t=e,this.now=(this.end-this.start)*t+this.start,this.options.step&&this.options.step.call(this.elem,this.now,this),n&&n.set?n.set(this):ut.propHooks._default.set(this),this}},ut.prototype.init.prototype=ut.prototype,ut.propHooks={_default:{get:function(e){var t;return 1!==e.elem.nodeType||null!=e.elem[e.prop]&&null==e.elem.style[e.prop]?e.elem[e.prop]:(t=T.css(e.elem,e.prop,""))&&"auto"!==t?t:0},set:function(e){T.fx.step[e.prop]?T.fx.step[e.prop](e):1!==e.elem.nodeType||!T.cssHooks[e.prop]&&null==e.elem.style[tt(e.prop)]?e.elem[e.prop]=e.now:T.style(e.elem,e.prop,e.now+e.unit)}}},ut.propHooks.scrollTop=ut.propHooks.scrollLeft={set:function(e){e.elem.nodeType&&e.elem.parentNode&&(e.elem[e.prop]=e.now)}},T.easing={linear:function(e){return e},swing:function(e){return.5-Math.cos(e*Math.PI)/2},_default:"swing"},T.fx=ut.prototype.init,T.fx.step={};var lt,ct,ft=/^(?:toggle|show|hide)$/,pt=/queueHooks$/;function dt(){ct&&(!1===v.hidden&&e.requestAnimationFrame?e.requestAnimationFrame(dt):e.setTimeout(dt,T.fx.interval),T.fx.tick())}function ht(){return e.setTimeout((function(){lt=void 0})),lt=Date.now()}function gt(e,t){var n,r=0,i={height:e};for(t=t?1:0;r<4;r+=2-t)i["margin"+(n=fe[r])]=i["padding"+n]=e;return t&&(i.opacity=i.width=e),i}function vt(e,t,n){for(var r,i=(yt.tweeners[t]||[]).concat(yt.tweeners["*"]),o=0,a=i.length;o<a;o++)if(r=i[o].call(n,t,e))return r}function yt(e,t,n){var r,i,o=0,a=yt.prefilters.length,s=T.Deferred().always((function(){delete u.elem})),u=function(){if(i)return!1;for(var t=lt||ht(),n=Math.max(0,l.startTime+l.duration-t),r=1-(n/l.duration||0),o=0,a=l.tweens.length;o<a;o++)l.tweens[o].run(r);return s.notifyWith(e,[l,r,n]),r<1&&a?n:(a||s.notifyWith(e,[l,1,0]),s.resolveWith(e,[l]),!1)},l=s.promise({elem:e,props:T.extend({},t),opts:T.extend(!0,{specialEasing:{},easing:T.easing._default},n),originalProperties:t,originalOptions:n,startTime:lt||ht(),duration:n.duration,tweens:[],createTween:function(t,n){var r=T.Tween(e,l.opts,t,n,l.opts.specialEasing[t]||l.opts.easing);return l.tweens.push(r),r},stop:function(t){var n=0,r=t?l.tweens.length:0;if(i)return this;for(i=!0;n<r;n++)l.tweens[n].run(1);return t?(s.notifyWith(e,[l,1,0]),s.resolveWith(e,[l,t])):s.rejectWith(e,[l,t]),this}}),c=l.props;for(!function(e,t){var n,r,i,o,a;for(n in e)if(i=t[r=te(n)],o=e[n],Array.isArray(o)&&(i=o[1],o=e[n]=o[0]),n!==r&&(e[r]=o,delete e[n]),(a=T.cssHooks[r])&&"expand"in a)for(n in o=a.expand(o),delete e[r],o)n in e||(e[n]=o[n],t[n]=i);else t[r]=i}(c,l.opts.specialEasing);o<a;o++)if(r=yt.prefilters[o].call(l,e,c,l.opts))return h(r.stop)&&(T._queueHooks(l.elem,l.opts.queue).stop=r.stop.bind(r)),r;return T.map(c,vt,l),h(l.opts.start)&&l.opts.start.call(e,l),l.progress(l.opts.progress).done(l.opts.done,l.opts.complete).fail(l.opts.fail).always(l.opts.always),T.fx.timer(T.extend(u,{elem:e,anim:l,queue:l.opts.queue})),l}T.Animation=T.extend(yt,{tweeners:{"*":[function(e,t){var n=this.createTween(e,t);return ve(n.elem,e,ce.exec(t),n),n}]},tweener:function(e,t){h(e)?(t=e,e=["*"]):e=e.match(X);for(var n,r=0,i=e.length;r<i;r++)n=e[r],yt.tweeners[n]=yt.tweeners[n]||[],yt.tweeners[n].unshift(t)},prefilters:[function(e,t,n){var r,i,o,a,s,u,l,c,f="width"in t||"height"in t,p=this,d={},h=e.style,g=e.nodeType&&ge(e),v=ie.get(e,"fxshow");for(r in n.queue||(null==(a=T._queueHooks(e,"fx")).unqueued&&(a.unqueued=0,s=a.empty.fire,a.empty.fire=function(){a.unqueued||s()}),a.unqueued++,p.always((function(){p.always((function(){a.unqueued--,T.queue(e,"fx").length||a.empty.fire()}))}))),t)if(i=t[r],ft.test(i)){if(delete t[r],o=o||"toggle"===i,i===(g?"hide":"show")){if("show"!==i||!v||void 0===v[r])continue;g=!0}d[r]=v&&v[r]||T.style(e,r)}if((u=!T.isEmptyObject(t))||!T.isEmptyObject(d))for(r in f&&1===e.nodeType&&(n.overflow=[h.overflow,h.overflowX,h.overflowY],null==(l=v&&v.display)&&(l=ie.get(e,"display")),"none"===(c=T.css(e,"display"))&&(l?c=l:(xe([e],!0),l=e.style.display||l,c=T.css(e,"display"),xe([e]))),("inline"===c||"inline-block"===c&&null!=l)&&"none"===T.css(e,"float")&&(u||(p.done((function(){h.display=l})),null==l&&(c=h.display,l="none"===c?"":c)),h.display="inline-block")),n.overflow&&(h.overflow="hidden",p.always((function(){h.overflow=n.overflow[0],h.overflowX=n.overflow[1],h.overflowY=n.overflow[2]}))),u=!1,d)u||(v?"hidden"in v&&(g=v.hidden):v=ie.access(e,"fxshow",{display:l}),o&&(v.hidden=!g),g&&xe([e],!0),p.done((function(){for(r in g||xe([e]),ie.remove(e,"fxshow"),d)T.style(e,r,d[r])}))),u=vt(g?v[r]:0,r,p),r in v||(v[r]=u.start,g&&(u.end=u.start,u.start=0))}],prefilter:function(e,t){t?yt.prefilters.unshift(e):yt.prefilters.push(e)}}),T.speed=function(e,t,n){var r=e&&"object"==typeof e?T.extend({},e):{complete:n||!n&&t||h(e)&&e,duration:e,easing:n&&t||t&&!h(t)&&t};return T.fx.off?r.duration=0:"number"!=typeof r.duration&&(r.duration in T.fx.speeds?r.duration=T.fx.speeds[r.duration]:r.duration=T.fx.speeds._default),null!=r.queue&&!0!==r.queue||(r.queue="fx"),r.old=r.complete,r.complete=function(){h(r.old)&&r.old.call(this),r.queue&&T.dequeue(this,r.queue)},r},T.fn.extend({fadeTo:function(e,t,n,r){return this.filter(ge).css("opacity",0).show().end().animate({opacity:t},e,n,r)},animate:function(e,t,n,r){var i=T.isEmptyObject(e),o=T.speed(t,n,r),a=function(){var t=yt(this,T.extend({},e),o);(i||ie.get(this,"finish"))&&t.stop(!0)};return a.finish=a,i||!1===o.queue?this.each(a):this.queue(o.queue,a)},stop:function(e,t,n){var r=function(e){var t=e.stop;delete e.stop,t(n)};return"string"!=typeof e&&(n=t,t=e,e=void 0),t&&this.queue(e||"fx",[]),this.each((function(){var t=!0,i=null!=e&&e+"queueHooks",o=T.timers,a=ie.get(this);if(i)a[i]&&a[i].stop&&r(a[i]);else for(i in a)a[i]&&a[i].stop&&pt.test(i)&&r(a[i]);for(i=o.length;i--;)o[i].elem!==this||null!=e&&o[i].queue!==e||(o[i].anim.stop(n),t=!1,o.splice(i,1));!t&&n||T.dequeue(this,e)}))},finish:function(e){return!1!==e&&(e=e||"fx"),this.each((function(){var t,n=ie.get(this),r=n[e+"queue"],i=n[e+"queueHooks"],o=T.timers,a=r?r.length:0;for(n.finish=!0,T.queue(this,e,[]),i&&i.stop&&i.stop.call(this,!0),t=o.length;t--;)o[t].elem===this&&o[t].queue===e&&(o[t].anim.stop(!0),o.splice(t,1));for(t=0;t<a;t++)r[t]&&r[t].finish&&r[t].finish.call(this);delete n.finish}))}}),T.each(["toggle","show","hide"],(function(e,t){var n=T.fn[t];T.fn[t]=function(e,r,i){return null==e||"boolean"==typeof e?n.apply(this,arguments):this.animate(gt(t,!0),e,r,i)}})),T.each({slideDown:gt("show"),slideUp:gt("hide"),slideToggle:gt("toggle"),fadeIn:{opacity:"show"},fadeOut:{opacity:"hide"},fadeToggle:{opacity:"toggle"}},(function(e,t){T.fn[e]=function(e,n,r){return this.animate(t,e,n,r)}})),T.timers=[],T.fx.tick=function(){var e,t=0,n=T.timers;for(lt=Date.now();t<n.length;t++)(e=n[t])()||n[t]!==e||n.splice(t--,1);n.length||T.fx.stop(),lt=void 0},T.fx.timer=function(e){T.timers.push(e),T.fx.start()},T.fx.interval=13,T.fx.start=function(){ct||(ct=!0,dt())},T.fx.stop=function(){ct=null},T.fx.speeds={slow:600,fast:200,_default:400},T.fn.delay=function(t,n){return t=T.fx&&T.fx.speeds[t]||t,n=n||"fx",this.queue(n,(function(n,r){var i=e.setTimeout(n,t);r.stop=function(){e.clearTimeout(i)}}))},function(){var e=v.createElement("input"),t=v.createElement("select").appendChild(v.createElement("option"));e.type="checkbox",d.checkOn=""!==e.value,d.optSelected=t.selected,(e=v.createElement("input")).value="t",e.type="radio",d.radioValue="t"===e.value}();var mt,xt=T.expr.attrHandle;T.fn.extend({attr:function(e,t){return J(this,T.attr,e,t,arguments.length>1)},removeAttr:function(e){return this.each((function(){T.removeAttr(this,e)}))}}),T.extend({attr:function(e,t,n){var r,i,o=e.nodeType;if(3!==o&&8!==o&&2!==o)return void 0===e.getAttribute?T.prop(e,t,n):(1===o&&T.isXMLDoc(e)||(i=T.attrHooks[t.toLowerCase()]||(T.expr.match.bool.test(t)?mt:void 0)),void 0!==n?null===n?void T.removeAttr(e,t):i&&"set"in i&&void 0!==(r=i.set(e,n,t))?r:(e.setAttribute(t,n+""),n):i&&"get"in i&&null!==(r=i.get(e,t))?r:null==(r=T.find.attr(e,t))?void 0:r)},attrHooks:{type:{set:function(e,t){if(!d.radioValue&&"radio"===t&&S(e,"input")){var n=e.value;return e.setAttribute("type",t),n&&(e.value=n),t}}}},removeAttr:function(e,t){var n,r=0,i=t&&t.match(X);if(i&&1===e.nodeType)for(;n=i[r++];)e.removeAttribute(n)}}),mt={set:function(e,t,n){return!1===t?T.removeAttr(e,n):e.setAttribute(n,n),n}},T.each(T.expr.match.bool.source.match(/\w+/g),(function(e,t){var n=xt[t]||T.find.attr;xt[t]=function(e,t,r){var i,o,a=t.toLowerCase();return r||(o=xt[a],xt[a]=i,i=null!=n(e,t,r)?a:null,xt[a]=o),i}}));var bt=/^(?:input|select|textarea|button)$/i,wt=/^(?:a|area)$/i;function Tt(e){return(e.match(X)||[]).join(" ")}function Ct(e){return e.getAttribute&&e.getAttribute("class")||""}function St(e){return Array.isArray(e)?e:"string"==typeof e&&e.match(X)||[]}T.fn.extend({prop:function(e,t){return J(this,T.prop,e,t,arguments.length>1)},removeProp:function(e){return this.each((function(){delete this[T.propFix[e]||e]}))}}),T.extend({prop:function(e,t,n){var r,i,o=e.nodeType;if(3!==o&&8!==o&&2!==o)return 1===o&&T.isXMLDoc(e)||(t=T.propFix[t]||t,i=T.propHooks[t]),void 0!==n?i&&"set"in i&&void 0!==(r=i.set(e,n,t))?r:e[t]=n:i&&"get"in i&&null!==(r=i.get(e,t))?r:e[t]},propHooks:{tabIndex:{get:function(e){var t=T.find.attr(e,"tabindex");return t?parseInt(t,10):bt.test(e.nodeName)||wt.test(e.nodeName)&&e.href?0:-1}}},propFix:{for:"htmlFor",class:"className"}}),d.optSelected||(T.propHooks.selected={get:function(e){var t=e.parentNode;return t&&t.parentNode&&t.parentNode.selectedIndex,null},set:function(e){var t=e.parentNode;t&&(t.selectedIndex,t.parentNode&&t.parentNode.selectedIndex)}}),T.each(["tabIndex","readOnly","maxLength","cellSpacing","cellPadding","rowSpan","colSpan","useMap","frameBorder","contentEditable"],(function(){T.propFix[this.toLowerCase()]=this})),T.fn.extend({addClass:function(e){var t,n,r,i,o,a;return h(e)?this.each((function(t){T(this).addClass(e.call(this,t,Ct(this)))})):(t=St(e)).length?this.each((function(){if(r=Ct(this),n=1===this.nodeType&&" "+Tt(r)+" "){for(o=0;o<t.length;o++)i=t[o],n.indexOf(" "+i+" ")<0&&(n+=i+" ");a=Tt(n),r!==a&&this.setAttribute("class",a)}})):this},removeClass:function(e){var t,n,r,i,o,a;return h(e)?this.each((function(t){T(this).removeClass(e.call(this,t,Ct(this)))})):arguments.length?(t=St(e)).length?this.each((function(){if(r=Ct(this),n=1===this.nodeType&&" "+Tt(r)+" "){for(o=0;o<t.length;o++)for(i=t[o];n.indexOf(" "+i+" ")>-1;)n=n.replace(" "+i+" "," ");a=Tt(n),r!==a&&this.setAttribute("class",a)}})):this:this.attr("class","")},toggleClass:function(e,t){var n,r,i,o,a=typeof e,s="string"===a||Array.isArray(e);return h(e)?this.each((function(n){T(this).toggleClass(e.call(this,n,Ct(this),t),t)})):"boolean"==typeof t&&s?t?this.addClass(e):this.removeClass(e):(n=St(e),this.each((function(){if(s)for(o=T(this),i=0;i<n.length;i++)r=n[i],o.hasClass(r)?o.removeClass(r):o.addClass(r);else void 0!==e&&"boolean"!==a||((r=Ct(this))&&ie.set(this,"__className__",r),this.setAttribute&&this.setAttribute("class",r||!1===e?"":ie.get(this,"__className__")||""))})))},hasClass:function(e){var t,n,r=0;for(t=" "+e+" ";n=this[r++];)if(1===n.nodeType&&(" "+Tt(Ct(n))+" ").indexOf(t)>-1)return!0;return!1}});var Et=/\r/g;T.fn.extend({val:function(e){var t,n,r,i=this[0];return arguments.length?(r=h(e),this.each((function(n){var i;1===this.nodeType&&(null==(i=r?e.call(this,n,T(this).val()):e)?i="":"number"==typeof i?i+="":Array.isArray(i)&&(i=T.map(i,(function(e){return null==e?"":e+""}))),(t=T.valHooks[this.type]||T.valHooks[this.nodeName.toLowerCase()])&&"set"in t&&void 0!==t.set(this,i,"value")||(this.value=i))}))):i?(t=T.valHooks[i.type]||T.valHooks[i.nodeName.toLowerCase()])&&"get"in t&&void 0!==(n=t.get(i,"value"))?n:"string"==typeof(n=i.value)?n.replace(Et,""):null==n?"":n:void 0}}),T.extend({valHooks:{option:{get:function(e){var t=T.find.attr(e,"value");return null!=t?t:Tt(T.text(e))}},select:{get:function(e){var t,n,r,i=e.options,o=e.selectedIndex,a="select-one"===e.type,s=a?null:[],u=a?o+1:i.length;for(r=o<0?u:a?o:0;r<u;r++)if(((n=i[r]).selected||r===o)&&!n.disabled&&(!n.parentNode.disabled||!S(n.parentNode,"optgroup"))){if(t=T(n).val(),a)return t;s.push(t)}return s},set:function(e,t){for(var n,r,i=e.options,o=T.makeArray(t),a=i.length;a--;)((r=i[a]).selected=T.inArray(T.valHooks.option.get(r),o)>-1)&&(n=!0);return n||(e.selectedIndex=-1),o}}}}),T.each(["radio","checkbox"],(function(){T.valHooks[this]={set:function(e,t){if(Array.isArray(t))return e.checked=T.inArray(T(e).val(),t)>-1}},d.checkOn||(T.valHooks[this].get=function(e){return null===e.getAttribute("value")?"on":e.value})}));var kt=e.location,jt={guid:Date.now()},At=/\?/;T.parseXML=function(t){var n,r;if(!t||"string"!=typeof t)return null;try{n=(new e.DOMParser).parseFromString(t,"text/xml")}catch(e){}return r=n&&n.getElementsByTagName("parsererror")[0],n&&!r||T.error("Invalid XML: "+(r?T.map(r.childNodes,(function(e){return e.textContent})).join("\n"):t)),n};var Dt=/^(?:focusinfocus|focusoutblur)$/,Nt=function(e){e.stopPropagation()};T.extend(T.event,{trigger:function(t,n,r,i){var o,a,s,u,l,f,p,d,y=[r||v],m=c.call(t,"type")?t.type:t,x=c.call(t,"namespace")?t.namespace.split("."):[];if(a=d=s=r=r||v,3!==r.nodeType&&8!==r.nodeType&&!Dt.test(m+T.event.triggered)&&(m.indexOf(".")>-1&&(x=m.split("."),m=x.shift(),x.sort()),l=m.indexOf(":")<0&&"on"+m,(t=t[T.expando]?t:new T.Event(m,"object"==typeof t&&t)).isTrigger=i?2:3,t.namespace=x.join("."),t.rnamespace=t.namespace?new RegExp("(^|\\.)"+x.join("\\.(?:.*\\.|)")+"(\\.|$)"):null,t.result=void 0,t.target||(t.target=r),n=null==n?[t]:T.makeArray(n,[t]),p=T.event.special[m]||{},i||!p.trigger||!1!==p.trigger.apply(r,n))){if(!i&&!p.noBubble&&!g(r)){for(u=p.delegateType||m,Dt.test(u+m)||(a=a.parentNode);a;a=a.parentNode)y.push(a),s=a;s===(r.ownerDocument||v)&&y.push(s.defaultView||s.parentWindow||e)}for(o=0;(a=y[o++])&&!t.isPropagationStopped();)d=a,t.type=o>1?u:p.bindType||m,(f=(ie.get(a,"events")||Object.create(null))[t.type]&&ie.get(a,"handle"))&&f.apply(a,n),(f=l&&a[l])&&f.apply&&ne(a)&&(t.result=f.apply(a,n),!1===t.result&&t.preventDefault());return t.type=m,i||t.isDefaultPrevented()||p._default&&!1!==p._default.apply(y.pop(),n)||!ne(r)||l&&h(r[m])&&!g(r)&&((s=r[l])&&(r[l]=null),T.event.triggered=m,t.isPropagationStopped()&&d.addEventListener(m,Nt),r[m](),t.isPropagationStopped()&&d.removeEventListener(m,Nt),T.event.triggered=void 0,s&&(r[l]=s)),t.result}},simulate:function(e,t,n){var r=T.extend(new T.Event,n,{type:e,isSimulated:!0});T.event.trigger(r,null,t)}}),T.fn.extend({trigger:function(e,t){return this.each((function(){T.event.trigger(e,t,this)}))},triggerHandler:function(e,t){var n=this[0];if(n)return T.event.trigger(e,t,n,!0)}});var qt=/\[\]$/,Lt=/\r?\n/g,Ht=/^(?:submit|button|image|reset|file)$/i,Ot=/^(?:input|select|textarea|keygen)/i;function Pt(e,t,n,r){var i;if(Array.isArray(t))T.each(t,(function(t,i){n||qt.test(e)?r(e,i):Pt(e+"["+("object"==typeof i&&null!=i?t:"")+"]",i,n,r)}));else if(n||"object"!==x(t))r(e,t);else for(i in t)Pt(e+"["+i+"]",t[i],n,r)}T.param=function(e,t){var n,r=[],i=function(e,t){var n=h(t)?t():t;r[r.length]=encodeURIComponent(e)+"="+encodeURIComponent(null==n?"":n)};if(null==e)return"";if(Array.isArray(e)||e.jquery&&!T.isPlainObject(e))T.each(e,(function(){i(this.name,this.value)}));else for(n in e)Pt(n,e[n],t,i);return r.join("&")},T.fn.extend({serialize:function(){return T.param(this.serializeArray())},serializeArray:function(){return this.map((function(){var e=T.prop(this,"elements");return e?T.makeArray(e):this})).filter((function(){var e=this.type;return this.name&&!T(this).is(":disabled")&&Ot.test(this.nodeName)&&!Ht.test(e)&&(this.checked||!Te.test(e))})).map((function(e,t){var n=T(this).val();return null==n?null:Array.isArray(n)?T.map(n,(function(e){return{name:t.name,value:e.replace(Lt,"\r\n")}})):{name:t.name,value:n.replace(Lt,"\r\n")}})).get()}});var Rt=/%20/g,Mt=/#.*$/,It=/([?&])_=[^&]*/,Wt=/^(.*?):[ \t]*([^\r\n]*)$/gm,Ft=/^(?:GET|HEAD)$/,$t=/^\/\//,Bt={},_t={},Xt="*/".concat("*"),Ut=v.createElement("a");function zt(e){return function(t,n){"string"!=typeof t&&(n=t,t="*");var r,i=0,o=t.toLowerCase().match(X)||[];if(h(n))for(;r=o[i++];)"+"===r[0]?(r=r.slice(1)||"*",(e[r]=e[r]||[]).unshift(n)):(e[r]=e[r]||[]).push(n)}}function Vt(e,t,n,r){var i={},o=e===_t;function a(s){var u;return i[s]=!0,T.each(e[s]||[],(function(e,s){var l=s(t,n,r);return"string"!=typeof l||o||i[l]?o?!(u=l):void 0:(t.dataTypes.unshift(l),a(l),!1)})),u}return a(t.dataTypes[0])||!i["*"]&&a("*")}function Gt(e,t){var n,r,i=T.ajaxSettings.flatOptions||{};for(n in t)void 0!==t[n]&&((i[n]?e:r||(r={}))[n]=t[n]);return r&&T.extend(!0,e,r),e}Ut.href=kt.href,T.extend({active:0,lastModified:{},etag:{},ajaxSettings:{url:kt.href,type:"GET",isLocal:/^(?:about|app|app-storage|.+-extension|file|res|widget):$/.test(kt.protocol),global:!0,processData:!0,async:!0,contentType:"application/x-www-form-urlencoded; charset=UTF-8",accepts:{"*":Xt,text:"text/plain",html:"text/html",xml:"application/xml, text/xml",json:"application/json, text/javascript"},contents:{xml:/\bxml\b/,html:/\bhtml/,json:/\bjson\b/},responseFields:{xml:"responseXML",text:"responseText",json:"responseJSON"},converters:{"* text":String,"text html":!0,"text json":JSON.parse,"text xml":T.parseXML},flatOptions:{url:!0,context:!0}},ajaxSetup:function(e,t){return t?Gt(Gt(e,T.ajaxSettings),t):Gt(T.ajaxSettings,e)},ajaxPrefilter:zt(Bt),ajaxTransport:zt(_t),ajax:function(t,n){"object"==typeof t&&(n=t,t=void 0),n=n||{};var r,i,o,a,s,u,l,c,f,p,d=T.ajaxSetup({},n),h=d.context||d,g=d.context&&(h.nodeType||h.jquery)?T(h):T.event,y=T.Deferred(),m=T.Callbacks("once memory"),x=d.statusCode||{},b={},w={},C="canceled",S={readyState:0,getResponseHeader:function(e){var t;if(l){if(!a)for(a={};t=Wt.exec(o);)a[t[1].toLowerCase()+" "]=(a[t[1].toLowerCase()+" "]||[]).concat(t[2]);t=a[e.toLowerCase()+" "]}return null==t?null:t.join(", ")},getAllResponseHeaders:function(){return l?o:null},setRequestHeader:function(e,t){return null==l&&(e=w[e.toLowerCase()]=w[e.toLowerCase()]||e,b[e]=t),this},overrideMimeType:function(e){return null==l&&(d.mimeType=e),this},statusCode:function(e){var t;if(e)if(l)S.always(e[S.status]);else for(t in e)x[t]=[x[t],e[t]];return this},abort:function(e){var t=e||C;return r&&r.abort(t),E(0,t),this}};if(y.promise(S),d.url=((t||d.url||kt.href)+"").replace($t,kt.protocol+"//"),d.type=n.method||n.type||d.method||d.type,d.dataTypes=(d.dataType||"*").toLowerCase().match(X)||[""],null==d.crossDomain){u=v.createElement("a");try{u.href=d.url,u.href=u.href,d.crossDomain=Ut.protocol+"//"+Ut.host!=u.protocol+"//"+u.host}catch(e){d.crossDomain=!0}}if(d.data&&d.processData&&"string"!=typeof d.data&&(d.data=T.param(d.data,d.traditional)),Vt(Bt,d,n,S),l)return S;for(f in(c=T.event&&d.global)&&0==T.active++&&T.event.trigger("ajaxStart"),d.type=d.type.toUpperCase(),d.hasContent=!Ft.test(d.type),i=d.url.replace(Mt,""),d.hasContent?d.data&&d.processData&&0===(d.contentType||"").indexOf("application/x-www-form-urlencoded")&&(d.data=d.data.replace(Rt,"+")):(p=d.url.slice(i.length),d.data&&(d.processData||"string"==typeof d.data)&&(i+=(At.test(i)?"&":"?")+d.data,delete d.data),!1===d.cache&&(i=i.replace(It,"$1"),p=(At.test(i)?"&":"?")+"_="+jt.guid+++p),d.url=i+p),d.ifModified&&(T.lastModified[i]&&S.setRequestHeader("If-Modified-Since",T.lastModified[i]),T.etag[i]&&S.setRequestHeader("If-None-Match",T.etag[i])),(d.data&&d.hasContent&&!1!==d.contentType||n.contentType)&&S.setRequestHeader("Content-Type",d.contentType),S.setRequestHeader("Accept",d.dataTypes[0]&&d.accepts[d.dataTypes[0]]?d.accepts[d.dataTypes[0]]+("*"!==d.dataTypes[0]?", "+Xt+"; q=0.01":""):d.accepts["*"]),d.headers)S.setRequestHeader(f,d.headers[f]);if(d.beforeSend&&(!1===d.beforeSend.call(h,S,d)||l))return S.abort();if(C="abort",m.add(d.complete),S.done(d.success),S.fail(d.error),r=Vt(_t,d,n,S)){if(S.readyState=1,c&&g.trigger("ajaxSend",[S,d]),l)return S;d.async&&d.timeout>0&&(s=e.setTimeout((function(){S.abort("timeout")}),d.timeout));try{l=!1,r.send(b,E)}catch(e){if(l)throw e;E(-1,e)}}else E(-1,"No Transport");function E(t,n,a,u){var f,p,v,b,w,C=n;l||(l=!0,s&&e.clearTimeout(s),r=void 0,o=u||"",S.readyState=t>0?4:0,f=t>=200&&t<300||304===t,a&&(b=function(e,t,n){for(var r,i,o,a,s=e.contents,u=e.dataTypes;"*"===u[0];)u.shift(),void 0===r&&(r=e.mimeType||t.getResponseHeader("Content-Type"));if(r)for(i in s)if(s[i]&&s[i].test(r)){u.unshift(i);break}if(u[0]in n)o=u[0];else{for(i in n){if(!u[0]||e.converters[i+" "+u[0]]){o=i;break}a||(a=i)}o=o||a}if(o)return o!==u[0]&&u.unshift(o),n[o]}(d,S,a)),!f&&T.inArray("script",d.dataTypes)>-1&&T.inArray("json",d.dataTypes)<0&&(d.converters["text script"]=function(){}),b=function(e,t,n,r){var i,o,a,s,u,l={},c=e.dataTypes.slice();if(c[1])for(a in e.converters)l[a.toLowerCase()]=e.converters[a];for(o=c.shift();o;)if(e.responseFields[o]&&(n[e.responseFields[o]]=t),!u&&r&&e.dataFilter&&(t=e.dataFilter(t,e.dataType)),u=o,o=c.shift())if("*"===o)o=u;else if("*"!==u&&u!==o){if(!(a=l[u+" "+o]||l["* "+o]))for(i in l)if((s=i.split(" "))[1]===o&&(a=l[u+" "+s[0]]||l["* "+s[0]])){!0===a?a=l[i]:!0!==l[i]&&(o=s[0],c.unshift(s[1]));break}if(!0!==a)if(a&&e.throws)t=a(t);else try{t=a(t)}catch(e){return{state:"parsererror",error:a?e:"No conversion from "+u+" to "+o}}}return{state:"success",data:t}}(d,b,S,f),f?(d.ifModified&&((w=S.getResponseHeader("Last-Modified"))&&(T.lastModified[i]=w),(w=S.getResponseHeader("etag"))&&(T.etag[i]=w)),204===t||"HEAD"===d.type?C="nocontent":304===t?C="notmodified":(C=b.state,p=b.data,f=!(v=b.error))):(v=C,!t&&C||(C="error",t<0&&(t=0))),S.status=t,S.statusText=(n||C)+"",f?y.resolveWith(h,[p,C,S]):y.rejectWith(h,[S,C,v]),S.statusCode(x),x=void 0,c&&g.trigger(f?"ajaxSuccess":"ajaxError",[S,d,f?p:v]),m.fireWith(h,[S,C]),c&&(g.trigger("ajaxComplete",[S,d]),--T.active||T.event.trigger("ajaxStop")))}return S},getJSON:function(e,t,n){return T.get(e,t,n,"json")},getScript:function(e,t){return T.get(e,void 0,t,"script")}}),T.each(["get","post"],(function(e,t){T[t]=function(e,n,r,i){return h(n)&&(i=i||r,r=n,n=void 0),T.ajax(T.extend({url:e,type:t,dataType:i,data:n,success:r},T.isPlainObject(e)&&e))}})),T.ajaxPrefilter((function(e){var t;for(t in e.headers)"content-type"===t.toLowerCase()&&(e.contentType=e.headers[t]||"")})),T._evalUrl=function(e,t,n){return T.ajax({url:e,type:"GET",dataType:"script",cache:!0,async:!1,global:!1,converters:{"text script":function(){}},dataFilter:function(e){T.globalEval(e,t,n)}})},T.fn.extend({wrapAll:function(e){var t;return this[0]&&(h(e)&&(e=e.call(this[0])),t=T(e,this[0].ownerDocument).eq(0).clone(!0),this[0].parentNode&&t.insertBefore(this[0]),t.map((function(){for(var e=this;e.firstElementChild;)e=e.firstElementChild;return e})).append(this)),this},wrapInner:function(e){return h(e)?this.each((function(t){T(this).wrapInner(e.call(this,t))})):this.each((function(){var t=T(this),n=t.contents();n.length?n.wrapAll(e):t.append(e)}))},wrap:function(e){var t=h(e);return this.each((function(n){T(this).wrapAll(t?e.call(this,n):e)}))},unwrap:function(e){return this.parent(e).not("body").each((function(){T(this).replaceWith(this.childNodes)})),this}}),T.expr.pseudos.hidden=function(e){return!T.expr.pseudos.visible(e)},T.expr.pseudos.visible=function(e){return!!(e.offsetWidth||e.offsetHeight||e.getClientRects().length)},T.ajaxSettings.xhr=function(){try{return new e.XMLHttpRequest}catch(e){}};var Yt={0:200,1223:204},Qt=T.ajaxSettings.xhr();d.cors=!!Qt&&"withCredentials"in Qt,d.ajax=Qt=!!Qt,T.ajaxTransport((function(t){var n,r;if(d.cors||Qt&&!t.crossDomain)return{send:function(i,o){var a,s=t.xhr();if(s.open(t.type,t.url,t.async,t.username,t.password),t.xhrFields)for(a in t.xhrFields)s[a]=t.xhrFields[a];for(a in t.mimeType&&s.overrideMimeType&&s.overrideMimeType(t.mimeType),t.crossDomain||i["X-Requested-With"]||(i["X-Requested-With"]="XMLHttpRequest"),i)s.setRequestHeader(a,i[a]);n=function(e){return function(){n&&(n=r=s.onload=s.onerror=s.onabort=s.ontimeout=s.onreadystatechange=null,"abort"===e?s.abort():"error"===e?"number"!=typeof s.status?o(0,"error"):o(s.status,s.statusText):o(Yt[s.status]||s.status,s.statusText,"text"!==(s.responseType||"text")||"string"!=typeof s.responseText?{binary:s.response}:{text:s.responseText},s.getAllResponseHeaders()))}},s.onload=n(),r=s.onerror=s.ontimeout=n("error"),void 0!==s.onabort?s.onabort=r:s.onreadystatechange=function(){4===s.readyState&&e.setTimeout((function(){n&&r()}))},n=n("abort");try{s.send(t.hasContent&&t.data||null)}catch(e){if(n)throw e}},abort:function(){n&&n()}}})),T.ajaxPrefilter((function(e){e.crossDomain&&(e.contents.script=!1)})),T.ajaxSetup({accepts:{script:"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript"},contents:{script:/\b(?:java|ecma)script\b/},converters:{"text script":function(e){return T.globalEval(e),e}}}),T.ajaxPrefilter("script",(function(e){void 0===e.cache&&(e.cache=!1),e.crossDomain&&(e.type="GET")})),T.ajaxTransport("script",(function(e){var t,n;if(e.crossDomain||e.scriptAttrs)return{send:function(r,i){t=T("<script>").attr(e.scriptAttrs||{}).prop({charset:e.scriptCharset,src:e.url}).on("load error",n=function(e){t.remove(),n=null,e&&i("error"===e.type?404:200,e.type)}),v.head.appendChild(t[0])},abort:function(){n&&n()}}}));var Jt,Kt=[],Zt=/(=)\?(?=&|$)|\?\?/;T.ajaxSetup({jsonp:"callback",jsonpCallback:function(){var e=Kt.pop()||T.expando+"_"+jt.guid++;return this[e]=!0,e}}),T.ajaxPrefilter("json jsonp",(function(t,n,r){var i,o,a,s=!1!==t.jsonp&&(Zt.test(t.url)?"url":"string"==typeof t.data&&0===(t.contentType||"").indexOf("application/x-www-form-urlencoded")&&Zt.test(t.data)&&"data");if(s||"jsonp"===t.dataTypes[0])return i=t.jsonpCallback=h(t.jsonpCallback)?t.jsonpCallback():t.jsonpCallback,s?t[s]=t[s].replace(Zt,"$1"+i):!1!==t.jsonp&&(t.url+=(At.test(t.url)?"&":"?")+t.jsonp+"="+i),t.converters["script json"]=function(){return a||T.error(i+" was not called"),a[0]},t.dataTypes[0]="json",o=e[i],e[i]=function(){a=arguments},r.always((function(){void 0===o?T(e).removeProp(i):e[i]=o,t[i]&&(t.jsonpCallback=n.jsonpCallback,Kt.push(i)),a&&h(o)&&o(a[0]),a=o=void 0})),"script"})),d.createHTMLDocument=((Jt=v.implementation.createHTMLDocument("").body).innerHTML="<form></form><form></form>",2===Jt.childNodes.length),T.parseHTML=function(e,t,n){return"string"!=typeof e?[]:("boolean"==typeof t&&(n=t,t=!1),t||(d.createHTMLDocument?((r=(t=v.implementation.createHTMLDocument("")).createElement("base")).href=v.location.href,t.head.appendChild(r)):t=v),o=!n&&[],(i=M.exec(e))?[t.createElement(i[1])]:(i=De([e],t,o),o&&o.length&&T(o).remove(),T.merge([],i.childNodes)));var r,i,o},T.fn.load=function(e,t,n){var r,i,o,a=this,s=e.indexOf(" ");return s>-1&&(r=Tt(e.slice(s)),e=e.slice(0,s)),h(t)?(n=t,t=void 0):t&&"object"==typeof t&&(i="POST"),a.length>0&&T.ajax({url:e,type:i||"GET",dataType:"html",data:t}).done((function(e){o=arguments,a.html(r?T("<div>").append(T.parseHTML(e)).find(r):e)})).always(n&&function(e,t){a.each((function(){n.apply(this,o||[e.responseText,t,e])}))}),this},T.expr.pseudos.animated=function(e){return T.grep(T.timers,(function(t){return e===t.elem})).length},T.offset={setOffset:function(e,t,n){var r,i,o,a,s,u,l=T.css(e,"position"),c=T(e),f={};"static"===l&&(e.style.position="relative"),s=c.offset(),o=T.css(e,"top"),u=T.css(e,"left"),("absolute"===l||"fixed"===l)&&(o+u).indexOf("auto")>-1?(a=(r=c.position()).top,i=r.left):(a=parseFloat(o)||0,i=parseFloat(u)||0),h(t)&&(t=t.call(e,n,T.extend({},s))),null!=t.top&&(f.top=t.top-s.top+a),null!=t.left&&(f.left=t.left-s.left+i),"using"in t?t.using.call(e,f):c.css(f)}},T.fn.extend({offset:function(e){if(arguments.length)return void 0===e?this:this.each((function(t){T.offset.setOffset(this,e,t)}));var t,n,r=this[0];return r?r.getClientRects().length?(t=r.getBoundingClientRect(),n=r.ownerDocument.defaultView,{top:t.top+n.pageYOffset,left:t.left+n.pageXOffset}):{top:0,left:0}:void 0},position:function(){if(this[0]){var e,t,n,r=this[0],i={top:0,left:0};if("fixed"===T.css(r,"position"))t=r.getBoundingClientRect();else{for(t=this.offset(),n=r.ownerDocument,e=r.offsetParent||n.documentElement;e&&(e===n.body||e===n.documentElement)&&"static"===T.css(e,"position");)e=e.parentNode;e&&e!==r&&1===e.nodeType&&((i=T(e).offset()).top+=T.css(e,"borderTopWidth",!0),i.left+=T.css(e,"borderLeftWidth",!0))}return{top:t.top-i.top-T.css(r,"marginTop",!0),left:t.left-i.left-T.css(r,"marginLeft",!0)}}},offsetParent:function(){return this.map((function(){for(var e=this.offsetParent;e&&"static"===T.css(e,"position");)e=e.offsetParent;return e||pe}))}}),T.each({scrollLeft:"pageXOffset",scrollTop:"pageYOffset"},(function(e,t){var n="pageYOffset"===t;T.fn[e]=function(r){return J(this,(function(e,r,i){var o;if(g(e)?o=e:9===e.nodeType&&(o=e.defaultView),void 0===i)return o?o[t]:e[r];o?o.scrollTo(n?o.pageXOffset:i,n?i:o.pageYOffset):e[r]=i}),e,r,arguments.length)}})),T.each(["top","left"],(function(e,t){T.cssHooks[t]=Je(d.pixelPosition,(function(e,n){if(n)return n=Qe(e,t),Ue.test(n)?T(e).position()[t]+"px":n}))})),T.each({Height:"height",Width:"width"},(function(e,t){T.each({padding:"inner"+e,content:t,"":"outer"+e},(function(n,r){T.fn[r]=function(i,o){var a=arguments.length&&(n||"boolean"!=typeof i),s=n||(!0===i||!0===o?"margin":"border");return J(this,(function(t,n,i){var o;return g(t)?0===r.indexOf("outer")?t["inner"+e]:t.document.documentElement["client"+e]:9===t.nodeType?(o=t.documentElement,Math.max(t.body["scroll"+e],o["scroll"+e],t.body["offset"+e],o["offset"+e],o["client"+e])):void 0===i?T.css(t,n,s):T.style(t,n,i,s)}),t,a?i:void 0,a)}}))})),T.each(["ajaxStart","ajaxStop","ajaxComplete","ajaxError","ajaxSuccess","ajaxSend"],(function(e,t){T.fn[t]=function(e){return this.on(t,e)}})),T.fn.extend({bind:function(e,t,n){return this.on(e,null,t,n)},unbind:function(e,t){return this.off(e,null,t)},delegate:function(e,t,n,r){return this.on(t,e,n,r)},undelegate:function(e,t,n){return 1===arguments.length?this.off(e,"**"):this.off(t,e||"**",n)},hover:function(e,t){return this.mouseenter(e).mouseleave(t||e)}}),T.each("blur focus focusin focusout resize scroll click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup contextmenu".split(" "),(function(e,t){T.fn[t]=function(e,n){return arguments.length>0?this.on(t,null,e,n):this.trigger(t)}}));var en=/^[\s\uFEFF\xA0]+|([^\s\uFEFF\xA0])[\s\uFEFF\xA0]+$/g;T.proxy=function(e,t){var n,r,o;if("string"==typeof t&&(n=e[t],t=e,e=n),h(e))return r=i.call(arguments,2),o=function(){return e.apply(t||this,r.concat(i.call(arguments)))},o.guid=e.guid=e.guid||T.guid++,o},T.holdReady=function(e){e?T.readyWait++:T.ready(!0)},T.isArray=Array.isArray,T.parseJSON=JSON.parse,T.nodeName=S,T.isFunction=h,T.isWindow=g,T.camelCase=te,T.type=x,T.now=Date.now,T.isNumeric=function(e){var t=T.type(e);return("number"===t||"string"===t)&&!isNaN(e-parseFloat(e))},T.trim=function(e){return null==e?"":(e+"").replace(en,"$1")},"function"==typeof define&&define.amd&&define("jquery",[],(function(){return T}));var tn=e.jQuery,nn=e.$;return T.noConflict=function(t){return e.$===T&&(e.$=nn),t&&e.jQuery===T&&(e.jQuery=tn),T},void 0===t&&(e.jQuery=e.$=T),T}));
+var tbOrdenCompra = [],
+    edoOrdenCompra = "A",
+    indexItemCompra = -1,
+    App = function() {
+        var a, b, c, d, e, g, f, h, k, l = function() {
+                a = jQuery("html");
+                jQuery("body");
+                b = jQuery("#page-container");
+                c = jQuery("#sidebar");
+                d = jQuery("#sidebar-scroll");
+                e = jQuery("#side-overlay");
+                g = jQuery("#side-overlay-scroll");
+                f = jQuery("#header-navbar");
+                h = jQuery("#main-container");
+                k = jQuery("#page-footer");
+                jQuery(".js-select2").select2({
+                    allowClear: !0
+                });
+                $(".select2-emails").select2({
+                    placeholder: "...",
+                    tags: [],
+                    multiple: !0,
+                    ajax: {
+                        url: $("#url").val() + "entidades/correosSelect2",
+                        method: "POST",
+                        dataType: "json",
+                        delay: 250,
+                        data: function(a) {
+                            return {
+                                id_entidad: $("#idEntidad").val()
+                            }
+                        },
+                        processResults: function(a) {
+                            var b = [];
+                            $.each(a, function(a, d) {
+                                null != d && b.push({
+                                    id: d.valor,
+                                    text: d.valor
+                                })
+                            });
+                            return {
+                                results: b
+                            }
+                        },
+                        cache: !0
+                    },
+                    allowClear: !0
+                });
+                moment.locale("es");
+                jQuery('[data-toggle="tooltip"], .js-tooltip').tooltip({
+                    container: "body",
+                    animation: !1
+                });
+                jQuery('[data-toggle="popover"], .js-popover').popover({
+                    container: "body",
+                    animation: !0,
+                    trigger: "hover"
+                });
+                jQuery('[data-toggle="tabs"] a, .js-tabs a').click(function(a) {
+                    a.preventDefault();
+                    jQuery(this).tab("show")
+                });
+                jQuery(".form-control").placeholder();
+                $(".toolTip").tooltip({
+                    html: !0
+                });
+
+                $(".txtOnFocus").focus(function() {
+                    $(this).css("background-color",
+                        "color")
+                });
+                
+                $(".noCurrency").focus(function() {
+                    this.value = Number(this.value.replace(/[^0-9\.-]+/g, ""))
+                });
+                $(".dataTableFull").dataTable({
+                    language: {
+                        lengthMenu: "Mostrar _MENU_ registros por p\u00e1gina",
+                        zeroRecords: "No se encontraron registros",
+                        sInfo: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                        infoEmpty: "No hay registros",
+                        infoFiltered: "(filtrado por _MAX_ total registros)",
+                        sSearch: "Filtrar lista:",
+                        oPaginate: {
+                            sFirst: "Primero",
+                            sLast: "\u00daltimo",
+                            sNext: "Siguiente",
+                            sPrevious: "Anterior"
+                        }
+                    },
+                    pageLength: 100,
+                    lengthMenu: [
+                        [5, 10, 15, 20, 25, 50, 100, 200, 500, 1E3, 2E3, 3E3],
+                        [5, 10, 15, 20, 25, 50, 100, 200, 500, 1E3, 2E3, 3E3]
+                    ],
+                    scrollX: !0
+                });
+                $(".linkEmail").click(function() {
+                    var a = jQuery(this).data("email");
+                    window.location = "mailto:" + a + "?subject="
+                });
+                $(".clearCurrency").focus(function() {
+                    this.value = currency(this.value, {
+                        precision: 2
+                    })
+                });
+                $(".currency").focusout(function() {
+                    this.value = applyCurrency(this.value, {
+                        precision: 2
+                    })
+                });
+                $(".currencyLoad").load(function() {
+                    this.value = currency(this.value, {
+                        precision: 2
+                    })
+                });
+                $(".validateRFC").keyup(function() {
+                    jQuery(this).parents(".form-group");
+                    /^[a-zA-Z]{3,4}(\d{6})((\D|\d){2,3})?$/.test(this.value) ? ($(this).removeClass("has-error").addClass("has-success"), $("#entidad_guardar").prop("disabled", !1)) : ($(this).removeClass("has-success").addClass("has-error"), $("#entidad_guardar").prop("disabled", !0))
+                });
+                $(".input-number").on("input", function() {
+                    this.value = this.value.replace(/[^0-9]/g, "")
+                });
+                $(".input-uppercase").on("input", function() {
+                    var a = $(this).val().toUpperCase();
+                    this.value = $(this).val().toUpperCase();
+                    console.log("valoUpper", a)
+                });
+                $(".input-decimal").on("input", function() {
+                    this.value = this.value.replace(/[^0-9\.]/g, "")
+                });
+                $(".input-number-decimal").on("input", function() {
+                    console.log("entro solo num y le");
+                    this.value = this.value.replace(/[^0-9a-z]/g, "")
+                });
+
+
+
+                $(".selecProdSer").select2({
+                    ajax: {
+                        url: $("#url").val() + "catalogos/getProdSerSelect",
+                        method: "POST",
+                        dataType: "json",
+                        delay: 250,
+                        data: function(a) {
+                            return {
+                                search: a.term
+                            }
+                        },
+                        processResults: function(a) {
+                            var b = [];
+                            $.each(a, function(a, d) {
+                                null != d && b.push({
+                                    id: d.claveSat,
+                                    text: d.claveSat + " " + d.prodServi
+                                })
+                            });
+                            console.log(b);
+                            return {
+                                results: b
+                            }
+                        },
+                        cache: !0
+                    },
+                    minimumInputLength: 2,
+                    placeholder: " ",
+                    allowClear: !0
+                });
+                $(".crudClavSat").click(function() {
+                    if (2 < $("#usuarioNivel").val()) return swal({
+                        type: "error",
+                        title: "Error de validaci\u00f3n",
+                        text: "Usuario restringido"
+                    }), !1;
+                    $.fancybox.open({
+                        href: $("#url").val() + "catalogos/getCatSatView",
+                        type: "iframe",
+                        autoSize: !1,
+                        width: "95%",
+                        height: "95%",
+                        padding: 0,
+                        afterClose: function(a) {}
+                    })
+                });
+                $(".crudMedida").click(function() {
+                    if (2 < $("#usuarioNivel").val()) return swal({
+                        type: "error",
+                        title: "Error de validaci\u00f3n",
+                        text: "Usuario restringido"
+                    }), !1;
+                    $.fancybox.open({
+                        href: $("#url").val() + "catalogos/getMedidaView",
+                        type: "iframe",
+                        autoSize: !1,
+                        width: "95%",
+                        height: "95%",
+                        padding: 0,
+                        afterClose: function(a) {}
+                    })
+                });
+                $(".selectEntidad").select2({
+                    ajax: {
+                        url: $("#url").val() + "entidades/entidadesSelect",
+                        method: "POST",
+                        dataType: "json",
+                        delay: 250,
+                        data: function(a) {
+                            return {
+                                search: a.term,
+                                tipo: "c"
+                            }
+                        },
+                        processResults: function(a) {
+                            var b = [];
+                            $.each(a, function(a, d) {
+                                null != d && b.push({
+                                    id: d.id_entidad,
+                                    text: d.nombre_razon_social
+                                })
+                            });
+                            console.log(b);
+                            return {
+                                results: b
+                            }
+                        },
+                        cache: !0
+                    },
+                    minimumInputLength: 1,
+                    placeholder: " ",
+                    allowClear: !0
+                });
+                $(".selectEntidadTipo").select2({
+                    ajax: {
+                        url: $("#url").val() + "entidades/entidadesSelect",
+                        method: "POST",
+                        dataType: "json",
+                        delay: 250,
+                        data: function(a) {
+                            return {
+                                search: a.term,
+                                tipo: $("#tipoEntidad").val()
+                            }
+                        },
+                        processResults: function(a) {
+                            var b = [];
+                            $.each(a, function(a, d) {
+                                null != d && b.push({
+                                    id: d.id_entidad,
+                                    text: d.nombre_razon_social
+                                })
+                            });
+                            console.log(b);
+                            return {
+                                results: b
+                            }
+                        },
+                        cache: !0
+                    },
+                    minimumInputLength: 1,
+                    placeholder: " ",
+                    allowClear: !0
+                });
+                $(".selectUsuario").select2({
+                    ajax: {
+                        url: $("#url").val() + "usuarios/usuariosSelect",
+                        method: "POST",
+                        dataType: "json",
+                        delay: 250,
+                        data: function(a) {
+                            return {
+                                search: a.term
+                            }
+                        },
+                        processResults: function(a) {
+                            var b = [];
+                            $.each(a, function(a, d) {
+                                null != d && b.push({
+                                    id: d.id_usuario,
+                                    text: d.nombre_completo
+                                })
+                            });
+                            console.log(b);
+                            return {
+                                results: b
+                            }
+                        },
+                        cache: !0
+                    },
+                    minimumInputLength: 1,
+                    placeholder: " ",
+                    allowClear: !0
+                });
+                $(".selecProveedor").select2({
+                    ajax: {
+                        url: $("#url").val() + "entidades/entidadesSelect",
+                        method: "POST",
+                        dataType: "json",
+                        delay: 250,
+                        data: function(a) {
+                            return {
+                                search: a.term,
+                                tipo: "p"
+                            }
+                        },
+                        processResults: function(a) {
+                            var b = [];
+                            $.each(a, function(a, d) {
+                                null != d && b.push({
+                                    id: d.id_entidad,
+                                    text: d.nombre_razon_social
+                                })
+                            });
+                            console.log(b);
+                            return {
+                                results: b
+                            }
+                        },
+                        cache: !0
+                    },
+                    minimumInputLength: 1,
+                    placeholder: " ",
+                    allowClear: !0
+                });
+                $(".selecEntidad").select2({
+                    ajax: {
+                        url: $("#url").val() + "entidades/entidadesSelect",
+                        method: "POST",
+                        dataType: "json",
+                        delay: 250,
+                        data: function(a) {
+                            return {
+                                search: a.term
+                            }
+                        },
+                        processResults: function(a) {
+                            var b = [];
+                            $.each(a, function(a, d) {
+                                null != d && b.push({
+                                    id: d.id_entidad,
+                                    text: d.nombre_razon_social
+                                })
+                            });
+                            console.log(b);
+                            return {
+                                results: b
+                            }
+                        },
+                        cache: !0
+                    },
+                    minimumInputLength: 1,
+                    placeholder: " ",
+                    allowClear: !0
+                });
+                $(".selectBanco").select2({
+                    ajax: {
+                        url: $("#url").val() + "entidades/bancoSelect",
+                        method: "POST",
+                        dataType: "json",
+                        delay: 250,
+                        data: function(a) {
+                            return {
+                                search: a.term
+                            }
+                        },
+                        processResults: function(a) {
+                            var b = [];
+                            $.each(a, function(a, d) {
+                                null != d && b.push({
+                                    id: d.idCatBanco,
+                                    text: d.banco
+                                })
+                            });
+                            console.log(b);
+                            return {
+                                results: b
+                            }
+                        },
+                        cache: !0
+                    },
+                    minimumInputLength: 1,
+                    placeholder: "...",
+                    allowClear: !0
+                });
+                $(".selectGetBancoOrigen").select2({
+                    ajax: {
+                        url: $("#url").val() + "entidades/cuentaBancoSelect",
+                        method: "POST",
+                        dataType: "json",
+                        delay: 250,
+                        data: function(a) {
+                            return {
+                                search: a.term,
+                                idEntidadPropiedad: 3,
+                                idEntidad: $("#idEntidad").val()
+                            }
+                        },
+                        processResults: function(a) {
+                            var b = [];
+                            $.each(a, function(a, d) {
+                                null != d && b.push({
+                                    id: d.id_entidad_propiedad,
+                                    text: d.valor
+                                })
+                            });
+                            console.log(b);
+                            return {
+                                results: b
+                            }
+                        },
+                        cache: !0
+                    },
+                    minimumInputLength: 1,
+                    placeholder: "...",
+                    allowClear: !0
+                });
+                $(".selectGetBancoDestino").select2({
+                    ajax: {
+                        url: $("#url").val() + "entidades/cuentaBancoSelect",
+                        method: "POST",
+                        dataType: "json",
+                        delay: 250,
+                        data: function(a) {
+                            return {
+                                search: a.term,
+                                idEntidadPropiedad: 3,
+                                idEntidad: $("#idEntidadTienda").val()
+                            }
+                        },
+                        processResults: function(a) {
+                            var b = [];
+                            $.each(a, function(a, d) {
+                                null != d && b.push({
+                                    id: d.id_entidad_propiedad,
+                                    text: d.valor
+                                })
+                            });
+                            console.log(b);
+                            return {
+                                results: b
+                            }
+                        },
+                        cache: !0
+                    },
+                    minimumInputLength: 1,
+                    placeholder: "...",
+                    allowClear: !0
+                });
+                $(".selectUbicaMa").select2({
+                    ajax: {
+                        url: $("#url").val() + "catalogos/getUbicacion",
+                        method: "POST",
+                        dataType: "json",
+                        delay: 250,
+                        data: function(a) {
+                            return {
+                                search: a.term,
+                                tipo: "ma"
+                            }
+                        },
+                        processResults: function(a) {
+                            var b = [];
+                            $.each(a, function(a, d) {
+                                null != d && b.push({
+                                    id: d.ubicacion,
+                                    text: d.ubicacion
+                                })
+                            });
+                            console.log(b);
+                            return {
+                                results: b
+                            }
+                        },
+                        cache: !0
+                    },
+                    minimumInputLength: 1,
+                    placeholder: "...",
+                    allowClear: !0
+                });
+                $(".selectUbicaMi").select2({
+                    ajax: {
+                        url: $("#url").val() + "catalogos/getUbicacion",
+                        method: "POST",
+                        dataType: "json",
+                        delay: 250,
+                        data: function(a) {
+                            return {
+                                search: a.term,
+                                tipo: "mi"
+                            }
+                        },
+                        processResults: function(a) {
+                            var b = [];
+                            $.each(a, function(a, d) {
+                                null != d && b.push({
+                                    id: d.ubicacion,
+                                    text: d.ubicacion
+                                })
+                            });
+                            console.log(b);
+                            return {
+                                results: b
+                            }
+                        },
+                        cache: !0
+                    },
+                    minimumInputLength: 1,
+                    placeholder: "...",
+                    allowClear: !0
+                });
+                $(".addEntidad").click(function() {
+                    var a = jQuery(this),
+                        b = a.data("tipotem");
+                    a = a.data("tipoent");
+                    $.fancybox.open({
+                        href: $("#url").val() + "entidades/mostrar_entidad/0/" + a + "/" + b,
+                        type: "iframe",
+                        autoSize: !1,
+                        width: "100%",
+                        height: "100%",
+                        padding: 0,
+                        afterClose: function(a) {}
+                    })
+                })
+            },
+            m = function() {
+                var d;
+                h.length && (n(), jQuery(window).on("resize orientationchange", function() {
+                    clearTimeout(d);
+                    d = setTimeout(function() {
+                        n()
+                    }, 150)
+                }));
+                p("init");
+                if (b.hasClass("header-navbar-fixed") && b.hasClass("header-navbar-transparent")) jQuery(window).on("scroll", function() {
+                    20 < jQuery(this).scrollTop() ? b.addClass("header-navbar-scroll") : b.removeClass("header-navbar-scroll")
+                });
+                jQuery('[data-toggle="layout"]').on("click", function() {
+                    var b = jQuery(this);
+                    r(b.data("action"));
+                    a.hasClass("no-focus") && b.blur()
+                })
+            },
+            n = function() {
+                var a = jQuery(window).height(),
+                    d = f.outerHeight(),
+                    c = k.outerHeight();
+                b.hasClass("header-navbar-fixed") ? h.css("min-height", a - c) : h.css("min-height", a - (d + c))
+            },
+            p = function(a) {
+                var f = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                if ("init" === a) {
+                    p();
+                    var h;
+                    jQuery(window).on("resize orientationchange", function() {
+                        clearTimeout(h);
+                        h = setTimeout(function() {
+                            p()
+                        }, 150)
+                    })
+                } else 991 < f && b.hasClass("side-scroll") ? (jQuery(c).scrollLock("off"), jQuery(e).scrollLock("off"), d.length &&
+                    !d.parent(".slimScrollDiv").length ? d.slimScroll({
+                        height: c.outerHeight(),
+                        color: "#fff",
+                        size: "5px",
+                        opacity: .35,
+                        wheelStep: 15,
+                        distance: "2px",
+                        railVisible: !1,
+                        railOpacity: 1
+                    }) : d.add(d.parent()).css("height", c.outerHeight()), g.length && !g.parent(".slimScrollDiv").length ? g.slimScroll({
+                        height: e.outerHeight(),
+                        color: "#000",
+                        size: "5px",
+                        opacity: .35,
+                        wheelStep: 15,
+                        distance: "2px",
+                        railVisible: !1,
+                        railOpacity: 1
+                    }) : g.add(g.parent()).css("height", e.outerHeight())) : (jQuery(c).scrollLock(), jQuery(e).scrollLock(), d.length && d.parent(".slimScrollDiv").length &&
+                    (d.slimScroll({
+                        destroy: !0
+                    }), d.attr("style", "")), g.length && g.parent(".slimScrollDiv").length && (g.slimScroll({
+                        destroy: !0
+                    }), g.attr("style", "")))
+            },
+            r = function(a) {
+                var d = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                switch (a) {
+                    case "sidebar_pos_toggle":
+                        b.toggleClass("sidebar-l sidebar-r");
+                        break;
+                    case "sidebar_pos_left":
+                        b.removeClass("sidebar-r").addClass("sidebar-l");
+                        break;
+                    case "sidebar_pos_right":
+                        b.removeClass("sidebar-l").addClass("sidebar-r");
+                        break;
+                    case "sidebar_toggle":
+                        991 <
+                            d ? b.toggleClass("sidebar-o") : b.toggleClass("sidebar-o-xs");
+                        break;
+                    case "sidebar_open":
+                        991 < d ? b.addClass("sidebar-o") : b.addClass("sidebar-o-xs");
+                        break;
+                    case "sidebar_close":
+                        991 < d ? b.removeClass("sidebar-o") : b.removeClass("sidebar-o-xs");
+                        break;
+                    case "sidebar_mini_toggle":
+                        991 < d && b.toggleClass("sidebar-mini");
+                        break;
+                    case "sidebar_mini_on":
+                        991 < d && b.addClass("sidebar-mini");
+                        break;
+                    case "sidebar_mini_off":
+                        991 < d && b.removeClass("sidebar-mini");
+                        break;
+                    case "side_overlay_toggle":
+                        b.toggleClass("side-overlay-o");
+                        break;
+                    case "side_overlay_open":
+                        b.addClass("side-overlay-o");
+                        break;
+                    case "side_overlay_close":
+                        b.removeClass("side-overlay-o");
+                        break;
+                    case "side_overlay_hoverable_toggle":
+                        b.toggleClass("side-overlay-hover");
+                        break;
+                    case "side_overlay_hoverable_on":
+                        b.addClass("side-overlay-hover");
+                        break;
+                    case "side_overlay_hoverable_off":
+                        b.removeClass("side-overlay-hover");
+                        break;
+                    case "header_fixed_toggle":
+                        b.toggleClass("header-navbar-fixed");
+                        break;
+                    case "header_fixed_on":
+                        b.addClass("header-navbar-fixed");
+                        break;
+                    case "header_fixed_off":
+                        b.removeClass("header-navbar-fixed");
+                        break;
+                    case "side_scroll_toggle":
+                        b.toggleClass("side-scroll");
+                        p();
+                        break;
+                    case "side_scroll_on":
+                        b.addClass("side-scroll");
+                        p();
+                        break;
+                    case "side_scroll_off":
+                        b.removeClass("side-scroll");
+                        p();
+                        break;
+                    default:
+                        return !1
+                }
+            },
+            u = function() {
+                jQuery('[data-toggle="nav-submenu"]').on("click", function(b) {
+                    b.stopPropagation();
+                    b = jQuery(this);
+                    var d = b.parent("li");
+                    d.hasClass("open") ? d.removeClass("open") : (b.closest("ul").find("> li").removeClass("open"), d.addClass("open"));
+                    a.hasClass("no-focus") && b.blur()
+                })
+            },
+            v = function() {
+                q(!1,
+                    "init");
+                jQuery('[data-toggle="block-option"]').on("click", function() {
+                    q(jQuery(this).parents(".block"), jQuery(this).data("action"))
+                })
+            },
+            q = function(a, b) {
+                if ("init" === b) jQuery('[data-toggle="block-option"][data-action="fullscreen_toggle"]').each(function() {
+                    jQuery(this).html('<i class="' + (jQuery(this).closest(".block").hasClass("block-opt-fullscreen") ? "si si-size-actual" : "si si-size-fullscreen") + '"></i>')
+                }), jQuery('[data-toggle="block-option"][data-action="content_toggle"]').each(function() {
+                    var a = jQuery(this);
+                    a.html('<i class="' + (a.closest(".block").hasClass("block-opt-hidden") ? "si si-arrow-down" : "si si-arrow-up") + '"></i>')
+                });
+                else {
+                    var d = a instanceof jQuery ? a : jQuery(a);
+                    if (d.length) {
+                        var c = jQuery('[data-toggle="block-option"][data-action="fullscreen_toggle"]', d),
+                            f = jQuery('[data-toggle="block-option"][data-action="content_toggle"]', d);
+                        switch (b) {
+                            case "fullscreen_toggle":
+                                d.toggleClass("block-opt-fullscreen");
+                                d.hasClass("block-opt-fullscreen") ? jQuery(d).scrollLock() : jQuery(d).scrollLock("off");
+                                c.length && (d.hasClass("block-opt-fullscreen") ?
+                                    jQuery("i", c).removeClass("si si-size-fullscreen").addClass("si si-size-actual") : jQuery("i", c).removeClass("si si-size-actual").addClass("si si-size-fullscreen"));
+                                break;
+                            case "fullscreen_on":
+                                d.addClass("block-opt-fullscreen");
+                                jQuery(d).scrollLock();
+                                c.length && jQuery("i", c).removeClass("si si-size-fullscreen").addClass("si si-size-actual");
+                                break;
+                            case "fullscreen_off":
+                                d.removeClass("block-opt-fullscreen");
+                                jQuery(d).scrollLock("off");
+                                c.length && jQuery("i", c).removeClass("si si-size-actual").addClass("si si-size-fullscreen");
+                                break;
+                            case "content_toggle":
+                                d.toggleClass("block-opt-hidden");
+                                f.length && (d.hasClass("block-opt-hidden") ? jQuery("i", f).removeClass("si si-arrow-up").addClass("si si-arrow-down") : jQuery("i", f).removeClass("si si-arrow-down").addClass("si si-arrow-up"));
+                                break;
+                            case "content_hide":
+                                d.addClass("block-opt-hidden");
+                                f.length && jQuery("i", f).removeClass("si si-arrow-up").addClass("si si-arrow-down");
+                                break;
+                            case "content_show":
+                                d.removeClass("block-opt-hidden");
+                                f.length && jQuery("i", f).removeClass("si si-arrow-down").addClass("si si-arrow-up");
+                                break;
+                            case "refresh_toggle":
+                                d.toggleClass("block-opt-refresh");
+                                jQuery('[data-toggle="block-option"][data-action="refresh_toggle"][data-action-mode="demo"]', d).length && setTimeout(function() {
+                                    d.removeClass("block-opt-refresh")
+                                }, 2E3);
+                                break;
+                            case "state_loading":
+                                d.addClass("block-opt-refresh");
+                                break;
+                            case "state_normal":
+                                d.removeClass("block-opt-refresh");
+                                break;
+                            case "close":
+                                d.hide();
+                                break;
+                            case "open":
+                                d.show();
+                                break;
+                            default:
+                                return !1
+                        }
+                    }
+                }
+            },
+            t = function() {
+                jQuery(".form-material.floating > .form-control").each(function() {
+                    var a =
+                        jQuery(this),
+                        b = a.parent(".form-material");
+                    a.val() && b.addClass("open");
+                    a.on("change", function() {
+                        a.val() ? b.addClass("open") : b.removeClass("open")
+                    })
+                })
+            },
+            w = function() {
+                var a = jQuery("#css-theme");
+                jQuery('[data-toggle="theme"][data-theme="' + (a.length ? a.attr("href") : "default") + '"]').parent("li").addClass("active");
+                jQuery('[data-toggle="theme"]').on("click", function() {
+                    var b = jQuery(this).data("theme");
+                    jQuery('[data-toggle="theme"]').parent("li").removeClass("active");
+                    jQuery('[data-toggle="theme"][data-theme="' +
+                        b + '"]').parent("li").addClass("active");
+                    "default" === b ? a.length && a.remove() : a.length ? a.attr("href", b) : jQuery("#css-main").after('<link rel="stylesheet" id="css-theme" href="' + b + '">');
+                    a = jQuery("#css-theme")
+                })
+            },
+            y = function() {
+                jQuery('[data-toggle="scroll-to"]').on("click", function() {
+                    var a = jQuery(this),
+                        b = a.data("target");
+                    a = a.data("speed") ? a.data("speed") : 1E3;
+                    jQuery("html, body").animate({
+                        scrollTop: jQuery(b).offset().top
+                    }, a)
+                })
+            },
+            x = function() {
+                jQuery('[data-toggle="class-toggle"]').on("click", function() {
+                    var b =
+                        jQuery(this);
+                    jQuery(b.data("target").toString()).toggleClass(b.data("class").toString());
+                    a.hasClass("no-focus") && b.blur()
+                })
+            },
+            z = function() {
+                var a = jQuery(".js-table-sections");
+                jQuery(".js-table-sections-header > tr", a).click(function(b) {
+                    b = jQuery(this).parent("tbody");
+                    b.hasClass("open") || jQuery("tbody", a).removeClass("open");
+                    b.toggleClass("open")
+                })
+            },
+            E = function() {
+                var a = jQuery(".js-table-checkable");
+                jQuery("thead input:checkbox", a).click(function() {
+                    var b = jQuery(this).prop("checked");
+                    jQuery("tbody input:checkbox",
+                        a).each(function() {
+                        var a = jQuery(this);
+                        a.prop("checked", b);
+                        A(a, b)
+                    })
+                });
+                jQuery("tbody input:checkbox", a).click(function() {
+                    var a = jQuery(this);
+                    A(a, a.prop("checked"))
+                });
+                jQuery("tbody > tr", a).click(function(a) {
+                    if ("checkbox" !== a.target.type && "button" !== a.target.type && "a" !== a.target.tagName.toLowerCase() && !jQuery(a.target).parent("label").length) {
+                        a = jQuery("input:checkbox", this);
+                        var b = a.prop("checked");
+                        a.prop("checked", !b);
+                        A(a, !b)
+                    }
+                })
+            },
+            A = function(a, b) {
+                b ? a.closest("tr").addClass("active") : a.closest("tr").removeClass("active")
+            },
+            F = function() {
+                jQuery('[data-toggle="appear"]').each(function() {
+                    var b = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+                        d = jQuery(this),
+                        c = d.data("class") ? d.data("class") : "animated fadeIn",
+                        f = d.data("offset") ? d.data("offset") : 0,
+                        e = a.hasClass("ie9") || 992 > b ? 0 : d.data("timeout") ? d.data("timeout") : 0;
+                    d.appear(function() {
+                        setTimeout(function() {
+                            d.removeClass("visibility-hidden").addClass(c)
+                        }, e)
+                    }, {
+                        accY: f
+                    })
+                })
+            },
+            G = function() {
+                jQuery('[data-toggle="countTo"]').each(function() {
+                    var a = jQuery(this),
+                        b = a.data("after"),
+                        d = a.data("speed") ? a.data("speed") : 1500,
+                        c = a.data("interval") ? a.data("interval") : 15;
+                    a.appear(function() {
+                        a.countTo({
+                            speed: d,
+                            refreshInterval: c,
+                            onComplete: function() {
+                                b && a.html(a.html() + b)
+                            }
+                        })
+                    })
+                })
+            },
+            H = function() {
+                jQuery(".js-gallery").each(function() {
+                    jQuery(this).magnificPopup({
+                        delegate: "a.img-link",
+                        type: "image",
+                        gallery: {
+                            enabled: !0
+                        }
+                    })
+                });
+                jQuery(".js-gallery-advanced").each(function() {
+                    jQuery(this).magnificPopup({
+                        delegate: "a.img-lightbox",
+                        type: "image",
+                        gallery: {
+                            enabled: !0
+                        }
+                    })
+                })
+            },
+            I = function() {
+                jQuery(".js-slider").each(function() {
+                    var a =
+                        jQuery(this),
+                        b = a.data("slider-arrows") ? a.data("slider-arrows") : !1,
+                        d = a.data("slider-dots") ? a.data("slider-dots") : !1,
+                        c = a.data("slider-num") ? a.data("slider-num") : 1,
+                        f = a.data("slider-autoplay") ? a.data("slider-autoplay") : !1,
+                        e = a.data("slider-autoplay-speed") ? a.data("slider-autoplay-speed") : 3E3;
+                    a.slick({
+                        arrows: b,
+                        dots: d,
+                        slidesToShow: c,
+                        autoplay: f,
+                        autoplaySpeed: e
+                    })
+                })
+            },
+            J = function() {
+                jQuery(".js-colorpicker").each(function() {
+                    var a = jQuery(this),
+                        b = a.data("colorpicker-mode") ? a.data("colorpicker-mode") : "hex",
+                        d = a.data("colorpicker-inline") ?
+                        !0 : !1;
+                    a.colorpicker({
+                        format: b,
+                        inline: d
+                    })
+                })
+            },
+            K = function() {
+                jQuery(".js-notify").on("click", function() {
+                    var a = jQuery(this),
+                        b = a.data("notify-message"),
+                        d = a.data("notify-type") ? a.data("notify-type") : "info",
+                        c = a.data("notify-from") ? a.data("notify-from") : "top",
+                        f = a.data("notify-align") ? a.data("notify-align") : "right",
+                        e = a.data("notify-icon") ? a.data("notify-icon") : "";
+                    a = a.data("notify-url") ? a.data("notify-url") : "";
+                    jQuery.notify({
+                        icon: e,
+                        message: b,
+                        url: a
+                    }, {
+                        element: "body",
+                        type: d,
+                        allow_dismiss: !0,
+                        newest_on_top: !0,
+                        showProgressbar: !1,
+                        placement: {
+                            from: c,
+                            align: f
+                        },
+                        offset: 20,
+                        spacing: 10,
+                        z_index: 1031,
+                        delay: 5E3,
+                        timer: 1E3,
+                        animate: {
+                            enter: "animated fadeIn",
+                            exit: "animated fadeOutDown"
+                        }
+                    })
+                })
+            },
+            L = function() {
+                jQuery(".js-draggable-items").sortable({
+                    connectWith: ".draggable-column",
+                    items: ".draggable-item",
+                    opacity: .75,
+                    handle: ".draggable-handler",
+                    placeholder: "draggable-placeholder",
+                    tolerance: "pointer",
+                    start: function(a, b) {
+                        b.placeholder.css({
+                            height: b.item.outerHeight(),
+                            "margin-bottom": b.item.css("margin-bottom")
+                        })
+                    }
+                })
+            },
+            M = function() {
+                jQuery(".js-pie-chart").easyPieChart({
+                    barColor: jQuery(this).data("bar-color") ?
+                        jQuery(this).data("bar-color") : "#777777",
+                    trackColor: jQuery(this).data("track-color") ? jQuery(this).data("track-color") : "#eeeeee",
+                    lineWidth: jQuery(this).data("line-width") ? jQuery(this).data("line-width") : 3,
+                    size: jQuery(this).data("size") ? jQuery(this).data("size") : "80",
+                    animate: 750,
+                    scaleColor: jQuery(this).data("scale-color") ? jQuery(this).data("scale-color") : !1
+                })
+            };
+        return {
+            init: function() {
+                l();
+                m();
+                u();
+                v();
+                t();
+                w();
+                x();
+                y();
+                var a = new Date,
+                    b = jQuery(".js-year-copy");
+                2015 === a.getFullYear() ? b.html("2015") : b.html("2015-" +
+                    a.getFullYear().toString().substr(2, 2))
+            },
+            layout: function(a) {
+                r(a)
+            },
+            blocks: function(a, b) {
+                q(a, b)
+            },
+            initHelper: function(a) {
+                switch (a) {
+                    case "print-page":
+                        a = b.prop("class");
+                        b.prop("class", "");
+                        window.print();
+                        b.prop("class", a);
+                        break;
+                    case "table-tools":
+                        z();
+                        E();
+                        break;
+                    case "appear":
+                        F();
+                        break;
+                    case "appear-countTo":
+                        G();
+                        break;
+                    case "magnific-popup":
+                        H();
+                        break;
+                    case "ckeditor":
+                        CKEDITOR.disableAutoInline = !0;
+                        CKEDITOR.inline("js-ckeditor-inline");
+                        CKEDITOR.replace("js-ckeditor");
+                        break;
+                    case "summernote":
+                        jQuery(".js-summernote-air").summernote({
+                            airMode: !0
+                        });
+                        jQuery(".js-summernote").summernote({
+                            height: 350,
+                            minHeight: null,
+                            maxHeight: null
+                        });
+                        break;
+                    case "slick":
+                        I();
+                        break;
+                    case "datepicker":
+                        jQuery(".js-datepicker").add(".input-daterange").datepicker({
+                            weekStart: 1,
+                            autoclose: !0,
+                            todayHighlight: !0
+                        });
+                        break;
+                    case "colorpicker":
+                        J();
+                        break;
+                    case "tags-inputs":
+                        jQuery(".js-tags-input").tagsInput({
+                            height: "36px",
+                            width: "100%",
+                            defaultText: "Agregar...",
+                            removeWithBackspace: !0,
+                            delimiter: [","]
+                        });
+                        break;
+                    case "masked-inputs":
+                        jQuery(".js-masked-date").mask("99/99/9999");
+                        jQuery(".js-masked-date-dash").mask("99-99-9999");
+                        jQuery(".js-masked-phone").mask("(999) 999-9999");
+                        jQuery(".js-masked-phone-ext").mask("(999) 999-9999? x99999");
+                        jQuery(".js-masked-taxid").mask("99-9999999");
+                        jQuery(".js-masked-ssn").mask("999-99-9999");
+                        jQuery(".js-masked-pkey").mask("a*-999-a999");
+                        break;
+                    case "select2":
+                        jQuery(".js-select2").select2();
+                        break;
+                    case "highlightjs":
+                        hljs.initHighlightingOnLoad();
+                        break;
+                    case "notify":
+                        K();
+                        break;
+                    case "draggable-items":
+                        L();
+                        break;
+                    case "easy-pie-chart":
+                        M();
+                        break;
+                    default:
+                        return !1
+                }
+            },
+            initHelpers: function(a) {
+                if (a instanceof Array)
+                    for (var b in a) App.initHelper(a[b]);
+                else App.initHelper(a)
+            }
+        }
+    }();
+
+function applyDateHour(a) {
+    return DateFormat.format.date(a, "dd-MMM-yyyy hh:mm p")
+}
+
+function applyDate(a) {
+    return DateFormat.format.date(a, "dd/MM/yyyy")
+}
+
+function applyCurrency(a) {
+    return currency(a, {
+        formatWithSymbol: !0,
+        precision: 2
+    }).format()
+}
+
+function currencySn(a) {
+    return currency(a, {
+        separator: "",
+        precision: 2
+    }).format()
+}
+
+function currencySnPrec(a, b) {
+    return currency(a, {
+        separator: "",
+        precision: b
+    }).format()
+}
+
+function dataTableApp(a) {
+    $(".dataTable-full").DataTable().clear().draw();
+    $(".dataTable-full").DataTable().destroy();
+    $(".dataTable-full").find("tbody").append(a);
+    $(".dataTable-full").dataTable({
+        language: {
+            lengthMenu: "Mostrar _MENU_ registros por p\u00e1gina",
+            zeroRecords: "No se encontraron registros",
+            sInfo: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            infoEmpty: "No hay registros",
+            infoFiltered: "(filtrado por _MAX_ total registros)",
+            sSearch: "Filtrar lista:",
+            oPaginate: {
+                sFirst: "Primero",
+                sLast: "\u00daltimo",
+                sNext: "Siguiente",
+                sPrevious: "Anterior"
+            }
+        },
+        pageLength: 10,
+        lengthMenu: [
+            [5, 10, 15, 20, 25, 50, 100, 200, 500, 1E3, 2E3, 3E3],
+            [5, 10, 15, 20, 25, 50, 100, 200, 500, 1E3, 2E3, 3E3]
+        ],
+        scrollX: !0
+    });
+    $(".dataTable-full").DataTable().draw()
+}
+
+
+/*
+function dataTableByID(a, b) {
+    $("#" + b).DataTable().clear().draw();
+    $("#" + b).DataTable().destroy();
+    $("#" + b).find("tbody").append(a);
+    $("#" + b).dataTable({
+        language: {
+            lengthMenu: "Mostrar _MENU_ registros por p\u00e1gina",
+            zeroRecords: "No se encontraron registros",
+            sInfo: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            infoEmpty: "No hay registros",
+            infoFiltered: "(filtrado por _MAX_ total registros)",
+            sSearch: "Filtrar lista:",
+            oPaginate: {
+                sFirst: "Primero",
+                sLast: "\u00daltimo",
+                sNext: "Siguiente",
+                sPrevious: "Anterior"
+            }
+        },
+        pageLength: 10,
+        lengthMenu: [
+            [5, 10, 15, 20, 25, 50, 100, 200, 500, 1E3, 2E3, 3E3],
+            [5, 10, 15, 20, 25, 50, 100, 200, 500, 1E3, 2E3, 3E3]
+        ],
+        scrollX: !0
+    });
+    $("#" + b).DataTable().draw()
+}
+*/
+/*
+function dataTableMultSearchByID(a, b) {
+    $("#" + b).DataTable().clear().draw();
+    $("#" + b).DataTable().destroy();
+    $("#" + b).find("tbody").append(a);
+    $("#" + b + " tfoot th").each(function() {
+        $(this).text();
+        var a = $(this).width();
+        console.log("widt col table " + a);
+        $(this).html('<input type="text" style="width:' + a + 'px" placeholder="" />')
+    });
+    $("#" + b).dataTable({
+        language: {
+            lengthMenu: "Mostrar _MENU_ registros por p\u00e1gina",
+            zeroRecords: "No se encontraron registros",
+            sInfo: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            infoEmpty: "No hay registros",
+            infoFiltered: "(filtrado por _MAX_ total registros)",
+            sSearch: "Filtrar lista:",
+            oPaginate: {
+                sFirst: "Primero",
+                sLast: "\u00daltimo",
+                sNext: "Siguiente",
+                sPrevious: "Anterior"
+            }
+        },
+        pageLength: 5,
+        lengthMenu: [
+            [5, 10, 15, 20, 25, 50, 100, 200, 500, 1E3, 2E3, 3E3],
+            [5, 10, 15, 20, 25, 50, 100, 200, 500, 1E3, 2E3, 3E3]
+        ],
+        scrollX: !0
+    });
+    $("#" + b).DataTable().columns().every(function() {
+        var a = this;
+        $("input", this.footer()).on("keyup change", function() {
+            a.search() !== this.value && a.search(this.value).draw()
+        })
+    })
+}
+*/
+
+
+jQuery(function() {
+    App.init();
+    dataTableApp("");
+    App.initHelpers(["datepicker", "appear", "appear-countTo", "tags-inputs"]);
+    $("#table_id").DataTable({
+        serverSide: !0,
+        ajax: {
+            url: $("#url").val() + "articulos/lista_articulos",
+            type: "GET"
+        }
+    });
+    $("#cli-btn-guardar-articulo-alma").click(function() {
+        var a = $("#url").val(),
+            b = confirm("\u00bfSon correctos los datos?"),
+            c = $("#articulo_activo").prop("checked"),
+            d = jQuery(this).parents(".block");
+        b && (b = {
+            clave_art: $("#art-cod-corre").val(),
+            art_existecia: $("#art-existecia").val(),
+            lista_sucursal: $("#lista_sucursal").val(),
+            articulo_activo: c,
+            art_lugaralmacen: $("#art-lugaralmacen").val(),
+            art_nivelmin: $("#art-nivelmin").val(),
+            art_nivelmax: $("#art-nivelmax").val(),
+            id_articulo_almacen: $("#id_articulo_almacen").val(),
+            id_articulo: $("#id_articulo").val(),
+            id_tienda: $("#art-sucursal").val(),
+            costo: $("#art-costo").val(),
+            costoFijo: $("#costoFijo").prop("checked"),
+            idCompra: $("#idOrdenCompra").val()
+        }, $.ajax({
+            type: "POST",
+            url: a + "articulos/guardar_almacen",
+            beforeSend: function() {
+                block_class(!0,
+                    d)
+            },
+            complete: function() {
+                block_class(!1, d)
+            },
+            data: b
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                $("#modal-modificar-producto").modal("toggle");
+                notify_info(b.type, b.message)
+            } catch (f) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+            }
+        }))
+    });
+    $("#articulo_guardar").click(function() {
+        var a = jQuery(this).parents(".block"),
+            b = $("#url").val(),
+            c = confirm("\u00bfSon correctos los datos?"),
+            d = parseFloat(currencySn($("#precio01").val()));
+        if (parseFloat(currencySn($("#precio02").val())) >
+            d) return alert("El precio menudeo es mayor que el mayoreo"), !1;
+        c && ($("#frm_articulo")[0].checkValidity() ? ($("#itemsEntArt").val(localStorage.getItem("tbArtEnt")), $.ajax({
+            type: "POST",
+            url: b + "articulos/guardar",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: $("#frm_articulo").serialize()
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                notify_info("success", b.msg);
+                $("#articulo_guardar").prop("disabled", !0);
+                notify_info("info", "Se estan cargando las imagenes...");
+                setTimeout(function() {
+                    window.location.href =
+                        $("#url").val() + "articulos/mostrar_articulo/" + b.idArticulo
+                }, 2E3)
+            } catch (f) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+            }
+        })) : notify_info("danger", "Descripcion, precio01, precio02, "))
+    });
+    $("#btn_entidad_agregarprop").click(function() {
+        $("#cli-prop-nombre").val("");
+        $("#cli-pro-tipo").val("");
+        $("#c_entidad_prop").val("new");
+        $("#id_entidad_propiedad").val("0");
+        $("#modal-pro-contacto").modal("toggle");
+        edoContacto = "A"
+    });
+    $("#btnNuevoArt").click(function() {
+        $("#art-descripcion").val("");
+        $("#art-cod-corre").val("");
+        $("#art-cod-roldan").val("");
+        $("#art-codcedis").val("");
+        $("#art-linea").val("");
+        $("#art-sublinea").val("");
+        $("#art-unidad").val("");
+        $("#art-item").val("");
+        $("#art-precio1").val("0");
+        $("#art-precio2").val("0");
+        $("#art-descuento").val("0");
+        $("#art-costo").val("0");
+        $("#id_articulo").val("0");
+        $("#table_articulo_almacen").html("");
+        $("#articulo_guardar").prop("disabled", !1);
+        $("#art-descripcion").focus()
+    });
+    $("#cli-select-tipo-contacto").on("change", function() {
+        var a = "";
+        switch (this.value) {
+            case "1":
+                a =
+                    "Ingresa el tel&eacute;fono";
+                break;
+            case "2":
+                a = "Ingresa el correo";
+                break;
+            case "3":
+                a = "Ingresa cuenta bancaria";
+                break;
+            case "4":
+                a = "Ingresa el nombre"
+        }
+        $("#cli-prop-nombre-desc").html(a);
+        $("#cli-prop-nombre").focus()
+    });
+    $("#btnArtEnt").click(function() {
+        var a = "p" == $("#tipo_entidad").val() ? $("#url").val() + "articulos/getArticulosProveedor/" + $("#id_entidad").val() : $("#url").val() + "listaprecios/listaPreciosCliente/" + $("#id_entidad").val();
+        $.fancybox.open({
+            href: a,
+            type: "iframe",
+            autoSize: !1,
+            width: "100%",
+            height: "100%",
+            padding: 0,
+            afterClose: function(a) {}
+        })
+    });
+    $("#btnCancelSaveEnt").click(function() {
+        confirm("\u00bfLos datos no se guardaran, desea salir") && window.history.back()
+    });
+    $("#entidad_guardar").click(function() {
+        var a = jQuery(this).parents(".block"),
+            b = $("#url").val();
+        confirm("\u00bfSon correctos los datos?") && ($("#frm_entidad")[0].checkValidity() ? ($("#itemsContacto").val(localStorage.getItem("tbContacto")), $("#direcciones").val(JSON.stringify(tbDirConta)), $.ajax({
+            type: "POST",
+            url: b + "entidades/guardar",
+            beforeSend: function() {
+                block_class(!0,
+                    a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: $("#frm_entidad").serialize()
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a),
+                    c = b.objEdoEnt;
+                notify_info(b.type, b.msg);
+                $("#id_entidad").val(c.idEntidad);
+                "" == $("#cli-cod").val() && $("#cli-cod").val(c.codEntidad)
+            } catch (g) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(g)
+            }
+        })) : notify_info("danger", "RFC y Nombre son obligatorios"))
+    });
+    $("#cli-btn-guardar-prop").click(function() {
+        "A" == edoContacto ? agregaEntidadContacto() : editaEntidadContacto()
+    });
+    $("#btn_refresh_entidad_prop").click(function() {
+        var a = $("#url").val(),
+            b = jQuery(this).parents(".block"),
+            c = {
+                id_entidad: $("#id_entidad").val()
+            },
+            d = "";
+        $.ajax({
+            type: "POST",
+            url: a + "entidades/listaContactos",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: c
+        }).done(function(a) {
+            try {
+                var b = 1,
+                    c = JSON.parse(a),
+                    e;
+                for (e in c) {
+                    var k = c[e],
+                        l = null != k.tipo ? k.tipo : "";
+                    null != k && (d += '<tr><td class="text-center">' + b + "</td><td>" + k.valor + "</td><td>" + l + '</td><td class="hidden-xs"><span class="label label-primary">' +
+                        k.descripcion + '</span></td><td class="text-center"><div class="btn-group"><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Editar" onclick="editar_propiedad(' + k.id_entidad_propiedad + ');"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remover" onclick="eliminar_propiedad(' + k.id_entidad_propiedad + ');"><i class="fa fa-times"></i></button</div></td></tr>');
+                    b++
+                }
+                $("#table_entidad_pro").html(d)
+            } catch (m) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"),
+                    console.log(m)
+            }
+        })
+    });
+    $("#btnIrListaPre").click(function() {
+        var a = $("#url").val();
+        window.location.href = a + "listaprecios/viewPreciosEntidad/" + $("#id_entidad").val()
+    });
+    $("#btnActualizaArtProv").click(function() {
+        guardarArticuloProveedor(this)
+    });
+    $("#btnGuardaArtProv").click(function() {
+        guardarArticuloProveedor(this)
+    });
+    $("#btnAgreArt").click(function() {
+        $("#txtClaveArt").val("");
+        $("#desc-articulo").empty().trigger("change");
+        $("#txtInnerPack").val("");
+        $("#txtMasterPack").val("");
+        $("#modal-art-prop").modal("toggle")
+    });
+    $("#btnExpArtPro").click(function(a) {});
+    $("#btnBuscarArtPro").click(function() {
+        if ("none" != $("#divProProv").css("display")) {
+            var a = $("#url").val(),
+                b = jQuery(this).parents(".block"),
+                c = {
+                    id_entidad: $("#id_entidad").val()
+                },
+                d = "";
+            $.ajax({
+                type: "POST",
+                url: a + "entidades/getArticulosProveedor",
+                beforeSend: function() {
+                    block_class(!0, b)
+                },
+                complete: function() {
+                    block_class(!1, b)
+                },
+                data: c
+            }).done(function(a) {
+                try {
+                    var b = 1,
+                        c = JSON.parse(a);
+                    b = 1;
+                    c = JSON.parse(a);
+                    for (var e in c.items) {
+                        var k = c.items[e];
+                        if (null != k) {
+                            var l = null != k.ITEM ?
+                                k.ITEM : "",
+                                m = null != k.medida ? k.medida : "",
+                                n = '<img id="imgArt" src="' + $("#base_url").val() + 'assets/img/noimg.jpg" alt="Articulo" height="30" width="30">';
+                            null != k.url && (n = '<img id="imgArt" src="' + $("#base_url").val() + k.url + '" alt="Articulo" height="30" width="30">');
+                            d += '<tr><label class="css-input css-checkbox css-checkbox-primary"><input type="checkbox"><span></span></label><td>' + k.CLAVE_ART + '</td><td class="text-center">' + n + '</td><td class="font-w600">' + k.descripcion + '</td><td class="text-center">' +
+                                l + '</td><td class="text-center">' + m + '</td><td class="text-center">' + k.linea + '</td><td class="text-center">' + k.sublinea + '</td><td class="text-center">' + k.inner_pack + '</td><td class="text-center">' + k.master_pack + '</td><td class="text-center"><div class="btn-group"><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Editar" data-idarticulo="' + k.id_articulo + '" data-identidad="' + k.id_entidad + '" data-inner="' + k.inner_pack + '" data-master="' + k.master_pack + '" data-articulo="' +
+                                k.descripcion + '" onclick="editarArtProv(this);"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remover" data-idarticulo="' + k.id_articulo + '" data-identidad="' + k.id_entidad + '" onclick="eliminarArtProv(this);"><i class="fa fa-times"></i></button></div></td></tr>'
+                        }
+                        b++
+                    }
+                    dataTableApp(d)
+                } catch (p) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(p)
+                }
+            })
+        }
+    });
+    $(".buscaEntidad").keypress(function(a) {
+        13 == a.which &&
+            bucarEntidadModEnt(this)
+    });
+    $(".pagClientesAnte").click(function() {
+        getListPagClientes(this, $("#pagAnte").val())
+    });
+    $(".pagClientesSig").click(function() {
+        getListPagClientes(this, $("#pagSig").val())
+    });
+    $(".buscaEntidadPag").keypress(function(a) {
+        13 == a.which && (a = jQuery(this), $("#val").val(this.value), $("#field").val(a.data("field")), getListPagClientes(this, 1))
+    });
+    $("#desc-linea").select2({
+        ajax: {
+            url: $("#url").val() + "lineas/listaLineasJson",
+            method: "POST",
+            dataType: "json",
+            delay: 250,
+            data: function(a) {
+                return {
+                    search: a.term
+                }
+            },
+            processResults: function(a) {
+                var b = [];
+                $.each(a, function(a, d) {
+                    null != d && b.push({
+                        id: d.item,
+                        text: d.item
+                    })
+                });
+                console.log(b);
+                return {
+                    results: b
+                }
+            },
+            cache: !0
+        },
+        minimumInputLength: 1,
+        placeholder: " ",
+        allowClear: !0
+    });
+    $("#desc-sublinea").select2({
+        ajax: {
+            url: $("#url").val() + "lineas/listaSubLineasJson",
+            method: "POST",
+            dataType: "json",
+            delay: 250,
+            data: function(a) {
+                return {
+                    search: a.term
+                }
+            },
+            processResults: function(a) {
+                var b = [];
+                $.each(a, function(a, d) {
+                    null != d && b.push({
+                        id: d.item,
+                        text: d.item
+                    })
+                });
+                console.log(b);
+                return {
+                    results: b
+                }
+            },
+            cache: !0
+        },
+        minimumInputLength: 1,
+        placeholder: " ",
+        allowClear: !0
+    });
+    $("#desc-articulo").select2({
+        ajax: {
+            url: $("#url").val() + "articulos/listaArticulosJson",
+            method: "POST",
+            dataType: "json",
+            delay: 250,
+            data: function(a) {
+                return {
+                    search: a.term
+                }
+            },
+            processResults: function(a) {
+                var b = [];
+                $.each(a, function(a, d) {
+                    null != d && b.push({
+                        id: d.id_articulo,
+                        text: d.descripcion
+                    })
+                });
+                console.log(b);
+                return {
+                    results: b
+                }
+            },
+            cache: !0
+        },
+        minimumInputLength: 5,
+        placeholder: " ",
+        allowClear: !0
+    });
+    $("#btn-guarda-descuento").click(function() {
+        if (confirm("\u00bfSon correctos los datos?")) {
+            var a =
+                jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "entidades/guardaDescuentos",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    id_entidad: $("#id_entidad").val(),
+                    articulo: $("#desc-articulo").val(),
+                    linea: $("#desc-linea").val(),
+                    sublinea: $("#desc-sublinea").val(),
+                    descuento: $("#desc-descuento").val(),
+                    descrip: $("#desc-descripcion").val()
+                }
+            }).done(function(a) {
+                try {
+                    JSON.parse(a), $("#desc-articulo").select2("val", ""), $("#desc-linea").select2("val", ""),
+                        $("#desc-sublinea").select2("val", ""), $("#desc-descuento").val(""), $("#desc-descripcion").val(""), $("#modal-agregar-descuento").modal("toggle"), $("#criterio-busca-descuento").keypress()
+                } catch (c) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(c)
+                }
+            })
+        }
+    })
+});
+
+
+
+
+
+
+function getListPagClientes(a, b) {
+    var c = $("#url").val(),
+        d = jQuery(a).parents(".block");
+    jQuery(a);
+    var e = "";
+    $.ajax({
+        type: "POST",
+        url: c + "entidadesrest/getClientesPag",
+        beforeSend: function() {
+            block_class(!0, d)
+        },
+        complete: function() {
+            block_class(!1, d)
+        },
+        error: function(a, b, d) {
+            swal({
+                type: "error",
+                title: "Error",
+                text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+            })
+        },
+        data: {
+            idKey: $("#idKey").val(),
+            likeField: $("#field").val(),
+            likeMatch: $("#val").val(),
+            pagina: b,
+            porPagina: 5
+        }
+    }).done(function(a) {
+        try {
+            var b = 1,
+                d = a.item;
+            $("#lPagActual").html(d.pagActual);
+            $("#lTotalPag").html(d.totalPag);
+            $("#pagAnte").val(d.pagAnterior);
+            $("#pagSig").val(d.pagSiguiente);
+            if (a.status)
+                for (d in a.item.items) {
+                    var c = a.item.items[d];
+                    null != c && (e += '<tr><td class="text-center"><a href="#" onclick="get_entidad(' + c.id_entidad + ', true);"><label>' + c.cod_entidad + "</label></a></td><td><label>" + c.nombre_razon_social + '</label></td><td class="text-center"><label>' + c.rfc + '</label></td><td class="text-center"><label>' + c.ESTADO + "</label></td></tr>");
+                    b++
+                } else swal({
+                    type: "error",
+                    title: a.msg,
+                    text: JSON.stringify(a.error)
+                });
+            $("#tblCliPag > tbody").html(e)
+        } catch (l) {
+            swal({
+                type: "error",
+                title: "Error al descomponer el objeto, favor de reportarlo"
+            }), console.log(l)
+        }
+    })
+}
+
+function mosExisTiendas(a) {
+    var b = jQuery(a).parents(".block");
+    a = jQuery(a).data("id");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "articulos/existenciaTiendas",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        data: {
+            idArt: a
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a).item;
+            $("#txtCod").val(b.claveArticulo);
+            $("#txtArt").val(b.articulo);
+            $("#txtPre01").val(applyCurrency(b.precio01));
+            $("#txtPre02").val(applyCurrency(b.precio02));
+            $("#txtRol").val(currencySn(b.roldan));
+            $("#txtCorre").val(currencySn(b.corregidora));
+            $("#txtCDIS").val(currencySn(b.tlalne));
+            $("#modExiste").modal("toggle")
+        } catch (e) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+        }
+    })
+}
+
+function fichaArticulo() {}
+
+function showfichaArt(a) {
+    a = jQuery(a).data("id");
+    $.fancybox.open({
+        href: $("#url").val() + "articulos/mostrar_articulo/" + a + "/m",
+        type: "iframe",
+        autoSize: !1,
+        width: "95%",
+        height: "95%",
+        padding: 0,
+        afterClose: function(a) {}
+    })
+}
+
+function buscaArticulo(a) {
+    var b = $("#url").val(),
+        c = jQuery(a).parents(".block");
+    $.ajax({
+        type: "POST",
+        url: b + "articulos/listaArticulos",
+        beforeSend: function() {
+            block_class(!0, c)
+        },
+        complete: function() {
+            block_class(!1, c)
+        },
+        data: $("#frmListArt").serialize()
+    }).done(function(a) {
+        try {
+            console.log("buscaArticulo response " + a);
+            var d = "",
+                c = JSON.parse(a),
+                f;
+            for (f in c.items) {
+                var h = c.items[f];
+                if (null != h) {
+                    var k = null != h.item ? h.item : "",
+                        l = null != h.medida ? h.medida : "",
+                        m = null != h.linea ? h.linea : "",
+                        n = null != h.sublinea ? h.sublinea : "",
+                        p = null != h.marca ? h.marca : "",
+                        r = null != h.color ? h.color : "",
+                        u = 1 == h.artActivo ? '<span class="label label-primary">Activo</span>' : '<span class="label label-danger">Inactivo</span>',
+                        v = $("#isModal").val();
+                    console.log("isModal " + v);
+                    d += "<tr>" + ("true" == v ? '<td data-toggle="tooltip" title="Seleccionar articulo"><a href="#" data-id="' + h.idArticulo + '" data-cod="' + h.claveArticulo + '" data-nombre="' + h.articulo + '" data-costo="' + h.costo + '" data-existencia="' + h.existencia + '" data-item="' + k + '" onClick="asignaArticulo(this)">' +
+                            h.claveArticulo + "</a></td>" : '<td data-toggle="tooltip" title="Linea: ' + m + " Sublinea: " + n + " Marca: " + p + " Color: " + r + '"><a href="' + b + "/articulos/mostrar_articulo/" + h.idArticulo + '">' + h.claveArticulo + "</a></td>") + '<td class="font-w600"><a data-id="' + h.idArticulo + '" onclick="showfichaArt(this)">' + h.articulo + '</a></td><td class="text-center">' + k + '</td><td class="text-center" data-toggle="tooltip" title="Clave SAT: ' + h.claveUnidad + '">' + l + '</td><td class="text-center">' + applyCurrency(h.precio01) + '</td><td class="text-center">' +
+                        applyCurrency(h.precio02) + '</td><td class="hidden-xs text-center">' + u + '</td><td class="text-center">' + h.existencia + "</td></tr>"
+                }
+            }
+            dataTableApp(d)
+        } catch (q) {
+            alert("Error interno, favor de re portarlo al administrador del sistema"), console.log(q)
+        }
+    })
+}
+
+function closeModalEntidad(a) {
+    $("#modal-listado-cliente").modal("toggle");
+    get_entidad(a, !0)
+}
+
+function bucarEntidadModOrd(a) {
+    var b = $("#url").val(),
+        c = jQuery(a).parents(".block"),
+        d = jQuery(a).data("col"),
+        e = "";
+    $.ajax({
+        type: "POST",
+        url: b + "entidades/lista_entidades",
+        beforeSend: function() {
+            block_class(!0, c)
+        },
+        complete: function() {
+            block_class(!1, c)
+        },
+        data: {
+            tipo_entidad: $("#tipo_entidad").val(),
+            criterio: a.value,
+            col: d
+        }
+    }).done(function(a) {
+        try {
+            var b = 1,
+                d = JSON.parse(a),
+                c;
+            for (c in d) {
+                var g = d[c];
+                null != g && (e += '<tr><td><a href="#" onclick="closeModalEntidad(' + g.id_entidad + ')">' + g.cod_entidad + '</a></td><td><a href="#" onclick="closeModalEntidad(' +
+                    g.id_entidad + ')">' + g.nombre_razon_social + "</a></td><td>" + g.rfc + "</td><td>" + g.calle + "</td><td>" + g.poblacion + "</td></tr>");
+                b++
+            }
+            dataTableByID(e, "listaEntidades")
+        } catch (m) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(m)
+        }
+    })
+}
+
+function showListaPreciosCliente() {
+    $.fancybox.open({
+        href: $("#url").val() + "listaprecios/listaPreciosCliente/" + $("#idEntidad").val(),
+        type: "iframe",
+        autoSize: !1,
+        width: "100%",
+        height: "100%",
+        padding: 0,
+        afterClose: function(a) {}
+    })
+}
+
+function showPropEnti(a) {
+    a = jQuery(a);
+    a.data("identidad");
+    $("#lblEntidad").html(a.data("nombreentidad"));
+    $("#idEntidad").val(a.data("identidad"));
+    $("#modalPropEntidad").modal("toggle")
+}
+
+function bucarEntidadModEnt(a) {
+    var b = $("#url").val(),
+        c = jQuery(a).parents(".block");
+    a = [];
+    if ("" != $("#txtCod").val()) {
+        var d = {
+            col: "cod"
+        };
+        d.val = $("#txtCod").val();
+        a.push(d)
+    }
+    "" != $("#txtNom").val() && (d = {
+        col: "nom"
+    }, d.val = $("#txtNom").val(), a.push(d));
+    "" != $("#txtCon").val() && (d = {
+        col: "con"
+    }, d.val = $("#txtCon").val(), a.push(d));
+    0 == a.length && (d = {
+        col: "nom"
+    }, d.val = $("#txtNom").val(), a.push(d));
+    var e = "";
+    $.ajax({
+        type: "POST",
+        url: b + "entidades/lista_entidades",
+        beforeSend: function() {
+            block_class(!0, c)
+        },
+        complete: function() {
+            block_class(!1,
+                c)
+        },
+        data: {
+            tipo_entidad: $("#tipo_entidad").val(),
+            items: a
+        }
+    }).done(function(a) {
+        try {
+            var d = 1,
+                c = JSON.parse(a),
+                g;
+            for (g in c) {
+                var l = c[g];
+                if (null != l) {
+                    var m = null != l.monto_credito ? l.monto_credito : 0,
+                        n = b + "entidades/mostrar_entidad/" + l.id_entidad + "/" + l.entidad_tipo + "/" + $("#tVentana").val();
+                    e += '<tr><td class="text-center"><a href="' + n + '">' + (null != l.cod_entidad ? l.cod_entidad : "") + "</a></td><td>" + l.nombre_razon_social + '</td><td class="text-center">' + applyCurrency(m) + '</td><td class="text-center">' + applyCurrency(l.debe) +
+                        '</td><td class="text-center"><div class="btn-group"><button class="btn btn-xs btn-default" data-nombreentidad="' + l.nombre_razon_social + '" type="button" data-toggle="tooltip" title="Acciones" data-identidad="' + l.id_entidad + '" onclick="showPropEnti(this)"><i class="fa fa-tasks"></i></button></div></td></tr>'
+                }
+                d++
+            }
+            dataTableApp(e)
+        } catch (p) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(p)
+        }
+    })
+}
+
+function ListaEntidadFunction() {
+    $("#btnAddEntidad").click(function() {
+        var a = $("#tVentana").val();
+        window.location.href = $("#url").val() + "entidades/mostrar_entidad/0/" + $("#tipo_entidad").val() + "/" + a
+    })
+}
+
+function guardarArticuloProveedor(a) {
+    var b = jQuery(a),
+        c = $("#url").val(),
+        d = jQuery(a).parents(".block");
+    a = b.val();
+    if ("new" == a) {
+        b = $("#desc-articulo").val();
+        var e = $("#id_entidad").val();
+        var g = "" != $("#txtInnerPack").val() ? $("#txtInnerPack").val() : 0;
+        var f = "" != $("#txtMasterPack").val() ? $("#txtMasterPack").val() : 0;
+        var h = "#modal-art-prop"
+    } else b = b.data("idarticulo"), e = $("#id_entidad").val(), g = "" != $("#txtInnerPack").val() ? $("#txtInnerPack").val() : 0, f = "" != $("#txtMasterPack").val() ? $("#txtMasterPack").val() : 0,
+        h = "#modal-art-prop-edita";
+    confirm("\u00bfGuardar registro?") && $.ajax({
+        type: "POST",
+        url: c + "entidades/guardarArtProv",
+        beforeSend: function() {
+            block_class(!0, d)
+        },
+        complete: function() {
+            block_class(!1, d)
+        },
+        data: {
+            idArticulo: b,
+            idEntidad: e,
+            inner: g,
+            master: f,
+            action: a,
+            claveArt: void 0
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            notify_info(b.type, b.msg);
+            $(h).modal("toggle");
+            $("#btnBuscarArtPro").click()
+        } catch (m) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(m)
+        }
+    })
+}
+
+function editarArtProv(a) {
+    var b = jQuery(a);
+    $("#url").val();
+    jQuery(a).parents(".block");
+    a = b.data("idarticulo");
+    var c = b.data("identidad"),
+        d = b.data("inner"),
+        e = b.data("master");
+    b = b.data("articulo");
+    $("#modal-art-prop-edita").modal("toggle");
+    $("#txtInnerPackEdit").val(d);
+    $("#txtMasterPackEdit").val(e);
+    $("#txtArticulo").val(b);
+    $("#btnActualizaArtProv").data("idarticulo", a);
+    $("#btnActualizaArtProv").data("identidad", c);
+    console.log("idArt " + $("#btnActualizaArtProv").data("idarticulo"));
+    console.log("idEnt " +
+        $("#btnActualizaArtProv").data("identidad"))
+}
+
+function eliminarArtProv(a) {
+    var b = jQuery(a),
+        c = $("#url").val(),
+        d = jQuery(a).parents(".block");
+    a = b.data("idarticulo");
+    b = b.data("identidad");
+    confirm("\u00bfDeseas eliminar el registro?") && $.ajax({
+        type: "POST",
+        url: c + "entidades/eliminarArtProv",
+        beforeSend: function() {
+            block_class(!0, d)
+        },
+        complete: function() {
+            block_class(!1, d)
+        },
+        data: {
+            idEntidad: b,
+            idArticulo: a
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            notify_info(b.type, b.msg);
+            $("#btnBuscarArtPro").click()
+        } catch (f) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+        }
+    })
+}
+
+function editaOrdenCom(a) {
+    window.location.href = $("#url").val() + "compras/editaOrdenCompra/" + a
+}
+
+function quitarProdOrdenCom(a, b, c) {
+    var d = jQuery(c).parents(".block");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "compras/quitarProductoCompra",
+        beforeSend: function() {
+            block_class(!0, d)
+        },
+        complete: function() {
+            block_class(!1, d)
+        },
+        data: {
+            idC: a,
+            idD: b
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            listaOrdenenCompra(b)
+        } catch (f) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+        }
+    })
+}
+
+function listaOrdenenCompra(a) {
+    try {
+        var b = 0,
+            c = "",
+            d = a.items;
+        a = 0;
+        for (var e in d) {
+            var g = d[e];
+            if (null != g) {
+                var f = parseInt(g.existencia_cdis) < parseInt(g.cantidad) ? '<span class="label label-danger">' + g.existencia_cdis + "</span>" : '<span class="label label-success">' + g.existencia_cdis + "</span>";
+                c += "<tr><td>" + g.clave_art + "</td><td>" + g.descripcion + "</td><td>" + currency(g.costo, 1) + '</td><td data-importe="' + g.importe + '" data-col="cantidad" data-id="' + g.id_compra_d + '" data-costo="' + g.costo + '" contenteditable="true" class="text-center" style="background:#D5F5E3;" onBlur="saveDataTable(this);" onClick="showEditTable(this);">' +
+                    g.cantidad + '</td><td class="text-center">' + g.ped_pac + '</td><td class="text-center">' + g.unidad + '</td><td class="text-center">' + g.existencia + '</td><td class="text-center">' + g.master_pack + '</td><td class="text-center">' + g.nivel_min + '</td><td class="text-center">' + g.nivel_max + '</td><td class="text-center">' + f + '</td><td id="td_' + g.id_compra_d + '">' + currency(g.importe, 1) + '</td><td class="text-center"><div class="btn-group"><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Cancelar" data-idCompraC="' +
+                    g.id_compra_c + '" data-idCompraD="' + g.id_compra_d + '" onClick="quitarProdOrdenCom(' + g.id_compra_c + "," + g.id_compra_d + ',this);"><i class="fa fa-times"></i></button></div><input type="hidden" id="tdImporte_' + g.id_compra_d + '" value="' + g.importe + '">';
+                "</td></tr>";
+                a += parseFloat(g.importe)
+            }
+            b++
+        }
+        console.log("total " + a);
+        $("#lblSubTotal").html(currency(a, 1));
+        $("#total").val(a);
+        $("#subTotal").val(a);
+        $("#lblTotal").html(currency(a, 1));
+        dataTableApp(c)
+    } catch (h) {
+        alert("Error interno, favor de reportarlo al administrador del sistema"),
+            console.log(h)
+    }
+}
+
+function ordenesCompra(a, b) {
+    $("#cbEntidad").val();
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "compras/getOrdenCompra",
+        beforeSend: function() {
+            block_class(!0, a)
+        },
+        complete: function() {
+            block_class(!1, a)
+        },
+        data: {
+            idCompra: $("#id_compra_c").val()
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            listaOrdenenCompra(b)
+        } catch (e) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+        }
+    })
+}
+
+function mostrarArticulo() {
+    var a = $("#url").val() + "articulos/modalListadoArticulos/";
+    miPopup = window.open(a, "Proveedores", "width=1200,height=600,scrollbars=yes");
+    miPopup.focus()
+}
+
+function mostrarProveedor() {
+    var a = $("#url").val() + "entidades/modalListadoEntidad/p";
+    miPopup = window.open(a, "Proveedores", "width=1200,height=600,scrollbars=yes");
+    miPopup.focus()
+}
+
+function eliminaProvArt(a, b) {
+    var c = $("#url").val(),
+        d = jQuery(this).parents(".block");
+    confirm("\u00bfDeseas eliminar el registro?") && $.ajax({
+        type: "POST",
+        url: c + "articulos/eliminarProvArt",
+        beforeSend: function() {
+            block_class(!0, d)
+        },
+        complete: function() {
+            block_class(!1, d)
+        },
+        data: {
+            idEntidad: b,
+            idArticulo: a
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            notify_info(b.type, b.msg);
+            proveedorArticulo()
+        } catch (f) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+        }
+    })
+}
+
+function editarProvArt(a, b) {
+    var c = $("#url").val(),
+        d = jQuery(this).parents(".block");
+    $.ajax({
+        type: "POST",
+        url: c + "articulos/getProveedorArticulo",
+        beforeSend: function() {
+            block_class(!0, d)
+        },
+        complete: function() {
+            block_class(!1, d)
+        },
+        data: {
+            idEntidad: b,
+            idArticulo: a
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a).item;
+            $("#cbEntidad").empty().append('<option value="' + b.id_entidad + '">' + b.nombre_razon_social + "</option>").val(b.id_entidad).trigger("change");
+            $("#innerPack").val(b.inner_pack);
+            $("#masterPack").val(b.master_pack);
+            $("#cProveedor").val("edit");
+            $("#modal-proveedor").modal("toggle")
+        } catch (f) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+        }
+    })
+}
+
+function formatoAjuste(a) {
+    a = jQuery(a).data("json");
+    a = $("#base_url").val() + "/upload/ajustes/" + a.tiendaRfc + "/Ajuste_" + a.folio + ".pdf";
+    console.log("path " + a);
+    $("#modalShowPDF").modal({
+        backdrop: "static",
+        keyboard: !1
+    });
+    $("#showPDF").attr("data", a)
+}
+
+function detalleListaAjuste(a) {
+    a = jQuery(a).data("json").folio;
+    $("#txtFolioAjuste").val(a);
+    $("#buscaAjuste").modal("toggle");
+    $("#btnSeleAjuste").hide();
+    $("#cbIdTiendaAjus").prop("disabled", !0);
+    $("#cbIdTiendaAjus").val($("#idTienda").val());
+    $("#btnBusAjuste").click()
+}
+
+function listaMovsAlmaFunction() {
+    $("#btnBusAjuste").click(function() {
+        getDatosAjuste(this)
+    });
+    $(document.body).on("change", "#cTiendas", function() {
+        $("#btnBusLisMovsAlma").click()
+    });
+    $("#btnAgregarArt").click(function() {
+        var a = $("#url").val();
+        window.location.href = a + "almacen/ajustes_articulos"
+    });
+    $("#btnBusLisMovsAlma").click(function() {
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "almacen/getAjustesAlmaMovs",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1,
+                    a)
+            },
+            data: {
+                desde: $("#txtDesde").val(),
+                hasta: $("#txtHasta").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                a = "";
+                for (var d in b.items) {
+                    var e = b.items[d];
+                    if (null != e) {
+                        var g = "";
+                        switch (e.tipo) {
+                            case "E":
+                                g = "success";
+                                break;
+                            case "S":
+                                g = "warning"
+                        }
+                        a += "<tr class='" + g + "'><td class='text-center'><label><a href='#' data-json='" + JSON.stringify(e) + "' onclick='formatoAjuste(this)'>" + e.folio + "</a></label></td><td class='text-center'><label>" + e.tipo + "</label></td><td class='text-left'><label><a href='#' data-json='" +
+                            JSON.stringify(e) + "' onclick='detalleListaAjuste(this)'>" + e.kardexMov + "</a></label></td><td class='text-center'><label>" + moment(e.fecha).format("DD/MM/YYYY") + "</label></td><td class='text-left'><label>" + e.usuario + "</label></td><td class='text-left'><label>" + e.observaciones + "</label></td></tr>"
+                    }
+                }
+                dataTableApp(a)
+            } catch (f) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+            }
+        })
+    })
+}
+
+function listaAjustes() {
+    $("#tableArtAjus tbody").html("");
+    for (var a in tblAjuste) {
+        var b = tblAjuste[a];
+        if (null != b) {
+            var c = "<a href='#' data-type='text' data-json='" + JSON.stringify(b) + "' data-validate-number='true' data-value='" + b.cantidad + "' data-pk='" + a + "' data-name='can' data-title='Cantidad' class='xeditable editable editable-click' >" + b.cantidad + "</a>";
+            $("#tableArtAjus tbody").append("<tr><td>" + b.claveArticulo + '</td><td data-id="' + b.idArticulo + '" onclick = "showfichaArt(this)">' + b.articulo + "</td><td>" +
+                applyCurrency(b.costo) + "</td><td>" + b.item + "</td><td>" + c + "</td><td>" + applyCurrency(b.total) + '</td><td><div class="btn-group"><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Quitar" data-id="' + a + '" onClick="deleteAjuste(this);"><i class="fa fa-times"></i></button></div></td></tr>')
+        }
+    }
+}
+
+function deleteAjuste(a) {
+    a = jQuery(a).data("id");
+    tblAjuste.splice(a, 1);
+    listaAjustes()
+}
+
+function editXeditTableAjustes(a, b, c) {
+    var d = jQuery(a);
+    c = d.data("json");
+    var e = d.data("pk");
+    d.data("name");
+    a = parseInt(null == b ? a.value : b);
+    b = parseFloat(c.costo) * a;
+    c.total = b;
+    c.cantidad = a;
+    console.log("itemEdit ", c);
+    tblAjuste[e] = c;
+    listaAjustes()
+}
+
+function getDatosAjuste(a) {
+    var b = jQuery(a).parents(".block");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "almacen/getAjusteTienda",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        data: {
+            folio: $("#txtFolioAjuste").val(),
+            idTienda: $("#cbIdTiendaAjus").val()
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a),
+                c = b.itemC,
+                g = b.itemD;
+            $("#txtTipo").val("");
+            $("#txtMov").val("");
+            $("#txtFecha").val("");
+            $("#txtUsuario").val("");
+            $("#txtObserva").val("");
+            if (null != c) {
+                $("#txtTipo").val(c.tipo);
+                $("#txtMov").val(c.kardexMov);
+                $("#txtFecha").val(c.fecha);
+                $("#txtUsuario").val(c.usuario);
+                $("#txtObserva").val(c.observaciones);
+                a = "";
+                for (var f in g) {
+                    var h = g[f];
+                    null != h && (a += "<tr><td>" + h.claveArticulo + "</td><td>" + h.articulo + "</td><td>" + h.cantidad + "</td></tr>")
+                }
+                $("#tblAjusArt > tbody").html(a);
+                $("#itemC").val(JSON.stringify(c));
+                $("#itemD").val(JSON.stringify(g))
+            } else alert("No existe el folio solicitado"), $("#itemC").val(""), $("#itemD").val(""), $("#tblAjusArt > tbody").html("")
+        } catch (k) {
+            alert("Error interno, no se pudo conectar con el servidor"),
+                console.log(k)
+        }
+    })
+}
+
+function ajArtFunctions() {
+    $("#tableArtAjus").editable({
+        selector: "a",
+        type: "text",
+        success: function(a, b) {
+            editXeditTableAjustes(this, b, null)
+        }
+    });
+    $("#txtDesArt").keypress(function(a) {
+        13 == a.which && ($("#txtArtMaster").focus(), $("#txtArtMaster").val(""))
+    });
+    $("#btnBusAjusteAlm").click(function() {
+        $("#buscaAjuste").modal("toggle");
+        $("#cbIdTiendaAjus").val($("#idTienda").val()).trigger("change")
+    });
+    $("#btnSeleAjuste").click(function() {
+        try {
+            if ("" != $("#itemC").val()) {
+                JSON.parse($("#itemC").val());
+                var a = JSON.parse($("#itemD").val()),
+                    b;
+                for (b in a) {
+                    var c = a[b];
+                    if (null != c) {
+                        var d = buscaArtExitOrdVenta(tblAjuste, c.idArticulo);
+                        console.log("EXISTE ART AJSTE " + JSON.stringify(d));
+                        null == d ? tblAjuste.push({
+                            ubicacion: null,
+                            idTienda: $("#idTienda").val(),
+                            idVentaD: null,
+                            idArticulo: c.idArticulo,
+                            articulo: c.articulo,
+                            claveArticulo: c.claveArticulo,
+                            item: c.item,
+                            cantidad: c.cantidad,
+                            existencia: 0
+                        }) : (d.cantidad = parseInt(d.cantidad) + parseInt(c.existencia), tblAjuste[d.index] = d)
+                    }
+                }
+                $("#claveArticulo").val("");
+                $("#articulo").val("");
+                $("#item").val("");
+                $("#cantidad").val("");
+                $("#idArticulo").val("0");
+                $("#claveArticulo").focus();
+                listaAjustes();
+                $("#buscaAjuste").modal("toggle")
+            } else alert("No existe el registro")
+        } catch (e) {
+            alert("Error interno, favor de reportarlo"), console.log(e)
+        }
+    });
+    $("#btnNueAjus").click(function() {
+        var a = $("#url").val();
+        window.location.href = a + "almacen/ajustes_articulos"
+    });
+    $("#btnBusAjuste").click(function() {
+        getDatosAjuste(this)
+    });
+    $("#cantidad").keypress(function(a) {
+        if (13 == a.which) {
+            a = this.value;
+            if (0 == $("#idArticulo").val()) return alert("Selecciona un articulo"),
+                !1;
+            if ("" == $("#cTipo").val()) return alert("Selecciona el tipo del ajuste"), !1;
+            if ("" == a) return alert("Ingresa la cantidad"), this.focus, !1;
+            if ($.isNumeric(a)) a = parseInt(a);
+            else return alert("La cantidad debe ser numerica"), !1;
+            if ("S" == $("#cTipo").val() && a > $("#existencia").val()) return alert("La cantidad de salida supera la existencia. En almacen : " + $("#existencia").val()), !1;
+            var b = buscaArtExitOrdVenta(tblAjuste, $("#idArticulo").val());
+            console.log("EXISTE ART AJSTE " + JSON.stringify(b));
+            var c = $("#costo").val();
+            c = Number(c.replace(/[^0-9.-]+/g, ""));
+            var d = c * a;
+            null == b ? tblAjuste.push({
+                ubicacion: null,
+                idTienda: $("#idTienda").val(),
+                idVentaD: null,
+                idArticulo: $("#idArticulo").val(),
+                articulo: $("#articulo").val(),
+                claveArticulo: $("#claveArticulo").val(),
+                item: $("#item").val(),
+                cantidad: a,
+                existencia: $("#existencia").val(),
+                costo: c,
+                total: d
+            }) : (b.cantidad = parseInt(b.cantidad) + parseInt(a), tblAjuste[b.index] = b);
+            $("#claveArticulo").val("");
+            $("#articulo").val("");
+            $("#item").val("");
+            $("#cantidad").val("");
+            $("#idArticulo").val("0");
+            $("#claveArticulo").focus();
+            listaAjustes()
+        }
+    });
+    $("#aAddMov").click(function() {
+        $.fancybox.open({
+            href: $("#url").val() + "catalogos/showListkardexMovs/",
+            type: "iframe",
+            autoSize: !1,
+            width: "80%",
+            height: "80%",
+            padding: 0,
+            afterClose: function(a) {}
+        })
+    });
+    $("#showTiendas").click(function() {
+        $.fancybox.open({
+            href: $("#url").val() + "catalogos/viewListTiendas/",
+            type: "iframe",
+            autoSize: !1,
+            width: "80%",
+            height: "80%",
+            padding: 0,
+            afterClose: function(a) {}
+        })
+    });
+    $("#btnSaveMovKar").click(function() {
+        if ("" == $("#cTipo").val()) return alert("Selecciona el tipo, E o S"),
+            !1;
+        var a = confirm("\u00bfSon correctos los datos?"),
+            b = jQuery(this).parents(".block");
+        a && $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogos/addKardexMov",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                tipo: $("#cTipo").val(),
+                mov: $("#txtDes").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                alert(b.msg);
+                $("#txtDes").val("");
+                $("#cTipo").val("");
+                $("#modalAddMov").modal("toggle")
+            } catch (e) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+            }
+        })
+    });
+    $("#btnSaveAjusteAlm").click(function() {
+        if ("" == $("#cTipo").val()) return alert("Selecciona el tipo"), !1;
+        if ("0" == $("#cMov").val()) return alert("Selecciona el movimiento"), !1;
+        if ("" == $("#txtDesArt").val()) return alert("Ingresa el motivo del ajuste"), !1;
+        var a = {};
+        if (confirm("\u00bfSon correctos los datos?")) {
+            var b = jQuery(this).parents(".block");
+            if (0 === tblAjuste.length) return alert("El detalle del ajuste no puede ir vacio"), !1;
+            a.items = JSON.stringify(tblAjuste);
+            a.tipo = $("#cTipo").val();
+            a.movi = $("#cMov").val();
+            a.descri = $("#txtDesArt").val();
+            0 != $("#idKardexMovWS").val() ? (a.idKardexMovWS = $("#idKardexMovWS").val(), a.idTiendaWS = 0 != $("#cMovTienda").val() ? $("#cMovTienda").val() : null) : (a.idKardexMovWS = null, a.idTiendaWS = null);
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "almacen/saveMovAlmacen",
+                beforeSend: function() {
+                    block_class(!0, b)
+                },
+                complete: function() {
+                    block_class(!1, b)
+                },
+                data: a
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    $("#btnSaveAjusteAlm").prop("disabled", !0);
+                    $("#btnAddArt").prop("disabled", !0);
+                    notify_info(b.type,
+                        b.msg);
+                    var c = $("#base_url").val() + "/upload/" + b.file;
+                    $("#modalShowPDF").modal({
+                        backdrop: "static",
+                        keyboard: !1
+                    });
+                    $("#showPDF").attr("data", c)
+                } catch (g) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(g)
+                }
+            })
+        }
+    });
+    $(document.body).on("change", "#cMov", function() {
+        var a = $(this).find(":selected").data("json");
+        if (null != a)
+            if (1 == a.esTraspasoEntrada) {
+                $("#divTienda").show();
+                var b = jQuery(this).parents(".block");
+                $.ajax({
+                    type: "POST",
+                    url: $("#url").val() + "catalogos/getListTiendasCri",
+                    beforeSend: function() {
+                        block_class(!0, b)
+                    },
+                    complete: function() {
+                        block_class(!1, b)
+                    },
+                    data: {
+                        idTienda: $("#idTienda").val()
+                    }
+                }).done(function(a) {
+                    try {
+                        var b = JSON.parse(a),
+                            c;
+                        for (c in b.items) {
+                            var g = b.items[c];
+                            idTienda != g.id_tienda && $("#cMovTienda").append("<option value=" + g.idTienda + ">" + g.nombreCorto + "</option>").trigger("change")
+                        }
+                    } catch (f) {
+                        alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+                    }
+                });
+                $("#idKardexMovWS").val(a.idKardexMovWS)
+            } else $("#divTienda").hide(), $("#idKardexWS").val(0),
+                $("#idTiendaWS").val(0)
+    });
+    $(document.body).on("change", "#cTipo", function() {
+        var a = this.value,
+            b = $("#idTienda").val();
+        $("#cMov").empty();
+        var c = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogos/kardexMovs",
+            beforeSend: function() {
+                block_class(!0, c)
+            },
+            complete: function() {
+                block_class(!1, c)
+            },
+            data: {
+                idTipo: a
+            }
+        }).done(function(a) {
+            try {
+                var d = JSON.parse(a);
+                $("#cMov").append("<option data-json='null' value=0>--Selecciona--</option>").trigger("change");
+                for (var c in d) {
+                    var f = d[c];
+                    b != f.id_tienda &&
+                        $("#cMov").append("<option data-json='" + JSON.stringify(f) + "' value=" + f.idKardexMov + ">" + f.kardexMov + "</option>").trigger("change")
+                }
+            } catch (h) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(h)
+            }
+        })
+    });
+    $("#btnAddArt").click(function() {
+        $("#addArtModal").modal("toggle")
+    });
+    $("#txtBuscaArticuloCodMo").keypress(function(a) {
+        13 == a.which && getArticulos(this)
+    });
+    $("#txtBuscaArticuloDescMo").keypress(function(a) {
+        13 == a.which && getArticulos(this)
+    });
+    $("#txtBuscaArticuloItemMo").keypress(function(a) {
+        13 ==
+            a.which && getArticulos(this)
+    });
+    $("#btnAgregarTras").click(function() {
+        var a = $("#url").val(),
+            b = jQuery(this).parents(".block"),
+            c = !1,
+            d = [];
+        $('input[name="checkArt[]"]').map(function() {
+            var a = jQuery(this);
+            if (0 < m) {
+                var b = a.data("corregidora"),
+                    d = a.data("roldan"),
+                    h = a.data("cedis"),
+                    k = $("#id_tienda").val(),
+                    l;
+                1 == k ? l = b : 2 == k ? l = d : 3 == k && (l = h);
+                if (0 < l) {
+                    var m = m <= l ? m : l;
+                    a = "<tr><td class='text-left'>" + a.data("clave_articulo") + "<input type='hidden' id='ar_" + a.data("clave_articulo") + "' value='" + a.data("id_articulo") + "'></td><td class='text-left'>" +
+                        a.data("descripcion") + "</td><td class='text-left'>" + a.data("item") + "</td><td class='text-left'>" + m + "</td><td class='text-left'><input type='button' value='x' onclick='quitaMP(this)'></td></tr>";
+                    $("#tbListaArt").append(a)
+                } else c = !0
+            }
+        }).get();
+        if ("" == d) return !1;
+        c && alert("Los art\u00edculos sin existencia no se agregar\u00e1n a la orden de venta");
+        $.ajax({
+            type: "POST",
+            url: a + "articulos/insertaMultArti",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                items: d,
+                idOrden: $("#id_orden").val(),
+                descuento_cliente: $("#descuento_cliente").val(),
+                idTienda: $("#id_tienda").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                lista_articulos_orden(b);
+                $("#addArtModal").modal("toggle")
+            } catch (f) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+            }
+        })
+    })
+}
+
+function ajustesArticuloFunctions() {}
+
+function exportaKardex(a, b) {
+    var c = $(a),
+        d = jQuery(a),
+        e = d.data("formato");
+    d.parents(".block-content");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "kardexrest/exportKardex",
+        beforeSend: function() {
+            $(c).buttonLoader("start");
+            $(c).prop("disabled", !0)
+        },
+        complete: function() {
+            $(c).buttonLoader("stop");
+            $(c).prop("disabled", !1)
+        },
+        error: function(a, b, d) {
+            swal({
+                type: "error",
+                title: "Error",
+                text: "Error interno, favor de reportarlo"
+            })
+        },
+        data: {
+            claveArticulo: $("#txtCodArt").val(),
+            formato: e,
+            desde: $("#txtDesde").val(),
+            hasta: $("#txtHasta").val(),
+            idKey: $("#idKey").val(),
+            idTienda: $("#idTienda").val()
+        }
+    }).done(function(a) {
+        try {
+            var d = a.item,
+                c = $("#base_url").val() + d;
+            b.preventDefault();
+            console.log("descarga " + c);
+            window.location.href = c
+        } catch (k) {
+            swal({
+                type: "error",
+                title: "Error",
+                text: "Error interno, favor de reportarlo"
+            }), console.log(k)
+        }
+    })
+}
+
+function kardexArticuloFunctions() {
+    $("#btnKadexDowXls").click(function(a) {
+        exportaKardex(this, a)
+    });
+    $("#btnKardexDowPDF").click(function(a) {
+        exportaKardex(this, a)
+    });
+    $("#btnExpKardex").click(function() {
+        $("#export-kardex").modal("toggle")
+    });
+    $(document.body).on("change", "#cTiendas", function() {
+        $("#txtCodArt").focus()
+    });
+    $("#txtCodArt").keypress(function(a) {
+        13 == a.which && $("#btnBuscaKardex").click()
+    });
+    $("#btnBuscaKardex").click(function() {
+        var a = jQuery(this).parents(".block"),
+            b = "" == $("#txtCodArt").val() ? $("#cbArticulo").val() :
+            $("#txtCodArt").val();
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "articulos/getKardexMovs",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                idArticulo: b,
+                idTienda: $("#cTiendas").val(),
+                desde: $("#txtDesde").val(),
+                hasta: $("#txtHasta").val(),
+                codArticulo: $("#txtCodArt").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a),
+                    c = b.item;
+                a = "";
+                $("#lblArticulo").empty().append('<option value="' + c.idArticulo + '">' + c.articulo + "</option>").val(c.idArticulo).trigger("change");
+                $("#txtExistencia").val(c.existencia);
+                for (var g in b.items) {
+                    var f = b.items[g];
+                    if (null != f) {
+                        c = "";
+                        switch (parseInt(f.idKardexMov)) {
+                            case 4:
+                                c = "warning";
+                                break;
+                            case 10:
+                                c = "danger";
+                                break;
+                            case 11:
+                                c = "info"
+                        }
+                        a += '<tr class="' + c + '"><td class="text-center"><label>' + f.fecha + '</label></td><td class="text-center"><label>' + f.kardexMov + '</label></td><td class="text-center"><label>' + f.ref + '</label></td><td class="text-center"><label>' + f.entrada + '</label></td><td class="text-center"><label>' + f.salida + '</label></td><td class="text-center"><label>' + f.existencia +
+                            '</label></td><td class="text-center"><label>' + applyCurrency(0) + '</label></td><td class="text-center"><label>' + applyCurrency(f.costo) + "</label></td><td class=\"text-center\"><div class=\"btn-group\"><button class='btn btn-xs btn-default' type='button' data-toggle='tooltip' data-table='venta' data-id='" + f.idVentaD + "' data-typeid='d' title='Mostrar detalle' onclick='detalleComprobante(this)'><i class='fa fa-navicon'></i></button></div></td></tr>"
+                    }
+                }
+                $("#lista_kardex").html(a)
+            } catch (h) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"),
+                    console.log(h)
+            }
+        })
+    });
+    $("#cbArticulo").select2({
+        ajax: {
+            url: $("#url").val() + "articulos/articuloJson",
+            method: "POST",
+            dataType: "json",
+            delay: 250,
+            data: function(a) {
+                return {
+                    search: a.term
+                }
+            },
+            processResults: function(a) {
+                var b = [];
+                $.each(a, function(a, d) {
+                    null != d && ($("#txtCosto").val("$ " + truncaDecimales(d.ULT_COSTO)), $("#txtP1").val("$ " + truncaDecimales(d.PRECIO1)), $("#txtP2").val("$ " + truncaDecimales(d.PRECIO2)), $("#precioAr").val(truncaDecimales(d.PRECIO1)), b.push({
+                        id: d.id_articulo,
+                        text: d.descripcion
+                    }))
+                });
+                console.log(b);
+                return {
+                    results: b
+                }
+            },
+            cache: !0
+        },
+        minimumInputLength: 1,
+        placeholder: " ",
+        allowClear: !0
+    })
+}
+
+function marcaDelete(a) {
+    $data = jQuery(a);
+    a = $data.data("idartimg");
+    $("#idArtImg").val(a)
+}
+
+function getListadoCostos(a, b) {
+    var c = $("#url").val(),
+        d = jQuery(a).parents(".block");
+    jQuery(a);
+    var e = "";
+    $.ajax({
+        type: "POST",
+        url: c + "articulosrest/getListadoCostos",
+        beforeSend: function() {
+            block_class(!0, d)
+        },
+        complete: function() {
+            block_class(!1, d)
+        },
+        error: function(a, b, d) {
+            swal({
+                type: "error",
+                title: "Error",
+                text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+            })
+        },
+        data: {
+            idKey: $("#idKey").val(),
+            likeField: $("#fieldCos").val(),
+            likeMatch: $("#valCos").val(),
+            pagina: b,
+            porPagina: 5,
+            idArticulo: $("#idArticulo").val()
+        }
+    }).done(function(a) {
+        try {
+            var b =
+                1,
+                d = a.item;
+            $("#lPagActualCos").html(d.pagActual);
+            $("#lTotalPagCos").html(d.totalPag);
+            $("#pagAnteCos").val(d.pagAnterior);
+            $("#pagSigCos").val(d.pagSiguiente);
+            if (a.status)
+                for (d in a.item.items) {
+                    var c = a.item.items[d];
+                    null != c && (e += '<tr><td class="text-center"><label>' + applyDateHour(c.fecha) + '</label></td><td class="text-center"><label>--</label></td><td class="text-center"><label>--</label></td><td class="text-center"><label>' + applyCurrency(c.costoCompra) + '</label></td><td class="text-center"><label>' +
+                        applyCurrency(c.costoAnt) + '</label></td><td class="text-center"><label>' + applyCurrency(c.costoNue) + "</label></td></tr>");
+                    b++
+                } else swal({
+                    type: "error",
+                    title: a.msg,
+                    text: JSON.stringify(a.error)
+                });
+            $("#tblHistoCostos > tbody").html(e)
+        } catch (l) {
+            swal({
+                type: "error",
+                title: "Error al descomponer el objeto, favor de reportarlo"
+            }), console.log(l)
+        }
+    })
+}
+
+function articuloFunctions() {
+    $("#btnNuevoAjusteArt").click(function() {
+        $(this).attr("href");
+        window.open($("#url").val() + "almacen/ajustes_articulos", "_blank")
+    });
+    $("#btnNuevaCompraArt").click(function() {
+        $(this).attr("href");
+        window.open($("#url").val() + "compras/viewCompra/0/6", "_blank")
+    });
+    $("#btnAjustaExisArt").click(function() {
+        2 < parseInt($("#usuarioNivel").val()) ? swal({
+            type: "error",
+            title: "Error de validaci\u00f3n",
+            text: "Usuario restringido"
+        }) : $("#modal-opt-ajuste-exist").modal("toggle")
+    });
+    $(document.body).on("change",
+        "#idTiendaF",
+        function() {
+            var a = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "articulos/getArticulo",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    codArt: $("#claveArticulo").val(),
+                    idTiendaF: this.value
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    b instanceof Object ? ($("#articulo").val(b.articulo), $("#item").val(b.item), $("#idArticulo").val(b.idArticulo), $("#claveArticulo").val(b.claveArticulo), $("#precio01").val(b.precio01), $("#precio02").val(b.precio02),
+                        $("#costo").val(b.costo)) : swal({
+                        type: "error",
+                        title: b
+                    })
+                } catch (d) {
+                    swal({
+                        type: "error",
+                        title: "Error de conexi\u00f3n con el servidor"
+                    }), console.log(d)
+                }
+            })
+        });
+    $("#claveArticulo").keypress(function(a) {
+        13 == a.which && $("#articulo").focus()
+    });
+    $("#txtFechaCos").keypress(function(a) {
+        13 == a.which && (a = jQuery(this), $("#valCos").val(this.value), $("#fieldCos").val(a.data("field")), getListadoCostos(this, 1))
+    });
+    $("#btnCambiaCosto").click(function() {
+        if (1 < $("#usuarioNivel").val()) return alert("Solo el administrador puede ajustar el costo manual"),
+            !1;
+        swal({
+            title: "Cambio de Costo",
+            text: "\u00bfConfirma cambiar el costo?",
+            type: "warning",
+            showCancelButton: !0,
+            closeOnConfirm: !1,
+            showLoaderOnConfirm: !0
+        }, function(a) {
+            if (!1 === a) return !1;
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "articulosrest/setCambioCosto",
+                data: {
+                    idArticulo: $("#idArticulo").val(),
+                    idUsuario: $("#idUsuario").val(),
+                    costoArt: $("#txtCosto").val(),
+                    idKey: $("#idKey").val(),
+                    idTienda: $("#idTienda").val(),
+                    observaciones: $("#txtCostoObs").val()
+                },
+                error: function(a, c, d) {
+                    swal({
+                        type: "error",
+                        title: "Campos obligatorios",
+                        text: a.responseJSON.msg
+                    })
+                }
+            }).done(function(a) {
+                try {
+                    a.estat ? swal({
+                        type: "error",
+                        title: "Campos obligatorios",
+                        text: a.msg
+                    }) : swal({
+                        type: "success",
+                        title: "Costo cambiado",
+                        text: a.msg
+                    })
+                } catch (c) {
+                    swal({
+                        type: "error",
+                        title: "Error",
+                        text: "Error interno, favor de reportarlo al administrador del sistema"
+                    }), console.log(c)
+                }
+            })
+        })
+    });
+    $("#listCosAnte").click(function() {
+        getListadoCostos(this, $("#pagAnteCos").val())
+    });
+    $("#listCosSig").click(function() {
+        getListadoCostos(this, $("#pagSigCos").val())
+    });
+    $("#listCostos").click(function() {
+        if (2 <
+            $("#usuarioNivel").val()) return swal({
+            type: "error",
+            title: "Error de validaci\u00f3n",
+            text: "Usuario restringido"
+        }), !1;
+        $("#modalAddLinSub").modal("toggle")
+    });
+    $("#btnAddArtPro").click(function() {
+        edoArtEnt = "A";
+        $("#modal-proveedor").modal("toggle");
+        $("#innerPack").val("");
+        $("#masterPack").val("");
+        $("#cbEntidad").empty().trigger("change")
+    });
+    $("#costoFijo").change(function() {
+        if (this.checked) confirm("Al establecer el costo fijo no se tomara el costo promedio") ? ($("#art-costo").prop("disabled", !1), $("#art-costo").focus()) :
+            $(this).prop("checked", !1);
+        else {
+            var a = $("#url").val(),
+                b = $("#blcEditaArtAlma"),
+                c = {
+                    idArticulo: $("#id_articulo_almacen").val(),
+                    idTienda: $("#id_tienda").val()
+                };
+            $.ajax({
+                type: "POST",
+                url: a + "articulos/getOrdenCompraArt",
+                beforeSend: function() {
+                    block_class(!0, b)
+                },
+                complete: function() {
+                    block_class(!1, b)
+                },
+                data: c
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a),
+                        d = b.id_compra_d;
+                    null != d ? ($("#art-costo").val(b.costo_ent), $("#art-costo").prop("disabled", !0), $("#idOrdenCompra").val(d)) : ($("#art-costo").prop("disabled", !1),
+                        $("#costoFijo").prop("checked", !0), alert("No existe orden de compra"))
+                } catch (f) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+                }
+            })
+        }
+    });
+    $("#btnSaveLinSub").click(function() {
+        if ("" == $("#txtDescLinSub").val()) return !1;
+        var a = jQuery(this).parents(".block");
+        if (confirm("\u00bfSon correctos los datos?")) {
+            var b = "linea" == $("#tipoLinSub").val() ? $("#url").val() + "catalogos/addLinea" : $("#url").val() + "catalogos/addSubLinea";
+            $.ajax({
+                type: "POST",
+                url: b,
+                beforeSend: function() {
+                    block_class(!0,
+                        a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    descripcion: $("#txtDescLinSub").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    notify_info(b.type, b.msg);
+                    $("#modalAddLinSub").modal("toggle")
+                } catch (e) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+                }
+            })
+        }
+    });
+    $("#btnAcListaAlma").click(function() {
+        var a = $("#url").val(),
+            b = jQuery(this).parents(".block"),
+            c = {
+                id_articulo: $("#id_articulo").val()
+            },
+            d = "",
+            e = "";
+        $.ajax({
+            type: "POST",
+            url: a + "articulos/lista_articulos_almacen",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: c
+        }).done(function(a) {
+            try {
+                var b = 1,
+                    c = JSON.parse(a),
+                    g;
+                for (g in c) {
+                    var l = c[g];
+                    console.log("valor dato : " + l);
+                    null != l && (e = 1 == l.activo ? '<span class="label label-success">Activo</span>' : '<span class="label label-danger">Desactivado</span>', d += '<tr><td class="text-center">' + b + "</td><td>" + l.sucursal + "</td><td>" + l.costo + "</td><td>" + l.EXISTENCIA + "</td><td>" + l.LOCALIZ + '</td><td class="hidden-xs">' + e + '</td><td class="text-center"><div class="btn-group"><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Editar" onclick="editar_articulo_almacen(' +
+                        l.id_articulo_almacen + ');"><i class="fa fa-pencil"></i></button></div></td></tr>');
+                    b++
+                }
+                $("#table_articulo_almacen").html(d)
+            } catch (m) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(m)
+            }
+        })
+    });
+    $("#btnAgreAlma").click(function() {
+        $("#art-lugaralmacen").val("");
+        $("#art-nivelmin").val("");
+        $("#art-nivelmax").val("");
+        $("#id_articulo_almacen").val("0");
+        $("#articulo_activo").prop("checked", !0);
+        $("#modal-modificar-producto").modal("toggle");
+        $("#art-sucursal").prop("disabled",
+            !1)
+    });
+    $("#btnAgregarProv").click(function() {
+        $("#cProveedor").val("new");
+        $("#modal-proveedor").modal("toggle")
+    });
+    $("#subirImg").click(function() {
+        jQuery(this).parents(".block");
+        var a = new FormData($("#importImg")[0]);
+        $.ajax({
+            url: $("#url").val() + "articulos/importImg",
+            type: "POST",
+            data: a,
+            async: !1,
+            beforeSend: function() {
+                $("#btnCerrar").prop("disabled", !0);
+                $("#subirImg").prop("disabled", !0);
+                $("#attachmentImg").prop("disabled", !0)
+            },
+            success: function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    "danger" == b.type ? notify_info(b.type,
+                        b.msg) : location.reload()
+                } catch (d) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+                } finally {
+                    $("#btnCerrar").prop("disabled", !1), $("#subirImg").prop("disabled", !1), $("#attachmentImg").prop("disabled", !1)
+                }
+            },
+            cache: !1,
+            contentType: !1,
+            processData: !1
+        })
+    });
+    $("#btnDelImg").click(function() {
+        if (0 == $("#idArticulo").val()) return alert("Es necesario primero guardar el art\u00edculo"), !1;
+        if (confirm("\u00bfDesea eliminar la imagen")) {
+            var a = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "articulos/deleteImg",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    idArtImg: $("#idArtImg").val()
+                }
+            }).done(function(a) {
+                try {
+                    JSON.parse(a), location.reload()
+                } catch (c) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(c)
+                }
+            })
+        }
+    });
+    $("#btnModalImg").click(function() {
+        if (0 == $("#idArticulo").val()) return alert("Es necesario primero guardar el art\u00edculo"), !1;
+        var a = $("#totImg").val();
+        console.log("total img " + a);
+        3 <=
+            a ? alert("Solo se puede subir hasta 3 imagenes") : $("#modal-subimg").modal("toggle")
+    });
+    $("#btnListaArti").click(function() {
+        var a = $("#url").val();
+        window.location.href = a + "articulos/consulta_articulos"
+    });
+    $("#btnBuscarProv").click(function() {
+        var a = $("#url").val(),
+            b = jQuery(this).parents(".block"),
+            c = {
+                id_articulo: $("#id_articulo").val()
+            };
+        $.ajax({
+            type: "POST",
+            url: a + "articulos/proveedorArticulo",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: c
+        }).done(function(a) {
+            try {
+                var b =
+                    "",
+                    d = JSON.parse(a),
+                    c;
+                for (c in d.items) {
+                    var h = d.items[c],
+                        k = null != h.inner_pack ? h.inner_pack : "",
+                        l = null != h.master_pack ? h.master_pack : "";
+                    null != h && (b += '<tr><td class="text-center">1</td><td>' + h.nombre_razon_social + '</td><td class="text-center">' + k + '</td><td class="text-center">' + l + '</td><td class="text-center"><div class="btn-group"><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Editar" onclick="editarProvArt(' + h.id_articulo + "," + h.id_entidad + ');"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Eliminar" onclick="eliminaProvArt(' +
+                        h.id_articulo + "," + h.id_entidad + ');"><i class="fa fa-times"></i></button></div></td></tr>')
+                }
+                $("#tableProveedorArt").html(b)
+            } catch (m) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(m)
+            }
+        })
+    });
+    $("#btnGuardarArtProv").click(function() {
+        "A" == edoArtEnt ? agregaArtEnti() : editaArtEnti();
+        $("#modal-proveedor").modal("toggle")
+    });
+    $("#cbEntidad").select2({
+        ajax: {
+            url: $("#url").val() + "entidades/entidadesSelect",
+            method: "POST",
+            dataType: "json",
+            delay: 250,
+            data: function(a) {
+                return {
+                    search: a.term,
+                    tipo: "p"
+                }
+            },
+            processResults: function(a) {
+                var b = [];
+                $.each(a, function(a, d) {
+                    null != d && b.push({
+                        id: d.id_entidad,
+                        text: d.nombre_razon_social
+                    })
+                });
+                console.log(b);
+                return {
+                    results: b
+                }
+            },
+            cache: !0
+        },
+        minimumInputLength: 1,
+        placeholder: " ",
+        allowClear: !0
+    })
+}
+
+function showEditTable(a) {
+    $(a).css("background", "#FFF")
+}
+
+function saveCellInvoice(a) {
+    var b = a.innerHTML;
+    b = b.replace("<br>", "");
+    console.log("editaVal " + b);
+    if ($.isNumeric(b)) {
+        var c = jQuery(a),
+            d = c.data("col"),
+            e = c.data("id");
+        $("#tdImpFac_" + e).val();
+        "costo" == d ? (c = b, b = $("#tdCanFac_" + e).val()) : c = $("#tdPreFac_" + e).val();
+        $(a).css("background", "#FFF url(" + $("#base_url").val() + "/assets/img/loader.gif) no-repeat right");
+        $.ajax({
+            url: $("#url").val() + "formasventa/saveCellInvoice",
+            type: "POST",
+            data: {
+                id: e,
+                precio: c,
+                cantidad: b,
+                idFactura: $("#idFactura").val()
+            },
+            success: function(b) {
+                try {
+                    var d =
+                        JSON.parse(b),
+                        c = parseFloat(d.total),
+                        g = parseFloat(d.importe),
+                        l = parseFloat(d.precio),
+                        m = parseFloat(d.ivaFactor),
+                        n = parseFloat(d.subtotal);
+                    $("#total").val(c);
+                    $("#iva").val(m);
+                    $("#subTotal").val(n);
+                    $("#tdImpFac_" + e).val(g);
+                    $("#tdPreFac_" + e).val(l);
+                    $("#tdCanFac_" + e).val(d.cantidad);
+                    $("#lblSubTotalFa").html("$ " + n);
+                    $("#lblIVAFa").html("$ " + m);
+                    $("#lblTotalFa").html("$ " + c);
+                    $("#tdCellFac_" + e).html("$ " + g);
+                    $(a).css("background", "#D5F5E3")
+                } catch (p) {
+                    alert("Error interno, favor de reportarlo")
+                }
+            }
+        })
+    } else alert("El valor debe de ser num\u00e9rico")
+}
+
+function saveDataTable(a) {
+    var b = parseInt(a.innerHTML);
+    if ($.isNumeric(b)) {
+        var c = jQuery(a),
+            d = c.data("col"),
+            e = c.data("id"),
+            g = $("#tdImporte_" + e).val();
+        c = c.data("costo");
+        var f = $("#total").val();
+        $(a).css("background", "#FFF url(" + $("#base_url").val() + "/assets/img/loader.gif) no-repeat right");
+        $.ajax({
+            url: $("#url").val() + "compras/saveDataTable",
+            type: "POST",
+            data: {
+                column: d,
+                editval: b,
+                id: e,
+                importe: g,
+                costo: c,
+                total: f
+            },
+            success: function(b) {
+                try {
+                    var d = JSON.parse(b);
+                    $("#total").val(d.total);
+                    $("#lblSubTotal").html(currency(d.total,
+                        1));
+                    $("#lblTotal").html(currency(d.total, 1));
+                    $("#td_" + e).html(currency(d.importe, 1));
+                    $("#tdImporte_" + e).val(d.importe);
+                    $(a).css("background", "#D5F5E3")
+                } catch (l) {
+                    alert("Error interno, favor de reportarlo")
+                }
+            }
+        })
+    } else alert("El valor debe de ser num\u00e9rico")
+}
+
+function ImpOrdenCompra() {
+    var a = {
+        idCompraC: $("#idCompra").val(),
+        idEtidad: $("#cbEntidad").val(),
+        estatus: $("#cbStatus").val(),
+        importe: $("#total").val(),
+        fechaPro: $("#txtFechaPro").val(),
+        idTienda: $("#cbTienda").val()
+    };
+    OpenWindowWithPost($("#url").val() + "compras/pdfOrdenCompra", "width=1300,height=700,left=100,top=100,resizable=no,scrollbars=yes", "NewFile", a)
+}
+
+function listOrdCompra(a, b) {
+    $("#cbEntidad").val();
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "compras/ordenesCompra",
+        beforeSend: function() {
+            block_class(!0, a)
+        },
+        complete: function() {
+            block_class(!1, a)
+        },
+        data: {
+            cbFiltro: b
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a).items;
+            a = "";
+            var c = 1,
+                g;
+            for (g in b) {
+                var f = b[g];
+                if (null != f) {
+                    console.log(f);
+                    var h = "",
+                        k = null != f.total_pz ? f.total_pz : "",
+                        l = null != f.total_master_pack ? f.total_master_pack : "";
+                    "C" == f.estatus ? h = '<span class="label label-danger">C</span>' : "A" == f.estatus && (h = '<span class="label label-success">A</span>');
+                    a += "<tr><td>" + f.folio + "</td><td>" + f.tienda + "</td><td>" + f.provee + "</td><td>" + f.fecha_elaboro + '</td><td class="text-center">' + h + "</td><td>" + f.usela + "</td><td></td><td>" + k + "</td><td>" + l + '</td><td class="text-center"><div class="btn-group"><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remover" data-idCompraC="' + f.id_compra_c + '" data-idCompraD="' + f.id_compra_d + '" onClick="quitarProdOrdenCom(' + f.id_compra_c + "," + f.id_compra_d + ',this);"><i class="fa fa-times"></i></button></div><div class="btn-group"><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remover" onClick="editaOrdenCom(' +
+                        f.id_compra_c + ')"><i class="fa fa-pencil"></i></button>';
+                    "</div></td></tr>"
+                }
+                c++
+            }
+            dataTableApp(a)
+        } catch (m) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(m)
+        }
+    })
+}
+
+function eliminaDetFac(a, b) {
+    var c = jQuery(b).parents(".block");
+    $.ajax({
+        url: $("#url").val() + "formasventa/eliminaDetFac",
+        type: "POST",
+        beforeSend: function() {
+            block_class(!0, c)
+        },
+        complete: function() {
+            block_class(!1, c)
+        },
+        data: {
+            id: a,
+            idFactura: $("#idFactura").val()
+        },
+        success: function(a) {
+            try {
+                var b = JSON.parse(a);
+                tableDetalleFactura(b.items);
+                $("#btnActDetalleFac").click();
+                $("#subTotal").val(b.subtotal);
+                $("#iva").val(b.iva);
+                $("#total").val(b.total);
+                $("#lblSubTotalFa").html("$ " + b.subtotal);
+                $("#lblIVAFa").html("$ " +
+                    b.iva);
+                $("#lblTotalFa").html("$ " + b.total)
+            } catch (g) {
+                alert("Error interno, favor de reportarlo")
+            }
+        }
+    })
+}
+
+function tableDetalleFactura(a) {
+    var b = "",
+        c;
+    for (c in a) {
+        var d = a[c];
+        if (null != d) {
+            var e = null != d.id_orden_c ? d.id_orden_c : "";
+            var g = null != d.descrip_join ? d.descrip_join : d.descripcion;
+            var f = null != d.unidad_join ? d.unidad_join : d.unidad;
+            b += "<tr><td>" + d.clave_art + "</td><td>" + e + "</td><td>" + g + "</td><td>" + f + '</td><td data-total="' + d.total + '" data-col="costo" data-id="' + d.id_factura_d + '" contenteditable="true" class="text-center" style="background:#D5F5E3;" onBlur="saveCellInvoice(this);" onClick="showEditTable(this);">' + d.costo +
+                '</td><td data-total="' + d.total + '" data-col="cantidad" data-id="' + d.id_factura_d + '" contenteditable="true" class="text-center" style="background:#D5F5E3;" onBlur="saveCellInvoice(this);" onClick="showEditTable(this);">' + d.cantidad + '</td><td id="tdCellFac_' + d.id_factura_d + '"> $' + d.total + '</td><td><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remover" onclick="eliminaDetFac(' + d.id_factura_d + ', this);"><i class="fa fa-times"></i></button><input type="hidden" id="tdPreFac_' +
+                d.id_factura_d + '" value="' + d.costo + '"><input type="hidden" id="tdCanFac_' + d.id_factura_d + '" value="' + d.cantidad + '"></td></tr>'
+        }
+    }
+    $("#tFacDoc").html(b)
+}
+
+function getSeries(a) {
+    var b = jQuery(a).parents(".block");
+    a = jQuery(a).val();
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "formasventa/getSeries",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        data: {
+            idTienda: $("#cbEmisor").val(),
+            tipoCom: a
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            $("#cbSerie").empty();
+            $("#cbSerie").trigger("chosen:updated");
+            a = 1;
+            for (var c in b.items) {
+                var g = b.items[c];
+                null != g && ($("#cbSerie").append('<option value="' + g.serie + '">' + g.serie + "</option>"), $("#cbSerie").trigger("chosen:updated"));
+                a++
+            }
+        } catch (f) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+        }
+    })
+}
+
+function getArticulosFacPorDoc(a) {
+    var b = jQuery(a),
+        c = b.val();
+    b = b.data("col");
+    var d = $("#url").val(),
+        e = jQuery(a).parents(".block"),
+        g = "",
+        f = "l";
+    $("#radVen").prop("checked") && (f = "t");
+    formData = {
+        criterio: c,
+        col: b,
+        idEntidad: $("#cbEntidadCli").val(),
+        tipo: f
+    };
+    $.ajax({
+        type: "POST",
+        url: d + "formasventa/getListArticulos",
+        beforeSend: function() {
+            block_class(!0, e)
+        },
+        complete: function() {
+            block_class(!1, e)
+        },
+        data: formData
+    }).done(function(a) {
+        try {
+            var b = 1,
+                d = JSON.parse(a),
+                c;
+            for (c in d.items) {
+                var e = d.items[c];
+                if (null != e) {
+                    if ("t" ==
+                        f) {
+                        var h = currency(e.PRECIO2, 1);
+                        var r = e.PRECIO2
+                    } else h = currency(e.precio_cliente, 1), r = e.precio_cliente;
+                    g += '<tr><td><input type="text" class="text-center" style="width: 90%;" id="checkArt" name="checkArt[]" data-id_articulo="' + e.id_articulo + '" data-clave_articulo="' + e.CLAVE_ART + '" data-precli="' + r + '" data-p1="' + e.PRECIO1 + '" data-p2="' + e.PRECIO2 + '" value="0"></td><td>' + e.CLAVE_ART + '</td><td class="font-w300">' + e.descripcion + "</td><td>" + h + '</td><td class="text-center">' + currency(e.PRECIO1, 1) + '</td><td class="text-center">' +
+                        currency(e.PRECIO2, 1) + "</td></tr>"
+                }
+                b++
+            }
+            dataTableMultSearchByID(g, "tbArticulos")
+        } catch (u) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(u)
+        }
+    })
+}
+
+function formVenFunctions() {
+    $("#btnAgregarArtFacDoc").click(function() {
+        var a = $("#url").val(),
+            b = jQuery(this).parents(".block"),
+            c = [];
+        $('input[name="checkArt[]"]').map(function() {
+            var a = jQuery(this),
+                b = parseInt(a.val());
+            a.data("json");
+            0 < b ? c.push({
+                cantidad: b,
+                idArticulo: a.data("id_articulo"),
+                claveArt: a.data("clave_articulo"),
+                precioCliente: a.data("precli"),
+                p1: a.data("p1"),
+                p2: a.data("p2")
+            }) : sinExis = !0
+        }).get();
+        if ("" == c) return !1;
+        $.ajax({
+            type: "POST",
+            url: a + "formasventa/insertMultipleArt",
+            beforeSend: function() {
+                block_class(!0,
+                    b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                items: c,
+                idFactura: $("#idFactura").val(),
+                idTienda: $("#idTienda").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                tableDetalleFactura(b.items);
+                $("#subTotal").val(b.subtotal);
+                $("#iva").val(b.iva);
+                $("#total").val(b.total);
+                $("#lblSubTotalFa").html("$ " + b.subtotal);
+                $("#lblIVAFa").html("$ " + b.iva);
+                $("#lblTotalFa").html("$ " + b.total);
+                $("#modalArticulosOrden").modal("toggle")
+            } catch (g) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"),
+                    console.log(g)
+            }
+        })
+    });
+    $("#txtBuscaArticuloCodMo").keypress(function(a) {
+        13 == a.which && getArticulosFacPorDoc(this)
+    });
+    $("#txtBuscaArticuloDescMo").keypress(function(a) {
+        13 == a.which && getArticulosFacPorDoc(this)
+    });
+    $("#btnAgrArt").click(function() {
+        $("#modalArticulosOrden").modal("toggle")
+    });
+    $("#modal-det-fac").on("shown.bs.modal", function() {
+        $("#codAr").focus()
+    });
+    $("#canAr").keypress(function(a) {
+        if (8 != a.which && 0 != a.which && (48 > a.which || 57 < a.which)) return !1
+    });
+    $(document.body).on("change", "#cbTipoCom", function() {
+        getSeries(this)
+    });
+    $("#btnAddDocDet").click(function() {
+        var a = jQuery(this).parents(".block"),
+            b = "f";
+        $("#docuInRad1").prop("checked") && (b = "o");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "formasventa/insertaFacturaDetalle",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                idOrden: $("#nDcumento").val(),
+                idFactura: $("#idFactura").val(),
+                tipo: b,
+                fecha: $("#txtFecha").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                b.existe ? ($("#subTotal").val(b.subtotal), $("#iva").val(b.iva), $("#total").val(b.total),
+                    $("#lblSubTotalFa").html("$ " + b.subtotal), $("#lblIVAFa").html("$ " + b.iva), $("#lblTotalFa").html("$ " + b.total), tableDetalleFactura(b.items)) : (alert("El registro no existe"), $("#tableSecDoc > tbody").html(""))
+            } catch (e) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+            }
+        })
+    });
+    $("#conRad1").change(function() {
+        $("#lblDesArt").hide();
+        $("#lblArticulo").show();
+        $("#rowCostos").show()
+    });
+    $("#conRad2").change(function() {
+        $("#lblDesArt").show();
+        $("#lblMedida").show();
+        $("#lblArticulo").hide();
+        $("#rowCostos").hide()
+    });
+    $("#codAr").keypress(function(a) {
+        if (13 == a.which) {
+            $("#url").val();
+            var b = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "formasventa/getArticulo",
+                beforeSend: function() {
+                    block_class(!0, b)
+                },
+                complete: function() {
+                    block_class(!1, b)
+                },
+                data: {
+                    clavArt: $("#codAr").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a).item;
+                    null != b ? ($("#cbArticulo").empty().append('<option value="' + b.id_articulo + '">' + b.descripcion + "</option>").val(b.id_articulo).trigger("change"), $("#txtCosto").val(b.ULT_COSTO),
+                        $("#txtP1").val(b.PRECIO1), $("#txtP2").val(b.PRECIO2), $("#precioAr").val(b.PRECIO1)) : alert("El art\u00edculo no existe")
+                } catch (e) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+                }
+            })
+        }
+    });
+    $("#btnAddArtDet").click(function() {
+        $("#url").val();
+        var a = $("#conRad1").prop("checked") ? {
+            idArticulo: $("#cbArticulo").val(),
+            precio: $("#precioAr").val(),
+            cantidad: $("#canAr").val(),
+            idFactura: $("#idFactura").val()
+        } : {
+            precio: $("#precioAr").val(),
+            cantidad: $("#canAr").val(),
+            medida: $("#txtMedida").val(),
+            concepto: $("#txtDesArt").val(),
+            claveArt: $("#codAr").val(),
+            idFactura: $("#idFactura").val()
+        };
+        var b = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "formasventa/insertaFacturaArticulo",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: a
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                b.existe ? (tableDetalleFactura(b.items), $("#subTotal").val(b.subtotal), $("#iva").val(b.iva), $("#total").val(b.total), $("#lblSubTotalFa").html("$ " + b.subtotal), $("#lblIVAFa").html("$ " +
+                    b.iva), $("#lblTotalFa").html("$ " + b.total), $("#codAr").val(""), $("#precioAr").val(""), $("#canAr").val(""), $("#txtP1").val(""), $("#txtP2").val(""), $("#txtCosto").val(""), $("#cbArticulo").select2("val", ""), $("#codAr").focus()) : alert(b.msg)
+            } catch (e) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+            }
+        })
+    });
+    $("#btnNewFac").click(function() {
+        location.reload()
+    });
+    $("#nDcumento").keypress(function(a) {
+        if (13 == a.which) {
+            a = $("#url").val();
+            var b = jQuery(this).parents(".block"),
+                c = $("#docuInRad1").prop("checked") ? 1 : 2;
+            $.ajax({
+                type: "POST",
+                url: a + "formasventa/buscaDocumento",
+                beforeSend: function() {
+                    block_class(!0, b)
+                },
+                complete: function() {
+                    block_class(!1, b)
+                },
+                data: {
+                    tipoDoc: c,
+                    nDcumento: $("#nDcumento").val(),
+                    fecha: $("#txtFecha").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b = "",
+                        d = JSON.parse(a);
+                    if (d.existe) {
+                        var c = d.cabecero,
+                            h = "undefined" != jQuery.type(c.id_orden_c) ? c.id_orden_c : c.folio,
+                            k = "undefined" != jQuery.type(c.fecha) ? c.fecha : c.fecha_alta,
+                            l = "undefined" != jQuery.type(c.total_articulos) ? c.total_articulos :
+                            "";
+                        b += '<tbody class="js-table-sections-header">';
+                        b += '<tr onclick="showDetTable(this)"><td class="text-center"><i class="fa fa-angle-right"></i></td><td class="font-w600">' + h + "</td><td>" + c.nombre_razon_social + "</td><td>" + k + "</td><td>" + l + "</td><td>$ " + truncaDecimales(c.total) + "</td></tr>";
+                        b += "</tbody>";
+                        b += "<tbody>";
+                        for (var m in d.detalle) {
+                            var n = d.detalle[m];
+                            null != n && (b += '<tr><td class="text-center"></td><td class="font-w600 text-success">' + n.clave_art + "</td><td>" + n.descripcion + "</td><td>" + n.precio +
+                                "</td><td>" + n.cantidad + "</td><td>$ " + truncaDecimales(n.total) + "</td></tr>")
+                        }
+                        b += "</tbody>";
+                        $("#tableSecDoc > tbody").html("");
+                        $("#tableSecDoc").append(b)
+                    } else $("#tableSecDoc > tbody").html(""), alert(d.msg)
+                } catch (p) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(p)
+                }
+            })
+        }
+    });
+    $("#btnGenFac").click(function() {
+        console.log("valor " + $("#folFac").html());
+        if ("" == $("#folFac").html() && confirm("\u00bfSon correctos los datos?")) {
+            var a = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "formasventa/invoice",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    id_entidad: $("#cbEntidadCli").val(),
+                    subtotal: $("#subTotal").val(),
+                    iva: $("#iva").val(),
+                    total: $("#total").val(),
+                    mPago: $("#cbMetodoPago").val(),
+                    fPago: $("#cbForPago").val(),
+                    cPago: $("#cbConPago").val(),
+                    idFactura: $("#idFactura").val(),
+                    mPagoT: $("#cbMetodoPago option:selected").text(),
+                    fPagoT: $("#cbForPago option:selected").text(),
+                    cPagoT: $("#cbConPago option:selected").text(),
+                    nRef: $("#txtNumCuenPago").val(),
+                    obs: $("#txtObserFac").val(),
+                    emisor: $("#cbEmisor").val(),
+                    idTienda: $("#cbEmisor").val(),
+                    serie: $("#cbSerie").val(),
+                    tipoComprobante: $("#cbTipoCom").val(),
+                    tipoComprobanteT: $("#cbTipoCom option:selected").text(),
+                    tipoFactura: "O"
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    if (b.edoFac) {
+                        var d = b.file,
+                            e = b.rfcEmisor;
+                        $("#ctrFact").show();
+                        $("#folFac").html(b.folioFac);
+                        $("#imgPDF").attr("href", $("#url").val() + "formasventa/attachment/" + d + "/" + e + "/pdf");
+                        $("#imgXML").attr("href", $("#url").val() + "formasventa/attachment/" +
+                            d + "/" + e + "/xml");
+                        $("#btnGenFac").hide()
+                    } else alert(b.msg)
+                } catch (g) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(g)
+                }
+            })
+        }
+    });
+    $("#btnComFac").click(function() {
+        if ("" == $("#txtRFC").val()) return alert("Ingresa el RFC"), !1;
+        if (null == $("#cbEntidadCli").val()) return alert("Selecciona un cliente para poder facturar"), !1;
+        $("#txtCorreosFac").importTags("");
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "formasventa/getCorrSerie",
+            beforeSend: function() {
+                block_class(!0,
+                    a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                id_entidad: $("#cbEntidadCli").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a),
+                    d = b.correos,
+                    e = b.series;
+                null != d && $("#txtCorreosFac").importTags(d);
+                $("#modal-gen-fac").modal("toggle");
+                $("#cbEmisor").val($("#idTienda").val());
+                2 <= parseInt($("#usuarioNivel").val()) && $("#cbEmisor").prop("disabled", !0);
+                $("#lblSubTotalFaMo").html($("#lblSubTotalFa").html());
+                $("#lblIVAFaMo").html($("#lblIVAFa").html());
+                $("#lblTotalFaMo").html($("#lblTotalFa").html());
+                $("#cbSerie").empty();
+                $("#cbSerie").trigger("chosen:updated");
+                a = 1;
+                for (var g in e) {
+                    var f = e[g];
+                    null != f && ($("#cbSerie").append('<option value="' + f.serie + '">' + f.serie + "</option>"), $("#cbSerie").trigger("chosen:updated"));
+                    a++
+                }
+            } catch (h) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(h)
+            }
+        })
+    });
+    $("#btnActDetalleFac").click(function() {
+        var a = $("#url").val(),
+            b = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: a + "formasventa/detalleFactura",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1,
+                    b)
+            },
+            data: {
+                idFactura: $("#idFactura").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                tableDetalleFactura(b)
+            } catch (e) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+            }
+        })
+    });
+    $("#btnAgrVen").click(function() {
+        $("#modal-det-fac").modal();
+        $("#codAr").val("");
+        $("#precioAr").val("");
+        $("#canAr").val("");
+        $("#tableSecDoc > tbody").html("")
+    });
+    $("#txtCod").keypress(function(a) {
+        if ("13" == a.which) {
+            var b = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() +
+                    "entidades/getEntidad",
+                beforeSend: function() {
+                    block_class(!0, b)
+                },
+                complete: function() {
+                    block_class(!1, b)
+                },
+                data: {
+                    $codEnt: this.value
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    null != b ? ($("#txtRFC").val(b.rfc), $("#txtCalle").val(b.calle), $("#txtExt").val(b.n_exterior), $("#txtInt").val(b.n_interior), $("#txtCol").val(b.colonia), $("#txtLocalidad").val(b.LOCALIDAD), $("#txtRef").val(b.REFERENCIA), $("#txtPais").val(b.pais), $("#txtPobla").val(b.poblacion), $("#txtEdo").val(b.ESTADO), $("#txtCiudad").val(b.CIUDAD),
+                        $("#txtCP").val(b.CP)) : alert("C\u00f3digo inexistente")
+                } catch (e) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+                }
+            })
+        }
+    });
+    $("#cbEntidadCli").select2({
+        ajax: {
+            url: $("#url").val() + "entidades/entidadesSelect",
+            method: "POST",
+            dataType: "json",
+            delay: 250,
+            data: function(a) {
+                return {
+                    search: a.term,
+                    tipo: "c"
+                }
+            },
+            processResults: function(a) {
+                var b = [];
+                $.each(a, function(a, d) {
+                    null != d && ($("#txtCod").val(d.cod_entidad), $("#txtRFC").val(d.rfc), $("#txtCalle").val(d.calle), $("#txtExt").val(d.n_exterior),
+                        $("#txtInt").val(d.n_interior), $("#txtCol").val(d.colonia), $("#txtLocalidad").val(d.LOCALIDAD), $("#txtRef").val(d.REFERENCIA), $("#txtPais").val(d.pais), $("#txtPobla").val(d.poblacion), $("#txtEdo").val(d.ESTADO), $("#txtCiudad").val(d.CIUDAD), $("#txtCP").val(d.CP), b.push({
+                            id: d.id_entidad,
+                            text: d.nombre_razon_social
+                        }))
+                });
+                console.log(b);
+                return {
+                    results: b
+                }
+            },
+            cache: !0
+        },
+        minimumInputLength: 1,
+        placeholder: " ",
+        allowClear: !0
+    });
+    $("#cbArticulo").select2({
+        ajax: {
+            url: $("#url").val() + "articulos/articuloJson",
+            method: "POST",
+            dataType: "json",
+            delay: 250,
+            data: function(a) {
+                return {
+                    search: a.term
+                }
+            },
+            processResults: function(a) {
+                var b = [];
+                $.each(a, function(a, d) {
+                    null != d && ($("#txtCosto").val("$ " + truncaDecimales(d.ULT_COSTO)), $("#txtP1").val("$ " + truncaDecimales(d.PRECIO1)), $("#txtP2").val("$ " + truncaDecimales(d.PRECIO2)), $("#precioAr").val(truncaDecimales(d.PRECIO1)), b.push({
+                        id: d.id_articulo,
+                        text: d.descripcion
+                    }))
+                });
+                console.log(b);
+                return {
+                    results: b
+                }
+            },
+            cache: !0
+        },
+        minimumInputLength: 1,
+        placeholder: " ",
+        allowClear: !0
+    })
+}
+
+function showFactura(a) {
+    $data = jQuery(a);
+    a = $data.data("foliofactura");
+    var b = $data.data("nombrearchivo") + ".pdf",
+        c, d = $("#cbTiendaFac").val();
+    1 == d ? c = "MARJ570127KP5" : 2 == d ? c = "NAPS660104S47" : 3 == d && (c = "IHP0406212D7");
+    $("#hLblNumFac").html(a);
+    c = $("#base_url").val() + "/upload/invoice/" + c + "/" + b;
+    console.log(c);
+    $("#modalMostrarFacLis").modal({
+        backdrop: "static",
+        keyboard: !1
+    });
+    $("#showPDFfac").attr("data", c)
+}
+
+function detalleFactura(a) {
+    $("#modal-det-fac").modal("toggle");
+    $data = jQuery(a);
+    var b = $data.data("idfactura"),
+        c = $data.data("artchivo"),
+        d = $data.data("rfcemisor");
+    a = $data.data("estatus");
+    var e = $data.data("nombrearchivo"),
+        g = $data.data("ordenc");
+    $("#id_factura").val(b);
+    $("#cbMetodoPago").val($data.data("idmetodopago"));
+    $("#cbForPago").val($data.data("idformapago"));
+    $("#cbConPago").val($data.data("idcondicionpago"));
+    $("#cbEmisor").val($data.data("idemisor"));
+    $("#cbSerie").val($data.data("serie"));
+    $("#txtNumCuenPago").val($data.data("ref"));
+    $("#txtObserFac").val($data.data("observaciones"));
+    $("#lblSubTotalFaMo").html($data.data("subtotal"));
+    $("#lblIVAFaMo").html($data.data("iva_factor"));
+    $("#lblTotalFaMo").html($data.data("total"));
+    $("#folFac").html($data.data("serie") + "-" + $data.data("folio"));
+    $("#rfcEmisor").val(d);
+    $("#apiKey").val($data.data("apikey"));
+    $("#nombreArchivo").val(e);
+    $("#folioFiscal").val($data.data("foliofiscal"));
+    $("#idOrdenC").val(g);
+    $("#folFactura").val($data.data("folio"));
+    b = $("#url").val() + "formasventa/attachment/" +
+        encodeURIComponent(c.trim()) + "/" + d + "/pdf";
+    c = $("#url").val() + "formasventa/attachment/" + encodeURIComponent(c.trim()) + "/" + d + "/xml";
+    $("#imgPDF").attr("href", b);
+    $("#imgXML").attr("href", c);
+    "A" == a ? (a = '<label>Estado</label> <span class="label label-success">Activa</span>', $("#btnCanFac").show()) : (a = '<label>Estado</label> <span class="label label-danger">Cancelada</span>', $("#btnCanFac").hide());
+    $("#edoFac").html(a);
+    $("#detCanFac").hide()
+}
+
+function listaFacturasFunctions() {
+    $("#btnExpFac").click(function() {
+        var a = {
+            cbTiendaFac: $("#cbTiendaFac").val(),
+            txtFecFacDesde: $("#txtFecFacDesde").val(),
+            txtFecFacHasta: $("#txtFecFacHasta").val(),
+            tipoFac: $("#cbTipoFac").val(),
+            formaFac: $("#cbFormFac").val()
+        };
+        OpenWindowWithPost($("#url").val() + "formasventa/exportListaFacturas", "width=100,height=100,left=100,top=100,resizable=no,scrollbars=yes", "NewFile", a)
+    });
+    $("#btnCanFac").click(function() {
+        $("#detCanFac").show();
+        $("#txtObserCanFac").focus()
+    });
+    $("#btnConCanFac").click(function() {
+        confirm("\u00bfDesea cancelar la factura");
+        var a = $("#url").val(),
+            b = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: a + "ordenes/cancelaDocumento",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                idFactura: $("#id_factura").val(),
+                rfcEmisor: $("#rfcEmisor").val(),
+                apiKey: $("#apiKey").val(),
+                folioFiscal: $("#folioFiscal").val(),
+                observa: $("#txtObserCanFac").val(),
+                nombreArchivo: $("#nombreArchivo").val(),
+                idOrden: $("#idOrdenC").val(),
+                folFactura: $("#folFactura").val(),
+                idKardex: 8,
+                folPre: $("#folFactura").val(),
+                tipo: "FA-",
+                idTipoCom: 1
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                alert(b.msg)
+            } catch (e) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+            }
+        })
+    });
+    $("#btnAcListaFac").click(function() {
+        var a = $("#url").val(),
+            b = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: a + "formasventa/listadoFacturas",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                cbTiendaFac: $("#cbTiendaFac").val(),
+                txtFecFacDesde: $("#txtFecFacDesde").val(),
+                txtFecFacHasta: $("#txtFecFacHasta").val(),
+                tipoFac: $("#cbTipoFac").val(),
+                formaFac: $("#cbFormFac").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = "",
+                    c = JSON.parse(a),
+                    g;
+                for (g in c.items) {
+                    var f = c.items[g],
+                        h = f.fecha_alta.substring(0, 10);
+                    f.tienda.substring(0, 5);
+                    var k = f.usuario.substring(0, 5);
+                    null != f && (b += '<tr><td><a data-idfactura="' + f.id_factura_c + '" data-idmetodopago="' + f.id_metodo_pago + '"data-idformapago="' + f.id_forma_pago + '"data-idcondicionpago="' + f.id_condiciones_pago + '"data-idemisor="' + f.id_tienda + '"data-serie="' + f.serie + '"data-ref="' + f.n_ref + '"data-observaciones="' +
+                        f.observaciones + '"data-artchivo="' + f.nombre_archivo + '"data-subtotal="' + f.subtotal + '"data-iva_factor="' + f.iva_factor + '"data-total="' + f.total + '"data-estatus="' + f.estatus + '"data-folio="' + f.folio + '"data-rfcemisor="' + f.rfc_tienda + '"data-apikey="' + f.api_key + '"data-foliofiscal="' + f.folio_fiscal + '"data-ordenc="' + (null != f.id_orden_c ? f.id_orden_c : 0) + '"data-nombrearchivo="' + f.nombre_archivo + '" href="#" onclick="detalleFactura(this)" >' + f.folio + "-" + f.serie + '</a><div class="btn-group"><button data-nombrearchivo="' +
+                        f.nombre_archivo + '" data-foliofactura="' + f.folio + "-" + f.serie + '" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Mostrar factura" onclick="showFactura(this)"><i class="fa fa-eye"></i></button></div></td><td class="text-center">' + ("A" == f.estatus ? '<span class="label label-success">A</span>' : '<span class="label label-danger">C</span>') + "</td><td>" + f.nombre_razon_social + '</td><td class="text-center">' + h + '</td><td class="text-center">' + currency(f.total, 1) + "</td><td>" + k + "</td></tr>")
+                }
+                dataTableApp(b);
+                $("#lblSubTotalFa").html("$ " + c.subtotal);
+                $("#lblIVAFa").html("$ " + c.iva);
+                $("#lblTotalFa").html("$ " + c.total);
+                $("#lblSubOperaFacAc").html(c.fac_a);
+                $("#lblSubOperaFacCa").html(c.fac_c)
+            } catch (l) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(l)
+            }
+        })
+    });
+    $("#btnAgregarFormaVen").click(function() {
+        $("#type").val();
+        window.location.href = $("#url").val() + "formasventa/nuevaFactura"
+    })
+}
+
+function listaForVenFunctions() {
+    $("#btnAgregarFormaVen").click(function() {
+        var a = $("#type").val();
+        window.location.href = $("#url").val() + "formasventa/nuevaForma/" + a
+    });
+    $("#btnAcListaFor").click(function() {
+        var a = $("#url").val(),
+            b = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: a + "formasventa/buscaFormasVenta",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                dateSearch: $("#txtDate").val(),
+                idEntidad: $("#cbEntidadCli").val(),
+                type: $("#type").val()
+            }
+        }).done(function(a) {
+            try {
+                var b =
+                    "",
+                    c = JSON.parse(a),
+                    g;
+                for (g in c) {
+                    var f = c.items[g];
+                    null != f && (b += "<tr><td>" + f.id_formas_venta + "</td><td>" + f.nombre_razon_social + "</td><td>" + f.fecha + "</td><td>" + f.articulos + "</td><td>" + currency(f.importe, 1) + "</td><td>" + f.usuario + '</td><td><button class="btn btn-sm btn-default push-5-r push-10" type="button" onClick="modal_lista_vendedor()"><i class="fa fa-print"></i> Listas</button></td></tr>')
+                }
+                dataTableApp(b)
+            } catch (h) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(h)
+            }
+        })
+    })
+}
+
+function muestraOrdenCompra() {
+    if ("" != $("#detJonCompra").val()) {
+        var a = $("#cabJSonCompra").val();
+        a = JSON.parse(a);
+        $("#cbEntidad").empty().append('<option value="' + a.id_entidad + '">' + a.nombre_razon_social + "</option>").val(a.id_entidad).trigger("change");
+        $("#txtCodigoPro").val(a.cod_entidad);
+        $("#cbTienda").val(a.id_tienda);
+        a = $("#detJSonCompra").val();
+        a = JSON.parse(a);
+        for (var b in a) {
+            var c = a[b];
+            null != c && (c = JSON.stringify({
+                idArticulo: c.id_articulo,
+                claveArticulo: c.clave_art,
+                descripcion: c.descripcion,
+                costo: c.costo,
+                piezas: c.cantidad,
+                master: c.master_pack,
+                importe: c.importe,
+                masterCan: c.master
+            }), tbOrdenCompra.push(c), localStorage.setItem("tbOrdenCompra", JSON.stringify(tbOrdenCompra)))
+        }
+        listaOrdenCompra()
+    }
+}
+
+function Compra() {
+    $("#btnBusOrdenCom").click(function() {
+        $("#modalBuscaOC").modal()
+    });
+    $("#txtNumOC").keypress(function(a) {
+        13 == a.which && $.ajax({
+            type: "POST",
+            url: $("#url").val() + "compras/getOrdenCompra",
+            beforeSend: function() {
+                block_class(!0, block)
+            },
+            complete: function() {
+                block_class(!1, block)
+            },
+            data: {
+                idTienda: $("#cbTiendaOC").val(),
+                folOC: $("#txtNumOC").val()
+            }
+        }).done(function(a) {
+            try {
+                JSON.parse(a)
+            } catch (c) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(c)
+            }
+        })
+    })
+}
+
+function changeTitleListCompras(a) {
+    var b = $("#lblTitlePage");
+    3 == a.val() ? (b.html("Ordenes de Compra"), document.title = "Listado - Ordenes de Compra") : 6 == a.val() ? (b.html("Compras"), document.title = "Listado - Compras") : (b.html("Compras, Ordenes de Compra"), document.title = "Listado - Compras, Ordenes de Compra")
+}
+
+function changeTitleCompras(a) {
+    var b = $("#lblTitlePage");
+    3 == a.val() ? (b.html("Orden de Compra"), document.title = "Ordene de Compra") : (a.val(), b.html("Compra"), document.title = "Compra")
+}
+
+function ListadoCompras() {
+    $(document.body).on("change", "#idTipoComprobante", function() {
+        changeTitleListCompras($("#idTipoComprobante"))
+    });
+    $("#btnBuscaListaCompra").click(function() {
+        buscaCompra(this)
+    });
+    $(".buscaCO").keypress(function(a) {
+        13 == a.which && buscaCompra(this)
+    });
+    $(document.body).on("change", "#cbFiltro", function() {
+        var a = this.value,
+            b = jQuery(this).parents(".block");
+        listOrdCompra(b, a)
+    });
+    $("#btnListOC").click(function() {
+        var a = $("#cbFiltro").val(),
+            b = jQuery(this).parents(".block");
+        listOrdCompra(b, a)
+    });
+    $("#btnAgregarListaCompra").click(function() {
+        var a = $("#url").val(),
+            b = $("#idTipoComprobante").val();
+        window.location.href = a + "compras/viewCompra/0/" + b
+    })
+}
+
+function listOrdCompfunctions() {
+    $(".buscaOC").keypress(function(a) {
+        13 == a.which && buscaOrdenCompra(this)
+    });
+    $(document.body).on("change", "#cbFiltro", function() {
+        var a = this.value,
+            b = jQuery(this).parents(".block");
+        listOrdCompra(b, a)
+    });
+    $("#btnListOC").click(function() {
+        var a = $("#cbFiltro").val(),
+            b = jQuery(this).parents(".block");
+        listOrdCompra(b, a)
+    });
+    $("#btnAgregarListaCompra").click(function() {
+        var a = $("#url").val();
+        window.location.href = a + "compras/viewOrdenCompra/0"
+    })
+}
+
+function agregaDetalleOrden() {
+    var a = parseFloat($("#txtArtCan").val()) * parseFloat($("#txtArtMaster").val()),
+        b = parseFloat(a) * parseFloat($("#txtArtCos").val());
+    a = JSON.stringify({
+        idArticulo: $("#id_articulo").val(),
+        claveArticulo: $("#txtCodArt").val(),
+        descripcion: $("#txtArticulo").val(),
+        costo: $("#txtArtCos").val(),
+        piezas: a,
+        master: $("#txtArtMaster").val(),
+        importe: b,
+        masterCan: $("#txtArtCan").val()
+    });
+    tbOrdenCompra.push(a);
+    console.log(a);
+    localStorage.setItem("tbOrdenCompra", JSON.stringify(tbOrdenCompra));
+    $("#txtArticulo").val("");
+    $("#txtArtExis").val("");
+    $("#txtArtMax").val("");
+    $("#txtArtMin").val("");
+    $("#txtArtCan").val("");
+    $("#txtArtMaster").val("");
+    $("#txtArtCos").val("");
+    $("#txtCodArt").val("");
+    $("#txtCodArt").focus();
+    listaOrdenCompra()
+}
+
+function eliminaItemOC(a) {
+    confirm("\u00bfDeseas eliminar el registro?") && (a = jQuery(a), a = parseInt(a.data("indextabla")), console.log("item eliminar" + a), tbOrdenCompra.splice(a, 1), console.log(JSON.stringify(tbOrdenCompra)), localStorage.setItem("tbOrdenCompra", JSON.stringify(tbOrdenCompra)), listaOrdenCompra())
+}
+
+function listaOrdenCompra() {
+    $("#tblLisOrdenCompra tbody").html("");
+    var a = localStorage.getItem("tbOrdenCompra");
+    console.log("Antes parse" + a);
+    a = JSON.parse(a);
+    console.log("Primer parse" + a);
+    var b = 0,
+        c = 0,
+        d = 0,
+        e = "",
+        g;
+    for (g in a) {
+        var f = JSON.parse(a[g]);
+        console.log("Segundo parse" + f);
+        null != f && (b += parseFloat(f.importe), c += parseInt(f.master), d += parseInt(f.piezas), e += "<tr><td>" + f.claveArticulo + "</td><td>" + f.descripcion + "</td><td>" + f.piezas + "</td><td>" + currency(f.costo, 1) + "</td><td>" + f.master + "</td><td>" + currency(f.importe,
+            1) + "</td><td><button type='button' class='btn-white btn btn-xs' data-indextabla='" + g + "' onClick='eliminaItemOC(this)'><span class='fa fa-close'></span></button></td></tr>")
+    }
+    dataTableByID(e, "tblLisOrdenCompra");
+    $("#lblTotalMas").html(c);
+    $("#lblTotalPz").html(d);
+    $("#lblTotal").html("$ " + currency(b, 0))
+}
+
+function padToFourUtil(a) {
+    9999 >= a && (a = ("0000" + a).slice(-4));
+    return a
+}
+
+function editFile(a) {
+    a = jQuery(a);
+    location.href = a.data("url")
+}
+
+function showUtilPDF(a) {
+    a = jQuery(a).data("nombrearchivo");
+    console.log("ruta " + a);
+    $("#modalShowPDF").modal({
+        backdrop: "static",
+        keyboard: !1
+    });
+    $("#showPDF").attr("data", a)
+}
+
+function buscaCompra(a) {
+    var b = $("#url").val(),
+        c = jQuery(a).parents(".block");
+    jQuery(a);
+    var d = "";
+    $.ajax({
+        type: "POST",
+        url: b + "comprasrest/getlistaCompra",
+        beforeSend: function() {
+            block_class(!0, c)
+        },
+        complete: function() {
+            block_class(!1, c)
+        },
+        error: function(a, b, d) {
+            swal({
+                type: "error",
+                title: "Error",
+                text: "Error interno, favor de reportarlo"
+            })
+        },
+        data: $("#frmBusOrCom").serialize()
+    }).done(function(a) {
+        try {
+            var b = 1,
+                c = a.item,
+                e;
+            for (e in c) {
+                var k = c[e];
+                if (null != k) {
+                    var l = $("#base_url").val() + "upload/compra/" + $("#rfc").val() +
+                        "/" + k.nombreArchivo,
+                        m = moment(k.fechaElabora).format("DD/MM/YYYY"),
+                        n = applyCurrency(k.importe),
+                        p = a = void 0;
+                    3 == $("#idTipoComprobante").val() ? p = k.idOrdenCompraC : 6 == $("#idTipoComprobante").val() && (p = k.idCompraC);
+                    var r = $("#url").val() + "compras/viewComprasModal/" + p + "/" + $("#idTipoComprobante").val();
+                    "p" == k.estatus ? a = '<span class="label label-warning" title="Pendiente de Confirmar">P</span>' : "a" == k.estatus ? a = '<span class="label label-success" title="Aprobado">A</span>' : "c" == k.estatus && (a = '<span class="label label-danger" title="Cancelado">C</span>');
+                    d += '<tr><td class="text-center"><label>' + padToFourUtil(k.folio) + "</label></td><td ><label>" + k.cod_entidad + "</label></td><td ><label>" + k.nombre_razon_social + '</label></td><td class="text-center"><label>' + m + '</label></td><td class="text-center"><label>' + k.tipoComprobante + '</label></td><td class="text-center"><label>' + k.facPre + '</label></td><td bgcolor="#58FAAC" class="text-center"><label>' + n + '</label></td><td class="text-center hidden-xs">' + a + '</td><td class="text-center"><label>' + k.usuarioElabora +
+                        '</label></td><td class="text-center"><div class="btn-group"><button class="btn btn-xs btn-default" data-nombrearchivo="' + l + '" type="button" data-toggle="tooltip" title="Mostrar comprobante" onclick="showUtilPDF(this)"><i class="fa fa-eye"></i></button><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Cancelar comprobante"><i class="fa fa-times-circle"></i></button><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" data-url="' + r + '" title="Editar comprobante" onclick="getAddCompra(this);"><i class="fa fa-edit"></i></button></div></td>';
+                    "</tr>"
+                }
+                b++
+            }
+            dataTableApp(d)
+        } catch (u) {
+            alert("Error interno, favor de re portarlo al administrador del sistema"), console.log(u)
+        }
+    })
+}
+
+function buscaOrdenCompra(a) {
+    var b = $("#url").val(),
+        c = jQuery(a).parents(".block");
+    jQuery(a);
+    var d = "";
+    $.ajax({
+        type: "POST",
+        url: b + "compras/listaOrdenesCompra",
+        beforeSend: function() {
+            block_class(!0, c)
+        },
+        complete: function() {
+            block_class(!1, c)
+        },
+        data: $("#frmBusOrCom").serialize()
+    }).done(function(a) {
+        try {
+            var b = 1,
+                c = JSON.parse(a),
+                e;
+            for (e in c.items) {
+                var k = c.items[e];
+                if (null != k) {
+                    var l = $("#base_url").val() + "upload/orden_compra/" + $("#rfc").val() + "/" + k.nombreArchivo,
+                        m = moment(k.fechaElabora).format("llll");
+                    a = void 0;
+                    var n = padToFourUtil(k.folio);
+                    "a" == k.estatus ? (a = '<span class="label label-success">Activa</span>', n = '<a href="' + $("#url").val() + "compras/viewOrdenCompra/" + k.idOrdenCompraC + '">' + padToFourUtil(k.folio) + "</a>") : "o" == k.estatus ? a = '<span class="label label-success">Cerrada</span>' : "c" == k.estatus && (a = '<span class="label label-danger">Cancelada</span>');
+                    d += '<tr><td class="text-center"><label>' + n + '</label><div class="btn-group"><button data-nombrearchivo="' + l + '" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Mostrar" onclick="showUtilPDF(this)"><i class="fa fa-eye"></i></button></div></td><td ><label>' +
+                        k.cod_entidad + "</label></td><td ><label>" + k.nombre_razon_social + '</label></td><td class="text-center"><label>' + m + '</label></td><td class="text-center hidden-xs">' + a + "</td></tr>"
+                }
+                b++
+            }
+            dataTableApp(d)
+        } catch (p) {
+            alert("Error interno, favor de re portarlo al administrador del sistema"), console.log(p)
+        }
+    })
+}
+
+function buscaArtProveedorEnLista(a, b) {
+    for (var c in a)
+        if ($.trim(a[c].idArticulo) == $.trim(b)) return !0;
+    return !1
+}
+
+function crudOrdenComArt() {
+    agregaArtOrdenCom()
+}
+
+function editArOrCom() {
+    console.log("indexRegEdita " + indexOrdenCom);
+    var a = parseInt($("#cantidadM").val()),
+        b = parseFloat($("#costoM").val()),
+        c = b * a,
+        d = parseFloat($("#factorDescM").val()),
+        e = b * d,
+        g = b - e;
+    var f = $("#costoMasIva");
+    $(f).is(":checked") ? (f = currencySn(1.16 * g), console.log("costo + IVA", f)) : f = b;
+    a = {
+        idArticulo: $("#idArticuloM").val(),
+        costo: b,
+        precio01: $("#precio01M").val(),
+        precio02: $("#precio02M").val(),
+        cantidad: a,
+        importe: c,
+        articulo: $("#articuloM").val(),
+        claveArticulo: $("#claveArticuloM").val(),
+        index: indexOrdenCom,
+        costoUnitario: g,
+        costoIva: f,
+        factorDescuento: e,
+        descuento: d
+    };
+    console.log("dato a eactualizar " + JSON.stringify(a));
+    tbOrdenCom[indexOrdenCom] = a;
+    localStorage.setItem("tbOrdenCom", JSON.stringify(tbOrdenCom));
+    edoOrdenCom = "A";
+    $("#modalEditaPartida").modal("toggle");
+    listaArtOrden(!0)
+}
+
+function agregaArtOrdenCom() {
+    var a = localStorage.getItem("tbOrdenCom"),
+        b = $("#costoMasIva");
+    a = JSON.parse(a);
+    console.log("itemss ", a);
+    a = buscaArtExitOrdCom(a, $("#claveArticuloH").val());
+    var c = parseInt($("#cantidad").val());
+    var d = parseFloat($("#tasaTrasladado").val());
+    if ($(b).is(":checked")) {
+        var e = b = parseFloat($("#costo").val());
+        var g = e + e * d
+    } else e = b = parseFloat($("#costo").val()), g = $("#costo").val(), d = 0;
+    null != a && (c += a.cantidad);
+    var f = parseFloat($("#factorDesc").val());
+    var h = b * c;
+    var k = h * f;
+    var l = h - k;
+    var m =
+        l * d;
+    var n = parseFloat(l + m);
+    null == a ? (console.log("no existe articulo en det compra+ ", a), a = {
+        idArticulo: $("#idArticulo").val(),
+        precio01: $("#precio01").val(),
+        precio02: $("#precio02").val(),
+        articulo: $("#articulo").val(),
+        claveArticulo: $("#claveArticuloH").val(),
+        index: indexOrdenCom + 1,
+        costo: b,
+        cantidad: c,
+        factorDescuento: f,
+        subTotal: h,
+        descuento: k,
+        subTotalGrabado: l,
+        impTrasladado: m,
+        total: n,
+        costoUnitario: e,
+        costoIva: g,
+        tasaTrasladado: d
+    }, indexOrdenCom++, tbOrdenCom.push(a)) : (console.log("existe articulo en det compraaaaa " +
+        a.articulo + " " + a.claveArticulo), tbOrdenCom[a.index] = {
+        idArticulo: $("#idArticulo").val(),
+        precio01: $("#precio01").val(),
+        precio02: $("#precio02").val(),
+        articulo: $("#articulo").val(),
+        claveArticulo: $("#claveArticuloH").val(),
+        index: a.index,
+        costo: b,
+        cantidad: c,
+        factorDescuento: f,
+        subTotal: h,
+        descuento: k,
+        subTotalGrabado: l,
+        impTrasladado: m,
+        total: n,
+        costoUnitario: e,
+        costoIva: g,
+        tasaTrasladado: d
+    });
+    console.log("itemmCompraa ", tbOrdenCom);
+    localStorage.setItem("tbOrdenCom", JSON.stringify(tbOrdenCom));
+    listaArtOrden(!0)
+}
+
+function editaArtOrCom(a) {
+    var b = jQuery(a);
+    a = b.data("json");
+    indexOrdenCom = b = b.data("index");
+    $("#jsonRow").val(JSON.stringify(a));
+    $("#modalEditaPartida").modal("toggle");
+    console.log("objArti ", a);
+    $("#claveArticuloM").val(a.claveArticulo);
+    $("#articuloM").val(a.articulo);
+    $("#costoM").val(a.costo);
+    $("#cantidadM").val(a.cantidad);
+    $("#idArticuloM").val(a.idArticulo);
+    $("#idArticuloM").val(a.idArticulo);
+    $("#importeM").val(applyCurrency(a.importe));
+    $("#importeM").val(applyCurrency(a.importe));
+    $("#indexM").val(b);
+    $("#tasaTrasladadoM").val(a.tasaTrasladado);
+    $("#precio01M").val(a.precio01);
+    $("#precio02M").val(a.precio02);
+    $("#factorDescM").val(a.factorDescuento)
+}
+
+function editaArtOrdenCom(a) {
+    var b = $(a),
+        c = jQuery(a);
+    a = c.data("json");
+    c = c.data("col");
+    b = b.html();
+    b = b.replace("<br>", "");
+    b = b.replace("<label>", "");
+    b = b.replace("</label>", "");
+    if ("can" == c) {
+        var d = parseInt(b);
+        c = a.costo
+    } else c = currency(b), d = a.cantidad;
+    console.log("cantidad " + d + " costo " + c);
+    var e = c * d;
+    b = a.index;
+    console.log("index " + b);
+    a = {
+        idArticulo: a.idArticulo,
+        costo: c,
+        cantidad: d,
+        importe: e,
+        articulo: a.articulo,
+        claveArticulo: a.claveArticulo,
+        index: b
+    };
+    console.log("valEdit " + JSON.stringify(a));
+    tbOrdenCom[b] = a;
+    localStorage.setItem("tbOrdenCom", JSON.stringify(tbOrdenCom));
+    "A" == edoOrdenCom;
+    listaArtOrden(!1)
+}
+
+function eliminaArtOrdenCom() {}
+
+function buscaArtExitOrdCom(a, b) {
+    for (var c in a) {
+        var d = a[c];
+        console.log("claveArtArray " + d.claveArticulo + " claveCompra " + b);
+        if (d.claveArticulo == b) return d
+    }
+    return null
+}
+
+function buscaArtExitOrdVenta(a, b) {
+    for (var c in a) {
+        var d = a[c];
+        if (null != d && (console.log("Datos de entrada : idArtLista " + d.idArticulo + " idArtAdd " + b), parseInt(d.idArticulo) == b)) return console.log("Si existe el articulo : idArtLista " + d.idArticulo + " idArtAdd " + b), d.index = c, d
+    }
+    console.log("No existe el articulo en la lista de venta");
+    return null
+}
+
+function delArtOrCom(a) {
+    a = jQuery(a);
+    a = parseInt(a.data("index"));
+    tbOrdenCom.splice(a, 1);
+    localStorage.setItem("tbOrdenCom", JSON.stringify(tbOrdenCom));
+    listaArtOrden(!0)
+}
+
+function calculaTotMOC(a) {
+    var b;
+    var c = parseInt($("#cantidadM").val());
+    a = parseFloat($("#tasaTrasladadoM").val());
+    var d = $("#costoMasIva");
+    if ($(d).is(":checked")) {
+        d = b = parseFloat($("#costoM").val());
+        var e = d + d * a
+    } else d = b = parseFloat($("#costoM").val()), e = $("#costoM").val(), a = 0;
+    var g = parseFloat($("#factorDescM").val());
+    c *= b;
+    console.log("EDIT:subTotal", c);
+    b *= g;
+    console.log("EDIT:descuento", b);
+    g = c - b;
+    console.log("EDIT:subTotalGrabado", g);
+    var f = g * a;
+    console.log("EDIT:tasaTrasladado", a);
+    console.log("EDIT:impTrasladado",
+        f);
+    a = parseFloat(g + f);
+    console.log("EDIT:total", a);
+    $("#subTotalM").val(c);
+    $("#descuentoM").val(b);
+    $("#subTotalGrabadoM").val(g);
+    $("#impTrasladadoM").val(f);
+    $("#totalM").val(a);
+    $("#costoInitarioM").val(d);
+    $("#costoIvaM").val(e);
+    $("#importeM").val(applyCurrency(a))
+}
+
+function listaArtOrden(a) {
+    var b = localStorage.getItem("tbOrdenCom");
+    b = JSON.parse(b);
+    var c = "",
+        d = "",
+        e = 0,
+        g = 0,
+        f = 0,
+        h = 0,
+        k = 0;
+    if ("c" == $("#estatus").val() || "o" == $("#estatus").val()) d = "disabled";
+    for (var l in b) {
+        var m = b[l],
+            n = JSON.stringify(m);
+        null != m && (e += parseFloat(m.subTotal), g += parseFloat(m.descuento), f += parseFloat(m.subTotalGrabado), h += parseFloat(m.impTrasladado), k += parseFloat(m.total), c += "<tr><td><label>" + m.claveArticulo + "</label></td><td><label><a data-id='" + m.idArticulo + "' onclick='showfichaArt(this)'>" +
+            m.articulo + "<a/></label></td><td class='text-center' data-col='can' data-json='" + n + "' contenteditable='false' onBlur='editaArtOrdenCom(this)'><label>" + m.cantidad + "</label></td><td class='text-center' data-col='cos' data-json='" + n + "' contenteditable='false' onBlur='editaArtOrdenCom(this)'><label>" + applyCurrency(m.costo) + "</label></td><td bgcolor='#58FAAC' class='text-center' data-col='cos' data-json='" + n + "' contenteditable='false' onBlur='editaArtOrdenCom(this)'><label>" + applyCurrency(m.subTotal) +
+            "</label></td><td class='text-center' data-col='cos' data-json='" + n + "' contenteditable='false' onBlur='editaArtOrdenCom(this)'><label>" + applyCurrency(m.descuento) + "</label></td><td bgcolor='#58FAAC' class='text-center' data-col='cos' data-json='" + n + "' contenteditable='false' onBlur='editaArtOrdenCom(this)'><label>" + applyCurrency(m.subTotalGrabado) + "</label></td><td class='text-center' data-col='cos' data-json='" + n + "' contenteditable='false' onBlur='editaArtOrdenCom(this)'><label>" + applyCurrency(m.impTrasladado) +
+            "</label></td><td bgcolor='#58FAAC' class='text-center' data-col='cos' data-json='" + n + "' contenteditable='false' onBlur='editaArtOrdenCom(this)'><label>" + applyCurrency(m.total) + "</label></td><td class='text-center'><div class='btn-group'><button " + d + " class='btn btn-xs btn-default' onclick='delArtOrCom(this)' data-index='" + l + "' type='button data-toggle=tooltip' title='Eliminar registrooo'><i class='fa fa-times'></i></button></div><div class='btn-group'><button " + d + " class='btn btn-xs btn-default' data-index='" +
+            l + "' data-json='" + n + "' onclick='editaArtOrCom(this)' data-index='" + l + "' type='button data-toggle=tooltip' title='Edita registro'><i class='fa fa-pencil'></i></button></div></td></tr>")
+    }
+    $("#tblLisOrdenCompra tbody").html(c);
+    a && ($("#idArticulo").val(0), $("#claveArticulo").val(""), $("#articulo").val(""), $("#costo").val(""), $("#cantidad").val(""), $("#claveArticulo").focus(), $("#factorDesc").val("0"));
+    $("#lblSubTotal").html(applyCurrency(e));
+    $("#lblFacDescuento").html(applyCurrency(g));
+    $("#lblSubTotalGrav").html(applyCurrency(f));
+    $("#lblIva").html(applyCurrency(h));
+    $("#lblTotal").html(applyCurrency(k));
+    $("#total").val(currencySn(k))
+}
+
+function listaArtOrdenComOnLoadPG() {
+    try {
+        var a = JSON.parse($("#itemsArtOrdCompJSON").val()),
+            b;
+        for (b in a) {
+            var c = a[b];
+            if (null != c) {
+                var d = JSON.stringify(c);
+                tbOrdenCom.push(d)
+            }
+        }
+        localStorage.setItem("tbOrdenCom", JSON.stringify(tbOrdenCom));
+        listaArtOrden(!0)
+    } catch (e) {
+        alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+    }
+}
+
+function CompraFunction() {
+    $("#btnBuscaCompro").click(function() {});
+    $(document.body).on("change", "#codMetodoPago", function() {
+        if ("PPD" == this.value) {
+            var a = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "entidadesrest/getEntidadById",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    idEntidad: $("#idEntidad").val(),
+                    idKey: $("#idKey").val()
+                },
+                error: function(a, c, d) {
+                    swal({
+                        type: "error",
+                        title: "Error",
+                        text: "Error interno, favor de reportarlo"
+                    })
+                }
+            }).done(function(a) {
+                try {
+                    var b =
+                        a.item,
+                        d = b.debe,
+                        e = b.monto_credito;
+                    a = e - d;
+                    var g = applyCurrency(b.monto_credito),
+                        f = b.dias_credito;
+                    $("#lblDispo").html("Disponible " + applyCurrency(a));
+                    $("#lblLimCred").html("L\u00edmite de cr\u00e9dito" + applyCurrency(g));
+                    $("#montoCredito").val(currencySn(e));
+                    $("#haber").val(currencySn(a));
+                    $("#debe").val(currencySn(d));
+                    $("#diasCredito").val(f)
+                } catch (h) {
+                    swal({
+                        type: "error",
+                        title: "Error",
+                        text: "Error interno, favor de reportarlo"
+                    }), console.log(h)
+                }
+            })
+        } else $("#lblDispo").html(""), $("#lblLimCred").html(""), $("#montoCredito").val(currencySn(0)),
+            $("#haber").val(currencySn(0)), $("#debe").val(currencySn(0)), $("#diasCredito").val(0)
+    });
+    $(document.body).on("change", "#idTipoComprobante", function() {
+        changeTitleCompras($("#idTipoComprobante"))
+    });
+    $(document.body).on("change", "#idTipoComprobanteCompra", function() {
+        1 == this.value ? $("#costoMasIva").prop("checked", !0) : $("#costoMasIva").prop("checked", !1)
+    });
+    $("#btnSubirCompro").click(function() {
+        $("#modalFilesCompra").modal("toggle")
+    });
+    $("#btnShowArtPro").click(function() {
+        var a = parseInt($("#idEntidad").val());
+        if (0 == a) return !1;
+        $.fancybox.open({
+            href: $("#url").val() + "articulos/getArticulosProveedor/" + a,
+            type: "iframe",
+            autoSize: !1,
+            width: "100%",
+            height: "100%",
+            padding: 0,
+            afterClose: function(a) {}
+        })
+    });
+    $("#modalEditaPartida").on("shown.bs.modal", function(a) {
+        $("#costoM").focus()
+    });
+    $("#btnModArtC").click(function() {
+        var a = $("#indexM").val(),
+            b = {
+                idArticulo: $("#idArticuloM").val(),
+                precio01: $("#precio01M").val(),
+                precio02: $("#precio02M").val(),
+                articulo: $("#articuloM").val(),
+                claveArticulo: $("#claveArticuloM").val(),
+                index: a,
+                costo: $("#costoM").val(),
+                cantidad: $("#cantidadM").val(),
+                factorDescuento: $("#factorDescM").val(),
+                subTotal: $("#subTotalM").val(),
+                descuento: $("#descuentoM").val(),
+                subTotalGrabado: $("#subTotalGrabadoM").val(),
+                impTrasladado: $("#impTrasladadoM").val(),
+                total: $("#totalM").val(),
+                costoUnitario: $("#costoInitarioM").val(),
+                costoIva: $("#costoIvaM").val(),
+                tasaTrasladado: $("#tasaTrasladadoM").val()
+            };
+        tbOrdenCom[a] = b;
+        console.log("itemmm ", b);
+        localStorage.setItem("tbOrdenCom", JSON.stringify(tbOrdenCom));
+        listaArtOrden(!0);
+        $("#modalEditaPartida").modal("toggle")
+    });
+    $("#btnCancelCom").click(function() {
+        var a = confirm("\u00bfDesea cancelar la orden de compra?"),
+            b = $("#idTipoComprobante").val(),
+            c = $("#codMetodoPago").val();
+        if ("null" == b) return alert("Selecciona el tipo de comprobante"), !1;
+        if ("null" == c) return alert("Selecciona el metodo de pago"), !1;
+        if (a) {
+            var d = jQuery(this).parents(".block");
+            a = prompt("Ingresa el motivo de la cancelaci\u00f3n");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "compras/cancelOrAutoCompra",
+                beforeSend: function() {
+                    block_class(!0,
+                        d)
+                },
+                complete: function() {
+                    block_class(!1, d)
+                },
+                data: {
+                    idCompraC: $("#idCompraC").val(),
+                    observaciones: a,
+                    estatus: "c",
+                    folio: $("#folio").val(),
+                    serie: $("#serie").val(),
+                    codMetodoPago: c,
+                    idTipoComprobante: b
+                }
+            }).done(function(a) {
+                try {
+                    JSON.parse(a), notify_info("info", "Registro actualizado"), $("#btnImprimirC").prop("disabled", !0), $("#btnCancelCom").prop("disabled", !0), $("#btnAutOrdenCom").prop("disabled", !0)
+                } catch (g) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(g)
+                }
+            })
+        }
+    });
+    $("#btnAutCom").click(function() {
+        if (confirm("\u00bfDesea autorizar la orden de compra?")) {
+            var a =
+                jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "compras/cancelOrAutoCompra",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    idCompraC: $("#idCompraC").val(),
+                    observaciones: $("#observaciones").val(),
+                    estatus: "a",
+                    folio: $("#folio").val(),
+                    serie: $("#serie").val(),
+                    idTipoComprobante: $("#idTipoComprobante").val(),
+                    codMetodoPago: $("#codMetodoPago").val(),
+                    codFormaPago: $("#idFormaPago").val(),
+                    idEntidad: $("#idEntidad").val(),
+                    montoCredito: $("#montoCredito").val(),
+                    debe: $("#debe").val(),
+                    haber: $("#haber").val(),
+                    importe: $("#total").val(),
+                    diasCredito: $("#diasCredito").val()
+                },
+                error: function(a, c, d) {
+                    swal({
+                        type: "error",
+                        title: "Error",
+                        text: "Error interno, favor de reportarlo"
+                    });
+                    $("#btnImprimirC").prop("disabled", !0);
+                    $("#btnAutCom").prop("disabled", !0)
+                }
+            }).done(function(a) {
+                try {
+                    JSON.parse(a), swal({
+                        type: "success",
+                        title: "Confirmaci\u00f3n de compra",
+                        text: "La compra se ingres\u00f3 correctamente"
+                    }), $("#btnImprimirC").prop("disabled", !0), $("#btnAutCom").prop("disabled", !0)
+                } catch (c) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"),
+                        $("#btnImprimirC").prop("disabled", !0), $("#btnAutCom").prop("disabled", !0), console.log(c)
+                }
+            })
+        }
+    });
+    $("#factuPre");
+    $("#btnImprimirC").click(function() {
+        var a = $("#idTipoComprobante"),
+            b = $("#codMetodoPago"),
+            c = $("#idTipoComprobante"),
+            d = $("#idEntidad");
+        if ("null" == b.val() && 6 == c) return alert("Selecciona el metodo de pago"), !1;
+        if ("null" == a.val()) return alert("Selecciona el tipo, Compra u Orden de Compra"), !1;
+        if (0 == d.val()) return alert("Selecciona el proveedor"), !1;
+        if (confirm("\u00bfSon correctos los datos?")) {
+            var e =
+                jQuery(this).parents(".block");
+            a = localStorage.getItem("tbOrdenCom");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "compras/guardaCompra",
+                beforeSend: function() {
+                    block_class(!0, e)
+                },
+                complete: function() {
+                    block_class(!1, e)
+                },
+                data: {
+                    tbOrdenCompra: a,
+                    idEntidad: $("#idEntidad").val(),
+                    codEntidad: $("#codEntidad").val(),
+                    entidad: $("#nombreRazonSocial").val(),
+                    idTienda: $("#idTienda").val(),
+                    idComraC: $("#idCompraC").val(),
+                    folio: $("#folio").val(),
+                    serie: $("#serie").val(),
+                    nombreArchivo: $("#nombreArchivo").val(),
+                    idTipoComprobante: $("#idTipoComprobante").val(),
+                    idTipoComprobanteCompra: $("#idTipoComprobanteCompra").val(),
+                    codMetodoPago: $("#codMetodoPago").val(),
+                    txtComprobante: $("#idTipoComprobanteCompra option:selected").text(),
+                    facPre: $("#factuPre").val(),
+                    idCatRazonDoc: $("#idCatRazonDoc").val(),
+                    catRazonDoc: $("#idCatRazonDoc option:selected").text(),
+                    idFormaPago: $("#idFormaPago").val(),
+                    formaPago: $("#idFormaPago option:selected").text(),
+                    observaciones: $("#observaciones").val(),
+                    idOrdenCRest: $("#idOrdenCRest").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    $("#nombreArchivo").val(b.nombreArchivo);
+                    $("#lblFolio").html("Folio:  " + b.folio + " Serie:  " + b.serie);
+                    $("#idCompraC").val(b.idOrdenCompraC);
+                    $("#folio").val(b.folio);
+                    $("#serie").val(b.serie);
+                    notify_info("info", "Registro guardado correctamente");
+                    var d = $("#base_url").val() + b.pathF;
+                    console.log(d);
+                    $("#modalShowPDF").modal({
+                        backdrop: "static",
+                        keyboard: !1
+                    });
+                    $("#showPDF").attr("data", d);
+                    $("#btnAutCom").prop("disabled", !1)
+                } catch (k) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(k)
+                }
+            })
+        }
+    });
+    $("#codEntidad").keypress(function(a) {
+        if (13 ==
+            a.which) {
+            var b = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "compras/getProveedor",
+                beforeSend: function() {
+                    block_class(!0, b)
+                },
+                complete: function() {
+                    block_class(!1, b)
+                },
+                data: {
+                    claveProveedor: this.value,
+                    idTienda: $("#idTienda").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a),
+                        c = b.item;
+                    null != c ? ($("#idEntidad").val(c.id_entidad), $("#nombreRazonSocial").val(c.nombre_razon_social), $("#itemsArtProJSON").val(JSON.stringify(b.items)), $("#claveArticulo").focus(), null != c.idTiendaProveedor ?
+                        ($("#idTiendaProveedor").val(c.idTiendaProveedor), $("#opEnvioRest").show()) : ($("#idTiendaProveedor").val("0"), $("#opEnvioRest").hide())) : (alert("No existe la entidad"), $("#itemsArtProJSON").val(""), $("#idEntidad").val(0))
+                } catch (g) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(g)
+                }
+            })
+        }
+    });
+    $("#costo").keypress(function(a) {
+        13 == a.which && (a = $("#factorDesc"), $(a).focus(), $(a).select())
+    });
+    $("#cantidad").keypress(function(a) {
+        if (13 == a.which) {
+            console.log("valuee ", this.value);
+            if ("" === this.value) return !1;
+            $("#costo").focus()
+        }
+    });
+    $("#factorDesc").keypress(function(a) {
+        if (13 == a.which) {
+            a = parseInt($("#idArticulo").val());
+            var b = parseInt($("#idEntidad").val()),
+                c = $("#idTipoComprobanteCompra");
+            if ("" == this.value || 0 == a || 0 == b) return !1;
+            if ("0" == c.val()) return alert("Selecciona el tipo de documento de la compra"), $("#idTipoComprobante").focus(), !1;
+            b = JSON.parse($("#itemsArtProJSON").val());
+            a = buscaArtProveedorEnLista(b, a);
+            console.log("existe articulo en lista precio proveedor_ " + a);
+            if (!a &&
+                confirm("\u00bfEl art\u00edculo no existe en la lista del proveedor, desea agregarlo?")) {
+                var d = jQuery(this).parents(".block");
+                $.ajax({
+                    type: "POST",
+                    url: $("#url").val() + "articulos/saveArtProveedor",
+                    beforeSend: function() {
+                        block_class(!0, d)
+                    },
+                    complete: function() {
+                        block_class(!1, d)
+                    },
+                    data: {
+                        idArticulo: $("#idArticulo").val(),
+                        idEntidad: $("#idEntidad").val(),
+                        txtCod: $("#claveArticuloH").val(),
+                        txtInner: 0,
+                        txtMaster: 0
+                    }
+                }).done(function(a) {
+                    try {
+                        var b = JSON.parse(a).items;
+                        null != b && $("#itemsArtProJSON").val(JSON.stringify(b));
+                        notify_info("success", "Articulo agregado correctamente a la lista de precios del proveedor")
+                    } catch (f) {
+                        alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+                    }
+                })
+            }
+            crudOrdenComArt()
+        }
+    });
+    $("#claveArticulo").keypress(function(a) {
+        if (13 == a.which) {
+            a = $("#idTipoComprobanteCompra").val();
+            if ("" === this.value) return !1;
+            if ("null" === a) return alert("Selecciona el tipo de documento"), !1;
+            if (0 == $("#idEntidad").val()) return alert("Selecciona el proveedor"), !1;
+            var b = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "articulosrest/getArticuloMaster",
+                beforeSend: function() {
+                    block_class(!0, b)
+                },
+                complete: function() {
+                    block_class(!1, b)
+                },
+                data: {
+                    claveArticulo: this.value,
+                    idKey: $("#idKey").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b = a.item;
+                    null != b ? ($("#articulo").val(b.articulo), $("#idArticulo").val(b.idArticulo), $("#claveArticuloH").val(b.claveArticulo), $("#costo").val(b.costo), $("#precio01").val(b.precio01), $("#precio02").val(b.precio02), $("#tasaTrasladado").val(null != b.tasaTrasladado ? b.tasaTrasladado :
+                        0), $("#tasaRetenido").val(null != b.tasaRetenido ? b.tasaRetenido : 0), $("#cantidad").focus()) : (alert("No existe el articulo"), $("#idArticulo").val(""), $("#precio01").val(0), $("#precio02").val(0))
+                } catch (e) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+                }
+            })
+        }
+    });
+    $("#btnImpC").click(function() {
+        ImpOrdenCompra()
+    })
+}
+
+function ListadoKArdexMovs() {}
+
+function listOrdenesCompfunctions() {
+    $("#btnShowArtPro").click(function() {
+        var a = parseInt($("#idEntidad").val());
+        if (0 == a) return !1;
+        $.fancybox.open({
+            href: $("#url").val() + "articulos/getArticulosProveedor/" + a,
+            type: "iframe",
+            autoSize: !1,
+            width: "100%",
+            height: "100%",
+            padding: 0,
+            afterClose: function(a) {}
+        })
+    });
+    $("#modalEditaPartida").on("shown.bs.modal", function(a) {
+        $("#costoM").focus()
+    });
+    $("#btnModArtOC").click(function() {
+        confirm("\u00bfSon correctos los datos?") && (edoOrdenCom = "E", crudOrdenComArt())
+    });
+    $("#btnCancelOrdenCom").click(function() {
+        if (confirm("\u00bfDesea cancelar la orden de compra?")) {
+            var a =
+                jQuery(this).parents(".block"),
+                b = prompt("Ingresa el motivo de la cancelaci\u00f3n");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "compras/cancelOrAutoOrdenCompra",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    idOrdenCompraC: $("#idCompraC").val(),
+                    observaciones: b,
+                    estatus: "c",
+                    folio: $("#folio").val(),
+                    serie: $("#serie").val()
+                }
+            }).done(function(a) {
+                try {
+                    JSON.parse(a), notify_info("info", "Registro guardado correctamente"), $("#btnImprimirOC").prop("disabled", !0), $("#btnCancelOrdenCom").prop("disabled",
+                        !0), $("#btnAutOrdenCom").prop("disabled", !0)
+                } catch (d) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+                }
+            })
+        }
+    });
+    $("#btnAutOrdenCom").click(function() {
+        if (confirm("\u00bfDesea autorizar la orden de compra?")) {
+            var a = jQuery(this).parents(".block"),
+                b = prompt("Observaciones");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "compras/cancelOrAutoOrdenCompra",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    idOrdenCompraC: $("#idCompraC").val(),
+                    observaciones: b,
+                    estatus: "o"
+                }
+            }).done(function(a) {
+                try {
+                    JSON.parse(a), notify_info("info", "Registro guardado correctamente"), $("#btnImprimirOC").prop("disabled", !0), $("#btnCancelOrdenCom").prop("disabled", !0), $("#btnAutOrdenCom").prop("disabled", !0)
+                } catch (d) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+                }
+            })
+        }
+    });
+    $("#btnImprimirOC").click(function() {
+        if (confirm("\u00bfSon correctos los datos?")) {
+            var a = jQuery(this).parents(".block"),
+                b = localStorage.getItem("tbOrdenCom");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "compras/guardaOrdenCompra",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    tbOrdenCompra: b,
+                    idEntidad: $("#idEntidad").val(),
+                    codEntidad: $("#codEntidad").val(),
+                    entidad: $("#nombreRazonSocial").val(),
+                    idTienda: $("#idTienda").val(),
+                    idOrdenComraC: $("#idCompraC").val(),
+                    folio: $("#folio").val(),
+                    serie: $("#serie").val(),
+                    nombreArchivo: $("#nombreArchivo").val(),
+                    idTipoComprobante: 3
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    $("#nombreArchivo").val(b.nombreArchivo);
+                    $("#lblFolio").html("Folio:  " + b.folio + " Serie:  " + b.serie);
+                    $("#idCompraC").val(b.idOrdenCompraC);
+                    $("#folio").val(b.folio);
+                    $("#serie").val(b.serie);
+                    notify_info("info", "Registro guardado correctamente");
+                    var c = $("#base_url").val() + b.pathF;
+                    console.log(c);
+                    $("#modalShowPDF").modal({
+                        backdrop: "static",
+                        keyboard: !1
+                    });
+                    $("#showPDF").attr("data", c)
+                } catch (g) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(g)
+                }
+            })
+        }
+    });
+    $("#codEntidad").keypress(function(a) {
+        if (13 == a.which) {
+            var b =
+                jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "compras/getProveedor",
+                beforeSend: function() {
+                    block_class(!0, b)
+                },
+                complete: function() {
+                    block_class(!1, b)
+                },
+                data: {
+                    claveProveedor: this.value,
+                    idTienda: $("#idTienda").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a),
+                        c = b.item;
+                    null != c ? ($("#idEntidad").val(c.id_entidad), $("#nombreRazonSocial").val(c.nombre_razon_social), $("#itemsArtProJSON").val(JSON.stringify(b.items)), $("#claveArticulo").focus(), null != c.idTiendaProveedor ? ($("#idTiendaProveedor").val(c.idTiendaProveedor),
+                        $("#opEnvioRest").show()) : ($("#idTiendaProveedor").val("0"), $("#opEnvioRest").hide())) : (alert("No existe la entidad"), $("#itemsArtProJSON").val(""), $("#idEntidad").val(0))
+                } catch (g) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(g)
+                }
+            })
+        }
+    });
+    $("#costo").keypress(function(a) {
+        13 == a.which && $("#cantidad").focus()
+    });
+    $("#cantidad").keypress(function(a) {
+        if (13 == a.which) {
+            console.log("idArticulo " + $("#idArticulo").val());
+            console.log("idEntidad " + $("#idEntidad").val());
+            a = parseInt($("#idArticulo").val());
+            var b = parseInt($("#idEntidad").val());
+            if ("" == this.value || 0 == a || 0 == b) return !1;
+            b = JSON.parse($("#itemsArtProJSON").val());
+            a = buscaArtProveedorEnLista(b, a);
+            console.log("existe articulo en lista precio proveedorrrrr " + a);
+            if (!a && confirm("\u00bfEl art\u00edculo no existe en la lista del proveedor, desea agregarlo?")) {
+                var c = jQuery(this).parents(".block");
+                $.ajax({
+                    type: "POST",
+                    url: $("#url").val() + "articulos/saveArtProveedor",
+                    beforeSend: function() {
+                        block_class(!0, c)
+                    },
+                    complete: function() {
+                        block_class(!1, c)
+                    },
+                    data: {
+                        idArticulo: $("#idArticulo").val(),
+                        idEntidad: $("#idEntidad").val(),
+                        txtCod: $("#claveArticulo").val(),
+                        txtInner: 0,
+                        txtMaster: 0
+                    }
+                }).done(function(a) {
+                    try {
+                        var b = JSON.parse(a).items;
+                        null != b && $("#itemsArtProJSON").val(JSON.stringify(b));
+                        notify_info("success", "Articulo agregado correctamente a la lista de precios del proveedor")
+                    } catch (g) {
+                        alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(g)
+                    }
+                })
+            }
+            crudOrdenComArt()
+        }
+    });
+    $("#claveArticulo").keypress(function(a) {
+        if (13 == a.which) {
+            if ("" === this.value) return !1;
+            var b = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "compras/getArticuloMaster",
+                beforeSend: function() {
+                    block_class(!0, b)
+                },
+                complete: function() {
+                    block_class(!1, b)
+                },
+                data: {
+                    claveArticulo: this.value
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a).item;
+                    null != b ? ($("#articulo").val(b.articulo), $("#idArticulo").val(b.idArticulo), $("#costo").val(b.costo), $("#cantidad").focus()) : (alert("No existe el articulo"), $("#idArticulo").val(""), $("#costo").val(0), $("#precio01").val(0), $("#precio02").val(0))
+                } catch (e) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"),
+                        console.log(e)
+                }
+            })
+        }
+    });
+    $("#btnImpOrdenC").click(function() {
+        ImpOrdenCompra()
+    })
+}
+
+function lista_usuario_functions() {
+    $("#btnBorrarUsuario").click(function() {
+        if (confirm("\u00bfConfirma eliminar el registro?")) {
+            var a = jQuery(this).parents(".block"),
+                b = $("#url").val();
+            $.ajax({
+                type: "POST",
+                url: b + "usuarios/elimnarUsuario",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    idUsuario: $("#id_usuario").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    $("#modal-edita-usuario").modal("toggle");
+                    notify_info(b.info_type, b.msg);
+                    $("#us-observacion").val();
+                    $("#btn_refresh_lista_us").click()
+                } catch (e) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"),
+                        console.log(e)
+                }
+            })
+        }
+    });
+    $("#btnGuardarPropUsuario").click(function() {
+        var a = jQuery(this).parents(".block"),
+            b = $("#url").val();
+        $.ajax({
+            type: "POST",
+            url: b + "usuarios/guardaPropiedad",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: $("#frm-prop-us").serialize()
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                $("#modal-edita-usuario").modal("toggle");
+                notify_info(b.info_type, b.msg);
+                $("#us-observacion").val();
+                $("#btn_refresh_lista_us").click()
+            } catch (e) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"),
+                    console.log(e)
+            }
+        })
+    });
+    $("#criterio-busca-usuario").keypress(function(a) {
+        $("#url").val();
+        var b = jQuery(this).parents(".block");
+        13 == a.which && lista_usuarios(b)
+    });
+    $("#btn_refresh_lista_us").click(function() {
+        var a = jQuery(this).parents(".block");
+        lista_usuarios(a)
+    })
+}
+
+function lista_usuarios(a) {
+    var b = $("#url").val();
+    $.ajax({
+        type: "POST",
+        url: b + "usuarios/listadoUsuarios",
+        beforeSend: function() {
+            block_class(!0, a)
+        },
+        complete: function() {
+            block_class(!1, a)
+        },
+        data: {
+            id_tienda: $("#lista-tiendas").val(),
+            criterio: $("#criterio-busca-usuario").val()
+        }
+    }).done(function(a) {
+        try {
+            var d = 0,
+                c = JSON.parse(a);
+            a = "";
+            for (var g in c.items) {
+                var f = c.items[g];
+                null != f && (a += "<tr><td>" + f.nombre_completo + "</td><td>" + f.puesto + "</td><td>" + (null != f.inicialesUsuario ? f.inicialesUsuario : "") + "</td><td>" + f.usuario +
+                    "</td><td>" + f.perfil + "</td>" + (1 == f.activo ? '<td class="hidden-xs"><span class="label label-primary">Activo</span></td>' : '<td class="hidden-xs"><span class="label label-danger">Inactivo</span></td>') + '<td class="text-center"><div class="btn-group"><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Editar Usuario" onClick="locaEditaUsuario(\'' + (b + "usuarios/editaUsuario/" + f.id_usuario) + '\');"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remover Usuario" onClick="editaProSuario(' +
+                    f.id_usuario + "," + f.password_cambiado + "," + f.activo + ", '" + f.observacion + '\');"><i class="fa fa-times"></i></button></div></td></tr>');
+                d++
+            }
+            $("#lista_usuarios").html(a);
+            $("#total_usuarios_rows").html(d)
+        } catch (h) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(h)
+        }
+    })
+}
+
+function editaProSuario(a, b, c, d) {
+    $("#modal-edita-usuario").modal("toggle");
+    $("#id_usuario").val(a);
+    d = "null" != d ? d : "";
+    $("#us-observacion").val(d);
+    b = 0 == b ? !1 : !0;
+    c = 1 == c ? !1 : !0;
+    $("#us-renueva-pw").prop("checked", b);
+    $("#us-desactiva-acc").prop("checked", c);
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "usuarios/listadoAccesos",
+        beforeSend: function() {},
+        complete: function() {},
+        data: {
+            id_usuario: a
+        }
+    }).done(function(a) {
+        try {
+            var b = 1,
+                d = JSON.parse(a);
+            a = "";
+            for (var c in d.items) {
+                var e = d.items[c];
+                null != e && (a += "<tr><td>" + b + "</td><td>" +
+                    e.fecha + "</td><td>" + e.remote_ip + "</td><td>" + e.agent + "</td></tr>");
+                b++
+            }
+            $("#lista_usuarios_accesos").html(a)
+        } catch (l) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(l)
+        }
+    })
+}
+
+function locaEditaUsuario(a) {
+    window.location.href = a
+}
+
+function usuario_functions() {
+    $("#us-nombre-completo").focus();
+    $(document.body).on("change", "#us-menu", function() {
+        var a = this.value,
+            b = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "usuarios/listaMenu",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                id_menu: a,
+                id_usuario: $("#id_usuario").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = 1,
+                    c = JSON.parse(a);
+                a = "";
+                for (var g in c.items) {
+                    var f = c.items[g];
+                    null != f && (a += '<tr><td><input type="checkbox" name="check_menu_sub[]" id="check_menu_sub_' +
+                        f.id_menu_sub + '" value="' + f.id_menu_sub + '"> ' + b + "</td><td>" + f.descripcion + "</td></tr>");
+                    b++
+                }
+                $("#table_menu_usuario").html(a);
+                for (var h in c.items_usaurio_menu) {
+                    var k = c.items_usaurio_menu[h];
+                    if (null != k) {
+                        var l = "#check_menu_sub_" + k.id_menu_sub;
+                        console.log("menu asig" + l);
+                        $(l).attr("checked", !0)
+                    }
+                }
+            } catch (m) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(m)
+            }
+        })
+    });
+    $("#btn_refresh_usuario").click(function() {
+        var a = jQuery(this).parents(".block"),
+            b = $("#id_usuario").val();
+        0 != b && $.ajax({
+            type: "POST",
+            url: $("#url").val() + "usuarios/datosUsuario",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                id_usuario: b
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a),
+                    c = b.usuario;
+                $("#us-nombre-completo").val(c.nombre_completo);
+                $("#us-puesto").val(c.puesto);
+                $("#us-usuario").val(c.usuario);
+                $("#art-correo").val(c.correo);
+                $("#art-telefono").val(c.telefono);
+                $("#art-direccion").val(c.direccion);
+                $("#us-sucursal").val(c.id_tienda);
+                $("#inicialesUsuario").val(c.inicialesUsuario);
+                var g = 1 == c.renueva_password ? !0 : !1;
+                $("#us-renueva-pw").prop("checked", g);
+                $("#us-usuario-nivel").val(c.id_usuario_nivel);
+                $("#menu_usuario").show();
+                agrega_menus(b.itemsMenu)
+            } catch (f) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+            }
+        })
+    });
+    $("#guardar_usuario_menu").click(function() {
+        if (confirm("\u00bfSon correctos los datos?")) {
+            var a = jQuery(this).parents(".block"),
+                b = $('input[name="check_menu_sub[]"]:checked').map(function() {
+                    return this.value
+                }).get();
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "usuarios/guardaUsuarioMenu",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    id_menu: $("#us-menu").val(),
+                    id_menu_sub: b,
+                    id_usuario: $("#id_usuario").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    notify_info(b.info_type, b.msg)
+                } catch (e) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+                }
+            })
+        }
+    });
+    $("#guardar_usuario").click(function() {
+        if (confirm("\u00bfSon correctos los datos?")) {
+            var a = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "usuarios/guardaUsuario",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: $("#frm_usuario").serialize()
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    notify_info(b.info_type, b.msg);
+                    $("#id_usuario").val(b.id_usuario);
+                    $("#menu_usuario").show();
+                    agrega_menus(b.itemsMenu)
+                } catch (d) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+                }
+            })
+        }
+    })
+}
+
+function validaCodido(a) {
+    var b = a.value;
+    b = $.trim(b);
+    console.info("claveArticulo" + b);
+    jQuery(a).parents(".block");
+    "" != b && $.ajax({
+        type: "POST",
+        url: $("#url").val() + "articulos/validaCodigo",
+        beforeSend: function() {},
+        complete: function() {},
+        data: {
+            dWhere: {
+                claveArticulo: b
+            }
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            if (null != b) {
+                if (console.info("idArticuloEnPantalla " + $("#idArticulo").val()), console.info("idArticuloConsultado " + b.idArticulo), b.idArticulo != parseInt($("#idArticulo").val())) {
+                    var c = "El c\u00f3digo ya existe : " +
+                        b.articulo;
+                    alert(c);
+                    notify_info("danger", c);
+                    $("#articulo_guardar").prop("disabled", !0)
+                }
+            } else notify_info("success", "C\u00f3digo disponible"), $("#articulo_guardar").prop("disabled", !1)
+        } catch (g) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(g)
+        }
+    })
+}
+
+function validaIniciales(a) {
+    var b = $(a).parents(".block-content");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "usuariosrest/validaIniciales",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        error: function(a, b, e) {
+            swal({
+                type: "error",
+                title: "Error",
+                text: "Error interno, favor de reportarlo"
+            })
+        },
+        data: {
+            inicialesUsuario: $("#inicialesUsuario").val(),
+            idKey: $("#idKey").val()
+        }
+    }).done(function(a) {
+        try {
+            var b = a.item;
+            null != b ? (swal({
+                type: "error",
+                title: "Error de iniciales",
+                text: "Ya existen esas iniciales registradas a " +
+                    b.usuario
+            }), $("#guardar_usuario").prop("disabled", !0)) : ($("#guardar_usuario").prop("disabled", !1), notify_info("success", "Iniciales disponibles"))
+        } catch (e) {
+            swal({
+                type: "error",
+                title: "Error",
+                text: "Error interno, favor de reportarlo"
+            }), console.log(e)
+        }
+    })
+}
+
+function validate_user(a) {
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "usuarios/validaUsuario",
+        beforeSend: function() {},
+        complete: function() {},
+        data: {
+            usuario: a
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            1 == b.existe ? ($("#div_valida_usuario").removeClass("has-success").addClass("has-error"), $("#guardar_usuario").prop("disabled", !0)) : ($("#div_valida_usuario").removeClass("has-error").addClass("has-success"), $("#guardar_usuario").prop("disabled", !1));
+            notify_info(b.info_type, b.msg)
+        } catch (d) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"),
+                console.log(d)
+        }
+    })
+}
+
+function agrega_menus(a) {
+    $("#us-menu").empty();
+    $("#us-menu").trigger("chosen:updated");
+    var b = 1,
+        c;
+    for (c in a) {
+        var d = a[c];
+        null != d && (1 == b && $("#us-menu").append('<option value="0">-- Seleccina un Menu --</option>'), $("#us-menu").append('<option value="' + d.id_menu + '">' + d.menu + "</option>"), $("#us-menu").trigger("chosen:updated"));
+        b++
+    }
+}
+
+function canArtDetDesc(a) {
+    var b = jQuery(a).data("id"),
+        c = confirm("\u00bfConfirma eliminar el descuento de los articulos seleccionados?"),
+        d = jQuery(this).parents(a);
+    c && $.ajax({
+        type: "POST",
+        url: $("#url").val() + "descuentos/eliminaDescArts",
+        beforeSend: function() {
+            block_class(!0, d)
+        },
+        complete: function() {
+            block_class(!1, d)
+        },
+        data: {
+            idDescuentoC: b
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            notify_info(b.type, b.msg)
+        } catch (f) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+        } finally {
+            $(this).prop("disabled",
+                !0)
+        }
+    })
+}
+
+function canArtEntDesc(a) {
+    var b = jQuery(a).data("id"),
+        c = confirm("\u00bfConfirma eliminar el descuento del articulo?"),
+        d = jQuery(this).parents(a);
+    c && $.ajax({
+        type: "POST",
+        url: $("#url").val() + "descuentos/eliminaDescuento",
+        beforeSend: function() {
+            block_class(!0, d)
+        },
+        complete: function() {
+            block_class(!1, d)
+        },
+        data: {
+            idDescuentoD: b
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            notify_info(b.type, b.msg)
+        } catch (f) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+        } finally {
+            $(this).prop("disabled", !0)
+        }
+    })
+}
+
+function delArtEntDesc(a) {
+    a = jQuery(a).data("indextable");
+    tbDescuentos.splice(a, 1);
+    listadoDescuentos()
+}
+
+function listadoDescuentos() {
+    var a = "",
+        b;
+    for (b in tbDescuentos) {
+        var c = tbDescuentos[b];
+        if (null != c) {
+            var d = "d" == c.tipo ? "Desc" : "Pza",
+                e = null != c.precioVenta ? applyCurrency(c.precioVenta) : "";
+            a += '<tr><td class="text-center">' + c.claveArticulo + "</td><td><label>" + c.articulo + '</label></td><td class="text-center">' + applyDate(c.desde) + " " + applyDate(c.hasta) + '</td><td class="text-center">' + c.piezas + " " + e + "</td><td>" + d + '</td><td>0</td><td class="text-center"><button class="btn btn-xs btn-default " onclick="delArtEntDesc(this)" data-indextable="' +
+                b + '" type="button" data-toggle="tooltip" title="Elimina"><i class="fa fa-times"></i></button></td></tr>'
+        }
+    }
+    $("#tblDesc > tbody").html(a)
+}
+
+function Descuentos() {
+    $("#btnGuardaLisDesc").click(function() {
+        var a = jQuery(this).parents(".block");
+        confirm("\u00bfSon correctos los datos?") && $.ajax({
+            type: "POST",
+            url: $("#url").val() + "descuentos/guardaDescuentos",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                desde: $("#txtFecDesde").val(),
+                hasta: $("#txtFecHasta").val(),
+                descripcion: $("#txtObserva").val(),
+                items: tbDescuentos
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                notify_info(b.type, b.msg);
+                $("#btnBusDescuento").click()
+            } catch (d) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"),
+                    console.log(d)
+            } finally {
+                $("#btnGuardaLisDesc").prop("disabled", !0)
+            }
+        })
+    });
+    $("#btnAddArtDesc").click(function() {
+        if (0 == $("#idArticulo").val()) return alert("Selecciona un articulo"), !1;
+        if ("" == $("#txtFecDesde").val() || "" == $("#txtFecHasta").val()) return alert("Selecciona un rango de fecha"), !1;
+        if ("" == $("#cantidad").val()) return alert("Indica la cantidad o el descuento"), !1;
+        var a = 0 != $("#txtPrecioDes").val() ? $("#txtPrecioDes").val() : null,
+            b = buscaArtExitOrdVenta(tbDescuentos, $("#idArticulo").val());
+        if (null !=
+            b) return alert("El articulo " + b.claveArticulo + " ya existe en la lista"), !1;
+        a = {
+            idArticulo: $("#idArticulo").val(),
+            claveArticulo: $("#txtCodArt").val(),
+            tipo: $("#idTipoDescuento").val(),
+            piezas: $("#cantidad").val(),
+            desde: $("#txtFecDesde").val(),
+            hasta: $("#txtFecHasta").val(),
+            articulo: $("#articulo").val(),
+            precioVenta: a
+        };
+        $("#idArticulo").val(0);
+        $("#txtCodArt").val("");
+        $("#cantidad").val("");
+        $("#articulo").val("");
+        $("#txtPrecioDes").val(0);
+        tbDescuentos.push(a);
+        listadoDescuentos();
+        $("#txtCodArt").focus()
+    });
+    $(document.body).on("change", "#idTipoDescuento", function() {
+        var a = this.value;
+        $("#cantidad").focus();
+        "p" == a ? ($("#lblUnidadDes").html("Piezas"), $("#txtPrecioDes").prop("disabled", !1)) : ($("#lblUnidadDes").html("Descuento"), $("#txtPrecioDes").prop("disabled", !0), $("#txtPrecioDes").val(0))
+    })
+}
+
+function eliminaDescCrite(a) {
+    confirm("\u00bfDeseas eliminar el descuento?") && $.ajax({
+        type: "POST",
+        url: $("#url").val() + "descuentos/eliminaDescuento",
+        beforeSend: function() {},
+        complete: function() {},
+        data: {
+            id: a
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            notify_info(b.type, b.msg);
+            $("#btnBusDescuento").click()
+        } catch (d) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+        }
+    })
+}
+
+function listadoDeDescunetos() {}
+
+function detalleCobro(a, b, c) {
+    var d = jQuery(this).parents(".block"),
+        e = jQuery(c);
+    c = parseFloat(e.data("totalnota"));
+    var g = 0 <= parseFloat(e.data("saldo")) ? parseFloat(e.data("saldo")) : 0;
+    e.data("idtienda");
+    e = e.data("folorden");
+    $("#folOrden").val(e);
+    $("#totalNota").val(c);
+    $("#saldoNota").val(g);
+    $("#lblTotalNota").html("$ " + c);
+    $("#lblAdeudoNota").html("$ " + g);
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "cajas/detalleVenta",
+        beforeSend: function() {
+            block_class(!0, d)
+        },
+        complete: function() {
+            block_class(!1, d)
+        },
+        data: {
+            idOrden: a
+        }
+    }).done(function(d) {
+        try {
+            var c =
+                JSON.parse(d);
+            d = "";
+            var f = c.cabecero;
+            $("#modalPagoProp").modal("toggle");
+            $("#idOrdenC").val(a);
+            "A" == b ? $("#divCancelaOrden").show() : $("#divCancelaOrden").hide();
+            var e = null != f.nombre_razon_social ? f.nombre_razon_social : "";
+            d += '<tbody class="js-table-sections-header">';
+            d += '<tr onclick="showDetTable(this)"><td class="text-center"><i class="fa fa-angle-right"></i></td><td class="font-w600">' + f.fol_orden + "</td><td>" + e + "</td><td>" + f.total_articulos + "</td><td>" + truncaDecimales(f.factor_descuento) + "</td><td></td><td></td><td></td><td></td><td>$ " +
+                truncaDecimales(f.total) + "</td><td>" + f.vendedor + "</td></tr>";
+            d += "</tbody>";
+            d += "<tbody>";
+            for (var g in c.detalle) {
+                var n = c.detalle[g];
+                f = "";
+                var p = null != n.usuario ? n.usuario : "";
+                switch (n.tipo_precio) {
+                    case "p1":
+                        f = '<span class="label label-success">P1</span>';
+                        break;
+                    case "p2":
+                        f = '<span class="label label-info">P2</span>';
+                        break;
+                    case "pa":
+                        f = '<span class="label label-danger">PA</span>';
+                        break;
+                    case "pc":
+                        f = '<span class="label label-pc">PC</span>';
+                        break;
+                    case "pl":
+                        f = '<span class="label label-warning">PL</span>'
+                }
+                null !=
+                    n && (d += '<tr><td class="text-center"></td><td class="font-w600 text-success">' + n.clave_art + "</td><td>" + n.descripcion + "</td><td>" + n.cantidad + "</td><td>" + n.descuento + "</td><td>" + n.precio + "</td><td>" + f + "</td><td>" + n.precio_venta1 + "</td><td>" + n.precio_venta2 + "</td><td>$ " + truncaDecimales(n.total) + "</td><td>" + p + "</td></tr>")
+            }
+            d += "</tbody>";
+            $("#tableSecDocOr > tbody").html("");
+            $("#tableSecDocOr").append(d)
+        } catch (r) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(r)
+        }
+    })
+}
+
+function getMetodoPagoOrden() {
+    var a = $("#conModal");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "cobros/getMetodoPago",
+        beforeSend: function() {
+            block_class(!0, a)
+        },
+        complete: function() {
+            block_class(!1, a)
+        },
+        data: {
+            idOrnden: $("#idOrdenC").val()
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            a = "";
+            for (var d in b.items) {
+                var e = b.items[d];
+                null != e && (a += '<tr><tr><td class="text-center"><input type="button" value="x" data-id="' + e.id + '" onclick="quitaMPLista(this)"></td><td>' + e.metodo_pago + '</td><td class="text-left">$ ' + truncaDecimales(e.pagado) +
+                    "</td></tr>")
+            }
+            $("#bMetPago").html(a)
+        } catch (g) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(g)
+        }
+    })
+}
+
+function addMetodopagoNota() {
+    var a = $("#cbMetodoPagoCli option:selected").text(),
+        b = $("#cbMetodoPagoCli").val();
+    if (0 == b) return alert("Selecciona un m\u00e9todo de pago"), $("#cbMetodoPagoCli").focus(), !1;
+    var c = $("#txtImp").val(),
+        d = $("#txtRefePa").val();
+    a = "<tr><td class='text-center'><input type='button' value='x' onclick='quitaMP(this)'></td><td class='text-center'>" + b + "</td><td class='text-center'>" + a + "</td><td class='text-center'>" + c + "</td><td class='text-center'>" + d + "</td></tr>";
+    $("#tBodyMP").append(a);
+    $("#cbMetodoPagoCli").val("00");
+    $("#txtImp").val("");
+    $("#txtRefePa").val("");
+    $total = 0;
+    var e = ["btn", "id_metodo_pago", "metodo", "importe", "referencia"];
+    $("#tableMP tbody tr").map(function(a) {
+        var b = {};
+        $(this).find("td").each(function(a) {
+            b[e[a]] = $(this).text()
+        });
+        $.each(b, function(a, b) {
+            console.log("key:" + a + " value:" + b);
+            "importe" == a && ($total = parseFloat($total) + parseFloat(b))
+        })
+    });
+    $("#total_pagado").val($total);
+    a = parseFloat($("#total").val()) - $total;
+    0 == a ? ($("#btnCobrarMixto").show(), $("#txtPagCon").show(),
+        $("#row-msg").hide(), $("#lblCambio").html("Cambio"), $("#caja-efec-cambio").html(currency(0, 1))) : ($("#btnCobrarMixto").hide(), $("#txtPagCon").hide(), $("#row-msg").show(), $("#hMensajeCobro").html("Diferencia en varios metodos de pago"), $("#lblCambio").html("Resta"), $("#caja-efec-cambio").html(currency(a, 1)))
+}
+
+function cajas_cobro_functions() {
+    $("#btnArqueoCaja").click(function() {
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "ordenes/getAllComprobantes",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                txtDesde: $("#txtDesde").val(),
+                txtHasta: $("#txtHasta").val(),
+                idUsuario: $("#cbIdUsuario").val(),
+                cbIdTienda: $("#cbIdTienda").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a).items,
+                    d = 0,
+                    e = 0,
+                    g = 0,
+                    f = 0,
+                    h = 0,
+                    k = 0,
+                    l = [];
+                a = [];
+                var m = [],
+                    n = 0,
+                    p = 0,
+                    r = 0,
+                    u = 0,
+                    v;
+                for (v in b) {
+                    var q = b[v];
+                    if (null != q) {
+                        22 == q.idTipoComprobante && (d += parseFloat(q.total));
+                        23 == q.idTipoComprobante && (e += parseFloat(q.total));
+                        1 == q.idTipoComprobante && (g += parseFloat(q.total));
+                        "PPD" == q.codMetodoPago && (h += parseFloat(q.total), 1 == q.idTipoComprobante && a.push({
+                            nombre_razon_social: q.nombre_razon_social,
+                            folio: q.folio,
+                            total: q.total
+                        }), 22 != q.idTipoComprobante && 23 != q.idTipoComprobante || l.push({
+                            nombre_razon_social: null != q.nombre_razon_social ? q.nombre_razon_social : "",
+                            tipoComprobante: q.tipoComprobante,
+                            folio: q.folio,
+                            referenciaPago: q.referenciaPago,
+                            total: q.total
+                        }));
+                        "02" == q.codFormaPago && m.push({
+                            nombre_razon_social: q.nombre_razon_social,
+                            referenciaPago: q.referenciaPago,
+                            total: q.total
+                        });
+                        null == q.totalArticulos && ("Ingreso" != q.tipo && "Egreso" == q.tipo && ("S" == q.fiscal ? p += parseFloat(q.total) : "N" == q.fiscal && (n += parseFloat(q.total))), 30 == q.idTComHijo && (r += parseFloat(q.total)));
+                        if ("04" == q.codFormaPago || "28" == q.codFormaPago) u += parseFloat(q.total);
+                        f += parseFloat(q.total)
+                    }
+                }
+                k = f - h;
+                console.log("ventas mostrador " + d);
+                console.log("ventas registradora " + e);
+                $("#lblVenMostra").html(applyCurrency(d));
+                $("#lblVenCajRe").html(applyCurrency(e));
+                $("#lblVenFac").html(applyCurrency(g));
+                $("#lblVenSubTotal").html(applyCurrency(f));
+                $("#lblVenCred").html(applyCurrency(h));
+                $("#lblVenTotal").html(applyCurrency(k));
+                $("#lblGastosNoFis").html(applyCurrency(-1 * n));
+                $("#lblGastosFis").html(applyCurrency(-1 * p));
+                $("#lblPagoProvee").html(applyCurrency(-1 * r));
+                $("#lblTarCreDeb").html(applyCurrency(u));
+                b = "";
+                for (v in m) {
+                    var t = m[v];
+                    null != t &&
+                        (b += "<tr><td>" + t.nombre_razon_social + "</td><td>" + t.referenciaPago + "</td><td></td><td>" + applyCurrency(t.total) + "</td></tr>")
+                }
+                $("#tbListCheques > tbody").html(b);
+                b = "";
+                m = 0;
+                for (v in l) t = l[v], null != t && (b += "<tr><td>" + t.nombre_razon_social + "</td><td>" + t.tipoComprobante + "</td><td>" + t.folio + "</td><td>" + applyCurrency(t.total) + "</td></tr>", m += parseFloat(t.total));
+                $("#tbListCredMos > tbody").html(b);
+                $("#lblTotalNotasCredito").html(applyCurrency(m));
+                l = "";
+                for (v in a) t = a[v], null != t && (l += "<tr><td>" + t.nombre_razon_social +
+                    "</td><td>" + t.folio + "</td><td>" + applyCurrency(t.total) + "</td></tr>");
+                $("#htmlCredFatu > tbody").html(l)
+            } catch (w) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(w)
+            }
+        })
+    })
+}
+
+function quitaMP(a) {
+    $(a).parents("tr").remove()
+}
+
+function quitaMPLista(a) {
+    if (confirm("\u00bfConforma cancelar el movimiento?")) {
+        var b = prompt("Ingresa la referencia de la transferencia", ""),
+            c = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "pagos/confirmaTrasPago",
+            beforeSend: function() {
+                block_class(!0, c)
+            },
+            complete: function() {
+                block_class(!1, c)
+            },
+            data: {
+                idOrden: idOrden,
+                ref: b,
+                idMetPa: idMetPa
+            }
+        }).done(function(b) {
+            try {
+                JSON.parse(b), $(a).parents("tr").remove()
+            } catch (e) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"),
+                    console.log(e)
+            }
+        })
+    }
+}
+
+function confirmaTrasPago(a, b) {
+    if (confirm("\u00bfConforma cancelar el movimiento?")) {
+        var c = prompt("Ingresa la referencia de la transferencia", ""),
+            d = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "pagos/confirmaTrasPago",
+            beforeSend: function() {
+                block_class(!0, d)
+            },
+            complete: function() {
+                block_class(!1, d)
+            },
+            data: {
+                idOrden: a,
+                ref: c,
+                idMetPa: b
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                $("#btnBuscarTraCaja").click();
+                notify_info(b.notify, b.msg)
+            } catch (f) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+            }
+        })
+    }
+}
+
+function cancelaMovCaja(a) {
+    if (confirm("\u00bfConforma cancelar el movimiento?")) {
+        var b = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "pagos/cancelaPagoMov",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                id: a
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                notify_info(b.notify, b.msg);
+                $("#btnBuscarMovCaja").click()
+            } catch (e) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+            }
+        })
+    }
+}
+
+function cajas_functions() {
+    configPrint();
+    var a = "esc tab space return backspace scroll capslock numlock insert home del end pageup pagedown left up right down f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 1 2 3 4 5 6 7 8 9 0 a b c d e f g h i j k l m n o p q r s t u v w x y z Ctrl+a Ctrl+b Ctrl+c Ctrl+d Ctrl+e Ctrl+f Ctrl+g Ctrl+h Ctrl+i Ctrl+j Ctrl+k Ctrl+l Ctrl+m Ctrl+n Ctrl+o Ctrl+p Ctrl+q Ctrl+r Ctrl+s Ctrl+t Ctrl+u Ctrl+v Ctrl+w Ctrl+x Ctrl+y Ctrl+z Shift+a Shift+b Shift+c Shift+d Shift+e Shift+f Shift+g Shift+h Shift+i Shift+j Shift+k Shift+l Shift+m Shift+n Shift+o Shift+p Shift+q Shift+r Shift+s Shift+t Shift+u Shift+v Shift+w Shift+x Shift+y Shift+z Alt+a Alt+b Alt+c Alt+d Alt+e Alt+f Alt+g Alt+h Alt+i Alt+j Alt+k Alt+l Alt+m Alt+n Alt+o Alt+p Alt+q Alt+r Alt+s Alt+t Alt+u Alt+v Alt+w Alt+x Alt+y Alt+z Ctrl+esc Ctrl+tab Ctrl+space Ctrl+return Ctrl+backspace Ctrl+scroll Ctrl+capslock Ctrl+numlock Ctrl+insert Ctrl+home Ctrl+del Ctrl+end Ctrl+pageup Ctrl+pagedown Ctrl+left Ctrl+up Ctrl+right Ctrl+down Ctrl+f1 Ctrl+f2 Ctrl+f3 Ctrl+f4 Ctrl+f5 Ctrl+f6 Ctrl+f7 Ctrl+f8 Ctrl+f9 Ctrl+f10 Ctrl+f11 Ctrl+f12 Shift+esc Shift+tab Shift+space Shift+return Shift+backspace Shift+scroll Shift+capslock Shift+numlock Shift+insert Shift+home Shift+del Shift+end Shift+pageup Shift+pagedown Shift+left Shift+up Shift+right Shift+down Shift+f1 Shift+f2 Shift+f3 Shift+f4 Shift+f5 Shift+f6 Shift+f7 Shift+f8 Shift+f9 Shift+f10 Shift+f11 Shift+f12 Alt+esc Alt+tab Alt+space Alt+return Alt+backspace Alt+scroll Alt+capslock Alt+numlock Alt+insert Alt+home Alt+del Alt+end Alt+pageup Alt+pagedown Alt+left Alt+up Alt+right Alt+down Alt+f1 Alt+f2 Alt+f3 Alt+f4 Alt+f5 Alt+f6 Alt+f7 Alt+f8 Alt+f9 Alt+f10 Alt+f11 Alt+f12".split(" ");
+    jQuery("#platform-details").html("<code>" + navigator.userAgent + "</code>");
+    $.each(a, function(b, c) {
+        var d = /[\+]+/.test(a[b]) ? a[b].replace("+", "_") : a[b];
+        $(document).bind("keydown", a[b], function() {
+            switch (d) {
+                case "f2":
+                    $("#btnGeneraCobro").click()
+            }
+            return !1
+        })
+    });
+    $("#txtImp").keypress(function(a) {
+        13 == a.which && $("#txtRefePa").focus()
+    });
+    $("#txtRefePa").keypress(function(a) {
+        13 == a.which && ($("#cbMetodoPagoCli").focus(), addMetodopagoNota())
+    });
+    $("#modCobro").on("shown.bs.modal", function() {
+        $("#txtPagCon").focus()
+    });
+    $(document.body).on("change", "#cbMetodoPagoCli", function() {
+        $("#txtImp").focus()
+    });
+    $(document.body).on("change", "#cTipoIngreso", function() {
+        $("#txtMontoIngCaja").focus()
+    });
+    $(document.body).on("change", "#cbConPagoCaja", function() {
+        if (2 == this.value) {
+            $("#divClienteCredit").show();
+            var a = parseFloat($("#disponible").val()),
+                c = parseFloat($("#total").val());
+            console.log("dispo " + a);
+            console.log("tot" + c);
+            a >= c ? ($("#btnCobrarMixto").show(), $("#row-msg").hide()) : ($("#btnCobrarMixto").hide(), $("#row-msg").show(), $("#hMensajeCobro").html("El cliente no cuenta con cr&eacute;dito suficiente"))
+        } else $("#divClienteCredit").hide(),
+            $("#btnCobrarMixto").show(), $("#row-msg").hide()
+    });
+    $(document.body).on("change", "#cTipoIngreso", function() {
+        var a = this.value;
+        8 == a ? ($("#divEntidadCliente").show(), $("#divEntidadProveedor").hide()) : 9 == a ? ($("#divEntidadCliente").hide(), $("#divEntidadProveedor").show()) : ($("#divEntidadCliente").hide(), $("#divEntidadProveedor").hide())
+    });
+    $("#cEntidadCaja").select2({
+        ajax: {
+            url: $("#url").val() + "entidades/lista_entidades",
+            method: "POST",
+            dataType: "json",
+            delay: 250,
+            data: function(a) {
+                return {
+                    criterio: a.term,
+                    tipo_entidad: "c",
+                    col: "nombre_razon_social",
+                    cols: ["id_entidad", "nombre_razon_social", "SALDO"]
+                }
+            },
+            processResults: function(a) {
+                var b = [];
+                $.each(a, function(a, c) {
+                    null != c && (b.push({
+                        id: c.id_entidad,
+                        text: c.nombre_razon_social
+                    }), $("#txtEntidadAdeuda").val("$ " + c.SALDO))
+                });
+                return {
+                    results: b
+                }
+            },
+            cache: !0
+        },
+        minimumInputLength: 1,
+        placeholder: " ",
+        allowClear: !0
+    });
+    $("#cProdCaja").select2({
+        ajax: {
+            url: $("#url").val() + "entidades/lista_entidades",
+            method: "POST",
+            dataType: "json",
+            delay: 250,
+            data: function(a) {
+                return {
+                    criterio: a.term,
+                    tipo_entidad: "p",
+                    col: "nombre_razon_social",
+                    cols: ["id_entidad", "nombre_razon_social"]
+                }
+            },
+            processResults: function(a) {
+                var b = [];
+                $.each(a, function(a, c) {
+                    null != c && b.push({
+                        id: c.id_entidad,
+                        text: c.nombre_razon_social
+                    })
+                });
+                return {
+                    results: b
+                }
+            },
+            cache: !0
+        },
+        minimumInputLength: 1,
+        placeholder: " ",
+        allowClear: !0
+    });
+    $("#btnTransCaja").click(function() {
+        $("#moTraPen").modal("toggle")
+    });
+    $("#btnAddMetoPag").click(function() {
+        addMetodopagoNota()
+    });
+    $("#btnBuscarTraCaja").click(function() {
+        var a = $("#url").val(),
+            c = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: a + "pagos/listadoPagosPendientes",
+            beforeSend: function() {
+                block_class(!0, c)
+            },
+            complete: function() {
+                block_class(!1, c)
+            },
+            data: {
+                fecha: $("#txtFechaTraMov").val(),
+                idTienda: $("#id_tienda").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                a = "";
+                for (var d in b.items) {
+                    var c = b.items[d];
+                    if (null != c) {
+                        var h = c.fecha;
+                        a += "<tr><td>" + (null != c.nombre_razon_social ? c.nombre_razon_social : c.cliente) + "</td><td>" + currency(c.importe, 1) + "</td><td>" + h.substring(11, 19) + '</td><td class="text-center"><div class="btn-group"><a class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Cancelar Registro" onclick="confirmaTrasPago(' +
+                            c.id_orden_c + "," + c.id + ')"><i class="fa fa-pencil"></i></a></div></td></tr>'
+                    }
+                }
+                $("#tbody_movtra").html(a)
+            } catch (k) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(k)
+            }
+        })
+    });
+    $("#btnBuscarMovCaja").click(function() {
+        var a = $("#url").val(),
+            c = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: a + "pagos/listadoPagos",
+            beforeSend: function() {
+                block_class(!0, c)
+            },
+            complete: function() {
+                block_class(!1, c)
+            },
+            data: {
+                fecha: $("#txtFechaMov").val(),
+                idTienda: $("#id_tienda").val()
+            }
+        }).done(function(a) {
+            try {
+                var b =
+                    JSON.parse(a);
+                a = "";
+                for (var d in b.items) {
+                    var c = b.items[d];
+                    if (null != c) {
+                        var h = null != c.nombre_razon_social ? c.nombre_razon_social : "",
+                            k = c.fecha;
+                        console.log("fecha " + k);
+                        a += "<tr><td>" + c.tipo_ingreso + "</td><td>" + currency(c.importe, 1) + "</td><td>" + c.observaciones + "</td><td>" + k.substring(11, 19) + "</td><td>" + h + '</td><td class="text-center"><div class="btn-group"><a class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Cancelar Registro" onclick="cancelaMovCaja(' + c.id + ')"><i class="fa fa-pencil"></i></a></div></td></tr>'
+                    }
+                }
+                $("#tbody_movcaja").html(a)
+            } catch (l) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"),
+                    console.log(l)
+            }
+        })
+    });
+    $("#btnCorte").click(function() {
+        $("#btnCorte").html();
+        swal({
+            title: "Corte de Caja",
+            text: "\u00bfIngresa el total de efectivo?",
+            type: "input",
+            showCancelButton: !0,
+            closeOnConfirm: !1,
+            showLoaderOnConfirm: !0,
+            inputPlaceholder: "\u00bfTotal en efectivo?"
+        }, function(a) {
+            if (!1 === a) return !1;
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "caja/corte_caja",
+                data: {}
+            }).done(function(a) {
+                try {
+                    JSON.parse(a), swal("Turno abierto")
+                } catch (d) {
+                    alert("Error interno, favor de reportarlo"), console.log(d)
+                }
+            })
+        })
+    });
+    $("#btnCobrarMixto").click(function() {
+        realiza_cobro()
+    });
+    $("#btnEntradaEfecCaja").click(function() {
+        $("#modal-ingresos").modal();
+        $("#modal-title-movefec").html("ENTRADA DE EFECTIVO");
+        $("#tipoIngreso").val("i");
+        $("#divEntidadCliente").hide();
+        $("#divEntidadProveedor").hide();
+        tipoIngreso("INGRESO")
+    });
+    $("#btnSalidaEfecCaja").click(function() {
+        $("#modal-ingresos").modal();
+        $("#modal-title-movefec").html("SALIDA DE EFECTIVO");
+        $("#tipoIngreso").val("e");
+        $("#divEntidadCliente").hide();
+        $("#divEntidadProveedor").hide();
+        tipoIngreso("EGRESO")
+    });
+    $("#btnAceptaSalida").click(function() {
+        var a =
+            confirm("\u00bfSon correctos los datos?"),
+            c = $("#url").val(),
+            d = jQuery(this).parents(".block");
+        a && $.ajax({
+            type: "POST",
+            url: c + "cajas/afecta_efectivo_caja",
+            beforeSend: function() {
+                block_class(!0, d)
+            },
+            complete: function() {
+                block_class(!1, d)
+            },
+            data: {
+                cantidad: "-" + $("#txtSalidaEfectivo").val(),
+                obs: $("#txtObsSalida").val(),
+                id_usuario: $("#id_usuario").val(),
+                id_tienda: $("#id_tienda").val(),
+                id_caja: $("#id_caja").val(),
+                tipo: "s"
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                notify_info("success", "Salida registrada correctamente con la referencia " +
+                    b.id_ref)
+            } catch (f) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+            }
+        })
+    });
+    $("#btnAceptaEntrada").click(function() {
+        var a = confirm("\u00bfSon correctos los datos?"),
+            c = $("#url").val(),
+            d = jQuery(this).parents(".block"),
+            e = {};
+        e.tipo_ingreso = $("#tipoIngreso").val();
+        e.importe = $("#txtMontoIngCaja").val();
+        e.id_tipo_ingreso = $("#cTipoIngreso").val();
+        e.observaciones = $("#txtObsEfectivo").val();
+        "INGRESO" == $("#tipoIngreso").val() && (e.id_entidad = $("#cEntidadCaja").val());
+        if (0 ==
+            $("#cTipoIngreso").val()) return alert("Selecciona el tipo de efectivo"), !1;
+        a && $.ajax({
+            type: "POST",
+            url: c + "cajas/afectaEfectivoCaja",
+            beforeSend: function() {
+                block_class(!0, d)
+            },
+            complete: function() {
+                block_class(!1, d)
+            },
+            data: e
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                notify_info(b.type, b.msg)
+            } catch (h) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(h)
+            }
+        })
+    });
+    $("#btnGeneraCobro").click(function() {
+        if (0 == $("#id_caja").val()) return alert("Selecciona el modo de caja, caja01 o caja02"),
+            !1;
+        if ("" == $("#txtNumVenta").val() || "0" == $("#total").val()) return !1;
+        if ("false" == $("#falta_existencia").val()) {
+            $("#modCobro").modal({
+                backdrop: "static",
+                keyboard: !1
+            });
+            $("#total_cobrar").html($("#hImporteTotalArt").html());
+            $("#total_cobrar").html($("#hImporteTotalArt").html());
+            $("#txtImp").val($("#total").val());
+            $("#txtRefePa").val($("#refe_pago").val());
+            $("#txtImp").focus();
+            $("#txtPagCon").val("");
+            var a = "" != $("#metodo_pago").val() ? $("#metodo_pago").val() : "01";
+            $("#cbMetodoPagoCli").val(a);
+            $("#tBodyMP").html("");
+            addMetodopagoNota()
+        } else alert("Articulo bajo en existencia, favor de pasar con su vendedor")
+    });
+    $("#txtRefBanco").keypress(function(a) {
+        13 == a.which && $("#txtTipoBanco").focus()
+    });
+    $("#txtEfecMix").on("input", function(a) {
+        calcula_pago_mixto(0)
+    });
+    $("#txtTarjetaMix").on("input", function(a) {
+        calcula_pago_mixto(0)
+    });
+    $("#txtCreditoMix").on("input", function(a) {
+        calcula_pago_mixto(this.value)
+    });
+    $("#txtChequeMix").on("input", function(a) {
+        calcula_pago_mixto(0)
+    });
+    $("#txtPagCon").keypress(function(a) {
+        jQuery(this).parents(".block")
+    });
+    $("#txtPagCon").on("input", function(a) {
+        a = parseFloat($("#total").val());
+        var b = "" != this.value ? parseFloat(this.value) : 0;
+        b >= a ? (a = b - a, $("#caja-efec-cambio").html(currency(a, 1)), $("#row-msg").hide(), $("#btnCobrarMixto").show(), $("#lblCambio").html("Cambio")) : (a -= b, $("#caja-efec-cambio").html(currency(a, 1)), $("#lblCambio").html("Adeudo"))
+    });
+    $("#txtNumVenta").keypress(function(a) {
+        var b = $("#url").val(),
+            d = jQuery(this).parents(".block");
+        reinicia_controles();
+        if (13 == a.which) {
+            if ("" == this.value) return !1;
+            d = $("#bockPri");
+            a = {
+                fol_orden: this.value,
+                id_tienda: $("#id_tienda").val(),
+                folio_tipo: $("#folio_tipo").val(),
+                id_caja: $("#id_caja").val()
+            };
+            var e = "";
+            $.ajax({
+                type: "POST",
+                url: b + "ordenes/recupera_orden_by_id",
+                beforeSend: function() {
+                    block_class(!0, d)
+                },
+                complete: function() {
+                    block_class(!1, d)
+                },
+                data: a
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    if ("n" == b.status) {
+                        var d = b.orden,
+                            c = 1 == d.requiere_fac ? "SI" : "NO",
+                            g = null == d.nombre_razon_social ? d.nombre_cliente : d.nombre_razon_social,
+                            m = a = 0,
+                            n = m = 0,
+                            p = null != d.id_entidad ? d.id_entidad : 0,
+                            r = b.credito,
+                            u = b.saldo,
+                            v = b.disponible;
+                        $("#lblReqFac").html(c);
+                        $("#lblNombre").html(g);
+                        $("#lblRFC").html(d.rfc);
+                        $("#lblVendedor").html(d.vendedor);
+                        $("#id_entidad").val(p);
+                        $("#monto_credito").val(r.replace(",", ""));
+                        $("#saldo").val(u.replace(",", ""));
+                        $("#disponible").val(v.replace(",", ""));
+                        $("#lblNomCliCla").html("Cliente " + g);
+                        $("#lblDispoCa").html("Cr&eacute;dito " + v);
+                        $("#lblCreitoCa").html("Disponible " + r);
+                        $("#falta_existencia").val(b.falta_existencia);
+                        $("#metodo_pago").val(d.id_metodo_pago);
+                        $("#refe_pago").val(d.ref);
+                        nItera = 1;
+                        d = !1;
+                        for (var q in b.articulos) {
+                            var t = b.articulos[q];
+                            if (null != t) {
+                                if (0 > parseInt(t.existencia)) {
+                                    var w = " bgcolor=#efa231";
+                                    d = !0
+                                } else w = "";
+                                a += parseInt(t.cantidad);
+                                m += parseFloat(t.descuento_total);
+                                e += "<tr" + w + "><td>" + t.CLAVE_ART + "</td><td>" + t.descripcion + "</td><td>" + currency(t.precio, 1) + "</td><td>" + t.cantidad + "</td><td>" + t.existencia + "</td><td>" + t.descuento + ' %</td><td bgcolor="#B4F7B9">' + currency(t.total, 1) + "</td></tr>"
+                            }
+                            nItera++
+                        }
+                        $("#btnGeneraCobro").prop("disabled", d);
+                        $("#tabla_articulos").html(e);
+                        var y = b.iva,
+                            x = b.subTotal;
+                        n = b.total;
+                        $("#hDescuentoArt").html(currency(m, 1));
+                        $("#descuento").val(m);
+                        $("#hSubTotalArt").html(currency(x, 1));
+                        $("#subtotal").val(x);
+                        $("#hIvaArt").html(currency(y, 1));
+                        $("#iva").val(y);
+                        $("#hImporteTotalArt").html(currency(n, 1));
+                        $("#total").val(n)
+                    } else notify_info("warning", b.msg)
+                } catch (z) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(z)
+                }
+            })
+        }
+    });
+    $("#btnImpuestos").click(function() {
+        cambia_folio_caja(2)
+    });
+    $("#btnNotas").click(function() {
+        cambia_folio_caja(1)
+    })
+}
+
+function calcula_pago_mixto(a) {
+    var b = parseFloat($("#total").val()),
+        c = "" != $("#txtEfecMix").val() ? parseFloat($("#txtEfecMix").val()) : 0,
+        d = "" != $("#txtTarjetaMix").val() ? parseFloat($("#txtTarjetaMix").val()) : 0,
+        e = "" != $("#txtCreditoMix").val() ? parseFloat($("#txtCreditoMix").val()) : 0,
+        g = "" != $("#txtChequeMix").val() ? parseFloat($("#txtChequeMix").val()) : 0;
+    if (0 < a) {
+        var f = parseFloat($("#monto_credito").val()),
+            h = parseFloat($("#saldo").val());
+        f -= h;
+        console.log("total cre " + f);
+        if (a > f) return $("#hMensajeCobro").html("El importe excede el cr\u00e9dito del cliente del que dispone"),
+            $("#row-msg").show(), $("#btnCobrarMixto").hide(), !1
+    }
+    a = parseFloat(c + d + e + g);
+    console.log("subtotal" + a);
+    console.log("total" + b);
+    b = parseFloat(b - a);
+    console.log("debe" + b);
+    $("#total_resta").html(currency(b, 1));
+    $("#row-msg").hide();
+    $("#btnCobrarMixto").show()
+}
+
+function tipoIngreso(a) {
+    var b = jQuery(this).parents(".block");
+    $("#cCajaIngreso").val($("#id_caja").val());
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "cobros/getListTipoIngresos",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        data: {
+            tipoIngreso: a
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            $("#cTipoIngreso").empty();
+            a = 1;
+            for (var c in b.itemsTIngreso) {
+                var g = b.itemsTIngreso[c];
+                1 == a && $("#cTipoIngreso").append($("<option>", {
+                    value: "0",
+                    text: "--Selecciona--"
+                }));
+                null != g && ($("#cTipoIngreso").append($("<option>", {
+                    value: g.id_tipo_ingreso,
+                    text: g.tipo_ingreso
+                })), a += 1)
+            }
+        } catch (f) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+        }
+    })
+}
+
+function realiza_cobro() {
+    var a = $("#cbMetodoPagoCli").val(),
+        b = $("#blockAplicaCobro"),
+        c = $("#url").val();
+    if ("" != a) {
+        a = {};
+        a.id_corte = $("#id_corte").val();
+        a.fol_orden = $("#txtNumVenta").val();
+        a.id_tienda = $("#id_tienda").val();
+        a.id_caja = $("#id_caja").val();
+        a.metodo_pago = $("#cbMetodoPagoCli").val();
+        a.n_recibo = $("#n_recibo").val();
+        a.id_usuario = $("#id_usuario").val();
+        a.serie = $("#serie").val();
+        a.id_entidad = $("#id_entidad").val();
+        a.idConPago = $("#cbConPagoCaja").val();
+        a.txtConPago = $("#cbConPagoCaja option:selected").text();
+        a.pagoCon = $("#txtPagCon").val();
+        a.totalPagado = $("#total_pagado").val();
+        var d = ["btn", "id_metodo_pago", "metodo", "importe", "referencia"],
+            e = $("#tableMP tbody tr").map(function(a) {
+                var b = {};
+                $(this).find("td").each(function(a) {
+                    b[d[a]] = $(this).text()
+                });
+                $.each(b, function(a, b) {
+                    console.log("key:" + a + " value:" + b)
+                });
+                return b
+            }).get();
+        if ("" == e) return alert("Selecciona un metodo de pago"), null;
+        a.impMetodoPago = e;
+        $.ajax({
+            type: "POST",
+            url: c + "cajas/realiza_cobro",
+            beforeSend: function() {
+                $("#btnCobrarMixto").hide();
+                $("#divCobrando").show();
+                $("#btnCancelarCob").hide();
+                block_class(!0, b)
+            },
+            complete: function() {
+                $("#btnCobrarMixto").show();
+                $("#divCobrando").hide();
+                $("#btnCancelarCob").show();
+                block_class(!1, b)
+            },
+            data: a
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                if ("success" == b.tipo) {
+                    if ("" != b.msgFactu) alert(b.msgFactu);
+                    else if (reinicia_controles(), $("#n_recibo").val(b.n_recibo), $("#lblNRecibo").html(b.n_recibo), $("#modCobro").modal("toggle"), $("#txtNumVenta").val(""), $("#txtNumVenta").focus(), 0 == b.requiere_factura) {
+                        $("#impresora_pred").val(b.caja_cobrado);
+                        var d = $("#impresora_pred").val(),
+                            c = qz.configs.create(d),
+                            e = [{
+                                type: "raw",
+                                format: "file",
+                                data: $("#path").val() + "/upload/tmp/" + b.file
+                            }];
+                        qz.print(c, e)["catch"](displayError)
+                    }
+                    if ("" != b.folSerieFac) {
+                        $("#hLblNumFac").html(b.folSerieFac);
+                        var g = $("#path").val() + b.file_factura;
+                        console.log(g);
+                        $("#modalMostrarFac").modal({
+                            backdrop: "static",
+                            keyboard: !1
+                        });
+                        $("#showPDFfac").attr("data", g)
+                    }
+                } else $("#modCobro").modal("toggle"), reinicia_controles(), alert(b.msg)
+            } catch (n) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"),
+                    $("#btnCobrarMixto").prop("disabled", !0), console.log(n)
+            }
+        })
+    } else alert("Selecciona una forma de pago")
+}
+
+function reinicia_controles() {
+    $("#btnCobrarMixto").prop("disabled", !1);
+    $("#tabla_articulos").html("");
+    $("#lblNombre").html("");
+    $("#lblRFC").html("");
+    $("#lblVendedor").html("");
+    $("#hDescuentoArt").html("$0.00");
+    $("#hSubTotalArt").html("$0.00");
+    $("#hIvaArt").html("$0.00");
+    $("#hImporteTotalArt").html("$0.00");
+    $("#total_cobrar").html("$0.00");
+    $("#total").val("0");
+    $("#caja-efec-efectivo").val("0");
+    $("#txtRefBanco").val("");
+    $("#txtRefTarjeta").val("");
+    $("#txtRefValeCheque").val("");
+    $("#txtEfecMix").val("0");
+    $("#txtTarjetaMix").val("0");
+    $("#txtCreditoMix").val("0");
+    $("#txtChequeMix").val("0");
+    $("#iva").val("0");
+    $("#subtotal").val("0");
+    $("#descuento").val("0");
+    $("#caja-efec-cambio").html("$0.00");
+    $("#clienteCreDispo").val("0");
+    $("#clienteCredit").val("0");
+    $("#clienteDiasCre").val("0");
+    $("#clienteSaldo").val("0");
+    $("#clienteFecPag").val("");
+    $("#tBodyMP").html("");
+    $("#refe_pago").val("");
+    $("#cbConPagoCaja").val("1");
+    $("#total_pagado").val("0")
+}
+
+function resetColorsMetodoPagoCaja() {
+    $("#mpEfec").css("background-color", "white");
+    $("#mpChe").css("background-color", "white");
+    $("#mpTras").css("background-color", "white");
+    $("#mpTarC").css("background-color", "white");
+    $("#mpVal").css("background-color", "white");
+    $("#mpTarD").css("background-color", "white")
+}
+
+function cobro_caja(a) {
+    $("#metodo_pago").val(a);
+    $("#row-msg").hide();
+    resetColorsMetodoPagoCaja();
+    switch (a) {
+        case "01":
+            $("#mpEfec").css("background-color", "#99ff99");
+            $("#p_efectivo").show();
+            $("#p_tarjeta").hide();
+            $("#p_credito").hide();
+            $("#p_vale").hide();
+            $("#p_bancos").hide();
+            $("#p_mixto").hide();
+            $("#caja-efec-efectivo").focus();
+            break;
+        case "02":
+            $("#mpChe").css("background-color", "#99ff99");
+            $("#p_efectivo").hide();
+            $("#p_tarjeta").hide();
+            $("#p_credito").hide();
+            $("#p_vale").hide();
+            $("#p_bancos").show();
+            $("#p_mixto").hide();
+            $("#txtRefBanco").attr("placeholder", "Ingresa el tipo de cheque");
+            $("#txtTipoBanco").val("");
+            $("#txtRefBanco").focus();
+            $("#btnCobrarMixto").show();
+            break;
+        case "03":
+            $("#mpTras").css("background-color", "#99ff99");
+            $("#p_efectivo").hide();
+            $("#p_tarjeta").hide();
+            $("#p_credito").hide();
+            $("#p_vale").hide();
+            $("#p_bancos").show();
+            $("#p_mixto").hide();
+            $("#txtRefBanco").attr("placeholder", "Ingresa el folio de la transferencia");
+            $("#txtTipoBanco").val("");
+            $("#txtRefBanco").focus();
+            $("#btnCobrarMixto").show();
+            break;
+        case "04":
+            $("#mpTarC").css("background-color", "#99ff99");
+            $("#p_efectivo").hide();
+            $("#p_tarjeta").show();
+            $("#p_credito").hide();
+            $("#p_vale").hide();
+            $("#p_bancos").hide();
+            $("#p_mixto").hide();
+            $("#txtRefTarjeta").focus();
+            $("#btnCobrarMixto").show();
+            break;
+        case "08":
+            $("#mpVal").css("background-color", "#99ff99");
+            $("#p_efectivo").hide();
+            $("#p_tarjeta").hide();
+            $("#p_credito").hide();
+            $("#p_vale").show();
+            $("#p_bancos").hide();
+            $("#p_mixto").hide();
+            $("#txtRefValeCheque").focus();
+            $("#btnCobrarMixto").show();
+            break;
+        case "28":
+            $("#mpTarD").css("background-color", "#99ff99");
+            $("#p_efectivo").hide();
+            $("#p_tarjeta").show();
+            $("#p_credito").hide();
+            $("#p_vale").hide();
+            $("#p_bancos").hide();
+            $("#p_mixto").hide();
+            $("#txtRefTarjeta").focus();
+            $("#btnCobrarMixto").show();
+            break;
+        case "96":
+            $("#mpEfec").css("background-color", "#99ff99");
+            $("#p_efectivo").hide();
+            $("#p_tarjeta").hide();
+            $("#p_credito").hide();
+            $("#p_vale").hide();
+            $("#p_bancos").hide();
+            $("#p_mixto").show();
+            $("#btnCobrarMixto").hide();
+            $("#txtEfecMix").focus();
+            a = $("#monto_credito").val();
+            var b = parseFloat($("#saldo").val());
+            parseFloat($("#total").val());
+            var c = parseFloat(a - b);
+            $("#txtCreditoMixCliente").val(currency(a, 1));
+            $("#txtCreditoMixDispo").val(currency(c, 1));
+            $("#btnCobrarMixto").show();
+            break;
+        case "97":
+            $("#mpEfec").css("background-color", "yellow");
+            $("#p_efectivo").hide();
+            $("#p_tarjeta").hide();
+            $("#p_credito").show();
+            $("#p_vale").hide();
+            $("#p_bancos").hide();
+            $("#p_mixto").hide();
+            a = $("#monto_credito").val();
+            b = parseFloat($("#saldo").val());
+            var d = parseFloat($("#total").val());
+            c = parseFloat(a - b);
+            d = saldo_cliente(d, c);
+            console.log("credito : " + a);
+            console.log("saldo : " + b);
+            console.log("dispo : " + c);
+            console.log("tiene credit : " + d);
+            d ? ($("#row-msg").hide(), $("#btnCobrarMixto").show()) : ($("#row-msg").show(), $("#hMensajeCobro").html("El importe excede el cr\u00e9dito del cliente del que dispone"), $("#btnCobrarMixto").hide());
+            $("#hCredito").html(currency(a, 1));
+            $("#hSaldo").html(currency(b, 1));
+            $("#hCreditoDispo").html(currency(c, 1));
+            break;
+        case "95":
+            $("#mpEfec").css("background-color",
+                "yellow"), $("#p_efectivo").hide(), $("#p_tarjeta").hide(), $("#p_credito").hide(), $("#p_vale").hide(), $("#p_bancos").show(), $("#p_mixto").hide(), $("#txtRefBanco").attr("placeholder", "Ingresa el folio del dep\u00f3sito"), $("#txtRefBanco").val(""), $("#txtTipoBanco").val(""), $("#txtRefBanco").focus(), $("#btnCobrarMixto").show()
+    }
+}
+
+function saldo_cliente(a, b) {
+    var c = !1;
+    a <= b && (c = !0);
+    return c
+}
+
+function cambia_folio_caja(a) {
+    var b = $("#bockPri");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "cajas/recupera_folio",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        data: {
+            id_tienda: $("#id_tienda").val(),
+            id_caja: a
+        }
+    }).done(function(b) {
+        try {
+            var d = JSON.parse(b);
+            "1" == a ? ($("#btnNotas").removeClass("btn-default").addClass("btn-warning"), $("#btnImpuestos").removeClass("btn-warning").addClass("btn-default"), $("#impresora_pred").val("caja01")) : ($("#btnImpuestos").removeClass("btn-default").addClass("btn-warning"),
+                $("#btnNotas").removeClass("btn-warning").addClass("btn-default"), $("#impresora_pred").val("caja02"));
+            $("#lblNRecibo").html(d.folio);
+            $("#n_recibo").val(d.folio);
+            $("#id_caja").val(d.id_caja);
+            notify_info("success", "Se a cambiado la caja correctamente");
+            $("#txtNumVenta").focus()
+        } catch (e) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+        }
+    })
+}
+
+function valida_turno() {
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "cajas/valida_turno",
+        beforeSend: function() {
+            $("#btnCorte").prop("disabled", !0);
+            $("#btnCorte").html("Buscando turnos...")
+        },
+        complete: function() {
+            $("#btnCorte").prop("disabled", !1)
+        },
+        data: {
+            id_usuario: $("#id_usuario").val()
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            $("#btnCorte").html(b.msgButton);
+            $("#id_corte").val(b.id_corte)
+        } catch (c) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(c)
+        }
+    })
+}
+
+function ordenes_indicadores_function() {
+    $(document.body).on("change", "#selTiendas", function() {
+        lista_vendedores()
+    });
+    $("#btnChartVentas").click(function() {
+        modal_grafica_vendedores()
+    });
+    $("#btnImpVentas").click(function() {
+        modal_lista_vendedores()
+    });
+    $("#btnBuscar").click(function() {
+        var a = $("#url").val();
+        $("#selTiendas").val();
+        var b = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: a + "ordenes/lista_ordenes_vendedores",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                desde: $("#txtDesde").val(),
+                hasta: $("#txtHasta").val(),
+                id_tienda: $("#selTiendas").val(),
+                id_usuario: $("#selVendedores").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = "",
+                    c = JSON.parse(a),
+                    g = a = 0;
+                $("#row_lista").show();
+                for (var f in c) {
+                    var h = c[f];
+                    null != h && (a += parseInt(h.num_ventas), g += parseFloat(h.importe_total), b += "<tr><td>" + h.nombre + "</td><td>" + h.num_ventas + "</td><td>" + currency(h.importe_total, 1) + "</td><td>" + h.fecha + "</td><td>" + h.tienda + '</td><td><button class="btn btn-sm btn-default push-5-r push-10" type="button" onClick="modal_lista_vendedor(\'' +
+                        h.fecha + "'," + h.id_usuario + ",'" + h.nombre + '\')"><i class="fa fa-print"></i> Listas</button></td></tr>')
+                }
+                $("#lista_indicadores_ordenes").html(b)
+            } catch (k) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(k)
+            }
+        })
+    })
+}
+
+function modal_lista_vendedor(a, b, c) {
+    a = {
+        fecha: a,
+        id_usuario: b,
+        nombre_completo: c
+    };
+    b = $("#url").val();
+    OpenWindowWithPost(b + "ordenes/imprimir_ventas_vendedor", "width=1300,height=700,left=100,top=100,resizable=no,scrollbars=no", "NewFile", a)
+}
+
+function modal_lista_vendedores() {
+    var a = {
+            desde: $("#txtDesde").val(),
+            hasta: $("#txtHasta").val(),
+            id_tienda: $("#selTiendas").val(),
+            id_usuario: $("#selVendedores").val()
+        },
+        b = $("#url").val();
+    OpenWindowWithPost(b + "ordenes/imprimir_ventas_vendedores", "width=1300,height=700,left=100,top=100,resizable=no,scrollbars=no", "NewFile", a)
+}
+
+function modal_grafica_vendedores() {
+    var a = {
+            desde: $("#txtDesde").val(),
+            hasta: $("#txtHasta").val(),
+            id_tienda: $("#selTiendas").val(),
+            id_usuario: $("#selVendedores").val()
+        },
+        b = $("#url").val();
+    OpenWindowWithPost(b + "ordenes/grafica_vendedores", "width=1300,height=700,left=100,top=100,resizable=no,scrollbars=no", "NewFile", a)
+}
+
+function asignaImpresoraTxt(a) {
+    $("#txtNomImpre").val(a)
+}
+
+function getListPrinters() {
+    qz.printers.find().then(function(a) {
+        for (var b = "", c = 0; c < a.length; c++) b += "&nbsp; <a href='#' onclick='asignaImpresoraTxt(\"" + a[c] + "\");'>" + a[c] + "</a><br/>";
+        $("#msgListPrinters").html(b)
+    })["catch"](handleConnectionError)
+}
+
+function startConnection(a, b) {
+    qz.websocket.isActive() ? alert("Conexi\u00f3n activa") : qz.websocket.connect(a).then(function() {
+        findDefaultPrinter()
+    })["catch"](handleConnectionError)
+}
+
+function endConnection() {
+    qz.websocket.isActive() ? qz.websocket.disconnect().then(function() {
+        notify_info("success", "La conexi\u00f3n con la impresora se ha cerrado")
+    })["catch"](handleConnectionError) : alert("No hay conexi\u00f3nes activas")
+}
+
+function handleConnectionError(a) {
+    void 0 != a.target ? 2 <= a.target.readyState ? notify_info("danger", "La conexi\u00f3n con la impresora se ha cerrado") : (notify_info("danger", "Ocurrio un error en la conexi\u00f3n con la impresora"), console.error(a)) : notify_info("danger", a)
+}
+
+function findDefaultPrinter() {
+    qz.printers.getDefault().then(function(a) {
+        $("#impresora_pred").val(a)
+    })["catch"](displayError)
+}
+
+function displayError(a) {
+    console.log("Error al imprimir " + a)
+}
+
+function test_print() {
+    var a = $("#impresora_pred").val();
+    a = qz.configs.create(a);
+    qz.print(a, [{
+        type: "raw",
+        data: "\n\nTest de Impresion\n\n",
+        options: {
+            language: "escp",
+            dotDensity: "double"
+        }
+    }])["catch"](displayError)
+}
+
+function asignaArticulo(a) {
+    var b = jQuery(a);
+    a = b.data("id");
+    var c = b.data("cod"),
+        d = b.data("nombre"),
+        e = b.data("costo"),
+        g = b.data("existencia");
+    b = b.data("item");
+    parent.opener.document.frmBusOrCom.claveArticulo.value = c;
+    parent.opener.document.frmBusOrCom.articulo.value = d;
+    parent.opener.document.frmBusOrCom.idArticulo.value = a;
+    parent.opener.document.frmBusOrCom.costo.value = e;
+    parent.opener.document.frmBusOrCom.existencia.value = g;
+    parent.opener.document.frmBusOrCom.item.value = b;
+    parent.opener.document.frmBusOrCom.cantidad.focus();
+    parent.window.close()
+}
+
+function articulosProveedor() {
+    $("#btnBuscaArtPro").click(function() {
+        artiProvee(this)
+    });
+    $("#btnExpArtListPro").click(function() {
+        artiProvee(this)
+    })
+}
+
+function formatoConteos() {
+    $("#btnBusFrmConte").click(function() {
+        artiProvee(this)
+    });
+    $("#btnImpFormato").click(function() {
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "articulos/genFormatConteo",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                idTiendaF: $("#idTiendaF").val(),
+                idTienda: $("#idTienda").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                $("#dvjson").excelexportjs({
+                    containerid: "dvjson",
+                    datatype: "json",
+                    dataset: b,
+                    columns: getColumns(b)
+                })
+            } catch (d) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"),
+                    console.log(d)
+            }
+        })
+    })
+}
+
+function VentasPorVendedor() {
+    $("#btnDocPorDoc").click(function(a) {
+        var b = $(this),
+            c = jQuery(this),
+            d = c.data("table");
+        $("#tabla").val(d);
+        c.parents(".block-content");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "reportesrest/getVentasPorDocumento",
+            beforeSend: function() {
+                $(b).buttonLoader("start");
+                $(b).prop("disabled", !0)
+            },
+            complete: function() {
+                $(b).buttonLoader("stop");
+                $(b).prop("disabled", !1)
+            },
+            error: function(a, b, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error interno, favor de reportarlo"
+                })
+            },
+            data: $("#frmBusDocPorVen").serialize()
+        }).done(function(b) {
+            try {
+                var d =
+                    b.item,
+                    c = $("input[name='formatoExp']:checked").val(),
+                    e = $("#base_url").val() + d;
+                "excel" == c ? (a.preventDefault(), console.log("descarga " + e), window.location.href = e) : "pdf" == c && (console.log(e), $("#modalShowPDF").modal({
+                    backdrop: "static",
+                    keyboard: !1
+                }), $("#showPDF").attr("data", e))
+            } catch (k) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error interno, favor de reportarlo"
+                }), console.log(k)
+            }
+        })
+    });
+    $("#btnDocPorVendedor").click(function(a) {
+        var b = $(this),
+            c = jQuery(this),
+            d = c.data("table");
+        $("#tabla").val(d);
+        c.parents(".block-content");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "reportesrest/getVentasPorVendedor",
+            beforeSend: function() {
+                $(b).buttonLoader("start");
+                $(b).prop("disabled", !0)
+            },
+            complete: function() {
+                $(b).buttonLoader("stop");
+                $(b).prop("disabled", !1)
+            },
+            error: function(a, b, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error interno, favor de reportarlo"
+                })
+            },
+            data: $("#frmBusDocPorVen").serialize()
+        }).done(function(b) {
+            try {
+                var d = b.item,
+                    c = $("input[name='formatoExp']:checked").val(),
+                    e = $("#base_url").val() + d;
+                "excel" == c ? (a.preventDefault(), console.log("descarga " +
+                    e), window.location.href = e) : "pdf" == c && (console.log(e), $("#modalShowPDF").modal({
+                    backdrop: "static",
+                    keyboard: !1
+                }), $("#showPDF").attr("data", e))
+            } catch (k) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error interno, favor de reportarlo"
+                }), console.log(k)
+            }
+        })
+    })
+}
+
+function commonsReportsFunction() {
+    $("#codEntidad").keypress(function(a) {
+        13 == a.which && $.ajax({
+            type: "POST",
+            url: $("#url").val() + "entidades/getEntidad",
+            beforeSend: function() {
+                $("#btnMuestraListPrecios").buttonLoader("start")
+            },
+            complete: function() {
+                $("#btnMuestraListPrecios").buttonLoader("stop")
+            },
+            data: {
+                codEntidad: $(this).val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                $("#cbEntidad").empty().append('<option value="' + b.id_entidad + '">' + b.nombre_razon_social + "</option>").val(b.id_entidad).trigger("change")
+            } catch (d) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"),
+                    console.log(d)
+            }
+        })
+    });
+    $("#btnMuestraListPrecios").click(function() {
+        var a = $("#url").val() + "listaprecios/listaPreciosCliente/" + $("#cbEntidad").val();
+        $.fancybox.open({
+            href: a,
+            type: "iframe",
+            autoSize: !1,
+            width: "100%",
+            height: "100%",
+            padding: 0,
+            afterClose: function(a) {}
+        })
+    });
+    $("#btnRepUtilidad").click(function() {
+        var a = $(this);
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "articulosrest/getRepUtilidadArticulos",
+            error: function(a, c, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error interno, favor de reportarlo"
+                })
+            },
+            beforeSend: function() {
+                $(a).buttonLoader("start")
+            },
+            complete: function() {
+                $(a).buttonLoader("stop")
+            },
+            data: {
+                txtDesde: $("#txtDesde").val(),
+                txtHasta: $("#txtHasta").val(),
+                idKey: $("#idKey").val()
+            }
+        }).done(function(a) {
+            try {
+                $("#repRowFiltrosBus").hide("clip");
+                $("#rowUtilidadArt").show("clip");
+                $("#optRepUtilidad").modal("toggle");
+                var b = a.item;
+                $("#tbUtiliArt tbody").html("");
+                var d = a = 0,
+                    e = 0,
+                    g;
+                for (g in b) {
+                    var f = b[g];
+                    if (null != f) {
+                        var h = (parseFloat(f.totPreVenta) - parseFloat(f.totCosto)) / parseFloat(f.totCosto) * 100;
+                        a += parseInt(f.totCantida);
+                        d += parseFloat(f.totCosto);
+                        e +=
+                            parseFloat(f.totPreVenta);
+                        $("#tbUtiliArt tbody").append("<tr><td><label>" + f.claveArticulo + '</label></td><td class="text-center"><label>' + f.articulo + '</label></td><td class="text-center"><label>' + f.totCantida + '</label></td><td class="text-center"><label>' + applyCurrency(f.totCosto) + '</label></td><td class="text-center"><label>' + applyCurrency(f.totPreVenta) + '</label></td><td class="text-center"><label>' + currencySn(h) + "</label></td></tr>")
+                    }
+                }
+                $("#lblTotCanRepUtiArt").val(a);
+                $("#lblTotCosRepUtiArt").val(applyCurrency(d));
+                $("#lblTotPreRepUtiArt").val(applyCurrency(e))
+            } catch (k) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error interno, favor de reportarlo"
+                }), console.log(k)
+            }
+        })
+    });
+    $("#btnGetValInv").click(function(a) {
+        var b = $(this);
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "articulos/getValuaInventario",
+            beforeSend: function() {
+                $(b).buttonLoader("start")
+            },
+            complete: function() {
+                $(b).buttonLoader("stop")
+            },
+            data: {
+                txtBusCodArt: $("#txtBusCodArt").val(),
+                txtBusDesArt: $("#txtBusDesArt").val(),
+                txtBusItemArt: $("#txtBusItemArt").val(),
+                txtBusFam: $("#txtBusFam").val(),
+                txtBusLin: $("#txtBusLin").val(),
+                txtBusSubLi: $("#txtBusSubLi").val(),
+                txtMarca: $("#txtMarca").val(),
+                txtColor: $("#txtColor").val(),
+                txtMed: $("#txtMed").val(),
+                idTienda: $("#idTiendaF").val(),
+                fechaDesde: $("#fechaDesde").val(),
+                optTipoRep: $("[name='optTipoRep']").val(),
+                optCosto: $("[name='optCosto']").val()
+            }
+        }).done(function(b) {
+            try {
+                var d = JSON.parse(b);
+                a.preventDefault();
+                var c = $("#url").val() + "attachfile/downloadFile/" + encodeURIComponent(JSON.stringify(d));
+                console.log("URL " + c);
+                window.location.href = c
+            } catch (g) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"),
+                    console.log(g)
+            }
+        })
+    })
+}
+
+function ReporteAuxiliar() {
+    $("#btnExpoRepAux").click(function(a) {
+        a.preventDefault();
+        a = encodeURIComponent($("#txtDesde").val());
+        var b = encodeURIComponent($("#txtHasta").val()),
+            c = $("#idEntidad").val();
+        a = $("#url").val() + "entidades/exportReporteAuxialEntidad/" + c + "/" + a + "/" + b;
+        window.location.href = a
+    });
+    $("#btnBuscaRepAux").click(function() {
+        $(this);
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "entidadesrest/getReporteAuxiliar",
+            error: function(a, b, c) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error interno, favor de reportarlo"
+                })
+            },
+            data: {
+                txtDesde: $("#txtDesde").val(),
+                txtHasta: $("#txtHasta").val(),
+                idEntidad: $("#idEntidad").val(),
+                idKey: $("#idKey").val()
+            }
+        }).done(function(a) {
+            try {
+                if ($("#tblRepAuxiliar tbody").html(""), a.status) {
+                    var b = a.item,
+                        c;
+                    for (c in b) {
+                        var d = b[c];
+                        if (null != d) {
+                            var e = currencySn(d.impSaldoAnt),
+                                g = currencySn(d.impPagado),
+                                f = null == d.saldoFinal ? currencySn(d.impSaldoInsoluto) : currencySn(d.saldoFinal),
+                                h = null != d.codMetodoPago ? d.codMetodoPago : "",
+                                k = null != d.folio ? d.folio : "";
+                            if (19 == d.idTipoComprobante || 20 == d.idTipoComprobante || 21 == d.idTipoComprobante) e = 0;
+                            $("#tblRepAuxiliar tbody").append("<tr><td><label>" +
+                                applyDate(d.fecha) + '</label></td><td class="text-center"><label>' + d.tipoComprobante + '</label></td><td class="text-center"><label>' + h + '</label></td><td class="text-center"><label>' + k + '</label></td><td class="text-center"><label>' + e + '</label></td><td class="text-center"><label>' + g + '</label></td><td class="text-center"><label>' + f + "</label></td></tr>")
+                        }
+                    }
+                } else swal({
+                    type: "error",
+                    title: "Error interno",
+                    text: a.msg
+                })
+            } catch (l) {
+                swal({
+                        type: "error",
+                        title: "Error interno",
+                        text: "Error al intentar procesar el JSON, favor de reportarlo"
+                    }),
+                    console.log(l)
+            }
+        })
+    })
+}
+
+function getRepAuxialVenta(a) {
+    a = $("#url").val() + "entidades/getReporteAuxialEntidad/" + $("#idEntidad").val();
+    $.fancybox.open({
+        href: a,
+        type: "iframe",
+        autoSize: !1,
+        width: "100%",
+        height: "100%",
+        padding: 0,
+        afterClose: function(a) {}
+    })
+}
+
+function showHistoricoVentas(a) {
+    a = $("#url").val() + "entidades/getHistorialVentaCliente/" + $("#idEntidad").val();
+    $.fancybox.open({
+        href: a,
+        type: "iframe",
+        autoSize: !1,
+        width: "100%",
+        height: "100%",
+        padding: 0,
+        afterClose: function(a) {}
+    })
+}
+
+function showListaPreciosCliente(a) {
+    a = $("#url").val() + "listaprecios/listaPreciosCliente/" + $("#idEntidad").val();
+    $.fancybox.open({
+        href: a,
+        type: "iframe",
+        autoSize: !1,
+        width: "100%",
+        height: "100%",
+        padding: 0,
+        afterClose: function(a) {}
+    })
+}
+
+function showModPreciosCliente(a) {
+    $("#modalGetListaPrecios").modal("toggle")
+}
+
+function showValInve() {
+    $("#fechaInventario").modal("toggle")
+}
+
+function showUtilidadArticulos() {
+    $("#optRepUtilidad").modal("toggle")
+}
+
+function showConteoFormat(a) {
+    var b = jQuery(a).parents(".block");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "articulos/genFormatConteo",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        data: {
+            txtBusCodArt: $("#txtBusCodArt").val(),
+            txtBusDesArt: $("#txtBusDesArt").val(),
+            txtBusItemArt: $("#txtBusItemArt").val(),
+            txtBusFam: $("#txtBusFam").val(),
+            txtBusLin: $("#txtBusLin").val(),
+            txtBusSubLi: $("#txtBusSubLi").val(),
+            txtMarca: $("#txtMarca").val(),
+            txtColor: $("#txtColor").val(),
+            txtMed: $("#txtMed").val(),
+            idTienda: $("#idTiendaF").val()
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a),
+                c = $("#base_url").val() + "upload/" + b.folder + "/" + b.nameFile;
+            console.log(c);
+            $("#modalMostrarPDF").modal({
+                backdrop: "static",
+                keyboard: !1
+            });
+            $("#showPDF").attr("data", c)
+        } catch (g) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(g)
+        }
+    })
+}
+
+function listaArticulosFunction() {
+    $(document.body).on("change", "#idTiendaF", function() {
+        var a = this.value,
+            b = $("#idTienda").val(),
+            c = $(this).find(":selected").data("matriz");
+        b != a ? $("#btnExpImpArtList").html("Exportar") : $("#btnExpImpArtList").html("Exportar/Importar");
+        1 == c ? b != a ? $("#btnSyncArt").show() : $("#btnSyncArt").hide() : $("#btnSyncArt").hide()
+    });
+    $("#btnExpImpArtList").click(function() {
+        if (2 < $("#usuarioNivel").val()) return swal({
+                type: "error",
+                title: "Error de validaci\u00f3n",
+                text: "Usuario restringido"
+            }),
+            !1;
+        var a = jQuery(this).parents(".block");
+        if ("Exportar" != $(this).text()) {
+            var b = JSON.stringify({
+                txtBusCodArt: $("#txtBusCodArt").val(),
+                txtBusDesArt: $("#txtBusDesArt").val(),
+                txtBusItemArt: $("#txtBusItemArt").val(),
+                txtBusFam: $("#txtBusFam").val(),
+                txtBusLin: $("#txtBusLin").val(),
+                txtBusSubLi: $("#txtBusSubLi").val(),
+                txtMarca: $("#txtMarca").val(),
+                txtColor: $("#txtColor").val(),
+                txtMed: $("#txtMed").val(),
+                idTienda: $("#idTiendaF").val()
+            });
+            console.log("params " + b);
+            b = $("#url").val() + "attachfile/attFileEntArt/artLi/0/" +
+                $("#idTienda").val() + "/" + encodeURIComponent(b);
+            $.fancybox.open({
+                href: b,
+                type: "iframe",
+                autoSize: !1,
+                width: "50%",
+                height: "70%",
+                padding: 0,
+                afterClose: function(a) {}
+            })
+        } else $.ajax({
+            type: "POST",
+            url: $("#url").val() + "articulos/getArticulosStore",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                idTiendaF: $("#idTiendaF").val(),
+                idTienda: $("#idTienda").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                $("#dvjson").excelexportjs({
+                    containerid: "dvjson",
+                    datatype: "json",
+                    dataset: b,
+                    columns: getColumns(b)
+                })
+            } catch (e) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+            }
+        })
+    });
+    $("#btnAgregarArt").click(function() {
+        if (2 < $("#usuarioNivel").val()) return swal({
+            type: "error",
+            title: "Error de validaci\u00f3n",
+            text: "Usuario restringido"
+        }), !1;
+        var a = $("#url").val();
+        window.location.href = a + "articulos/nuevo_articulo"
+    });
+    $("#btnSyncArt").click(function() {
+        swal({
+            title: "\u00bfSincronizar con tienda matriz?",
+            text: "Se sincronizaran los art\u00edculos y costos con los de la tienda matriz",
+            type: "warning",
+            showCancelButton: !0,
+            closeOnConfirm: !1,
+            showLoaderOnConfirm: !0
+        }, function(a) {
+            if (!1 === a) return !1;
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "articulos/synCatArticulos",
+                data: null
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    b.err ? swal({
+                        type: b.type,
+                        title: b.msg,
+                        text: ""
+                    }) : (alert("Registros sincronizados correctamente Actualizados : " + b.artAc + " Insertados : " + b.artIn), location.reload())
+                } catch (d) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+                }
+            })
+        })
+    });
+    $("#btnSubirLista").click(function() {
+        jQuery(this).parents(".block");
+        var a = new FormData($("#importArticulos")[0]);
+        $.ajax({
+            url: $("#url").val() + "articulos/importarListaArt",
+            type: "POST",
+            data: a,
+            async: !1,
+            beforeSend: function() {
+                $("#btnCerrarM").prop("disabled", !0);
+                $("#btnSubirLista").prop("disabled", !0);
+                $("#attachmentListaArticulos").prop("disabled", !0)
+            },
+            success: function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    notify_info(b.type, b.msg);
+                    $("#importArticulos")[0].reset();
+                    $("#modal-imp-pro").modal("toggle")
+                } catch (d) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema")
+                } finally {
+                    $("#btnCerrarM").prop("disabled",
+                        !1), $("#btnSubirLista").prop("disabled", !1), $("#attachmentListaArticulos").prop("disabled", !1)
+                }
+            },
+            cache: !1,
+            contentType: !1,
+            processData: !1
+        })
+    });
+    $("#btnExpArt").click(function(a) {
+        a.preventDefault();
+        a = "ar.descripcion";
+        var b = $("#txtBusDesArt").val();
+        "" != $("#txtBusCodArt").val() && (a = "ar.CLAVE_ART", b = $("#txtBusCodArt").val());
+        "" != $("#txtBusItemArt").val() && (a = "ar.ITEM", b = $("#txtBusItemArt").val());
+        a = $("#url").val() + "articulos/exportArticulos/" + encodeURIComponent(a) + "/" + encodeURIComponent(b);
+        window.location.href =
+            a
+    });
+    $("#btnImpListaArt").click(function() {
+        $("#modal-imp-pro").modal("toggle")
+    })
+}
+
+function parItemArtEnt() {
+    try {
+        var a = JSON.parse($("#itemsEntArt").val()),
+            b;
+        for (b in a) {
+            var c = a[b];
+            if (null != c) {
+                var d = JSON.stringify(c);
+                tbArtEnt.push(d)
+            }
+        }
+        localStorage.setItem("tbArtEnt", JSON.stringify(tbArtEnt));
+        listaArtEntidad()
+    } catch (e) {
+        alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+    }
+}
+
+function parItemCompra() {
+    try {
+        var a = JSON.parse($("#detJSonCompra").val()),
+            b;
+        for (b in a) {
+            var c = a[b];
+            null != c && (c.index = b, tbOrdenCom.push(c))
+        }
+        console.log("entroooo");
+        localStorage.setItem("tbOrdenCom", JSON.stringify(tbOrdenCom));
+        listaArtOrden(!0)
+    } catch (d) {
+        alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+    }
+}
+
+function parItemOrdCompra() {
+    try {
+        var a = JSON.parse($("#detJSonCompra").val()),
+            b;
+        for (b in a) {
+            var c = a[b];
+            null != c && (c.index = b, tbOrdenCom.push(c))
+        }
+        localStorage.setItem("tbOrdenCom", JSON.stringify(tbOrdenCom));
+        listaArtOrden(!0)
+    } catch (d) {
+        alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+    }
+}
+
+function getDireccionesContacto() {
+    try {
+        var a = JSON.parse($("#direcciones").val()),
+            b;
+        for (b in a) {
+            var c = a[b];
+            null != c && tbDirConta.push(c)
+        }
+        listDireccionesContacto()
+    } catch (d) {
+        swal({
+            type: "error",
+            title: "Error en direcciones",
+            text: "Error al leer las direcciones del cliente, favor de reportarlo"
+        }), console.log(d)
+    }
+}
+
+function parItemEnCon() {
+    try {
+        var a = JSON.parse($("#itemsContacto").val()),
+            b;
+        for (b in a) {
+            var c = a[b];
+            if (null != c) {
+                var d = JSON.stringify(c);
+                tbContacto.push(d)
+            }
+        }
+        localStorage.setItem("tbContacto", JSON.stringify(tbContacto));
+        listaEntidadContactos()
+    } catch (e) {
+        alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+    }
+}
+
+function editaDireccionClie(a) {
+    $("#modal-direccion").modal("toggle");
+    a = jQuery(a);
+    a = parseInt(a.data("indextabla"));
+    var b = tbDirConta[a];
+    console.log("item ", b);
+    $("#calle").val(b.calle);
+    $("#n_interior").val(b.n_interior);
+    $("#n_exterior").val(b.n_exterior);
+    $("#poblacion").val(b.poblacion);
+    $("#colonia").val(b.colonia);
+    $("#CIUDAD").val(b.CIUDAD);
+    $("#REFERENCIA").val(b.REFERENCIA);
+    $("#LOCALIDAD").val(b.LOCALIDAD);
+    $("#CP").val(b.CP);
+    $("#REGION").val(b.REGION);
+    $("#ESTADO").val(b.ESTADO);
+    $("#pais").val(b.pais);
+    $("#idCatEntidadDireccion").val(b.idCatEntidadDireccion);
+    $("#indexTbDirec").val(a)
+}
+
+function ediEntContac(a) {
+    edoContacto = "E";
+    $("#modal-pro-contacto").modal();
+    a = jQuery(a);
+    idexItemConta = a = parseInt(a.data("indextabla"));
+    a = JSON.parse(tbContacto[a]);
+    $("#cli-select-tipo-contacto").val(a.id_propiedad_tipo);
+    $("#cli-prop-nombre").val(a.valor)
+}
+
+function delDireccionCliente(a) {
+    a = jQuery(a);
+    a = parseInt(a.data("indextabla"));
+    console.log("index", a);
+    tbDirConta.splice(a, 1);
+    listDireccionesContacto()
+}
+
+function delEntContac(a) {
+    a = jQuery(a);
+    a = parseInt(a.data("indextabla"));
+    tbContacto.splice(a, 1);
+    localStorage.setItem("tbContacto", JSON.stringify(tbContacto));
+    listaEntidadContactos()
+}
+
+function editArtEnt(a) {
+    edoArtEnt = "E";
+    $("#modal-proveedor").modal("toggle");
+    a = jQuery(a);
+    idexArtEnt = a = parseInt(a.data("indextabla"));
+    a = JSON.parse(tbArtEnt[a]);
+    $("#cbEntidad").empty().append('<option value="' + a.idEntidad + '">' + a.nombre_razon_social + "</option>").val(a.idEntidad).trigger("change");
+    $("#innerPack").val(a.innerPack);
+    $("#masterPack").val(a.masterPack)
+}
+
+function delArtEnt(a) {
+    confirm("\u00bfConfirma eliminar el registro?") && (a = jQuery(a), a = parseInt(a.data("indextabla")), tbArtEnt.splice(a, 1), localStorage.setItem("tbArtEnt", JSON.stringify(tbArtEnt)), listaArtEntidad())
+}
+
+function agregaArtEnti() {
+    var a = JSON.stringify({
+        idEntidad: $("#cbEntidad").val(),
+        innerPack: $("#innerPack").val(),
+        masterPack: $("#masterPack").val(),
+        idArticulo: $("#idArticulo").val(),
+        nombre_razon_social: $("#cbEntidad option:selected").text()
+    });
+    console.log(a);
+    tbArtEnt.push(a);
+    localStorage.setItem("tbArtEnt", JSON.stringify(tbArtEnt));
+    listaArtEntidad()
+}
+
+function editaArtEnti() {
+    tbArtEnt[idexArtEnt] = JSON.stringify({
+        idEntidad: $("#cbEntidad").val(),
+        innerPack: $("#innerPack").val(),
+        masterPack: $("#masterPack").val(),
+        idArticulo: $("#idArticulo").val(),
+        nombre_razon_social: $("#cbEntidad option:selected").text()
+    });
+    localStorage.setItem("tbArtEnt", JSON.stringify(tbArtEnt));
+    "A" == edoArtEnt;
+    listaArtEntidad()
+}
+
+function listaArtEntidad() {
+    $("#tblArtPro tbody").html("");
+    var a = localStorage.getItem("tbArtEnt");
+    a = JSON.parse(a);
+    for (var b in a) {
+        var c = JSON.parse(a[b]);
+        null != c && $("#tblArtPro tbody").append("<tr><td>" + c.nombre_razon_social + "</td><td>" + c.innerPack + "</td><td>" + c.masterPack + '</td><td class="text-center"><div class="btn-group"><button class="btn btn-xs btn-default " onclick="editArtEnt(this)" data-indextabla="' + b + '" type="button" data-toggle="tooltip" title="Editar contacto"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default " onclick="delArtEnt(this)" data-indextabla="' +
+            b + '" type="button" data-toggle="tooltip" title="Eliminar contacto"><i class="fa fa-times"></i></button></div></td></tr>')
+    }
+}
+
+function listDireccionesContacto() {
+    $("#tbDirecciones tbody").html("");
+    for (var a in tbDirConta) {
+        var b = tbDirConta[a];
+        if (null != b) {
+            var c = null != b.calle ? b.calle : "",
+                d = null != b.n_interior ? b.n_interior : "",
+                e = null != b.n_exterior ? b.n_exterior : "",
+                g = null != b.poblacion ? b.poblacion : "",
+                f = null != b.colonia ? b.colonia : "",
+                h = null != b.CIUDAD ? b.CIUDAD : "",
+                k = null != b.REFERENCIA ? b.REFERENCIA : "",
+                l = null != b.LOCALIDAD ? b.LOCALIDAD : "",
+                m = null != b.CP ? b.CP : "",
+                n = null != b.REGION ? b.REGION : "",
+                p = null != b.ESTADO ? b.ESTADO : "",
+                r = null != b.pais ? b.pais : "";
+            $("#tbDirecciones tbody").append("<tr><td><label>" + c + "</label></td><td><label>" + d + "</label></td><td><label>" + e + "</label></td><td><label>" + g + "</label></td><td><label>" + f + "</label></td><td><label>" + h + "</label></td><td><label>" + k + "</label></td><td><label>" + l + "</label></td><td><label>" + m + "</label></td><td><label>" + n + "</label></td><td><label>" + p + "</label></td><td><label>" + r + "</label></td><td><label>" + b.catEntidadDireccion + '</td><td class="text-center"><div class="btn-group"><button class="btn btn-xs btn-default " onclick="editaDireccionClie(this)" data-indextabla="' +
+                a + '" type="button" data-toggle="tooltip" title="Editar direccion"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default " onclick="delDireccionCliente(this)" data-indextabla="' + a + '" type="button" data-toggle="tooltip" title="Eliminar direccion"><i class="fa fa-times"></i></button></div></td></tr>')
+        }
+    }
+}
+
+function listaEntidadContactos() {
+    $("#tblEntiContac tbody").html("");
+    var a = localStorage.getItem("tbContacto");
+    a = JSON.parse(a);
+    for (var b in a) {
+        var c = JSON.parse(a[b]);
+        null != c && $("#tblEntiContac tbody").append("<tr><td>" + c.descripcion + "</td><td>" + c.valor + '</td><td class="text-center"><div class="btn-group"><button class="btn btn-xs btn-default " onclick="ediEntContac(this)" data-indextabla="' + b + '" type="button" data-toggle="tooltip" title="Editar contacto"><i class="fa fa-pencil"></i></button><button class="btn btn-xs btn-default " onclick="delEntContac(this)" data-indextabla="' +
+            b + '" type="button" data-toggle="tooltip" title="Eliminar contacto"><i class="fa fa-times"></i></button></div></td></tr>')
+    }
+}
+
+function editaEntidadContacto() {
+    tbContacto[idexItemConta] = JSON.stringify({
+        id_propiedad_tipo: $("#cli-select-tipo-contacto").val(),
+        descripcion: $("#cli-select-tipo-contacto :selected").text(),
+        id_entidad: $("#id_entidad").val(),
+        valor: $("#cli-prop-nombre").val(),
+        activo: 1
+    });
+    localStorage.setItem("tbContacto", JSON.stringify(tbContacto));
+    "A" == edoContacto;
+    listaEntidadContactos();
+    $("#modal-pro-contacto").modal("toggle")
+}
+
+function agregaEntidadContacto() {
+    var a = JSON.stringify({
+        id_propiedad_tipo: $("#cli-select-tipo-contacto").val(),
+        descripcion: $("#cli-select-tipo-contacto :selected").text(),
+        id_entidad: $("#id_entidad").val(),
+        valor: $("#cli-prop-nombre").val(),
+        activo: 1
+    });
+    console.log(a);
+    tbContacto.push(a);
+    localStorage.setItem("tbContacto", JSON.stringify(tbContacto));
+    $("#cli-prop-nombre").val("");
+    listaEntidadContactos()
+}
+
+function getListEntidadUsoCFDI(a) {
+    try {
+        $("#cbUsoCFDI").empty();
+        var b = JSON.parse($("#itemsUsoCFDI").val()),
+            c;
+        for (c in b) {
+            var d = b[c];
+            null != d && ("f" == a ? 1 == d.fisica && $("#cbUsoCFDI").append($("<option>", {
+                value: d.codUsoCFDI,
+                text: d.codUsoCFDI + " - " + d.usoCFDI
+            })) : 1 == d.moral && $("#cbUsoCFDI").append($("<option>", {
+                value: d.codUsoCFDI,
+                text: d.codUsoCFDI + " - " + d.usoCFDI
+            })))
+        }
+    } catch (e) {
+        alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+    }
+}
+
+function EntidadFunction() {
+    $("#btnGuardarEntiDireccion").click(function() {
+        if ("" == $("#indexTbDirec").val()) {
+            var a = parseInt($("#indexTbDirec").val());
+            console.log("index nuevo", a);
+            tbDirConta.push({
+                calle: $("#calle").val().toUpperCase(),
+                n_interior: $("#n_interior").val().toUpperCase(),
+                n_exterior: $("#n_exterior").val().toUpperCase(),
+                poblacion: $("#poblacion").val().toUpperCase(),
+                colonia: $("#colonia").val().toUpperCase(),
+                CIUDAD: $("#CIUDAD").val().toUpperCase(),
+                REFERENCIA: $("#REFERENCIA").val().toUpperCase(),
+                LOCALIDAD: $("#LOCALIDAD").val().toUpperCase(),
+                CP: $("#CP").val(),
+                REGION: $("#REGION").val().toUpperCase(),
+                ESTADO: $("#ESTADO").val().toUpperCase(),
+                pais: $("#pais").val().toUpperCase(),
+                idCatEntidadDireccion: $("#idCatEntidadDireccion").val(),
+                catEntidadDireccion: $("#idCatEntidadDireccion option:selected").text()
+            })
+        } else a = parseInt($("#indexTbDirec").val()), console.log("index edita", a), tbDirConta[a] = {
+            calle: $("#calle").val().toUpperCase(),
+            n_interior: $("#n_interior").val().toUpperCase(),
+            n_exterior: $("#n_exterior").val().toUpperCase(),
+            poblacion: $("#poblacion").val().toUpperCase(),
+            colonia: $("#colonia").val().toUpperCase(),
+            CIUDAD: $("#CIUDAD").val().toUpperCase(),
+            REFERENCIA: $("#REFERENCIA").val().toUpperCase(),
+            LOCALIDAD: $("#LOCALIDAD").val().toUpperCase(),
+            CP: $("#CP").val(),
+            REGION: $("#REGION").val().toUpperCase(),
+            ESTADO: $("#ESTADO").val().toUpperCase(),
+            pais: $("#pais").val().toUpperCase(),
+            idCatEntidadDireccion: $("#idCatEntidadDireccion").val(),
+            catEntidadDireccion: $("#idCatEntidadDireccion option:selected").text()
+        };
+        listDireccionesContacto();
+        $("#modal-direccion").modal("toggle")
+    });
+    $("#btnAddDireccion").click(function() {
+        $("#modal-direccion").modal("toggle");
+        $("#indexTbDirec").val("");
+        $("#calle").val("");
+        $("#n_interior").val("");
+        $("#n_exterior").val("");
+        $("#poblacion").val("");
+        $("#colonia").val("");
+        $("#CIUDAD").val("");
+        $("#REFERENCIA").val("");
+        $("#LOCALIDAD").val("");
+        $("#CP").val("");
+        $("#REGION").val("");
+        $("#ESTADO").val("");
+        $("#pais").val("");
+        $("#idCatEntidadDireccion").val(1)
+    });
+    $("#lkDoscAdeudo").click(function() {
+        alert("Apartado en construcci\u00f3n")
+    });
+    $('[name="opt_tipo_persona"]').change(function() {
+        getListEntidadUsoCFDI(this.value)
+    });
+    $("#cbForPago").change(function() {
+        99 == this.value ? $("#cbMetodoPago").val(2) : $("#cbMetodoPago").val(1)
+    });
+    $("#cbMetodoPago").change(function() {
+        1 == this.value ? $("#cbForPago").val("01") : $("#cbForPago").val("99")
+    });
+    $("#cli-rfc").blur(function() {
+        if (0 != $("#id_entidad").val() || "" == this.value) return !1;
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "entidades/validaCodEntidad",
+            beforeSend: function() {
+                block_class(!0,
+                    a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                dWhere: {
+                    rfc: this.value
+                }
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a).item;
+                null != b ? (notify_info("danger", "El RFC ya est\u00e1 asignado a : " + b.nombre_razon_social), $("#entidad_guardar").prop("disabled", !0)) : (notify_info("success", "El RFC esta disponible"), $("#entidad_guardar").prop("disabled", !1))
+            } catch (d) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+            }
+        })
+    });
+    $("#cli-cod").blur(function() {
+        if ("" == $("#cli-cod").val()) return $("#entidad_guardar").prop("disabled",
+            !1), !1;
+        if (0 != $("#id_entidad").val()) return !1;
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "entidades/validaCodEntidad",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                dWhere: {
+                    cod_entidad: this.value,
+                    entidad_tipo: $("#tipo_entidad").val()
+                }
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a).item;
+                null != b ? (notify_info("danger", "El c\u00f3digo ya est\u00e1 asignado a : " + b.nombre_razon_social), $("#entidad_guardar").prop("disabled", !0)) : (notify_info("success",
+                    "C\u00f3digo disponible"), $("#entidad_guardar").prop("disabled", !1))
+            } catch (d) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+            }
+        })
+    });
+    $("#txtClaveArt").keypress(function(a) {
+        if (13 == a.which) {
+            $("#url").val();
+            var b = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "formasventa/getArticulo",
+                beforeSend: function() {
+                    block_class(!0, b)
+                },
+                complete: function() {
+                    block_class(!1, b)
+                },
+                data: {
+                    clavArt: $("#txtClaveArt").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a).item;
+                    null != b ? $("#desc-articulo").empty().append('<option value="' + b.id_articulo + '">' + b.descripcion + "</option>").val(b.id_articulo).trigger("change") : alert("El art\u00edculo no existe")
+                } catch (e) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+                }
+            })
+        }
+    })
+}
+
+function dowloadUtilFile(a) {}
+
+function AttachFile() {
+    $("#btnUploadFile").click(function() {
+        var a = jQuery(this).data("url");
+        jQuery(this).parents(".block");
+        var b = new FormData($("#importArticulos")[0]);
+        $.ajax({
+            url: $("#url").val() + "/" + a,
+            type: "POST",
+            data: b,
+            async: !1,
+            beforeSend: function() {
+                $(this).prop("disabled", !0)
+            },
+            success: function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    notify_info(b.type, b.msg);
+                    $("#importArticulos")[0].reset()
+                } catch (e) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema")
+                } finally {
+                    $(this).prop("disabled", !1)
+                }
+            },
+            cache: !1,
+            contentType: !1,
+            processData: !1
+        })
+    });
+    $("#btnDescargaArt").click(function(a) {
+        a.preventDefault();
+        a = jQuery(this).data("url");
+        a = $("#url").val() + a;
+        console.log("descarga " + a);
+        window.location.href = a
+    })
+}
+
+function eliminaArticulosPrecioCliente(a) {
+    var b = jQuery(a).data("id");
+    swal({
+        title: "\u00bfDesea eliminar el articulo?",
+        text: "Eliminar de lista de precios",
+        showCancelButton: !0,
+        closeOnConfirm: !1,
+        showLoaderOnConfirm: !0,
+        inputPlaceholder: ""
+    }, function(a) {
+        if (!1 === a) return !1;
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "listapreciosrest/deleteItemListaPrecio",
+            data: {
+                idArticuloCliente: b,
+                idKey: $("#idKey").val()
+            },
+            error: function(a, b, c) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            }
+        }).done(function(a) {
+            try {
+                a.status ?
+                    (swal({
+                        type: "info",
+                        title: a.msg
+                    }), $("#btnBuscaListaPrecios").click()) : swal({
+                        type: "error",
+                        title: "Error al cancelar",
+                        text: a.msg
+                    })
+            } catch (e) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(e)
+            }
+        })
+    })
+}
+
+function listaArticulosPrecioCliente(a) {
+    var b = "",
+        c = "",
+        d;
+    for (d in a) {
+        var e = a[d];
+        if (null != e) {
+            "f" == e.tipoCalculo ? tipoCal = "Factor" : "d" == e.tipoCalculo ? tipoCal = "Desc" : "i" == e.tipoCalculo ? tipoCal = "Fijo" : "p1" == e.tipoCalculo ? tipoCal = "P1" : "p2" == e.tipoCalculo && (tipoCal = "P2");
+            var g = null != e.utilidad ? e.utilidad + " %" : 0;
+            b += "<tr><td><label>" + e.claveArticulo + '</label></td><td><a data-id="' + e.idArticulo + '" onclick="showfichaArt(this)" class="font-w600">' + e.articulo + "</a></td><td><label>" + applyCurrency(e.precioCliente) +
+                "</label></td><td><label>" + tipoCal + "</label></td><td><label>" + e.facDes + "</label></td><td><label>" + applyCurrency(e.precio01) + "</label></td><td><label>" + applyCurrency(e.precio02) + "</label></td><td><label>" + applyCurrency(e.costo) + "</label></td><td><label>" + g + '</label></td><td class="text-center"><div class="btn-group"><button class="btn btn-xs btn-default " onclick="eliminaArticulosPrecioCliente(this)" data-id="' + e.idArticuloCliente + '" type="button" data-toggle="tooltip" title="Eliminar"><i class="fa fa-times"></i></button></div></td></tr>';
+            1 == e.error && (c += "<br> EL art\u00edculo " + e.claveArticulo + " " + e.articulo + " " + e.msg)
+        }
+    }
+    dataTableByID(b, "listaArtCli");
+    "" != c && alert("Articulos incompletos")
+}
+
+function lista_precios_enti_functions() {
+    $("#btnAddArtLisPreCalFil").click(function() {
+        var a = confirm("\u00bfSon corrrectos los datos?"),
+            b = jQuery(this).parents(".block");
+        a && $.ajax({
+            type: "POST",
+            url: $("#url").val() + "listapreciosrest/saveListaPrecio",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            error: function(a, b, e) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            },
+            data: $("#frmListArt").serialize()
+        }).done(function(a) {
+            try {
+                swal({
+                    type: "info",
+                    title: "Agregado",
+                    text: "Articulo agregado a la lista de precios correctamente"
+                }), $("#btnBuscaListaPrecios").click(), $("#listadoArtListaPreCli").modal("toggle")
+            } catch (d) {
+                swal({
+                    type: "error",
+                    title: "Error al descomponer el objeto, favor de reportarlo"
+                }), console.log(d)
+            }
+        })
+    });
+    $("#btnBuscaListaPrecios").click(function() {
+        var a = $("#block_");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "listapreciosrest/getListaCliente",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            error: function(a,
+                c, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            },
+            data: {
+                codEntidad: $("#codEntidad").val(),
+                idKey: $("#idKey").val()
+            }
+        }).done(function(a) {
+            try {
+                listaArticulosPrecioCliente(a.item)
+            } catch (c) {
+                swal({
+                    type: "error",
+                    title: "Error al descomponer el objeto, favor de reportarlo"
+                }), console.log(c)
+            }
+        })
+    });
+    $("#btnMoreFiltrosLisPre").click(function() {
+        $("#optFiltrosArt").show("drop")
+    });
+    $("#btnListaArtLisPre").click(function() {
+        $("#listadoArtListaPreCli").modal("toggle")
+    });
+    $("#enti-claveart").keypress(function(a) {
+        if (13 == a.which) {
+            $("#url").val();
+            var b = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "articulos/getClaveArticulo",
+                beforeSend: function() {
+                    block_class(!0, b)
+                },
+                complete: function() {
+                    block_class(!1, b)
+                },
+                data: {
+                    val: this.value,
+                    idTienda: $("#idTienda").val(),
+                    col: "ar.claveArticulo"
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    null != b ? ($("#enti-art").empty().append('<option value="' + b.idArticulo + '">' + b.articulo + "</option>").val(b.idArticulo).trigger("change"),
+                        $("#enti-art-cos").val(applyCurrency(b.costo)), $("#enti-art-pre2").val(applyCurrency(b.precio02))) : alert("El art\u00edculo no existe")
+                } catch (e) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+                }
+            })
+        }
+    });
+    $("#btnImpLista").click(function() {
+        $("#codEntidadImport").val($("#cli-cod").val());
+        $("#modal-import-precios").modal("toggle")
+    });
+    $("#subirLista").click(function() {
+        jQuery(this).parents(".block");
+        var a = new FormData($("#importListaPrecios")[0]);
+        $.ajax({
+            url: $("#url").val() +
+                "listaprecios/importListaPrecios",
+            type: "POST",
+            data: a,
+            async: !1,
+            beforeSend: function() {
+                $("#btnCerrar").prop("disabled", !0);
+                $("#subirLista").prop("disabled", !0);
+                $("#attachmentListaPrecio").prop("disabled", !0)
+            },
+            success: function(a) {
+                try {
+                    var b = JSON.parse(a),
+                        d = b.clavesInexis,
+                        e = "";
+                    notify_info(b.type, b.msg);
+                    if ("danger" != b.type)
+                        if (null != d) {
+                            e += "<p>Los siguientes codigos no existen en articulos</p>";
+                            for (var g in d) e += "<li>" + d[g].clave_art + "</li>"
+                        } else $("#modal-import-precios").modal("toggle")
+                } catch (f) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema")
+                } finally {
+                    $("#ulClavesInexis").html(e),
+                        $("#btnCerrar").prop("disabled", !1), $("#subirLista").prop("disabled", !1), $("#attachmentListaPrecio").prop("disabled", !1), $("#btn_refresh_lista_pre").click(), location.reload()
+                }
+            },
+            cache: !1,
+            contentType: !1,
+            processData: !1
+        })
+    });
+    $("#btnExpLista").click(function(a) {
+        a.preventDefault();
+        a = $("#idEntidad").val();
+        var b = $("#idTienda").val();
+        $("#cli-nombre-razon").val();
+        var c = $("#codEntidad").val();
+        a = $("#url").val() + "listaprecios/exportListaPrecios/" + a + "/" + b + "/" + c;
+        window.location.href = a
+    });
+    $("#enti-art-precl").keypress(function(a) {
+        if (13 ==
+            a.which) {
+            a = this.value;
+            var b = currencySn($("#enti-art-cos").val()),
+                c = 0;
+            0 < b && (c = parseInt((parseFloat(a) - parseFloat(b)) / parseFloat(b) * 100));
+            console.log("utlidad art " + applyCurrency(c));
+            $("#enti-art-utl").val(currencySn(c) + " %")
+        }
+    });
+    $("#btnAgregarLista").click(function() {
+        $("#modal-precios").modal("toggle");
+        $("#enti-art").select2("val", "");
+        $("#enti-claveart").val("");
+        $("#enti-art-utl").val("0");
+        $("#enti-art-precl").val("0");
+        $("#enti-art-cos").val("0");
+        $("#enti-art-pre2").val("0");
+        $("#id_articulo_cliente").val("0")
+    });
+    $("#guardarLista").click(function() {
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "listaprecios/guardaListaPrecio",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                idArticuloCliente: $("#idArticuloCliente").val(),
+                idEntidad: $("#idEntidad").val(),
+                claveArticulo: $("#enti-claveart").val(),
+                precioCliente: currencySn($("#enti-art-precl").val()),
+                costo: currencySn($("#enti-art-cos").val()),
+                precio02: currencySn($("#enti-art-pre2").val())
+            }
+        }).done(function(a) {
+            try {
+                var b =
+                    JSON.parse(a);
+                notify_info(b.type, b.msg);
+                $("#id_articulo_cliente").val(b.idArtCli);
+                location.reload()
+            } catch (d) {
+                alert("Error interno, favor de reportarlo"), console.log(d)
+            }
+        })
+    });
+    $(document.body).on("change", "#enti-art", function() {
+        if ("" == this.value) return !1;
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "articulos/getClaveArticulo",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                val: this.value,
+                idTienda: $("#idTienda").val(),
+                col: "ar.idArticulo"
+            }
+        }).done(function(a) {
+            try {
+                var b =
+                    JSON.parse(a);
+                null != b ? ($("#enti-claveart").val(b.claveArticulo), $("#enti-art-cos").val(applyCurrency(b.costo)), $("#enti-art-pre2").val(applyCurrency(b.precio02)), $("#enti-art-precl").focus()) : ($("#enti-art-cos").val("$0.00"), $("#enti-art-pre2").val("$0.00"))
+            } catch (d) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+            }
+        })
+    });
+    $("#enti-art").select2({
+        ajax: {
+            url: $("#url").val() + "articulos/articuloJson",
+            method: "POST",
+            dataType: "json",
+            delay: 250,
+            data: function(a) {
+                return {
+                    search: a.term
+                }
+            },
+            processResults: function(a) {
+                var b = [];
+                $.each(a, function(a, d) {
+                    null != d && b.push({
+                        id: d.idArticulo,
+                        text: d.articulo
+                    })
+                });
+                return {
+                    results: b
+                }
+            },
+            cache: !0
+        },
+        minimumInputLength: 1,
+        placeholder: " ",
+        allowClear: !0
+    });
+    $("#btn_refresh_lista_pre").click(function() {
+        var a = jQuery(this).parents(".block");
+        listaPreciosEntidad(a)
+    })
+}
+
+function agregaPagoSaldo(a, b) {
+    var c = jQuery(a),
+        d = parseInt(c.data("idcom")),
+        e = c.data("idorden"),
+        g = c.data("folfac"),
+        f = c.data("seriefac"),
+        h = c.data("folord"),
+        k = c.data("folpre"),
+        l = c.data("seriepre");
+    c = c.data("idcaja");
+    var m = 0,
+        n = "";
+    $("#tbAbonos").html("");
+    $("#modalAddPago").modal("toggle");
+    $("#idOrdenC").val(e);
+    $("#id_tipo_comprobante").val(d);
+    $("#idCaja").val(c);
+    1 == d ? (m = g, n = f) : 5 == d ? (m = k, n = l) : 10 == d && (m = h);
+    $("#folioDoc").val(m);
+    $("#saldo").val(0);
+    $("#totalVenta").val(0);
+    $("#showAddPago").val(b);
+    $("#serie").val(n)
+}
+
+function removerPagoOrden(a) {
+    var b = prompt("Ingresa las observaciones de la cancelaci\u00f3n de pago", "");
+    "" == b && (b = null);
+    if (null != b) {
+        var c = jQuery(a).parents(".block"),
+            d = jQuery(a);
+        a = parseFloat(d.data("importe"));
+        var e = parseInt(d.data("id"));
+        d = parseInt(d.data("idorden"));
+        var g = $("#idEntidad").val();
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "pagos/bajaPago",
+            beforeSend: function() {
+                block_class(!0, c)
+            },
+            complete: function() {
+                block_class(!1, c)
+            },
+            data: {
+                importe: a,
+                id: e,
+                idEntidad: g,
+                obs: b,
+                idOrden: d
+            }
+        }).done(function(a) {
+            try {
+                var b =
+                    JSON.parse(a);
+                listaPagosAbonos(b, b.objOrden)
+            } catch (k) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(k)
+            }
+        })
+    }
+}
+
+function listaPagosAbonos(a, b) {
+    var c = "",
+        d = nItera = 0,
+        e;
+    for (e in a.items) {
+        var g = a.items[e];
+        if (null != g) {
+            var f = null != g.banco ? g.banco : "",
+                h = null != g.referencia ? g.referencia : "",
+                k = '<span class="label label-info">A</span>',
+                l = '<td><div class="btn-group"><button class="btn btn-xs btn-default" type="button" title="Cancelar" data-importe="' + g.importe + '" data-id="' + g.id + '" data-idorden="' + g.id_orden_c + '" onclick="removerPagoOrden(this);"><i class="fa fa-times"></i></button></div></td>';
+            "C" == g.estado && (k = '<span class="label label-danger">C</span>',
+                l = "<td></td>");
+            1 == g.id_tipo_mov && (l = "<td></td>");
+            d += parseFloat(g.importe);
+            c += "<tr><td>" + g.fecha + "</td><td>" + g.tipo_movimiento + '</td><td class="text-center">' + currency(g.importe, 1) + "</td><td>" + g.metodo_pago + "</td><td>" + f + "</td><td>" + h + "</td><td>" + k + "</td><td>" + g.usuario + "</td>" + l + "</tr>"
+        }
+        nItera++
+    }
+    $("#tbAbonos").html(c);
+    $("#lblSubTotalVe").html(b.total);
+    $("#lblAbonaVen").html(b.total_pagado);
+    $("#lblSaldoVe").html(b.saldo);
+    $("#saldo").val(parseFloat(b.saldo));
+    $("#totalVenta").val(parseFloat(b.total));
+    0 != b.saldo ? $("#btnAddAbono").prop("disabled", !1) : $("#btnAddAbono").prop("disabled", !0)
+}
+
+function creditosFunctionClientes() {
+    $("#btnBuscarListaClien").click(function() {
+        var a = $("#url").val(),
+            b = jQuery(this).parents(".block"),
+            c = "";
+        $.ajax({
+            type: "POST",
+            url: a + "entidades/listaClientesSaldo",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                edoCred: $("#cbEdoCred").val()
+            }
+        }).done(function(b) {
+            try {
+                var d = 1,
+                    g = JSON.parse(b);
+                $("#lblSaldoVetas").html(g.saldo);
+                for (var f in g.items) {
+                    var h = g.items[f],
+                        k = a + "entidades/creditos/" + h.id_entidad,
+                        l = null != h.fec_ult_pag_cred ? l :
+                        "";
+                    null != h && (c += "<tr><td>" + h.cod_entidad + "</td><td>" + h.nombre_razon_social + '</td><td class="text-center"><a href="' + k + '">' + currency(h.SALDO, 1) + "</a></td><td>" + l + "</td></tr>");
+                    d++
+                }
+                dataTableByID(c, "tableDocSalClie")
+            } catch (m) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(m)
+            }
+        })
+    });
+    $("#btnExpPagosListaClien").click(function(a) {
+        a.preventDefault();
+        a = $("#url").val() + "entidades/exportClienteSaldos";
+        window.location.href = a
+    })
+}
+
+function creditosFunction() {
+    $("#btnBuscarCreClien").click(function() {
+        var a = $("#url").val(),
+            b = jQuery(this).parents(".block"),
+            c = "";
+        $.ajax({
+            type: "POST",
+            url: a + "entidades/listado_ordenes",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                edoCred: $("#cbEdoCred").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = 1,
+                    d = JSON.parse(a);
+                $("#lblTotalVentas").html(d.totalVenta);
+                $("#lblAbonaVentas").html(d.pagado);
+                $("#lblSaldoVetas").html(d.saldo);
+                for (var f in d.items) {
+                    var h = d.items[f];
+                    console.log("dato" +
+                        h);
+                    if (null != h) {
+                        var k = a = "";
+                        null != h.fol_presupuesto ? (a = h.fol_presupuesto, k = '<span class="label label-info">PE</span>') : null != h.fol_factura ? (a = h.fol_factura + "-" + h.serie_factura, k = '<span class="label label-info">FA</span>') : (a = h.fol_orden, k = '<span class="label label-info">NO</span>');
+                        var l = null != h.fecha_ult_pago ? h.fecha_ult_pago : "",
+                            m = "";
+                        m = 0 <= h.diasCredVig && 5 >= h.diasCredVig ? '<span class="label label-warning">' + h.diasCredVig + "</span>" : 0 <= h.diasCredVig ? '<span class="label label-success">' + h.diasCredVig +
+                            "</span>" : '<span class="label label-danger">' + h.diasCredVen + "</span>";
+                        c += '<tr><td class="text-center">' + h.fechaElabora + "</td><td>" + h.nombre_razon_social + '</td><td class="text-center">' + a + '</td><td class="text-center">' + k + '</td><td class="text-center">' + m + '</td><td class="text-center" style="background:#D5F5E3;">' + h.fecha_vence + '</td><td class="text-center">' + l + '</td><td class="text-center">' + currency(h.total, 1) + '</td><td class="text-center">' + currency(h.total_pagado, 1) + '</td><td class="text-center"><a href="#" data-idcaja="' +
+                            h.id_caja + '" data-idcom="' + h.id_tipo_comprobante + '" data-idorden="' + h.id_orden_c + '" data-folfac="' + h.fol_factura + '" data-folord="' + h.fol_orden + '" data-folpre="' + h.fol_presupuesto + '" data-seriefac="' + h.serie_factura + '" data-seriepre="' + h.serie_presupuesto + '" onclick="agregaPagoSaldo(this,1)">' + currency(h.saldo, 1) + "</a></td></tr>"
+                    }
+                    b++
+                }
+                dataTableByID(c, "tableDocCredClie")
+            } catch (n) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(n)
+            }
+        })
+    })
+}
+
+function listadoDocuXpago(a) {
+    $("#modalDocPorPago").modal("toggle");
+    $data = jQuery(a);
+    a = $data.data("id");
+    var b = $("#blockModalDocPa");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "pagos/documentosPorPago",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        data: {
+            idPag: a
+        }
+    }).done(function(a) {
+        try {
+            var b = 1,
+                c = JSON.parse(a);
+            a = "";
+            for (var g in c.items) {
+                var f = c.items[g];
+                if (null != f) {
+                    var h = '<span class="label label-success">Activo</span>',
+                        k = null != f.tipo_comprobante ? f.tipo_comprobante : "",
+                        l =
+                        null != f.folio ? f.folio : "";
+                    "C" == f.estado && (h = '<span class="label label-danger">Cancelado</span>');
+                    a += "<tr><td>" + f.fecha + '</td><td class="text-center">' + currency(f.importe, 1) + "</td><td>" + f.metodo_pago + "</td><td>" + k + '</td><td class="text-center">' + l + '</td><td class="text-center">' + h + '</td><td class="text-center"><a href="#" data-id="' + f.id + '" onclick="listadoDocuXpago(this)">' + f.tipo_movimiento + "</a></td><td>" + f.usuario + "</td><td>" + f.tienda + "</td></tr>"
+                }
+                b++
+            }
+            dataTableByID(a, "tbDocPorPag")
+        } catch (m) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"),
+                console.log(m)
+        }
+    })
+}
+
+function cambiaFechaDocto(a) {
+    $("#modalCamFecDoc").modal("toggle");
+    $("#idEdoCuenEnti").val(a);
+    $("#fechaDocumento").val("")
+}
+
+function listadoCreditosFunction() {
+    $("#btnGuardaFecDoc").click(function() {
+        var a = jQuery(this).parents(".block"),
+            b = confirm("\u00bfSon correctos los datos?");
+        if ("" == $("#fechaDocumento").val()) return alert("Selecciona la fecha"), !1;
+        b && $.ajax({
+            type: "POST",
+            url: $("#url").val() + "entidades/cambiaFechaDocto",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                id: $("#idEdoCuenEnti").val(),
+                fecha: $("#fechaDocumento").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                alert(b.msg);
+                $("#modalCamFecDoc").modal("toggle");
+                $("#btnBusPagClie").click()
+            } catch (e) {
+                alert("Error interno, favor de reportarlo")
+            }
+        })
+    });
+    $("#aAddMovDeAbo").click(function() {
+        $("#tipoMovi").val("A");
+        $("#modalAddDescMov").modal("toggle")
+    });
+    $("#aAddMovDeCa").click(function() {
+        $("#tipoMovi").val("C");
+        $("#modalAddDescMov").modal("toggle")
+    });
+    $(document.body).on("change", "#cNoDocAbo", function() {
+        var a = jQuery($("#cNoDocAbo option:selected"));
+        $("#nDocumentoSel").val(a.data("ndocumento"));
+        $("#saldoSel").val(a.data("saldo"))
+    });
+    $("#btnGuardaDesCa").click(function() {
+        var a = jQuery(this).parents(".block");
+        confirm("\u00bfSon correctos los datos?") && $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogos/saveDesMov",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                descripcion: $("#txtDesMov").val(),
+                recupera: 1,
+                tipo: $("#tipoMovi").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                a = "#cDesCa";
+                alert(b.msg);
+                a = "C" == $("#cbTipoCargo").val() ? "#cDesCa" : "#cDesAbo";
+                $(a).empty();
+                $(a).append($("<option>", {
+                    value: "0",
+                    text: "--Selecciona--"
+                }));
+                for (var d in b.items) {
+                    var e = b.items[d];
+                    null != e && $(a).append($("<option>", {
+                        value: e.id_tipo_mov,
+                        text: e.tipo_movimiento
+                    }))
+                }
+                $("#modalAddDescMov").modal("toggle")
+            } catch (g) {
+                alert("Error interno, favor de reportarlo")
+            }
+        })
+    });
+    $("#btnSaveBanco").click(function() {
+        var a = jQuery(this).parents(".block");
+        confirm("\u00bfSon correctos los datos?") && $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogos/saveBanco",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                descripcion: $("#txtDesBanco").val(),
+                recupera: 1
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                alert(b.msg);
+                $("#cbBancoAbo").empty();
+                $("#cbBancoAbo").append($("<option>", {
+                    value: "0",
+                    text: "--Selecciona--"
+                }));
+                for (var d in b.items) {
+                    var e = b.items[d];
+                    null != e && $("#cbBancoAbo").append($("<option>", {
+                        value: e.id_banco,
+                        text: e.banco
+                    }))
+                }
+                $("#modalAddBanco").modal("toggle")
+            } catch (g) {
+                alert("Error interno, favor de reportarlo")
+            }
+        })
+    });
+    $("#aAddBanco").click(function() {
+        $("#modalAddBanco").modal("toggle")
+    });
+    $("#btnSaveMovEdoCu").click(function() {
+        var a = jQuery(this).parents(".block"),
+            b = $("#cbTipoCargo").val();
+        confirm("\u00bfSon correctos los datos?") && $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogos/saveTipoEdoCuenta",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                tipo: b,
+                descripcion: $("#txtDes").val(),
+                clave: $("#txtDesClave").val()
+            }
+        }).done(function(a) {
+            try {
+                var d = JSON.parse(a);
+                a = "";
+                "C" == b ? a = "#cCargo" : "A" == b && (a = "#cAbo");
+                $(a).empty();
+                var c = "";
+                $(a).append($("<option>", {
+                    value: "0",
+                    text: "--Selecciona--"
+                }));
+                for (var g in d.items) {
+                    var f = d.items[g];
+                    null != f && (c += '<option data-descripcion ="' + f.descripcion + '" value="' + f.id_tipo_estado_cuenta + '">' + f.clave + "</option>")
+                }
+                $(a).append(c);
+                $("#modalAddMov").modal("toggle")
+            } catch (h) {
+                alert("Error interno favor de reportarlo")
+            }
+        })
+    });
+    $("#aAddMovAbo").click(function() {
+        $("#txtDesClave").val("");
+        $("#txtDes").val("");
+        $("#modalAddMov").modal("toggle")
+    });
+    $("#aAddMovCa").click(function() {
+        $("#modalAddMov").modal("toggle")
+    });
+    $("#btnGuardaCarAbo").click(function() {
+        var a = jQuery(this).parents(".block");
+        if (confirm("\u00bfSon correctos los datos?")) {
+            var b =
+                0,
+                c = "",
+                d = 0,
+                e = "",
+                g = $("#nDocumentoSel").val(),
+                f = 0,
+                h = 0,
+                k = "",
+                l = "",
+                m = h = 0,
+                n = 0,
+                p = 0,
+                r = 0,
+                u = "";
+            if ("" == $("#cbTipoCargo").val()) return alert("Selecciona cargo o abono"), !1;
+            if ("C" == $("#cbTipoCargo").val()) {
+                b = $("#cCargo").val();
+                c = $("#txtFechaCar").val();
+                d = parseFloat($("#txtImpCa").val());
+                e = $("#txtNumDocCa").val();
+                k = $("#txtFechaCar").val();
+                l = $("#txtDiasCred").val();
+                m = $("#cNoDocCa").val();
+                p = $("#cbConPagoPre").val();
+                r = $("#cDesCa").val();
+                u = $("#txtCaObse").val();
+                if (parseFloat($("#creditoDispo").val()) <= d) return alert("El cargo es mayo al credito disponible, favor de actualizarlo"),
+                    !1;
+                if (0 == r) return alert("Selecciona una descripci\u00f3n del cargo"), !1;
+                if ("" == e) return alert("Ingresa una descripci\u00f3n o n\u00famero de documento en no."), !1
+            } else b = $("#cAbo").val(), d = $("#txtImpAbo").val(), f = $("#cbBancoAbo").val(), h = $("#cbMetodoPagoAbo").val(), k = $("#txtFechaAbo").val(), m = $("#cNoDocAbo").val(), n = $("#saldoSel").val(), r = $("#cDesAbo").val();
+            if (0 == r) return alert("Selecciona la descripci\u00f3n del movimiento"), !1;
+            if (0 == b) return alert("Selecciona el tipo de abono"), !1;
+            if ("" == k) return alert("Selecciona la fecha de pago"),
+                !1;
+            if ("" == d) return alert("Ingresa un importe"), !1;
+            if (!$.isNumeric(d)) return alert("El importe debe ser num\u00e9rico"), !1;
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "entidades/saveAbono",
+                beforeSend: function() {
+                    block_class(!0, a);
+                    $("#btnGuardaCarAbo").prop("disabled", !0)
+                },
+                complete: function() {
+                    block_class(!1, a);
+                    $("#btnGuardaCarAbo").prop("disabled", !1)
+                },
+                data: {
+                    fechaP: k,
+                    tipo: $("#cbTipoCargo").val(),
+                    idTipoEdoCuenta: b,
+                    fechaVence: c,
+                    importe: d,
+                    idEntidad: $("#idEntidad").val(),
+                    nDoc: e,
+                    idBanco: f,
+                    diasC: l,
+                    idOrdenC: 0,
+                    idMetPago: h,
+                    idCargo: m,
+                    nDocAbono: g,
+                    saldoDoc: n,
+                    conPago: p,
+                    idMov: r,
+                    desCargo: u
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    1 == b.edo && (null != b.fechaVence && alert("Fecha de vencimiento " + b.fechaVence), $("#modalAddCargo").modal("toggle"), $("#btnBusPagClie").click());
+                    alert(b.msg)
+                } catch (t) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(t)
+                }
+            })
+        }
+    });
+    $(document.body).on("change", "#cAbo", function() {
+        var a = jQuery($("#cAbo option:selected"));
+        $("#txtDesClaAbo").val(a.data("descripcion"))
+    });
+    $(document.body).on("change", "#cCargo", function() {
+        var a = jQuery($("#cCargo option:selected"));
+        $("#txtDesClaCar").val(a.data("descripcion"))
+    });
+    $(document.body).on("change", "#cbTipoCargo", function() {
+        var a = $("#cbTipoCargo").val();
+        if ("" == a) return $("#opAbono").hide(), $("#opCargo").hide(), !1;
+        var b = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "entidades/getTipoEdoCuenta",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                tipo: $("#cbTipoCargo").val(),
+                idEntidad: $("#idEntidad").val()
+            }
+        }).done(function(b) {
+            try {
+                var d = JSON.parse(b),
+                    c = b = "",
+                    g = "";
+                "C" == a ? ($("#opAbono").hide(), $("#opCargo").show(), b = "#cCargo", c = "#cNoDocCa", g = "#cDesCa") : "A" == a && ($("#opAbono").show(), $("#opCargo").hide(), b = "#cAbo", c = "#cNoDocAbo", g = "#cDesAbo");
+                $(b).empty();
+                if (null != d.itemEntidad) {
+                    var f = d.itemEntidad;
+                    $("#txtDiasCred").val(f.dias_credito);
+                    $("#txtCredDis").val(currency(f.saldo_dispo, 1));
+                    $("#creditoDispo").val(f.saldo_dispo)
+                }
+                if (null != d.itemsNotas) {
+                    $(c).empty();
+                    $(c).append($("<option>", {
+                        value: "0",
+                        text: "--Selecciona--"
+                    }));
+                    f = "";
+                    for (var h in d.itemsNotas) {
+                        var k = d.itemsNotas[h];
+                        null != k && (f += '<option data-ndocumento ="' + k.n_doc + '" data-saldo="' + k.saldo + '" value="' + k.id_estado_cuenta_entidad + '">' + k.claveEdoCuenta + "   No. " + k.n_doc + "  " + currency(k.importe, 1) + "Saldo. " + currency(k.saldo, 1) + "</option>")
+                    }
+                    $(c).append(f)
+                }
+                if (null != d.itemTipoMov)
+                    for (h in $(g).empty(), $(g).append($("<option>", {
+                            value: "0",
+                            text: "--Selecciona--"
+                        })), d.itemTipoMov) k = d.itemTipoMov[h], null != k && $(g).append($("<option>", {
+                        value: k.id_tipo_mov,
+                        text: k.tipo_movimiento
+                    }));
+                if (null != d.itemsBancos)
+                    for (h in $("#cbBancoAbo").empty(), $("#cbBancoAbo").append($("<option>", {
+                            value: "0",
+                            text: "--Selecciona--"
+                        })), d.itemsBancos) k = d.itemsBancos[h], null != k && $("#cbBancoAbo").append($("<option>", {
+                        value: k.id_banco,
+                        text: k.banco
+                    }));
+                if (null != d.itemsMp)
+                    for (h in $("#cbMetodoPagoAbo").empty(), $("#cbMetodoPagoAbo").append($("<option>", {
+                            value: "0",
+                            text: "--Selecciona--"
+                        })), d.itemsMp) k = d.itemsMp[h], null != k && $("#cbMetodoPagoAbo").append($("<option>", {
+                        value: k.id_metodo_pago,
+                        text: k.metodo_pago
+                    }));
+                $(b).append($("<option>", {
+                    value: "0",
+                    text: "--Selecciona--"
+                }));
+                c = "";
+                for (h in d.items) k = d.items[h], null != k && (c += '<option data-descripcion ="' + k.descripcion + '" value="' + k.id_tipo_estado_cuenta + '">' + k.clave + "</option>");
+                $(b).append(c)
+            } catch (l) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(l)
+            }
+        })
+    });
+    $("#btnAddCargo").click(function() {
+        $("#modalAddCargo").modal("toggle");
+        $("#opAbono").hide();
+        $("#opCargo").hide();
+        $("#cbTipoCargo").val("");
+        $("#txtFechaAbo").val("");
+        $("#cAbo").val("0");
+        $("#txtDesClaAbo").val("");
+        $("#txtImpAbo").val("");
+        $("#cbMetodoPagoAbo").val("0");
+        $("#cbBancoAbo").val("0");
+        $("#cNoDocAbo").val("");
+        $("#txtFechaCar").val("");
+        $("#txtFechaVen").val("");
+        $("#txtDiasCred").val("");
+        $("#txtCredDis").val("");
+        $("#txtDesClaCar").val("");
+        $("#txtNumDocCa").val("");
+        $("#cNoDocCa").val("0");
+        $("#txtImpCa").val("")
+    });
+    $("#btnBusPagClie").click(function() {
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "entidades/getEdoCuentaEntidad",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                idEntidad: $("#idEntidad").val(),
+                desde: $("#txtHisPagDesde").val(),
+                hasta: $("#txtHisPagHasta").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = 1,
+                    d = JSON.parse(a);
+                a = "";
+                var e = d.entidad;
+                null != e && ($("#aSaldo").html(currency(e.SALDO, 1)), $("#aDcredi").html(e.dias_credito), $("#aMonCre").html(currency(e.monto_credito, 1)));
+                for (var g in d.items) {
+                    var f = d.items[g];
+                    if (null != f) {
+                        var h = e = "",
+                            k = "",
+                            l = f.usuario;
+                        null != f.id_tipo_comprobante ? 1 == f.id_tipo_comprobante ?
+                            e = f.fol_factura + "-" + f.serie_factura : 5 == f.id_tipo_comprobante ? e = f.fol_presupuesto : 10 == f.id_tipo_comprobante && (e = f.fol_orden) : e = null != f.n_doc ? f.n_doc : f.clave;
+                        h = f.descripcion;
+                        null != f.fecha_vence && (k = f.fecha_vence);
+                        a += '<tr><td class="text-center">' + e + '</td><td class="text-center">' + h + '</td><td class="text-center">' + f.tipo + '</td><td class="text-center"><a onClick="cambiaFechaDocto(' + f.id_estado_cuenta_entidad + ')" href="#" >' + f.fecha + '</a></td><td class="text-center">' + k + '</td><td class="text-center">' +
+                            currency(f.importe, 1) + '</td><td class="text-center">' + l.substring(0, 5) + '</td><td class="text-center">' + f.tienda + "</td></tr>"
+                    }
+                    b++
+                }
+                $("#tbHistPag").html(a)
+            } catch (m) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(m)
+            }
+        })
+    });
+    $("#btnGuardarPago").click(function() {
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "pagos/agregaPagosDocumentos",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                importe: $("#txtCanPago").val(),
+                idEntidad: $("#idEntidad").val(),
+                fechaP: $("#txtFechaPagUni").val(),
+                mPago: $("#cbMetodoPagoUnic").val(),
+                banco: $("#cbBancoPagUni").val(),
+                ref: $("#txtRefPagUni").val()
+            }
+        }).done(function(a) {
+            try {
+                JSON.parse(a)
+            } catch (c) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(c)
+            }
+        })
+    });
+    $("#btnAddPagoCli").click(function() {
+        $("#modalAplicaPago").modal()
+    });
+    $("#modalAddPago").on("shown.bs.modal", function() {
+        $("#btnActPagos").click();
+        $("#txtCanAbono").focus();
+        1 == $("#showAddPago").val() ? $("#divAgregaPago").show() :
+            $("#divAgregaPago").hide()
+    });
+    $("#modalAplicaPago").on("shown.bs.modal", function() {
+        $("#txtCanPago").val("");
+        $("#txtCanPago").focus()
+    });
+    $("#btnBusDocsCli").click(function() {
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "entidades/historialOrdenes",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                idEntidad: $("#idEntidad").val(),
+                desde: $("#txtHisDesde").val(),
+                hasta: $("#txtHisHasta").val(),
+                idConPago: $("#cbConPagBus").val()
+            }
+        }).done(function(a) {
+            try {
+                var b =
+                    1,
+                    d = JSON.parse(a);
+                a = "";
+                for (var e in d.items) {
+                    var g = d.items[e];
+                    null != g && (a += '<tr><td class="text-center">' + g.fecha + '</td><td class="text-center">' + (null != g.fol_orden ? g.fol_orden : 0) + '</td><td class="text-center">' + (null != g.fol_presupuesto ? g.fol_presupuesto : 0) + '</td><td class="text-center">' + (null != g.fol_factura ? g.fol_factura + "-" + g.serie_factura : 0) + '</td><td class="text-center"><a href="#" data-idcaja="' + g.id_caja + '" data-idcom="' + g.id_tipo_comprobante + '" data-idorden="' + g.id_orden_c + '" data-folfac="' +
+                        g.fol_factura + '" data-folord="' + g.fol_orden + '" data-folpre="' + g.fol_presupuesto + '" onclick="agregaPagoSaldo(this,0)">' + currency(g.total, 1) + "</a></td><td>" + g.condiciones_pago + "</td><td>" + g.usuario + "</td></tr>");
+                    b++
+                }
+                dataTableByID(a, "tableHisDoc")
+            } catch (f) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+            }
+        })
+    });
+    $("#btnActPagos").click(function() {
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "pagos/listaPagosOrden",
+            beforeSend: function() {
+                block_class(!0,
+                    a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                idOrden: $("#idOrdenC").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                listaPagosAbonos(b, b.objOrden)
+            } catch (d) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+            }
+        })
+    });
+    $("#btnAddAbono").click(function() {
+        var a = parseFloat($("#saldo").val()),
+            b = parseFloat($("#txtCanAbono").val());
+        if (b > a) return alert("El importe ingresado es mayor que el adeudo de la compra"), !1;
+        var c = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "pagos/agregaAbono",
+            beforeSend: function() {
+                block_class(!0, c)
+            },
+            complete: function() {
+                block_class(!1, c)
+            },
+            data: {
+                idOrden: $("#idOrdenC").val(),
+                importe: b,
+                referencia: $("#txtRef").val(),
+                idEntidad: $("#idEntidad").val(),
+                idMetodoPago: $("#cbMetodoPagoAbo").val(),
+                idBanco: $("#cbBancoAbo").val(),
+                idTipoIngreso: 8,
+                idCaja: $("#idCaja").val(),
+                folio: $("#folioDoc").val(),
+                idTipoMov: $("#idTipoMov").val(),
+                idTipoCom: $("#id_tipo_comprobante").val(),
+                serie: $("#serie").val(),
+                fecha: $("#txtFechaOr").val()
+            }
+        }).done(function(a) {
+            try {
+                var b =
+                    JSON.parse(a);
+                listaPagosAbonos(b, b.objOrden);
+                $("#txtCanAbono").focus();
+                $("#txtCanAbono").val("");
+                $("#cbMetodoPagoAbo").val("01");
+                $("#cbBancoAbo").val(0);
+                $("#txtRef").val("")
+            } catch (g) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(g)
+            }
+        })
+    });
+    $("#btnExpPagosCre").click(function(a) {
+        var b = $("#txtHisPagDesde").val(),
+            c = $("#txtHisPagHasta").val();
+        b = b.substring(6, 11) + b.substring(3, 5) + b.substring(0, 2);
+        c = c.substring(6, 11) + c.substring(3, 5) + c.substring(0, 2);
+        a.preventDefault();
+        a = $("#url").val() + "entidades/exportEdoCuentaCliente/" + $("#idEntidad").val() + "/" + b + "/" + c;
+        window.location.href = a
+    });
+    $("#btnBuscarAc").click(function() {
+        var a = $("#url").val(),
+            b = jQuery(this).parents(".block"),
+            c = "";
+        $.ajax({
+            type: "POST",
+            url: a + "entidades/getListEdoCuentaCre",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                idEntidad: $("#idEntidad").val(),
+                edoCred: $("#cbEdoCred").val(),
+                tipoDoc: $("#cbTipoDoc").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = 1,
+                    d = JSON.parse(a);
+                $("#lblTotalVentas").html(d.totalVenta);
+                $("#lblAbonaVentas").html(d.pagado);
+                $("#lblSaldoVetas").html(d.saldo);
+                for (var f in d.items) {
+                    var h = d.items[f];
+                    if (null != h) {
+                        var k = '<span class="label label-info">' + h.tipoEdoCuenta + "</span>",
+                            l = null != h.fecha_ult_pago ? h.fecha_ult_pago : "";
+                        a = "";
+                        var m = h.condiciones_pago;
+                        a = 0 <= h.diasCredVig && 5 >= h.diasCredVig ? '<span class="label label-warning">' + h.diasCredVig + "</span>" : 0 <= h.diasCredVig ? '<span class="label label-success">' + h.diasCredVig + "</span>" : '<span class="label label-danger">' + h.diasCredVen + "</span>";
+                        c +=
+                            '<tr><td class="text-center">' + h.fecha + '</td><td class="text-center">' + h.n_doc + '</td><td class="text-center">' + k + '</td><td class="text-center">' + a + '</td><td class="text-center" style="background:#D5F5E3;">' + h.fecha_vence + '</td><td class="text-center">' + l + '</td><td class="text-center">' + currency(h.importe, 1) + '</td><td class="text-center">' + currency(h.total_pagado, 1) + '</td><td class="text-center">' + currency(h.saldo, 1) + '</td><td class="text-center">' + m.substring(0, 4) + "</td></tr>"
+                    }
+                    b++
+                }
+                dataTableByID(c,
+                    "tableDocCred")
+            } catch (n) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(n)
+            }
+        })
+    })
+}
+
+function lista_precios_functions() {
+    $("#buscaEntidad").keypress(function(a) {
+        13 == a.which && (a = jQuery(this).parents(".block"), listaPrecios(a))
+    });
+    $("#btn_refresh_lista_pre").click(function() {
+        var a = jQuery(this).parents(".block");
+        listaPrecios(a)
+    })
+}
+
+function htmlOrdenDesp(a, b, c, d, e, g) {
+    a = '<a style="width:600px;"><div class="row"><div class="col-md-12"><strong>' + a + '</strong></div></div><div class="row"><div class="col-md-7"><div class="row"><div class="col-md-6">Existencias</div><div class="col-md-6"><strong>' + b + '</strong></div></div><div class="row"><div class="col-md-6">Clave</div><div class="col-md-6"><strong>' + c + '</strong></div></div></div><div class="col-md-5"><div class="row"><div class="col-md-6">Men</div><div class="col-md-6"><strong>' +
+        d + '</strong></div></div><div class="row"><div class="col-md-6">May</div><div class="col-md-6"><strong>' + e + '</strong></div><div class="col-md-6">ITEM</div><div class="col-md-6"><strong>' + g + "</strong></div></div></div>";
+    "</div></a>";
+    return a
+}
+
+function configPrint() {
+    qz.security.setCertificatePromise(function(a, b) {
+        a("-----BEGIN CERTIFICATE-----\nMIIFAzCCAuugAwIBAgICEAIwDQYJKoZIhvcNAQEFBQAwgZgxCzAJBgNVBAYTAlVT\nMQswCQYDVQQIDAJOWTEbMBkGA1UECgwSUVogSW5kdXN0cmllcywgTExDMRswGQYD\nVQQLDBJRWiBJbmR1c3RyaWVzLCBMTEMxGTAXBgNVBAMMEHF6aW5kdXN0cmllcy5j\nb20xJzAlBgkqhkiG9w0BCQEWGHN1cHBvcnRAcXppbmR1c3RyaWVzLmNvbTAeFw0x\nNTAzMTkwMjM4NDVaFw0yNTAzMTkwMjM4NDVaMHMxCzAJBgNVBAYTAkFBMRMwEQYD\nVQQIDApTb21lIFN0YXRlMQ0wCwYDVQQKDAREZW1vMQ0wCwYDVQQLDAREZW1vMRIw\nEAYDVQQDDAlsb2NhbGhvc3QxHTAbBgkqhkiG9w0BCQEWDnJvb3RAbG9jYWxob3N0\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtFzbBDRTDHHmlSVQLqjY\naoGax7ql3XgRGdhZlNEJPZDs5482ty34J4sI2ZK2yC8YkZ/x+WCSveUgDQIVJ8oK\nD4jtAPxqHnfSr9RAbvB1GQoiYLxhfxEp/+zfB9dBKDTRZR2nJm/mMsavY2DnSzLp\nt7PJOjt3BdtISRtGMRsWmRHRfy882msBxsYug22odnT1OdaJQ54bWJT5iJnceBV2\n1oOqWSg5hU1MupZRxxHbzI61EpTLlxXJQ7YNSwwiDzjaxGrufxc4eZnzGQ1A8h1u\njTaG84S1MWvG7BfcPLW+sya+PkrQWMOCIgXrQnAsUgqQrgxQ8Ocq3G4X9UvBy5VR\nCwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdl\nbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQUpG420UhvfwAFMr+8vf3pJunQ\ngH4wHwYDVR0jBBgwFoAUkKZQt4TUuepf8gWEE3hF6Kl1VFwwDQYJKoZIhvcNAQEF\nBQADggIBAFXr6G1g7yYVHg6uGfh1nK2jhpKBAOA+OtZQLNHYlBgoAuRRNWdE9/v4\nJ/3Jeid2DAyihm2j92qsQJXkyxBgdTLG+ncILlRElXvG7IrOh3tq/TttdzLcMjaR\n8w/AkVDLNL0z35shNXih2F9JlbNRGqbVhC7qZl+V1BITfx6mGc4ayke7C9Hm57X0\nak/NerAC/QXNs/bF17b+zsUt2ja5NVS8dDSC4JAkM1dD64Y26leYbPybB+FgOxFu\nwou9gFxzwbdGLCGboi0lNLjEysHJBi90KjPUETbzMmoilHNJXw7egIo8yS5eq8RH\ni2lS0GsQjYFMvplNVMATDXUPm9MKpCbZ7IlJ5eekhWqvErddcHbzCuUBkDZ7wX/j\nunk/3DyXdTsSGuZk3/fLEsc4/YTujpAjVXiA1LCooQJ7SmNOpUa66TPz9O7Ufkng\n+CoTSACmnlHdP7U9WLr5TYnmL9eoHwtb0hwENe1oFC5zClJoSX/7DRexSJfB7YBf\nvn6JA2xy4C6PqximyCPisErNp85GUcZfo33Np1aywFv9H+a83rSUcV6kpE/jAZio\n5qLpgIOisArj1HTM6goDWzKhLiR/AeG3IJvgbpr9Gr7uZmfFyQzUjvkJ9cybZRd+\nG8azmpBBotmKsbtbAU/I/LVk8saeXznshOVVpDRYtVnjZeAneso7\n-----END CERTIFICATE-----\n--START INTERMEDIATE CERT--\n-----BEGIN CERTIFICATE-----\nMIIFEjCCA/qgAwIBAgICEAAwDQYJKoZIhvcNAQELBQAwgawxCzAJBgNVBAYTAlVT\nMQswCQYDVQQIDAJOWTESMBAGA1UEBwwJQ2FuYXN0b3RhMRswGQYDVQQKDBJRWiBJ\nbmR1c3RyaWVzLCBMTEMxGzAZBgNVBAsMElFaIEluZHVzdHJpZXMsIExMQzEZMBcG\nA1UEAwwQcXppbmR1c3RyaWVzLmNvbTEnMCUGCSqGSIb3DQEJARYYc3VwcG9ydEBx\nemluZHVzdHJpZXMuY29tMB4XDTE1MDMwMjAwNTAxOFoXDTM1MDMwMjAwNTAxOFow\ngZgxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJOWTEbMBkGA1UECgwSUVogSW5kdXN0\ncmllcywgTExDMRswGQYDVQQLDBJRWiBJbmR1c3RyaWVzLCBMTEMxGTAXBgNVBAMM\nEHF6aW5kdXN0cmllcy5jb20xJzAlBgkqhkiG9w0BCQEWGHN1cHBvcnRAcXppbmR1\nc3RyaWVzLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBANTDgNLU\niohl/rQoZ2bTMHVEk1mA020LYhgfWjO0+GsLlbg5SvWVFWkv4ZgffuVRXLHrwz1H\nYpMyo+Zh8ksJF9ssJWCwQGO5ciM6dmoryyB0VZHGY1blewdMuxieXP7Kr6XD3GRM\nGAhEwTxjUzI3ksuRunX4IcnRXKYkg5pjs4nLEhXtIZWDLiXPUsyUAEq1U1qdL1AH\nEtdK/L3zLATnhPB6ZiM+HzNG4aAPynSA38fpeeZ4R0tINMpFThwNgGUsxYKsP9kh\n0gxGl8YHL6ZzC7BC8FXIB/0Wteng0+XLAVto56Pyxt7BdxtNVuVNNXgkCi9tMqVX\nxOk3oIvODDt0UoQUZ/umUuoMuOLekYUpZVk4utCqXXlB4mVfS5/zWB6nVxFX8Io1\n9FOiDLTwZVtBmzmeikzb6o1QLp9F2TAvlf8+DIGDOo0DpPQUtOUyLPCh5hBaDGFE\nZhE56qPCBiQIc4T2klWX/80C5NZnd/tJNxjyUyk7bjdDzhzT10CGRAsqxAnsjvMD\n2KcMf3oXN4PNgyfpbfq2ipxJ1u777Gpbzyf0xoKwH9FYigmqfRH2N2pEdiYawKrX\n6pyXzGM4cvQ5X1Yxf2x/+xdTLdVaLnZgwrdqwFYmDejGAldXlYDl3jbBHVM1v+uY\n5ItGTjk+3vLrxmvGy5XFVG+8fF/xaVfo5TW5AgMBAAGjUDBOMB0GA1UdDgQWBBSQ\nplC3hNS56l/yBYQTeEXoqXVUXDAfBgNVHSMEGDAWgBQDRcZNwPqOqQvagw9BpW0S\nBkOpXjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQAJIO8SiNr9jpLQ\neUsFUmbueoxyI5L+P5eV92ceVOJ2tAlBA13vzF1NWlpSlrMmQcVUE/K4D01qtr0k\ngDs6LUHvj2XXLpyEogitbBgipkQpwCTJVfC9bWYBwEotC7Y8mVjjEV7uXAT71GKT\nx8XlB9maf+BTZGgyoulA5pTYJ++7s/xX9gzSWCa+eXGcjguBtYYXaAjjAqFGRAvu\npz1yrDWcA6H94HeErJKUXBakS0Jm/V33JDuVXY+aZ8EQi2kV82aZbNdXll/R6iGw\n2ur4rDErnHsiphBgZB71C5FD4cdfSONTsYxmPmyUb5T+KLUouxZ9B0Wh28ucc1Lp\nrbO7BnjW\n-----END CERTIFICATE-----\n")
+    });
+    qz.security.setSignaturePromise(function(a) {
+        return function(a,
+            c) {
+            a()
+        }
+    })
+}
+
+function modalOrdenCompra() {
+    3 <= $("#nivelUsuario").val() || $("#modalBuscaOrdenCompra").modal("toggle")
+}
+
+function aplicaDescOrdenVenta() {
+    $("#modalAplicaDesc").modal("toggle")
+}
+
+function importarOrdenVenta() {
+    0 < parseInt($("#idEntidad").val()) ? ($("#modal-impo-orden-venta").modal("toggle"), $("#idUsuarioImpVenta").val($("#idUsuario").val()), $("#idKeyImporVe").val($("#idKey").val())) : swal({
+        type: "error",
+        title: "Error",
+        text: "Selecciona un cliente"
+    })
+}
+
+function validaRfcCliente(a) {
+    a = $.trim(a);
+    if ("XEXX010101000" == a || "XAXX010101000" == a) return null;
+    "" != a && $.ajax({
+        type: "POST",
+        url: $("#url").val() + "entidades/getEntidadByRFC",
+        beforeSend: function() {},
+        complete: function() {},
+        data: {
+            rfc: a,
+            tipo: "c"
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a),
+                d = b.entidad;
+            null != d && ($("#cli-cod").val(d.cod_entidad), $("#cli-rfc").val(d.rfc), $("#cli-nombre-razon").val(d.nombre_razon_social), $("#cli-calle").val(d.calle), $("#cli-num-ext").val(d.n_exterior), $("#cli-num-int").val(d.n_interior),
+                $("#cli-colonia").val(d.colonia), $("#cli-poblacion").val(d.poblacion), $("#cli-referencia").val(d.REFERENCIA), $("#cli-pais").val(d.pais), $("#cli-cp").val(d.CP), $("#cli-estado").val(d.ESTADO), $("#cli-localidad").val(d.LOCALIDAD), $("#cbMetodoPago").val(d.id_metodo_pago), $("#txtNumCuenPagoCli").val(d.ref), $("#tipo_entidad").val(d.entidad_tipo), $("#c_entidad").val("edit"), $("#id_entidad").val(d.id_entidad), $("#cli-correos").importTags(b.correos), $("#cli-telefonos").importTags(b.telefonos))
+        } catch (e) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"),
+                console.log(e)
+        }
+    })
+}
+
+function OrdenesV12() {
+    startConnection();
+    $("#txtBuArtCod").focus();
+    $("#cbEmisorFac").val($("#id_tienda").val());
+    window.chrome ? (html5sql.openDatabase("articulosDB", "Base local de articulos", 104857600), html5sql.process("DROP TABLE IF EXISTS articulos"), html5sql.process("CREATE TABLE IF NOT EXISTS articulos(id_articulo INTEGER PRIMARY KEY, CLAVE_ART VARCHAR (12), ITEM VARCHAR(12), descripcion VARCHAR (100), LINEA VARCHAR (6), ULT_COSTO DECIMAL(10,2))", function(a) {
+        console.log("tabla creada correctamenteee")
+    }, function(a,
+        c) {
+        console.log(a)
+    })) : (alert("Base de datos local no compatible en este navegador"), $("#btnConsultaLocal").prop("disabled", !0));
+    configPrint();
+    var a = "esc tab space return backspace scroll capslock numlock insert home del end pageup pagedown left up right down f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 1 2 3 4 5 6 7 8 9 0 a b c d e f g h i j k l m n o p q r s t u v w x y z Ctrl+a Ctrl+b Ctrl+c Ctrl+d Ctrl+e Ctrl+f Ctrl+g Ctrl+h Ctrl+i Ctrl+j Ctrl+k Ctrl+l Ctrl+m Ctrl+n Ctrl+o Ctrl+p Ctrl+q Ctrl+r Ctrl+s Ctrl+t Ctrl+u Ctrl+v Ctrl+w Ctrl+x Ctrl+y Ctrl+z Shift+a Shift+b Shift+c Shift+d Shift+e Shift+f Shift+g Shift+h Shift+i Shift+j Shift+k Shift+l Shift+m Shift+n Shift+o Shift+p Shift+q Shift+r Shift+s Shift+t Shift+u Shift+v Shift+w Shift+x Shift+y Shift+z Alt+a Alt+b Alt+c Alt+d Alt+e Alt+f Alt+g Alt+h Alt+i Alt+j Alt+k Alt+l Alt+m Alt+n Alt+o Alt+p Alt+q Alt+r Alt+s Alt+t Alt+u Alt+v Alt+w Alt+x Alt+y Alt+z Ctrl+esc Ctrl+tab Ctrl+space Ctrl+return Ctrl+backspace Ctrl+scroll Ctrl+capslock Ctrl+numlock Ctrl+insert Ctrl+home Ctrl+del Ctrl+end Ctrl+pageup Ctrl+pagedown Ctrl+left Ctrl+up Ctrl+right Ctrl+down Ctrl+f1 Ctrl+f2 Ctrl+f3 Ctrl+f4 Ctrl+f5 Ctrl+f6 Ctrl+f7 Ctrl+f8 Ctrl+f9 Ctrl+f10 Ctrl+f11 Ctrl+f12 Shift+esc Shift+tab Shift+space Shift+return Shift+backspace Shift+scroll Shift+capslock Shift+numlock Shift+insert Shift+home Shift+del Shift+end Shift+pageup Shift+pagedown Shift+left Shift+up Shift+right Shift+down Shift+f1 Shift+f2 Shift+f3 Shift+f4 Shift+f5 Shift+f6 Shift+f7 Shift+f8 Shift+f9 Shift+f10 Shift+f11 Shift+f12 Alt+esc Alt+g Alt+space Alt+return Alt+backspace Alt+scroll Alt+capslock Alt+numlock Alt+insert Alt+home Alt+del Alt+end Alt+pageup Alt+pagedown Alt+left Alt+up Alt+right Alt+down Alt+f1 Alt+f2 Alt+f3 Alt+f4 Alt+f5 Alt+f6 Alt+f7 Alt+f8 Alt+f9 Alt+f10 Alt+f11 Alt+f12".split(" ");
+    jQuery("#platform-details").html("<code>" + navigator.userAgent + "</code>");
+    $.each(a, function(b, c) {
+        /[\+]+/.test(a[b]) && a[b].replace("+", "_");
+        $(document).bind("keydown", a[b], function() {
+            return !1
+        })
+    });
+    $("#btnConsultaLocal").click(function() {
+        $("#btnConsultaLocal").prop("disabled", !0);
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "ordenesv12/getArticulosLocal",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {}
+        }).done(function(a) {
+            try {
+                var b =
+                    JSON.parse(a);
+                a = "delete from articulos;";
+                for (var c in b.items) {
+                    var g = b.items[c];
+                    null != g && (a += "INSERT INTO articulos(id_articulo, CLAVE_ART, ITEM, descripcion, LINEA, ULT_COSTO) VALUES (" + g.id_articulo + ", '" + g.CLAVE_ART + "', '" + g.ITEM + "', '" + g.descripcion + "', '" + g.LINEA + "', " + g.ULT_COSTO + ");")
+                }
+                html5sql.process(a, function(a) {
+                    console.log("registros creados correctamente");
+                    alert("Carga local exitosa");
+                    $("#btnConsultaLocal").prop("disabled", !1)
+                }, function(a, b) {
+                    console.log(a);
+                    alert("Error en la carga local, favor de reportarlo")
+                });
+                html5sql.process("SELECT count(*) as t FROM articulos", function(a, b) {
+                    alert("registros cargados " + b.rows[0].t)
+                }, function(a, b) {
+                    console.log(a)
+                })
+            } catch (f) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+            }
+        })
+    })
+}
+
+function addArtItem(a, b) {
+    a.idUsuario = $("#idUsuario").val();
+    if (0 == a.artActivo) return alert("Hay art\u00edculos seleccionados que no se encuentran activos para su venta"), !1;
+    var c = $("#cbTipoComprobante").find(":selected").data("afecexistencia");
+    console.log("valida si descuenta existencia " + c);
+    if (parseInt(a.existencia) < b && 1 == c && 1 == a.afectaExistencias) return alert("El articulo " + a.claveArticulo + " " + a.articulo + " no se alcanza a cubrir la cantidad solicitada, en almac\u00e9n " + a.existencia + " piezas, solicitado " +
+        b), !1;
+    console.info("Pregunta por costo " + a.preguntaCosto);
+    if (1 == a.preguntaCosto) {
+        do c = prompt("Ingresa el importe del concepto"); while (isNaN(b));
+        a.precio01 = c;
+        a.precio02 = c
+    }
+    console.info("Pregunta por descripcion " + a.preguntaDescripcion);
+    1 == a.preguntaDescripcion && (c = prompt("Ingresa la descripci\u00f3n del concepto"), a.descripcionVenta = c.toUpperCase());
+    c = JSON.parse(localStorage.getItem("tbOrdenVen"));
+    c = buscaArtExitOrdVenta(c, a.idArticulo);
+    console.log("existe art en listaaa " + JSON.stringify(c));
+    null == c ?
+        (a.cantidad = b, tbOrdenVen.push(a), localStorage.setItem("tbOrdenVen", JSON.stringify(tbOrdenVen))) : (c.cantidad = parseInt(c.cantidad) + parseInt(b), tbOrdenVen[c.index] = c)
+}
+
+function listadoVentArtProgreso(a) {
+    var b = JSON.parse(localStorage.getItem("tbOrdenVen"));
+    a && $("#tbOrdenesMostrador tbody").html("");
+    var c = 0,
+        d;
+    for (d in b) {
+        var e = b[d];
+        null != e && (c += parseInt(e.cantidad))
+    }
+    console.log("Total Articulos " + c);
+    for (d in b) e = b[d], null != e && (console.log("articulo sin criterio de venta" + JSON.stringify(e)), e = critVentaArticuloProgreso(e, c, b), tbOrdenVen[d] = e, console.log("articulo con criterio de venta" + JSON.stringify(e)));
+    var g = $("#nivelUsuario").val(),
+        f = !1,
+        h = !1,
+        k = !0,
+        l = c = b = 0,
+        m = 0,
+        n =
+        0,
+        p = 0,
+        r = "";
+    for (d in tbOrdenVen)
+        if (e = tbOrdenVen[d], null != e) {
+            n = parseFloat(n) + parseFloat(e.cantidad) * parseFloat(e.preVenUnitario);
+            b = parseFloat(b) + parseFloat(e.factorDesc);
+            c = parseFloat(c) + parseFloat(e.factorDescUni);
+            l = parseFloat(l) + parseInt(e.cantidad);
+            m = parseFloat(m) + parseFloat(e.total);
+            p = parseFloat(p) + parseFloat(e.impTrasladado);
+            var u = JSON.stringify(e);
+            2 >= g && (h = f = !0);
+            4 == g && (k = !1);
+            var v = h ? "<a href='#' data-type='text' data-json='" + u + "' data-validate-number='true' data-value='" + e.precioVenta + "' data-pk='" +
+                d + "' data-name='pre' data-title='Precio' class='xeditable editable editable-click' >" + applyCurrency(e.precioVenta) + "</a>" : applyCurrency(e.precioVenta);
+            var q = f ? "<a href='#' data-type='text' data-json='" + u + "' data-validate-number='true' data-value='" + e.desc01 + "' data-pk='" + d + "' data-name='des' data-title='Descuento' class='xeditable editable editable-click' >" + e.desc01 + "</a>" : e.desc01 + "%";
+            u = k ? "<a href='#' data-type='text' data-json='" + u + "' data-validate-number='true' data-value='" + e.cantidad + "' data-pk='" +
+                d + "' data-name='can' data-title='Cantidad' class='xeditable editable editable-click' >" + e.cantidad + "</a>" : e.cantidad;
+            var t = '<div class="btn-group"><button class="btn btn-xs btn-default" type="button" data-indextabla="' + d + '" title="Remover Registro" onclick="eliminar_orden_articulo(this)"><i class="fa fa-times"></i></button></div>';
+            var w = null != e.item ? e.item : "",
+                y = "",
+                x = $("#cbTipoComprobante").find(":selected").data("json");
+            parseInt(e.cantidad) > parseInt(e.existencia) && 1 == e.afectaExistencias && 1 == x.afectaExistencia &&
+                (y = ' bgcolor="#F79F8C"', r = "Las filas marcadas no cuentan con suficiente existencia");
+            x = "undefined" != typeof e.descripcionVenta ? e.descripcionVenta : e.articulo;
+            a && $("#tbOrdenesMostrador tbody").append("<tr " + y + "><td>" + e.claveArticulo + '</td><td class="text-center">' + u + "</td><td>" + w + '</td><td data-id="' + e.idArticulo + '" onclick="showfichaArt(this)" >' + x + '</td><td class="text-center">' + v + '</td><td class="text-center">' + e.lblPrecio + '</td><td class="text-center">' + q + '</td><td class="text-center" title="Descuento con impuestos' +
+                applyCurrency(e.factorDesc) + '">' + applyCurrency(e.total) + '</td><td class="text-center">' + t + "</td></tr>")
+        } a = parseFloat(n - c);
+    $("#hTotalArt").html(l);
+    $("#hSubtotalArt").html(applyCurrency(n));
+    $("#hDescuentoArt").html(applyCurrency(-1 * c));
+    $("#hDescuentoArt").prop("title", applyCurrency(b));
+    $("#hSuDescuentoArt").html(applyCurrency(a));
+    $("#himpTrasladado").html(applyCurrency(p));
+    $("#himpRetenido").html(applyCurrency(-0));
+    $("#hImporteTotalArt").html(applyCurrency(m));
+    $("#totalArticulos").val(currencySn(l));
+    $("#factorDescuento").val(currencySn(b));
+    $("#total").val(currencySn(m));
+    localStorage.setItem("tbOrdenVen", JSON.stringify(tbOrdenVen));
+    "" != r ? (alert(r), $("#btnGeneraOrden").prop("disabled", !0)) : $("#btnGeneraOrden").prop("disabled", !1)
+}
+
+function critVentaArticuloProgreso(a, b, c) {
+    b = parseInt(b);
+    var d = 0,
+        e = 0,
+        g = 0,
+        f = "",
+        h = "";
+    var k = parseInt(a.cantidad);
+    var l = parseFloat(a.precio01),
+        m = parseFloat(a.precio02);
+    var n = "undefined" !== typeof a.precio03 ? parseFloat(a.precio03) : 0;
+    var p = 0,
+        r = [];
+    "" != $("#itemsArticulosCliente").val() && (r = JSON.parse($("#itemsArticulosCliente").val()));
+    "PL" == a.tipoPrecio ? p = a.precioVenta : "undefined" !== typeof r && 0 < r.length && (r = buscaArtExitOrdVenta(r, a.idArticulo), console.log("articulo PrecioEspe " + JSON.stringify(r)), null != r &&
+        (p = parseFloat(r.precioCliente)));
+    var u = parseFloat(a.costo);
+    r = "undefined" !== typeof a.desc01 ? parseFloat(a.desc01) : parseFloat(a.descuento);
+    var v = "undefined" !== typeof a.nPiezaAplicaPrecio03 ? parseInt(a.nPiezaAplicaPrecio03) : 0;
+    "undefined" !== typeof a.exentoCriteriosDesc ? null != a.exentoCriteriosDesc && parseInt(a.exentoCriteriosDesc) : a.exentoCriteriosDesc = 0;
+    precioAuto = "undefined" === typeof a.precioAuto && "PA" != a.tipoPrecio ? 0 : "undefined" === typeof a.precioAuto ? parseFloat(a.precioVenta) : parseFloat(a.precioAuto);
+    var q = parseInt(a.incluyeImpuestos),
+        t = parseFloat(a.tasaTrasladado);
+    parseFloat(a.tasaRetenido);
+    0 == p && 0 == precioAuto ? (d = 0, f = buscaArtExitOrdVenta(c, a.idArticulo), null != f && (d = parseInt(f.cantidad)), d >= v && 0 < v ? (console.log("Tipo Precio P3"), d = n, f = '<span class="label label-danger" title="Precio Especial">P3</span>', e = r = 0) : 3 <= b || 1 == a.aplicaMay ? (console.log("Tipo Precio P2"), d = m, f = '<span class="label label-info" title="Precio Mayoreo">P2</span>', h = "P2") : (console.log("Tipo Precio P1"), f = '<span class="label label-success" title="Precio Menudeo">P1</span>',
+        d = l, h = "P1"), n = parseFloat(k * d), 0 < r && ("PL" == a.tipoPrecio || "PA" == a.tipoPrecio ? (h = a.tipoPrecio, d = a.parseFloat(d)) : (h = "P2", d = m), n = parseFloat(k * d), e = parseFloat(r * n / 100), g = parseFloat(t + 1), g = parseFloat(e / g), f = '<span class="label label-info" title="Precio Mayoreo">P2</span>', c = n - e, 2 < $("#nivelUsuario").val() ? c < u && (4 != nivelUsuario && alert("El descuento del art\u00edculo es mayor al costo, no se puede aplicar"), e = r = 0, 3 <= b ? (d = m, f = '<span class="label label-info" title="Precio Mayoreo">P2</span>', h = "P2") : (f = '<span class="label label-success" title="Precio Menudeo">P1</span>',
+        d = l, h = "P1"), console.log("precioVenta desc " + d), n = parseFloat(k * d)) : 0 > c && (alert("El descuento del art\u00edculo es mayor al de venta, no se puede aplicar"), e = r = 0))) : (0 != p && (d = parseFloat(p), f = '<span class="label label-warning" title="Precio en lista de precios de cliente">PL</span>', h = "PL"), 0 != precioAuto && (d = parseFloat(a.precioVenta), f = '<span class="label label-danger" title="Precio autorizado manual">PA</span>', h = "PA"), n = parseFloat(k * d), r = 0);
+    n -= e;
+    1 == q ? (l = parseFloat(t + 1), b = parseFloat(d / l), console.log("tasaTrasladadoCon " +
+        l), console.log("precioVenta " + d), console.log("preVenUnitariooo " + b), k = parseFloat(b * k - g) * t) : (k = 0 * t, b = d);
+    a.lblPrecio = f;
+    a.precioVenta = d;
+    a.factorDesc = e;
+    a.total = n;
+    a.desc01 = r;
+    a.impTrasladado = k;
+    a.subtotal = 0;
+    a.preVenUnitario = b;
+    a.descuento = r;
+    a.tipoPrecio = h;
+    a.factorDescUni = g;
+    console.info("Salida de calculos " + JSON.stringify(a));
+    return a
+}
+
+function keyPressAddArtsOV(a) {
+    13 == (a.which || a.keyCode) && $("#btnAgregarArtOrden").click()
+}
+
+function keyPresSigArt(a, b) {
+    if (13 == (a.which || a.keyCode)) {
+        var c = "#item_" + (jQuery(b).data("id") + 1);
+        $(c).focus().select();
+        console.log("sig ele " + c)
+    }
+}
+
+function mostarDatosOrdenVenta() {
+    console.info("dadosC" + $("#ordenCJSON").val());
+    console.info("dadosD" + $("#ordenDJSON").val());
+    var a = JSON.parse($("#ordenCJSON").val()),
+        b = JSON.parse($("#ordenDJSON").val()),
+        c = parseInt($("#idOrdenC").val());
+    console.info("idOrdenCC " + c);
+    0 != c && (0 != a.idEntidad && ($("#divDatosCliente").show(), $("#divVentaPublico").hide(), $("#lblClienteNombre").html(a.nombre_razon_social), $("#lblClienteRFC").html(a.rfc)), localStorage.setItem("tbOrdenVen", JSON.stringify(b)), listadoVentArtProgreso(!0))
+}
+
+function listadoCuentasCobrarPagar() {}
+
+function getPagosDocumento(a) {
+    var b = jQuery(a).data("idventac"),
+        c = jQuery(a).parents(".block");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "administrativo/getPagosDocumento",
+        beforeSend: function() {
+            block_class(!0, c)
+        },
+        complete: function() {
+            block_class(!1, c)
+        },
+        data: {
+            idVentaC: b,
+            idTienda: $("#idTienda").val()
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            a = "";
+            $("#modal-getPagosDocumento").modal("toggle");
+            for (var d in b.items) {
+                var c = b.items[d];
+                if (null != c) {
+                    var h = "";
+                    switch (c.idTipoComprobante) {
+                        case "19":
+                            h = '<span class="label label-success">Pago</span>';
+                            break;
+                        case "11":
+                            h = '<span class="label label-warning">Ajuste</span>';
+                            break;
+                        case "20":
+                            h = '<span class="label label-danger">Cancelacion de pago</span>'
+                    }
+                    a += "<tr><td style='width: 10%'><label>" + padToFour(c.idCobroPagoC) + "</label></td><td style='width: 10%'><label>" + c.fechaPago + "</label></td><td style='width: 12%'><label>" + c.tipoComprobante + " " + c.folio + c.serie + "</label></td><td class='text-center' style='width: 10%'>" + h + "</td><td class='text-center' style='width: 10%'><label>" + applyCurrency(c.impSaldoAnt) +
+                        "</label></td><td class='text-center' style='width: 10%'><label>" + applyCurrency(c.impPagado) + "</label></td><td class='text-center' style='width: 10%'><label>" + applyCurrency(c.impSaldoInsoluto) + "</label></td></tr>"
+                }
+            }
+            $("#tblPagosDocumento tbody").html(a)
+        } catch (k) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(k)
+        }
+    })
+}
+
+function getCuentasCobrarPagar(a) {
+    var b = jQuery(a).parents(".block");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "administrativo/getCuentasCobrarPagar",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        data: {
+            idEntidad: $("#cbEntidad").val(),
+            tipoDeuda: $("#cbTipoDeuda").val(),
+            tipoFecha: $("#cbTipoFecha").val(),
+            tipoComprobante: $("#cbTipoCompro").val(),
+            tipoEntidad: $("#tipoEntidad").val(),
+            tipoDesglo: $("#cbTipoDesglo").val(),
+            idTienda: $("#idTienda").val(),
+            desde: "",
+            hasta: ""
+        }
+    }).done(function(a) {
+        try {
+            var b =
+                JSON.parse(a);
+            a = "";
+            if ("e" == $("#cbTipoDesglo").val()) {
+                for (var c in b.items) {
+                    var g = b.items[c];
+                    null != g && (a += "<tr><td style='width: 60%'><label><a href='#' onclick='getFancyEntidad(" + g.idEntidad + ", false);'>" + g.entidad + "</a></label></td><td class='text-center' style='width: 15%'><label>" + applyCurrency(g.total) + "</label></td><td class='text-center' style='width: 15%'><label>" + applyCurrency(g.debe) + "</label></td><td class='text-center' style='width: 15%'><label>" + applyCurrency(g.haber) + "</label></td></tr>")
+                }
+                dataTableByID(a,
+                    "tblEntidad")
+            } else if ("d" == $("#cbTipoDesglo").val()) {
+                for (c in b.items) g = b.items[c], null != g && (a += "<tr><td style='width: 60%'><label><a href='#' onclick='getFancyEntidad(" + g.idEntidad + ", false);'>" + g.entidad + "</a></label></td><td style='width: 20%'><label><a data-tipoventa='venta' data-id='" + g.idVentaC + "' href='#' onclick='getFormatoPDF(this);'>" + g.nombreCorto + " " + g.folio + g.serie + "</a></label></td><td style='width: 20%'><label>" + applyDateHour(g.fecha) + "</label></td><td style='width: 20%'><label>" + applyDate(g.fechaVence) +
+                    "</label></td><td class='text-center' style='width: 15%'><label>" + applyCurrency(g.total) + "</label></td><td class='text-center' style='width: 15%'><label><a data-idventac='" + g.idVentaC + "' onclick='getPagosDocumento(this)'>" + applyCurrency(g.debe) + "</a></label></td><td class='text-center' style='width: 15%'><label>" + applyCurrency(g.haber) + "</label></td></tr>");
+                dataTableByID(a, "tblDocumentos")
+            } else alert("Selecciona un tipo de desglose")
+        } catch (f) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"),
+                console.log(f)
+        }
+    })
+}
+
+function ListaCuentasCobrarPagar() {
+    $(document.body).on("change", "#cbTipoDesglo", function() {
+        var a = this.value;
+        "e" == a ? ($("#divEntidad").show(), $("#divDocumentos").hide()) : "d" == a && ($("#divDocumentos").show(), $("#divEntidad").hide())
+    });
+    $("#btnCuentasCobrar").click(function() {
+        getCuentasCobrarPagar(this)
+    })
+}
+
+function guardaEntidadPropiedad() {}
+
+function EntidadPropiedad() {
+    $("#btnGuardaPropEnti").click(function() {
+        var a = jQuery(this).parents(".block");
+        confirm("\u00bfSon correctos los datos?") && $.ajax({
+            type: "POST",
+            url: $("#url").val() + "entidades/guardaEntidadPropiedad",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: $("#frmEntiProp").serialize()
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                notify_info(b.type, b.msg);
+                $("#idEntidadPropiedad").val(b.idEntidadPropiedad)
+            } catch (d) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"),
+                    console.log(d)
+            }
+        })
+    })
+}
+
+function cancelaPagoCobro(a) {
+    var b = jQuery(a).parents(".block");
+    a = jQuery(a).data("json");
+    if ("c" == a.estatus) return alert("El documento ya se encuentra cancelado"), !1;
+    if (confirm("\u00bfDeseas cancelar el pago?")) {
+        var c = prompt("Ingresa las observaciones", "");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "administrativo/guardaCobroPago",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                idCobroPagoC: a.idCobroPagoC,
+                idEntidad: a.idEntidad,
+                codEntidad: null,
+                fechaPago: "",
+                codFormaPago: null,
+                id_entidad_propiedad_origen: null,
+                id_entidad_propiedad_destino: null,
+                idTienda: $("#idTienda").val(),
+                importe: currencySn(a.importe),
+                tbPagoCobro: null,
+                tipo: "dc",
+                observaciones: c,
+                idTipoComprobante: a.idTipoComprobante
+            }
+        }).done(function(a) {
+            try {
+                JSON.parse(a), alert("Pago cancelado correctamente"), $("#btnBusPaCo").click()
+            } catch (e) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+            }
+        })
+    }
+}
+
+function ListaPagosCobros() {
+    $("#btnGenCFDIPago").click(function() {
+        if (null == $("#cbSerie").val()) return alert("Falta asignar serie y folio al comprobante"), !1;
+        if (!confirm("\u00bfSon correctos los datos?")) return !1;
+        $('input[name="compo[]"]').map(function() {
+            var a = jQuery(this).data("json").idCobroPagoC;
+            $(this).is(":checked") && $.ajax({
+                type: "POST",
+                url: $("#url").val() + "administrativo/getComplementoPagoCFDI",
+                beforeSend: function() {
+                    $("#btnGenCFDIPago").prop("disabled", !0);
+                    $("#btnCerrar").prop("disabled", !0)
+                },
+                complete: function() {
+                    $("#btnGenCFDIPago").prop("disabled", !1);
+                    $("#btnCerrar").prop("disabled", !1)
+                },
+                data: {
+                    idCobroPagoC: a,
+                    codUsoCFDI: $("#cbUsoCFDICli").val(),
+                    serie: $("#cbSerie").find(":selected").data("serie"),
+                    folio: $("#cbSerie").find(":selected").data("folio"),
+                    observaciones: $("#observaciones").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    if (b.edo) {
+                        var d = $("#base_url").val() + "upload/" + b.folder + "/" + b.nameFile;
+                        console.log(d);
+                        $("#modal-getAddComplementoPago").modal("toggle");
+                        $("#btnBusPaCo").click();
+                        $("#modalMostrarPDF").modal({
+                            backdrop: "static",
+                            keyboard: !1
+                        });
+                        $("#showPDF").attr("data", d)
+                    } else alert(b.msg)
+                } catch (e) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+                }
+            })
+        })
+    });
+    $("#cbEntidad").on("change", function() {
+        dataTableByID("", "tblPaCo");
+        $("#btnBusPaCo").click()
+    });
+    $("#btnAddCoPa").click(function() {
+        getPagoCobroModal(0)
+    });
+    $("#btnBusPaCo").click(function() {
+        var a = $("#cbEntidad").val();
+        if (null == a) return alert("Selecciona una entidad"), !1;
+        var b = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "administrativo/getListaPagosCobros",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                idEntidad: a,
+                desde: $("#txtFecDesde").val(),
+                hasta: $("#txtFecHasta").val(),
+                tipo: $("#tipo").val(),
+                idTipoComprobante: $("#idTipoComprobante").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                a = "";
+                var c = parseFloat(b.item.debe);
+                0 > c ? $("#lblSaldoGen").css("color", "red") : $("#lblSaldoGen").css("color", "black");
+                $("#lblSaldoGen").html("Saldo General : " +
+                    applyCurrency(c));
+                for (var g in b.items) {
+                    var f = b.items[g];
+                    c = "";
+                    if (null != f && 20 != f.idTipoComprobante) {
+                        var h = "c" == f.estatus ? '<span class="label label-danger">Cancelado</span>' : '<span class="label label-success">' + f.tipoComprobante + "</span>";
+                        21 == $("#idTipoComprobante").val() && (null != f.uuid ? (c = "Timbrado", h = '<span class="label label-success">' + c + "</span>") : (c = "Sin timbre", h = '<span class="label label-warning">' + c + "</span>"));
+                        a += "<tr><td style='width: 10%'><label>" + padToFour(f.folio) + "</label></td><td style='width: 10%'>" +
+                            h + "</td><td style='width: 40%'><label>" + f.nombre_razon_social + "</label></td><td style='width: 10%'><label>" + f.formaPago + "</label></td><td style='width: 10%'><label>" + f.fechaPago + "</label></td><td style='width: 10%'><label>" + applyCurrency(f.importe) + "</label></td><td style='width: 25%' class='text-center'><div class='btn-group'><button class='btn btn-xs btn-default' type='button' data-toggle='tooltip' title='Mostrar comprobante' data-json='" + JSON.stringify(f) + "' onclick='getPrintPDFComplemento(this)'><i class='fa fa-eye'></i></button><button class='btn btn-xs btn-default' type='button' data-toggle='tooltip' title='Editar'onclick='getPagoCobroModal(" +
+                            f.idCobroPagoC + ")'><i class='fa fa-pencil'></i></button><button class='btn btn-xs btn-default' type='button' data-toggle='tooltip' title='Cancelar' data-json='" + JSON.stringify(f) + "' onclick='cancelaPagoCobro(this)'><i class='fa fa-times'></i></button></div></td></tr>"
+                    }
+                }
+                dataTableByID(a, "tblPaCo")
+            } catch (k) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(k)
+            }
+        })
+    })
+}
+
+function listaPagosCobrosEntidad() {
+    var a = "";
+    if (19 == $("#idTipoComprobante").val() || 30 == $("#idTipoComprobante").val() || 21 == $("#idTipoComprobante").val())
+        for (var b in tbPagoCobro) {
+            var c = tbPagoCobro[b];
+            if (null != c)
+                if (0 == $("#idCobroPagoC").val()) {
+                    var d = "undefined" === typeof c.impPagado ? 0 : c.impPagado,
+                        e = "undefined" === typeof c.checked ? "" : c.checked;
+                    a += "<tr><td style='width: 20%'><input name='checkDoc[]' id='checkbox_" + b + "' data-index='" + b + "' data-json='" + JSON.stringify(c) + "' type='checkbox' onclick='editaSaldoCoPa(this);' " +
+                        e + "><label><a data-tipoventa='venta' data-id='" + c.idVentaC + "' href='#' onclick='getFormatoPDF(this);'>" + c.nombreCorto + " " + c.folio + c.serie + "</a></label></td><td style='width: 20%'><label>" + applyDateHour(c.fecha) + "</label></td><td style='width: 20%'><label>" + c.fechaVence + "</label></td><td bgcolor='#B4F7B9' class='text-center' style='width: 15%'><label>" + applyCurrency(c.debe) + "</label></td><td class='text-center' style='width: 15%'><label>" + applyCurrency(d) + "</label></td><td bgcolor='#B4F7B9' class='text-center' style='width: 15%'><label>" +
+                        applyCurrency(c.haber) + "</label></td></tr>"
+                } else a += "<tr><td style='width: 20%'><label><a data-tipoventa='venta' data-id='" + c.idVentaC + "' href='#' onclick='getFormatoPDF(this);'>" + c.nombreCorto + " " + c.folio + c.serie + "</a></label></td><td style='width: 20%'><label>" + applyDateHour(c.fecha) + "</label></td><td style='width: 20%'><label>" + c.fechaVence + "</label></td><td bgcolor='#B4F7B9' class='text-center' style='width: 15%'><label>" + applyCurrency(c.impSaldoAnt) + "</label></td><td class='text-center' style='width: 15%'><label>" +
+                    applyCurrency(c.impPagado) + "</label></td><td bgcolor='#B4F7B9' class='text-center' style='width: 15%'><label>" + applyCurrency(c.impSaldoInsoluto) + "</label></td></tr>"
+        } else swal({
+            type: "info",
+            title: "Cargo",
+            text: "Solo se muestran documentos con saldo si es un abono"
+        });
+    $("#tblPaCo tbody").html(a)
+}
+
+function editaSaldoCoPa(a) {
+    console.log("txtDispone:editaSaldoCoPa ", $("#txtDispone").val());
+    if (!$.isNumeric($("#txtDispone").val())) return console.log("El importe pagado debe de ser n\u00famerico"), !1;
+    var b = jQuery(a),
+        c = b.data("json");
+    b = b.data("index");
+    var d = parseFloat($("#txtDispone").val());
+    if ($(a).is(":checked")) {
+        var e = parseFloat(c.debe);
+        var g = d > e ? e : d;
+        var f = e - g;
+        c.checked = "checked";
+        c.impSaldoAnt = currencySn(e);
+        c.impPagado = currencySn(g);
+        c.impSaldoInsoluto = currencySn(f);
+        d -= g
+    } else d += parseFloat(c.impPagado),
+        c.checked = "", c.impSaldoAnt = currencySn(e), c.impPagado = currencySn(g), c.impSaldoInsoluto = currencySn(f);
+    $("#txtDispone").val(currencySn(d));
+    tbPagoCobro[b] = c;
+    listaPagosCobrosEntidad()
+}
+
+function validateDocsCargoAbono() {
+    for (var a in tbPagoCobro)
+        if (null != tbPagoCobro[a] && $("#checkbox_" + a).is(":checked")) return !0;
+    return !1
+}
+
+function uncheckDocsCargoAbono() {
+    for (var a in tbPagoCobro)
+        if (null != tbPagoCobro[a]) {
+            var b = $("#checkbox_" + a);
+            b.prop("checked") && (b.prop("checked", !1), editaSaldoCoPa(b))
+        } return !1
+}
+
+function PagosCobros() {
+    $("#txtImpPago").keypress(function(a) {
+        13 == a.which && (a = $("#idTipoComprobante"), (19 == a.val() || 21 == a.val() || 30 == a.val()) && confirm("\u00bfAplicar abono a documentos m\u00e1s antiguos?") && $('input[name="checkDoc[]"]').map(function() {
+            if (0 < parseFloat($("#txtDispone").val())) {
+                var a = jQuery(this).data("json");
+                console.log("dato", a);
+                $(this).prop("checked", !0);
+                editaSaldoCoPa(this)
+            }
+        }).get())
+    });
+    $("#idTipoComprobante").on("change", function() {
+        "19" == this.value ? $("#btnBusComprobanteCP").click() :
+            ($("#txtDispone").val("0"), tbPagoCobro = [], listaPagosCobrosEntidad())
+    });
+    $("#txtCodEntidad").keypress(function(a) {
+        13 == a.which && alert("En construccion")
+    });
+    $("#cbEntidad").on("change", function() {
+        $("#idEntidad").val(this.value);
+        $("#aBanOrigen").attr("data-identidad", this.value);
+        tbPagoCobro = [];
+        $("#txtDispone").val("0");
+        0 == $("#idCobroPagoC").val() ? ($("#btnBusComprobanteCP").click(), listaPagosCobrosEntidad(), $("#txtImpPago").val("")) : ($("#btnBusComprobanteCP").prop("disabled", !0), $("#txtCodEntidad").prop("disabled",
+                !0), $("#cbEntidad").prop("disabled", !0), $("#txtImpPago").prop("disabled", !0), $("#idTipoComprobante").prop("disabled", !0), $("#id_entidad_propiedad_origen").empty().append('<option value="' + $("#cuentaOrigen").data("id") + '">' + $("#cuentaOrigen").val() + "</option>").val($("#cuentaOrigen").data("id")).trigger("change"), $("#id_entidad_propiedad_destino").empty().append('<option value="' + $("#cuentaDestino").data("id") + '">' + $("#cuentaDestino").val() + "</option>").val($("#cuentaDestino").data("id")).trigger("change"),
+            tbPagoCobro = JSON.parse($("#tbPagoCobro").val()), listaPagosCobrosEntidad())
+    });
+    $("#btnGuardaCP").click(function() {
+        var a = !1,
+            b = 0,
+            c = $("#idTipoComprobante").val();
+        0 != $("#idCobroPagoC").val() && alert("Solo se modificar\u00e1n datos como fecha, forma de pago, cuenta origen y destino");
+        if (null == $("#cbEntidad").val()) return notify_info("warning", "Selecciona una entidad"), !1;
+        if ("" == $("#idTipoComprobante").val()) return swal({
+            type: "error",
+            title: "Error de pago",
+            text: "Selecciona el tipo, cargo/abono"
+        }), !1;
+        if (0 > parseFloat($("#txtImpPago").val()) ||
+            "" == $("#txtImpPago").val()) return swal({
+            type: "error",
+            title: "Error de pago",
+            text: "Ingresa el importe del cargo/abono"
+        }), !1;
+        var d = 19 == $("#idTipoComprobante").val() ? "Aplicar el abono" : "Aplicar el cargo",
+            e = "\u00bfDesea guardar el registro?";
+        if (19 == $("#idTipoComprobante").val() || 21 == $("#idTipoComprobante").val()) {
+            var g = !1,
+                f = tbPagoCobro.length;
+            if (0 < f) {
+                g = !0;
+                if (!validateDocsCargoAbono()) return swal({
+                        type: "error",
+                        title: "Error de pago",
+                        text: "Selecciona los elementos de la lista o da enter para aplicar el pago a los documentos con saldo"
+                    }),
+                    !1;
+                var h = 0;
+                for (l in tbPagoCobro) {
+                    var k = tbPagoCobro[l];
+                    console.log("reggg", k);
+                    null != k && (k = "undefined" != typeof k.impPagado ? parseFloat(k.impPagado) : 0, h += k)
+                }
+                var l = parseFloat($("#txtImpPago").val());
+                if (h > l) return swal({
+                    type: "error",
+                    title: "Error al aplicar el abono",
+                    text: "El abono aplicado a los documentos es mayor al capturado, favor de reportarlo"
+                }), !1
+            }
+            g && 0 < parseFloat($("#txtDispone").val()) && (a = !0, b = parseFloat($("#txtDispone").val()));
+            0 < parseFloat($("#txtDispone").val()) && 0 < f ? (d = "Saldo a favor", e = "El cliente no cuenta con documentos a cr\u00e9dito, desea agregar el abono como saldo a favor",
+                a = !0) : 0 < parseFloat($("#txtDispone").val()) && (d = "Saldo a favor", e = "El importe ingresado cubre el adeudado y tiene saldo a favor, desea agregarlo", a = !0, c = 38)
+        } else if (39 == $("#idTipoComprobante").val() && "" == $("#txtObservaciones").val()) return swal({
+            type: "error",
+            title: "Observaciones del cargo",
+            text: "Es necesario ingresar el motivo del cargo"
+        }), !1;
+        swal({
+            type: "warning",
+            title: d,
+            text: e,
+            showCancelButton: !0,
+            closeOnConfirm: !1,
+            showLoaderOnConfirm: !0
+        }, function(d) {
+            if (!1 === d) return !1;
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() +
+                    "administrativo/guardaCobroPago",
+                error: function(a, b, d) {
+                    swal({
+                        type: "error",
+                        title: "Error",
+                        text: "Error interno, favor de reportarlo"
+                    });
+                    $("#btnGuardaCP").prop("disabled", !0);
+                    $("#txtImpPago").prop("disabled", !0);
+                    $("#btnBusComprobanteCP").prop("disabled", !0)
+                },
+                data: {
+                    idEntidad: $("#cbEntidad").val(),
+                    codEntidad: $("#txtCodEntidad").val(),
+                    fechaPago: $("#txtFechaPago").val(),
+                    codFormaPago: $("#codFormaPago").val(),
+                    id_entidad_propiedad_origen: $("#id_entidad_propiedad_origen").val(),
+                    id_entidad_propiedad_destino: $("#id_entidad_propiedad_destino").val(),
+                    idTienda: $("#idTienda").val(),
+                    importe: currencySn($("#txtImpPago").val()),
+                    tbPagoCobro: tbPagoCobro,
+                    tipo: $("#tipo").val(),
+                    idCobroPagoC: $("#idCobroPagoC").val(),
+                    numOperacion: $("#numOperacion").val(),
+                    idTipoComprobante: c,
+                    observaciones: $("#txtObservaciones").val(),
+                    saldoFavor: a,
+                    impSaldoFavor: b,
+                    codUsoCFDI: $("#cbUsoCFDICli").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    b.status ? (swal({
+                        type: "info",
+                        title: b.msg
+                    }), parent.$.fancybox.close(), parent.$("#btnBusPaCo").click()) : (swal({
+                            type: "error",
+                            title: b.msg
+                        }),
+                        $("#btnGuardaCP").prop("disabled", !0), $("#txtImpPago").prop("disabled", !0), $("#btnBusComprobanteCP").prop("disabled", !0))
+                } catch (r) {
+                    swal({
+                        type: "error",
+                        title: "Error interno",
+                        text: "Error al intentar procesar el JSON, favor de reportarlo"
+                    }), $("#btnGuardaCP").prop("disabled", !0), $("#txtImpPago").prop("disabled", !0), $("#btnBusComprobanteCP").prop("disabled", !0), console.log(r)
+                }
+            })
+        })
+    });
+    $("#txtImpPago").keyup(function() {
+        if ("" == $("#idTipoComprobante").val()) return alert("Selecciona el tipo Cargo/abono"), !1;
+        $.isNumeric(this.value) ? (console.log("idTipoComprobante ", $("#idTipoComprobante").val()), 19 == $("#idTipoComprobante").val() || 21 == $("#idTipoComprobante").val() || 30 == $("#idTipoComprobante").val() ? ($("#txtDispone").val(this.value), console.log("idTipoComprobante set ", $("#txtDispone").val())) : $("#txtDispone").val(0), console.log("Es nume ", this.value), uncheckDocsCargoAbono()) : console.log("No es nume ", this.value)
+    });
+    $("#btnBusComprobanteCP").click(function() {
+        $("#txtDispone").val("0");
+        tbPagoCobro = [];
+        if (null ==
+            $("#cbEntidad").val()) return notify_info("warning", "Selecciona una entidad"), !1;
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "administrativo/getCuentasCobrarPagar",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                idEntidad: $("#cbEntidad").val(),
+                codEntidad: $("#txtCodEntidad").val(),
+                tipoDeuda: "c",
+                tipoFecha: "e",
+                tipoComprobante: "s",
+                tipoDesglo: "d",
+                idTienda: $("#idTienda").val(),
+                esFiscal: $("#esFiscal").val(),
+                tipoEntidad: $("#tipoEntidad").val(),
+                desde: "",
+                hasta: ""
+            }
+        }).done(function(a) {
+            try {
+                tbPagoCobro = JSON.parse(a).items, listaPagosCobrosEntidad()
+            } catch (c) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(c)
+            }
+        })
+    })
+}
+
+function ListaComplementoPagos() {
+    $("#btnCreaCompleCFDI").click(function() {
+        getAddComplementoPagoCFDI()
+    });
+    $("#btnBusCompleCFDI").click(function() {
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "administrativo/getComprobantesVenta",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                idEntidad: $("#cbEntidad").val(),
+                desde: $("#txtFecFacDesde").val(),
+                hasta: $("#txtFecFacHasta").val(),
+                idTipoComprobante: 21
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                a = "";
+                for (var d in b) {
+                    var e = b[b];
+                    null != e && (a += "<tr><td>" + e.folio + " " + e.serie + "</td><td>" + e.fecha + "</td><td>" + e.nombre_razon_social + "</td><td>" + e.rfc + "</td><td>" + e.total + "</td><td>" + e.status + "</td><td><a class='btn btn-xs btn-default' type='button' data-toggle='tooltip' title='Eliminar' onclick='eliminarListaPrecio(" + dato.id_articulo_cliente + ");'><i class='fa fa-close'></i></a><a class='btn btn-xs btn-default' type='button' data-toggle='tooltip' title='Editar' onclick='editarListaPrecio(" + dato.id_articulo_cliente +
+                        ");'><i class='fa  fa-edit'></i></a></td></tr>")
+                }
+                dataTableByID(a, "tblComplementoCFDI")
+            } catch (g) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(g)
+            }
+        })
+    })
+}
+
+function showModalCatPre() {
+    $("#modal-cat-pre").modal("toggle")
+}
+
+function getPrintersCompro(a) {
+    $("#modalPrinters").modal("toggle");
+    $("#btnListImpre").click();
+    $("#btnBuscImpre").click();
+    var b = jQuery(this).parents(a);
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "catalogos/getTipoComprobante",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        data: {
+            dWhere: {
+                activoEnCobros: 1
+            }
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            $("#cbTipoComproImp").empty();
+            for (var c in b.items) {
+                var g = b.items[c];
+                null != g && $("#cbTipoComproImp").append($("<option>", {
+                    value: g.idTipoComprobante,
+                    text: g.tipoComprobante
+                }))
+            }
+        } catch (f) {
+            notify_info("error", f), console.log(f)
+        }
+    })
+}
+
+function getAddComplementoPagoCFDI() {
+    $.fancybox.open({
+        href: $("#url").val() + "administrativo/pagoCliente/21",
+        type: "iframe",
+        autoSize: !1,
+        width: "100%",
+        height: "100%",
+        padding: 0,
+        afterClose: function(a) {}
+    })
+}
+
+function getEntidadPropiedad(a) {
+    var b = jQuery(a);
+    a = b.data("identidad");
+    b = b.data("idpropiedadtipo");
+    $.fancybox.open({
+        href: $("#url").val() + "entidades/getEntidadPropiedad/" + a + "/" + b,
+        type: "iframe",
+        autoSize: !1,
+        width: "70%",
+        height: "70%",
+        padding: 0,
+        afterClose: function(a) {}
+    })
+}
+
+function getCatBancoPropiedad() {
+    var a = $("#idCatBanco").val();
+    $.fancybox.open({
+        href: $("#url").val() + "entidades/getCatBancoPropiedad/" + a,
+        type: "iframe",
+        autoSize: !1,
+        width: "100%",
+        height: "100%",
+        padding: 0,
+        afterClose: function(a) {}
+    })
+}
+
+function CatBanco() {
+    $("#btnGuardaBanco").click(function() {
+        var a = jQuery(this).parents(".block");
+        confirm("\u00bfSon correctos los datos?") && $.ajax({
+            type: "POST",
+            url: $("#url").val() + "entidades/guardaCatBanco",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: $("#frmCatBanco").serialize()
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                notify_info(b.type, b.msg)
+            } catch (d) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+            }
+        })
+    })
+}
+
+function getPagoCobroModal(a) {
+    var b = $("#tipo").val(),
+        c = $("#cbEntidad").val(),
+        d = $("#idTienda").val(),
+        e = $("#idTipoComprobante").val(),
+        g = $("#idTipoComprobanteHijo").val(),
+        f = $("#tipoFormaPago").val(),
+        h = $("#esFiscal").val(),
+        k = $("#tipoEntidad").val();
+    $.fancybox.open({
+        href: $("#url").val() + "administrativo/getCobroPago/" + b + "/" + c + "/" + d + "/" + a + "/" + g + "/" + e + "/" + f + "/" + h + "/" + k,
+        type: "iframe",
+        autoSize: !1,
+        width: "100%",
+        height: "100%",
+        padding: 0,
+        afterClose: function(a) {
+            $("#btnBusPaCo").click()
+        }
+    });
+    if (21 == e) {
+        var l = !1,
+            m = !1;
+        $('input[name="compo[]"]').map(function() {
+            $(this).is(":checked") && ("c" == jQuery(this).data("json").estatus && (m = !0), l = !0)
+        });
+        if (!l) return !1;
+        if (m) return alert("El documento seleccionado esta cancelado"), !1;
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "ordenes/getSerieDocumento",
+            beforeSend: function() {
+                $("#btnAddCoPa").prop("disables", !0)
+            },
+            complete: function() {
+                $("#btnAddCoPa").prop("disables", !1)
+            },
+            data: {
+                idTienda: $("#idTienda").val(),
+                idTipoComprobante: e
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                $("#cbSerie").empty().trigger("change");
+                for (var d in b) {
+                    var c = b[d];
+                    if (null != c) {
+                        var f = '<option data-serie="' + c.serie + '" data-folio="' + c.folio + '" id="' + c.folio + '">' + c.serie + " | " + c.folio + " | " + (null != c.observacion ? c.observacion : "") + "</option>";
+                        $("#cbSerie").append(f).trigger("change")
+                    }
+                }
+                $("#modal-getAddComplementoPago").modal("toggle")
+            } catch (q) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(q)
+            }
+        })
+    }
+}
+
+function PrintConfig() {
+    $("#btnDescargaComprobantes").click(function(a) {
+        var b = jQuery(this),
+            c = b.data("nombrearchivo"),
+            d = b.data("path");
+        b = b.data("rfctienda");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "configuracionrest/getComprobantes",
+            data: {
+                nombreArchivo: c,
+                path: d,
+                rfcTienda: b,
+                idKey: $("#idKey").val()
+            },
+            error: function(a, b, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            }
+        }).done(function(b) {
+            try {
+                a.preventDefault();
+                var d = b.item,
+                    c = $("#url").val() + "attachfile/downloadFile/" +
+                    encodeURIComponent(JSON.stringify(d));
+                console.log("URL " + c);
+                window.location.href = c
+            } catch (h) {
+                swal({
+                    type: "error",
+                    title: "Error al descargar",
+                    text: "Error al descargar el comprobante"
+                }), console.log(h)
+            }
+        })
+    })
+}
+
+function getFormatoPDF(a) {
+    var b = jQuery(a);
+    a = b.data("tipoventa");
+    b = b.data("id");
+    $.fancybox.open({
+        href: $("#url").val() + "administrativo/showPDF/" + a + "/" + b,
+        type: "iframe",
+        autoSize: !1,
+        width: "70%",
+        height: "50%",
+        padding: 0,
+        afterClose: function(a) {}
+    })
+}
+
+function getFancyEntidad(a, b) {
+    if (0 != a) {
+        var c = $("#url").val() + "entidades/mostrar_entidad/" + a + "/c/m";
+        $.fancybox.open({
+            href: c,
+            type: "iframe",
+            autoSize: !1,
+            width: "100%",
+            height: "100%",
+            padding: 0,
+            afterClose: function(d) {
+                get_entidad(a, b)
+            }
+        })
+    } else $("#modalClientes").modal("toggle")
+}
+
+function getAddCompra(a) {
+    a = jQuery(a).data("url");
+    $.fancybox.open({
+        href: a,
+        type: "iframe",
+        autoSize: !1,
+        width: "100%",
+        height: "100%",
+        padding: 0,
+        afterClose: function(a) {
+            $("#btnBuscaListaCompra").click()
+        }
+    })
+}
+
+function getPrintFile(a) {
+    jQuery(a);
+    $.fancybox.open({
+        href: $("#url").val() + "configuracion/getPrintFile/",
+        type: "iframe",
+        autoSize: !1,
+        width: "60%",
+        height: "60%",
+        padding: 0,
+        afterClose: function(a) {}
+    })
+}
+
+function detalleComprobante(a) {
+    var b = jQuery(a);
+    a = b.data("table");
+    var c = $("#tipo").val(),
+        d = b.data("id"),
+        e = b.data("typeid");
+    b = b.data("json");
+    console.log("d ", b);
+    $.fancybox.open({
+        href: $("#url").val() + "configuracion/getPrintFile/" + a + "/" + c + "/" + d + "/" + e + "/" + b.nombreArchivo + "/" + b.path + "/" + b.rfcTienda,
+        type: "iframe",
+        autoSize: !1,
+        width: "90%",
+        height: "90%",
+        padding: 0,
+        afterClose: function(a) {}
+    })
+}
+
+function detalleArticulosDescuento(a) {
+    a = jQuery(a).data("id");
+    $.fancybox.open({
+        href: $("#url").val() + "descuentos/getDetalleDescuento/" + a,
+        type: "iframe",
+        autoSize: !1,
+        width: "100%",
+        height: "100%",
+        padding: 0,
+        afterClose: function(a) {}
+    })
+}
+
+function imprimeComprobante(a) {
+    var b = jQuery(a).data("json"),
+        c = jQuery(a).parents(".block");
+    $("#tipo").val();
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "ordenes/getPrintFile",
+        beforeSend: function() {
+            block_class(!0, c)
+        },
+        complete: function() {
+            block_class(!1, c)
+        },
+        data: {
+            d: b
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a),
+                d = $("#cbTipoComprobante").find(":selected").data("json");
+            if ("Pdf" == b.impresora) {
+                var c = $("#base_url").val() + "upload/" + b.nameFile;
+                $("#modal-buscadoc").modal("toggle");
+                showPrintPDF(c + ".pdf")
+            } else "Matriz" ==
+                b.impresora ? printMatriz(b.nameFile, d.impresora) : "Termica" == b.impresora && printMatriz(b.nameFile, b.impresora)
+        } catch (h) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(h)
+        }
+    })
+}
+
+function editarColor(a) {
+    var b = jQuery(a);
+    a = b.data("color");
+    b = b.data("id");
+    $("#idColor").val(b);
+    $("#color").val(a);
+    $("#modal-edita-nueva-col").modal("toggle")
+}
+
+function editarMarca(a) {
+    var b = jQuery(a);
+    a = b.data("marca");
+    b = b.data("id");
+    $("#idMarca").val(b);
+    $("#marca").val(a);
+    $("#modal-edita-nueva-mar").modal("toggle")
+}
+
+function editarLinea(a) {
+    var b = jQuery(a);
+    a = b.data("linea");
+    b = b.data("id");
+    $("#idLinea").val(b);
+    $("#linea").val(a);
+    $("#modal-edita-nueva-lin").modal("toggle")
+}
+
+function editarSubLinea(a) {
+    var b = jQuery(a);
+    a = b.data("sublinea");
+    b = b.data("id");
+    $("#idSubLinea").val(b);
+    $("#sublinea").val(a);
+    $("#modal-edita-nueva-sublinea").modal("toggle")
+}
+
+function editarFamilia(a) {
+    var b = jQuery(a);
+    a = b.data("familia");
+    b = b.data("id");
+    $("#idFamilia").val(b);
+    $("#familia").val(a);
+    $("#modal-edita-nueva-fam").modal("toggle")
+}
+
+function editarMedida(a) {
+    var b = jQuery(a);
+    a = b.data("medida");
+    b = b.data("id");
+    $("#idMedida").val(b);
+    $("#medida").val(a);
+    $("#modal-edita-nueva-med").modal("toggle")
+}
+
+function eliminaMarca(a) {
+    a = jQuery(a);
+    var b = a.data("marca"),
+        c = a.data("id");
+    swal({
+        title: "\u00bfDesea deshabilitar la marca " + b + "?",
+        text: "Motivo de la cancelacion",
+        type: "input",
+        showCancelButton: !0,
+        closeOnConfirm: !1,
+        showLoaderOnConfirm: !0,
+        inputPlaceholder: ""
+    }, function(a) {
+        if (!1 === a) return !1;
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogosrest/deleteMarca",
+            data: {
+                idMarca: c,
+                observacion: a,
+                idKey: $("#idKey").val()
+            },
+            error: function(a, b, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            }
+        }).done(function(a) {
+            try {
+                a.status ?
+                    swal({
+                        type: "info",
+                        title: "Documento cancelado correctamente"
+                    }) : swal({
+                        type: "error",
+                        title: "Error al cancelar",
+                        text: a.msg
+                    })
+            } catch (g) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(g)
+            }
+        })
+    })
+}
+
+function eliminaColor(a) {
+    a = jQuery(a);
+    var b = a.data("color"),
+        c = a.data("id");
+    swal({
+        title: "\u00bfDesea deshabilitar el color " + b + "?",
+        text: "Motivo de la cancelacion",
+        type: "input",
+        showCancelButton: !0,
+        closeOnConfirm: !1,
+        showLoaderOnConfirm: !0,
+        inputPlaceholder: ""
+    }, function(a) {
+        if (!1 === a) return !1;
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogosrest/deleteColor",
+            data: {
+                idColor: c,
+                observacion: a,
+                idKey: $("#idKey").val()
+            },
+            error: function(a, b, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            }
+        }).done(function(a) {
+            try {
+                a.status ?
+                    swal({
+                        type: "info",
+                        title: "Documento cancelado correctamente"
+                    }) : swal({
+                        type: "error",
+                        title: "Error al cancelar",
+                        text: a.msg
+                    })
+            } catch (g) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(g)
+            }
+        })
+    })
+}
+
+function eliminaLinea(a) {
+    a = jQuery(a);
+    var b = a.data("linea"),
+        c = a.data("id");
+    swal({
+        title: "\u00bfDesea deshabilitar la linea " + b + "?",
+        text: "Motivo de la cancelacion",
+        type: "input",
+        showCancelButton: !0,
+        closeOnConfirm: !1,
+        showLoaderOnConfirm: !0,
+        inputPlaceholder: ""
+    }, function(a) {
+        if (!1 === a) return !1;
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogosrest/deleteLinea",
+            data: {
+                idLinea: c,
+                observacion: a,
+                idKey: $("#idKey").val()
+            },
+            error: function(a, b, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            }
+        }).done(function(a) {
+            try {
+                a.status ?
+                    swal({
+                        type: "info",
+                        title: "Documento cancelado correctamente"
+                    }) : swal({
+                        type: "error",
+                        title: "Error al cancelar",
+                        text: a.msg
+                    })
+            } catch (g) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(g)
+            }
+        })
+    })
+}
+
+function eliminaSubLinea(a) {
+    a = jQuery(a);
+    var b = a.data("sublinea"),
+        c = a.data("id");
+    swal({
+        title: "\u00bfDesea deshabilitar la Sub linea " + b + "?",
+        text: "Motivo de la cancelacion",
+        type: "input",
+        showCancelButton: !0,
+        closeOnConfirm: !1,
+        showLoaderOnConfirm: !0,
+        inputPlaceholder: ""
+    }, function(a) {
+        if (!1 === a) return !1;
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogosrest/deleteSubLinea",
+            data: {
+                idSubLinea: c,
+                observacion: a,
+                idKey: $("#idKey").val()
+            },
+            error: function(a, b, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            }
+        }).done(function(a) {
+            try {
+                a.status ?
+                    swal({
+                        type: "info",
+                        title: a.msg
+                    }) : swal({
+                        type: "error",
+                        title: "Error al cancelar",
+                        text: a.msg
+                    })
+            } catch (g) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(g)
+            }
+        })
+    })
+}
+
+function eliminaFamilia(a) {
+    a = jQuery(a);
+    var b = a.data("familia"),
+        c = a.data("id");
+    swal({
+        title: "\u00bfDesea deshabilitar la familia " + b + "?",
+        text: "Motivo de la cancelacion",
+        type: "input",
+        showCancelButton: !0,
+        closeOnConfirm: !1,
+        showLoaderOnConfirm: !0,
+        inputPlaceholder: ""
+    }, function(a) {
+        if (!1 === a) return !1;
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogosrest/deleteFamilia",
+            data: {
+                idFamilia: c,
+                observacion: a,
+                idKey: $("#idKey").val()
+            },
+            error: function(a, b, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            }
+        }).done(function(a) {
+            try {
+                a.status ?
+                    (swal({
+                        type: "info",
+                        title: "Documento cancelado correctamente"
+                    }), $("#btnListEntrSal").click()) : swal({
+                        type: "error",
+                        title: "Error al cancelar",
+                        text: a.msg
+                    })
+            } catch (g) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(g)
+            }
+        })
+    })
+}
+
+function eliminaMedida(a) {
+    a = jQuery(a);
+    var b = a.data("medida"),
+        c = a.data("id");
+    swal({
+        title: "\u00bfDesea deshabilitar la medida " + b + "?",
+        text: "Motivo de la cancelacion",
+        type: "input",
+        showCancelButton: !0,
+        closeOnConfirm: !1,
+        showLoaderOnConfirm: !0,
+        inputPlaceholder: ""
+    }, function(a) {
+        if (!1 === a) return !1;
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogosrest/deleteMedida",
+            data: {
+                idMedida: c,
+                observacion: a,
+                idKey: $("#idKey").val()
+            },
+            error: function(a, b, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            }
+        }).done(function(a) {
+            try {
+                a.status ?
+                    (swal({
+                        type: "info",
+                        title: "Documento cancelado correctamente"
+                    }), $("#btnListEntrSal").click()) : swal({
+                        type: "error",
+                        title: "Error al cancelar",
+                        text: a.msg
+                    })
+            } catch (g) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(g)
+            }
+        })
+    })
+}
+
+function ListaMedida() {
+    $("#tnNuevaMed").click(function() {
+        $("#modal-edita-nueva-med").modal("toggle");
+        $("#idMedida").val("0");
+        $("#medida").val("")
+    });
+    $("#btnSaveMedida").click(function() {
+        var a = $(this);
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogosrest/saveMedida",
+            beforeSend: function() {
+                $(a).buttonLoader("start");
+                $(a).prop("disabled", !0)
+            },
+            complete: function() {
+                $(a).buttonLoader("stop");
+                $(a).prop("disabled", !1)
+            },
+            error: function(a, c, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            },
+            data: {
+                idMedida: $("#idMedida").val(),
+                medida: $("#medida").val(),
+                idKey: $("#idKey").val()
+            }
+        }).done(function(a) {
+            try {
+                a.status ? swal({
+                    type: "info",
+                    title: a.msg
+                }, function() {
+                    $("#modal-edita-nueva-med").modal("toggle");
+                    $("#medida").val("");
+                    $("#idMedida").val("0")
+                }) : swal({
+                    type: "error",
+                    title: "Error al cancelar",
+                    text: a.msg
+                })
+            } catch (c) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(c)
+            }
+        })
+    })
+}
+
+function ProdSerSat() {
+    $("#btnGuardaProdSat").click(function() {
+        var a = $(this);
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogosrest/saveProdSerSat",
+            beforeSend: function() {
+                $(a).buttonLoader("start");
+                $(a).prop("disabled", !0)
+            },
+            complete: function() {
+                $(a).buttonLoader("stop");
+                $(a).prop("disabled", !1)
+            },
+            error: function(a, c, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            },
+            data: {
+                idKey: $("#idKey").val(),
+                claveSat: $("#claveSat").val(),
+                claveSat_: $("#claveSat_").val(),
+                prodServi: $("#prodServi").val()
+            }
+        }).done(function(a) {
+            try {
+                a.status ? swal({
+                    type: "info",
+                    title: a.msg
+                }, function() {
+                    var b = a.item;
+                    $("#claveSat").val(b.item)
+                }) : swal({
+                    type: "error",
+                    title: "Error al cancelar",
+                    text: a.msg
+                })
+            } catch (c) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(c)
+            }
+        })
+    });
+    $("#claveSat_").keypress(function(a) {
+        if (13 == a.which) {
+            var b = $(this);
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "catalogosrest/getProdSerSat",
+                beforeSend: function() {
+                    $(b).prop("disabled",
+                        !0)
+                },
+                complete: function() {
+                    $(b).prop("disabled", !1)
+                },
+                error: function(a, b, e) {
+                    swal({
+                        type: "error",
+                        title: "Error",
+                        text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                    })
+                },
+                data: {
+                    idKey: $("#idKey").val(),
+                    claveSat: b.val()
+                }
+            }).done(function(a) {
+                try {
+                    if (a.status) {
+                        var b = a.item;
+                        null != b ? ($("#prodServi").val(b.prodServi), $("#claveSat").val(b.claveSat)) : (swal({
+                            type: "warning",
+                            title: "No existe",
+                            text: "No existe el producto o servicio"
+                        }), $("#claveSat_").val())
+                    } else swal({
+                        type: "error",
+                        title: "Error al cancelar",
+                        text: a.msg
+                    })
+                } catch (e) {
+                    swal({
+                        type: "error",
+                        title: "Error en cancelar",
+                        text: "Error interno favor de reportarlo"
+                    }), console.log(e)
+                }
+            })
+        }
+    })
+}
+
+function ListaFamila() {
+    $("#tnNuevaFam").click(function() {
+        $("#modal-edita-nueva-fam").modal("toggle");
+        $("#idFamilia").val("0")
+    });
+    $("#btnSaveFamilia").click(function() {
+        var a = $(this);
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogosrest/saveFamilia",
+            beforeSend: function() {
+                $(a).buttonLoader("start");
+                $(a).prop("disabled", !0)
+            },
+            complete: function() {
+                $(a).buttonLoader("stop");
+                $(a).prop("disabled", !1)
+            },
+            error: function(a, c, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            },
+            data: {
+                idFamilia: $("#idFamilia").val(),
+                familia: $("#familia").val(),
+                idKey: $("#idKey").val()
+            }
+        }).done(function(a) {
+            try {
+                a.status ? swal({
+                    type: "info",
+                    title: a.msg
+                }, function() {
+                    $("#modal-edita-nueva-fam").modal("toggle");
+                    $("#familia").val("");
+                    $("#idFamilia").val("0")
+                }) : swal({
+                    type: "error",
+                    title: "Error al cancelar",
+                    text: a.msg
+                })
+            } catch (c) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(c)
+            }
+        })
+    })
+}
+
+function ListaColor() {
+    $("#tnNuevaCol").click(function() {
+        $("#modal-edita-nueva-col").modal("toggle");
+        $("#idColor").val("0");
+        $("#color").val("")
+    });
+    $("#btnSaveColor").click(function() {
+        var a = $(this);
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogosrest/saveColor",
+            beforeSend: function() {
+                $(a).buttonLoader("start");
+                $(a).prop("disabled", !0)
+            },
+            complete: function() {
+                $(a).buttonLoader("stop");
+                $(a).prop("disabled", !1)
+            },
+            error: function(a, c, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            },
+            data: {
+                idColor: $("#idColor").val(),
+                color: $("#color").val(),
+                idKey: $("#idKey").val()
+            }
+        }).done(function(a) {
+            try {
+                a.status ? swal({
+                    type: "info",
+                    title: a.msg
+                }, function() {
+                    $("#modal-edita-nueva-col").modal("toggle");
+                    $("#color").val("");
+                    $("#idColor").val("0")
+                }) : swal({
+                    type: "error",
+                    title: "Error al cancelar",
+                    text: a.msg
+                })
+            } catch (c) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(c)
+            }
+        })
+    })
+}
+
+function ListaMarca() {
+    $("#tnNuevaMar").click(function() {
+        $("#modal-edita-nueva-mar").modal("toggle");
+        $("#idMarca").val("0");
+        $("#marca").val("")
+    });
+    $("#btnSaveMarca").click(function() {
+        var a = $(this);
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogosrest/saveMarca",
+            beforeSend: function() {
+                $(a).buttonLoader("start");
+                $(a).prop("disabled", !0)
+            },
+            complete: function() {
+                $(a).buttonLoader("stop");
+                $(a).prop("disabled", !1)
+            },
+            error: function(a, c, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            },
+            data: {
+                idMarca: $("#idMarca").val(),
+                marca: $("#marca").val(),
+                idKey: $("#idKey").val()
+            }
+        }).done(function(a) {
+            try {
+                a.status ? swal({
+                    type: "info",
+                    title: a.msg
+                }, function() {
+                    $("#modal-edita-nueva-mar").modal("toggle");
+                    $("#marca").val("");
+                    $("#idMarca").val("0")
+                }) : swal({
+                    type: "error",
+                    title: "Error al cancelar",
+                    text: a.msg
+                })
+            } catch (c) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(c)
+            }
+        })
+    })
+}
+
+function ListaLinea() {
+    $("#tnNuevaLin").click(function() {
+        $("#modal-edita-nueva-lin").modal("toggle");
+        $("#idLinea").val("0")
+    });
+    $("#btnSaveLinea").click(function() {
+        var a = $(this);
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogosrest/saveLinea",
+            beforeSend: function() {
+                $(a).buttonLoader("start");
+                $(a).prop("disabled", !0)
+            },
+            complete: function() {
+                $(a).buttonLoader("stop");
+                $(a).prop("disabled", !1)
+            },
+            error: function(a, c, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            },
+            data: {
+                idLinea: $("#idLinea").val(),
+                linea: $("#linea").val(),
+                idKey: $("#idKey").val()
+            }
+        }).done(function(a) {
+            try {
+                a.status ? swal({
+                    type: "info",
+                    title: a.msg
+                }, function() {
+                    $("#modal-edita-nueva-lin").modal("toggle");
+                    $("#linea").val("");
+                    $("#idLinea").val("0")
+                }) : swal({
+                    type: "error",
+                    title: "Error al cancelar",
+                    text: a.msg
+                })
+            } catch (c) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(c)
+            }
+        })
+    })
+}
+
+function ListaSubLinea() {
+    $("#tnNuevaSubLinea").click(function() {
+        $("#modal-edita-nueva-sublinea").modal("toggle");
+        $("#idSubLinea").val("0")
+    });
+    $("#btnSaveSubLinea").click(function() {
+        var a = $(this);
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogosrest/saveSubLinea",
+            beforeSend: function() {
+                $(a).buttonLoader("start");
+                $(a).prop("disabled", !0)
+            },
+            complete: function() {
+                $(a).buttonLoader("stop");
+                $(a).prop("disabled", !1)
+            },
+            error: function(a, c, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            },
+            data: {
+                idSubLinea: $("#idSubLinea").val(),
+                sublinea: $("#sublinea").val(),
+                idKey: $("#idKey").val()
+            }
+        }).done(function(a) {
+            try {
+                a.status ? swal({
+                    type: "info",
+                    title: a.msg
+                }, function() {
+                    $("#modal-edita-nueva-sublinea").modal("toggle");
+                    $("#sublinea").val("");
+                    $("#idSubLinea").val("0")
+                }) : swal({
+                    type: "error",
+                    title: "Error al cancelar",
+                    text: a.msg
+                })
+            } catch (c) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(c)
+            }
+        })
+    })
+}
+
+function editaComprobante(a, b) {
+    var c = jQuery(a),
+        d = c.data("id"),
+        e = $("#tipo").val(),
+        g = c.data("year"),
+        f = c.data("month"),
+        h = c.data("day");
+    c = c.data("col");
+    var k = jQuery(a).parents(".block");
+    "fol" == c ? d = a.value : $("#modal-buscadoc").modal("toggle");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "ordenes/getDocumento",
+        beforeSend: function() {
+            block_class(!0, k);
+            $(a).prop("disabled", !0)
+        },
+        complete: function() {
+            block_class(!1, k);
+            $(a).prop("disabled", !1)
+        },
+        data: {
+            id: d,
+            tipo: e,
+            year: g,
+            month: f,
+            day: h,
+            col: c
+        }
+    }).done(function(a) {
+        try {
+            var d =
+                JSON.parse(a),
+                c = d.itemC,
+                f = d.itemD,
+                e = d.itemsArticulos,
+                h = $("#cbTipoComprobante").find(":selected").data("json");
+            if (null != c)
+                if (null != e && $("#itemsArticulosCliente").val(JSON.stringify(e)), "c" != c.estado || 0 == b) {
+                    null != c.nombre_razon_social ? (null != c.nombreCliente ? $("#lblClienteNombre").html(c.nombreCliente) : $("#lblClienteNombre").html(c.nombre_razon_social), $("#lblClienteRFC").html(c.rfc), $("#idEntidad").val(c.idEntidad), $("#divVentaPublico").hide(), $("#cbMetodoPagoCli").val(c.codMetodoPago).trigger("change"),
+                            $("#cbForPagoCli").val(c.codFormaPago).trigger("change"), $("#condicionesDePago").val(c.condicionesDePago), $("#cbUsoCFDICli").val(c.codUsoCFDI).trigger("change"), 1 == c.requiereFactura ? ($("#lblUsoCFDI").show(), $("#btnReqFac").show().prop("disabled", !1), $("#iReqFac").removeClass("fa-close").addClass("fa-check-square"), $("#hiReqFac").val(1), $("#optionsFactura").show()) : ($("#btnReqFac").show(), $("#lblUsoCFDI").show(), $("#iReqFac").removeClass("fa-check-square").addClass("fa-close"), $("#hiReqFac").val(0))) :
+                        ($("#lblClienteNombre").html(null != c.nombreCliente ? c.nombreCliente : "VENTA AL PUBLICO EN GENERAL"), $("#lblClienteRFC").html(""), $("#idEntidad").val(0), $("#divVentaPublico").show(), $("#lblUsoCFDI").hide(), $("#iReqFac").removeClass("fa-check-square").addClass("fa-close"), $("#hiReqFac").val(0));
+                    if (b) {
+                        if ("p" == c.estado) return alert("El comprobante ya fue pagado"), !1;
+                        if ("c" == c.estado) return alert("El comprobante esta cancelado"), !1;
+                        8 == $("#cbTipoComprobante").val() || 4 == $("#cbTipoComprobante").val() || 22 ==
+                            h.menu ? $("#idOrdenC").val(c.id) : ($("#idOrdenC").val("0"), null != c.idCompraCWS ? $("#idTiendaWS").val(c.idTienda) : $("#idTiendaWS").val("0"));
+                        $("#idCompraC").val(null != c.idCompraCWS ? c.idCompraCWS : 0);
+                        $("#folOrden").val(c.folio);
+                        $("#orden-busca-cliente").val(c.nombre_razon_social);
+                        $("#divDatosCliente").show();
+                        $("#idUsuarioVendedor").val(c.idUsuario);
+                        $("#idCatEntidadDireccion").val(c.idCatEntidadDireccion);
+                        edoOrdenVen = "A"
+                    }
+                    h = $("#cbTipoComprobante").find(":selected").data("json");
+                    h = h.menu;
+                    console.log("tipoComproMenu " +
+                        h);
+                    for (var g in f) {
+                        var k = f[g];
+                        null != k && ($("#idCompraC").val(), addArtItem(k, k.cantidad))
+                    }
+                    localStorage.setItem("tbOrdenVen", JSON.stringify(tbOrdenVen));
+                    listadoVentArtProgreso(!0)
+                } else alert("La orden se encuentra cancelada");
+            else alert("No existe la orden de pago")
+        } catch (t) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(t)
+        }
+    })
+}
+
+function editXeditTable(a, b, c) {
+    var d = jQuery(a),
+        e = d.data("json"),
+        g = d.data("pk");
+    d = d.data("name");
+    var f = null == b ? a.value : b;
+    console.log("col a editar " + d);
+    console.log("col a editar valor " + f);
+    var h = parseInt(e.existencia);
+    b = "pre" == d ? parseFloat(f) : e.precioVenta;
+    var k = "des" == d ? parseFloat(f) : e.desc01;
+    f = "can" == d ? parseInt(f) : e.cantidad;
+    console.log("cantidad " + f);
+    console.log("precio " + b);
+    console.log("descuento " + k);
+    console.log("existencia " + h);
+    console.log("afectaExistencias " + e.afectaExistencias);
+    var l = $("#cbTipoComprobante").find(":selected").data("afecexistencia");
+    console.log("valida si descuenta existencia " + l);
+    if (h < f && 1 == l && 1 == e.afectaExistencias) return alert("No se alcanza a cubrir la cantidad solicitada, en almac\u00e9n " + h + " piezas"), listadoVentArtProgreso(!0), !1;
+    h = f * b;
+    console.log("subtotal " + h);
+    l = h * k / 100;
+    console.log("desImp " + l);
+    h -= l;
+    console.log("total " + h);
+    e.precioVenta = b;
+    e.desc01 = k;
+    e.cantidad = f;
+    e.total = h;
+    e.idUsuario = $("#idUsuario").val();
+    "pre" == d && (e.precioAuto = 1);
+    tbOrdenVen[g] = e;
+    console.log("Listado de articulos " + JSON.stringify(tbOrdenVen));
+    localStorage.setItem("tbOrdenVen",
+        JSON.stringify(tbOrdenVen));
+    listadoVentArtProgreso(!0);
+    null != c && 13 == (c.which || c.keyCode) && (a = "#item_" + (jQuery(a).data("id") + 1), $(a).focus().select(), console.log("sig ele " + a))
+}
+
+function deletedPriterFile(a) {
+    confirm("\u00bfDesea elminar el registro?") && $.ajax({
+        type: "POST",
+        url: $("#url").val() + "catalogos/deleteComprobanteImpresora",
+        beforeSend: function() {},
+        complete: function() {},
+        data: {
+            idTipoComprobante: a
+        }
+    }).done(function(a) {
+        try {
+            JSON.parse(a).itemAfec && alert("Registro Eliminado"), $("#btnBuscImpre").click()
+        } catch (c) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(c)
+        }
+    })
+}
+
+function cancelMovCaja(a) {
+    a = jQuery(a);
+    var b = a.data("idventac");
+    "a" == a.data("estado") ? swal({
+        title: "\u00bfDesea cancelar el movimiento?",
+        text: "Motivo de la cancelacion",
+        type: "input",
+        showCancelButton: !0,
+        closeOnConfirm: !1,
+        showLoaderOnConfirm: !0,
+        inputPlaceholder: ""
+    }, function(a) {
+        if (!1 === a) return !1;
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "ordenesrest/cancelMovCaja",
+            data: {
+                idVentaC: b,
+                idKey: $("#idKey").val(),
+                observaciones: a,
+                idUsuario: $("#idUsuario").val()
+            },
+            error: function(a, b, c) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            }
+        }).done(function(a) {
+            try {
+                a.status ? (swal({
+                    type: "info",
+                    title: "Documento cancelado correctamente"
+                }), $("#btnListEntrSal").click()) : swal({
+                    type: "error",
+                    title: "Error al cancelar",
+                    text: a.msg
+                })
+            } catch (e) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(e)
+            }
+        })
+    }) : swal({
+        type: "info",
+        title: "Error de cancelaci\u00f3n",
+        text: "El documento ya fue pagado o se encentra cancelado"
+    })
+}
+
+function dashboardAdmin() {
+    $("#addInvoices").click(function(a) {
+        a.preventDefault();
+        $("#side-categories-facturas").slideToggle()
+    })
+}
+
+function listadoPropiedadEntiOrde() {
+    var a = tbDetNuevoContact,
+        b = "",
+        c;
+    for (c in a) {
+        var d = JSON.parse(a[c]);
+        null != d && (b += "<tr><td><label>" + d.propiedad + "</label></td><td><label>" + d.valor + '</label></td><td class="text-center"><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Quitar" onclick="deletedPriterFile(' + c + ')"><i class="fa fa-times"></i></button></td></tr>')
+    }
+    $("#tblEntiContac > tbody").html(b)
+}
+
+function ordenes_functions() {
+    function a() {
+        $("#orden-busca-cliente").val("");
+        $("#divDatosCliente").hide();
+        $("#idEntidad").val("0");
+        $("#lblClienteRFC").val("");
+        $("#lblClienteDireccion").val("");
+        $("#lblClienteNombre").val("");
+        $("#txtCorreosCliente").importTags("");
+        $("#divVentaPublico").show();
+        $("#diasCredito").val("0");
+        $("#hiReqFac").val("0");
+        $("#itemsArticulosCliente").val("");
+        $("#orden-busca-cliente").focus();
+        localStorage.removeItem("tbOrdenVen");
+        tbOrdenVen = [];
+        edoOrdenVen = "A";
+        indexOrdenVen = -1;
+        listadoVentArtProgreso(!0)
+    }
+    configPrint();
+    valida_orden();
+    var b = "esc tab space return backspace scroll capslock numlock insert home del end pageup pagedown left up right down f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 1 2 3 4 5 6 7 8 9 0 a b c d e f g h i j k l m n o p q r s t u v w x y z Ctrl+a Ctrl+b Ctrl+c Ctrl+d Ctrl+e Ctrl+f Ctrl+g Ctrl+h Ctrl+i Ctrl+j Ctrl+k Ctrl+l Ctrl+m Ctrl+n Ctrl+o Ctrl+p Ctrl+q Ctrl+r Ctrl+s Ctrl+t Ctrl+u Ctrl+v Ctrl+w Ctrl+x Ctrl+y Ctrl+z Shift+a Shift+b Shift+c Shift+d Shift+e Shift+f Shift+g Shift+h Shift+i Shift+j Shift+k Shift+l Shift+m Shift+n Shift+o Shift+p Shift+q Shift+r Shift+s Shift+t Shift+u Shift+v Shift+w Shift+x Shift+y Shift+z Alt+a Alt+b Alt+c Alt+d Alt+e Alt+f Alt+g Alt+h Alt+i Alt+j Alt+k Alt+l Alt+m Alt+n Alt+o Alt+p Alt+q Alt+r Alt+s Alt+t Alt+u Alt+v Alt+w Alt+x Alt+y Alt+z Ctrl+esc Ctrl+tab Ctrl+space Ctrl+return Ctrl+backspace Ctrl+scroll Ctrl+capslock Ctrl+numlock Ctrl+insert Ctrl+home Ctrl+del Ctrl+end Ctrl+pageup Ctrl+pagedown Ctrl+left Ctrl+up Ctrl+right Ctrl+down Ctrl+f1 Ctrl+f2 Ctrl+f3 Ctrl+f4 Ctrl+f5 Ctrl+f6 Ctrl+f7 Ctrl+f8 Ctrl+f9 Ctrl+f10 Ctrl+f11 Ctrl+f12 Shift+esc Shift+tab Shift+space Shift+return Shift+backspace Shift+scroll Shift+capslock Shift+numlock Shift+insert Shift+home Shift+del Shift+end Shift+pageup Shift+pagedown Shift+left Shift+up Shift+right Shift+down Shift+f1 Shift+f2 Shift+f3 Shift+f4 Shift+f5 Shift+f6 Shift+f7 Shift+f8 Shift+f9 Shift+f10 Shift+f11 Shift+f12 Alt+esc Alt+tab Alt+space Alt+return Alt+backspace Alt+scroll Alt+capslock Alt+numlock Alt+insert Alt+home Alt+del Alt+end Alt+pageup Alt+pagedown Alt+left Alt+up Alt+right Alt+down Alt+f1 Alt+f2 Alt+f3 Alt+f4 Alt+f5 Alt+f6 Alt+f7 Alt+f8 Alt+f9 Alt+f10 Alt+f11 Alt+f12".split(" ");
+    $.each(b, function(a, d) {
+        var c = /[\+]+/.test(b[a]) ? b[a].replace("+", "_") : b[a];
+        $(document).bind("keydown", b[a], function() {
+            switch (c) {
+                case "Ctrl_a":
+                    $("#btnProductos").click();
+                    break;
+                case "Shift_m":
+                    $("#txtMed").select2("open");
+                    break;
+                case "Shift_g":
+                    $("#btnGeneraOrden").click()
+            }
+            return !1
+        })
+    });
+    $("#modalClientes").on("show.bs.modal", function() {
+        $("#tblCliPag > tbody").html("");
+        $("#txtCod").val("");
+        $("#txtNom").val("");
+        $("#txtRFC").val("");
+        $("#val").val("");
+        $("#field").val("");
+        $("#pagAnte").val("");
+        $("#pagSig").val("");
+        $("#txtCod").focus()
+    });
+    $(document.body).on("change", "#selLinDes", function() {
+        $("#txtDesc").focus()
+    });
+    $("#txtDesc").keypress(function(a) {
+        13 == a.which && $("#btnAppDesc").click()
+    });
+    $("#modalMostrarPDF").on("hidden.bs.modal", function() {
+        location.reload()
+    });
+    $(document.body).on("change", "#txtBusFam", function() {
+        getArticulos(this)
+    });
+    $(document.body).on("change", "#txtBusLin", function() {
+        getArticulos(this)
+    });
+    $(document.body).on("change", "#txtBusSubLi", function() {
+        getArticulos(this)
+    });
+    $(document.body).on("change",
+        "#txtMarca",
+        function() {
+            getArticulos(this)
+        });
+    $(document.body).on("change", "#txtColor", function() {
+        getArticulos(this)
+    });
+    $(document.body).on("change", "#txtMed", function() {
+        getArticulos(this)
+    });
+    $("#cli-prop-nombre").keypress(function(a) {
+        13 == a.which && (a = {
+            id_propiedad_tipo: $("#cli-select-tipo-contacto").val(),
+            propiedad: $("#cli-select-tipo-contacto option:selected").text(),
+            valor: $("#cli-prop-nombre").val()
+        }, tbDetNuevoContact.push(JSON.stringify(a)), listadoPropiedadEntiOrde(), this.value = "")
+    });
+    $(document.body).on("change",
+        "#cbTipoComprobantes",
+        function() {
+            $("#btnBuscaTipoDoc").click()
+        });
+    $(document.body).on("change", "#cbTipoComprobante", function() {
+        localStorage.removeItem("tbOrdenVen");
+        tbOrdenVen = [];
+        edoOrdenVen = "A";
+        indexOrdenVen = -1;
+        listadoVentArtProgreso(!0);
+        var a = $("#cbTipoComprobante").find(":selected").data("json"),
+            b = 13 == this.value ? 1 : this.value,
+            d = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "ordenes/getSerieDocumento",
+            beforeSend: function() {
+                block_class(!0, d)
+            },
+            complete: function() {
+                block_class(!1,
+                    d)
+            },
+            data: {
+                idTienda: $("#idTienda").val(),
+                idTipoComprobante: b,
+                tipoComproMenu: a.menu
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                $("#cbSerie").empty().trigger("change");
+                for (var d in b) {
+                    var c = b[d];
+                    if (null != c) {
+                        var f = new Option(c.serie + " | " + c.folio + " | " + (null != c.observacion ? c.observacion : ""), c.serie, !1, !1);
+                        $("#cbSerie").append(f).trigger("change")
+                    }
+                }
+            } catch (u) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(u)
+            }
+        })
+    });
+    $(document.body).on("change", "#cbForPagoCli", function() {
+        "99" ==
+        this.value && $("#cbMetodoPagoCli").val("PPD")
+    });
+    $(document.body).on("change", "#cbMetodoPagoCli", function() {
+        if ("PPD" == this.value) {
+            $("#cbForPagoCli").val("99").trigger("change");
+            var a = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "entidadesrest/getEntidadById",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    idEntidad: $("#idEntidad").val(),
+                    idKey: $("#idKey").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b = a.item;
+                    if (null != b) {
+                        $("#datosCredPre").show();
+                        $("#txtClienteCredit").val(applyCurrency(b.monto_credito));
+                        $("#montoCredito").val(b.monto_credito);
+                        var d = b.monto_credito - b.debe;
+                        $("#txtClienteCreDispo").val(applyCurrency(d));
+                        var c = new Date,
+                            f = parseInt(b.dias_credito);
+                        console.info("dias credito " + f);
+                        c.setDate(c.getDate() + f);
+                        $("#txtClienteFecPag").val($.format.date(c, "dd/MM/yyyy"))
+                    } else swal({
+                        type: "warning",
+                        title: "Falta el cliente",
+                        text: "Selecciona un cliente"
+                    })
+                } catch (p) {
+                    swal({
+                            type: "error",
+                            title: "Error",
+                            text: "Error interno, favor de reportarlo"
+                        }), console.log(p), $("#txtClienteCredit").val(applyCurrency(0)),
+                        $("#montoCredito").val(0), $("#txtClienteCreDispo").val(applyCurrency(0))
+                }
+            })
+        } else $("#datosCredPre").hide(), $("#txtClienteFecPag").val(""), $("#cbForPagoCli").val("01").trigger("change")
+    });
+    $(document.body).on("change", "#cbTipoCompro", function() {
+        if ("" != this.value) {
+            var a = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "catalogos/getTipoComprobante",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    dWhere: {
+                        menu: $(this).find(":selected").data("idtipocomprobantehijo")
+                    }
+                }
+            }).done(function(a) {
+                try {
+                    var b =
+                        JSON.parse(a);
+                    $("#cbTipoComproHijo").empty();
+                    for (var d in b.items) {
+                        var c = b.items[d];
+                        null != c && $("#cbTipoComproHijo").append($("<option>", {
+                            value: c.idTipoComprobante,
+                            text: c.tipoComprobante
+                        }))
+                    }
+                } catch (n) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(n)
+                }
+            })
+        } else $("#cbTipoComproHijo").empty()
+    });
+    $("#orden-busca-cliente").keypress(function(a) {
+        13 == a.which && $("#modal-add-cliente-express").modal("toggle")
+    });
+    $("#modal-add-cliente-express").on("shown.bs.modal", function() {
+        $("#txtNomNueCli").val($("#orden-busca-cliente").val());
+        $("#txtNomNueCli").focus()
+    });
+    $("#modal-add-cliente-express").on("hidden.bs.modal", function() {
+        $("#orden-busca-cliente").focus();
+        tbDetNuevoContact = [];
+        $("#tblEntiContac > tbody").html("")
+    });
+    $("#btnImporVenta").click(function() {
+        jQuery(this).parents(".block");
+        var a = new FormData($("#frmImportVenta")[0]);
+        $.ajax({
+            url: $("#url").val() + "ordenesrest/importVenta",
+            type: "POST",
+            data: a,
+            async: !1,
+            beforeSend: function() {},
+            error: function(a, b, d) {
+                console.log("errorres ", a.responseJSON.error);
+                swal({
+                    type: "error",
+                    title: "Error al subir el archivo",
+                    text: a.responseJSON.error
+                })
+            },
+            success: function(a) {},
+            cache: !1,
+            contentType: !1,
+            processData: !1
+        })
+    });
+    $("#btnDownCatPre").click(function(a) {
+        var b = $("#url").val(),
+            d = $(this);
+        $.ajax({
+            type: "POST",
+            url: b + "articulosrest/generateCatalogosZip",
+            beforeSend: function() {
+                $(d).buttonLoader("start")
+            },
+            complete: function() {
+                $(d).buttonLoader("stop")
+            },
+            error: function(a, b, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            },
+            data: {
+                idKey: $("#idKey").val(),
+                pdfColonial: $("#pdfColonial").is(":checked"),
+                pdfHerra: $("#pdfHerra").is(":checked"),
+                artiNal: $("#artiNal").is(":checked"),
+                artiImpo: $("#artiImpo").is(":checked")
+            }
+        }).done(function(b) {
+            try {
+                var d = {
+                    rfc: "",
+                    folder: "tmp",
+                    file: b.nameFile
+                };
+                a.preventDefault();
+                var c = $("#url").val() + "attachfile/downloadFile/" + encodeURIComponent(JSON.stringify(d));
+                console.log("URL " + c);
+                window.location.href = c
+            } catch (p) {
+                swal({
+                    type: "error",
+                    title: "Error al descomponer el objeto, favor de reportarlo"
+                }), console.log(p)
+            }
+        })
+    });
+    $("#btnSaveEnti").click(function() {
+        var a = $("#url").val(),
+            b = $(this);
+        $.ajax({
+            type: "POST",
+            url: a + "entidadesrest/saveEntidad",
+            beforeSend: function() {
+                $(b).buttonLoader("start")
+            },
+            complete: function() {
+                $(b).buttonLoader("stop")
+            },
+            error: function(a, b, d) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error de validaci\u00f3n de datos, favor de reportarlo"
+                })
+            },
+            data: {
+                idKey: $("#idKey").val(),
+                rfc: $("#txtRFCNueCli").val(),
+                nombre_razon_social: $("#txtNomNueCli").val(),
+                contactos: tbDetNuevoContact,
+                id_entidad: $("#idEntidad").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = a.item.idEntidad;
+                swal({
+                    type: "success",
+                    title: "Cliente dado de alta correctamente"
+                });
+                $("#modal-add-cliente-express").modal("toggle");
+                $("#txtNomNueCli").val("");
+                $("#txtRFCNueCli").val("");
+                $("#cli-prop-nombre").val("");
+                tbDetNuevoContact = [];
+                get_entidad(b, !0)
+            } catch (m) {
+                swal({
+                    type: "error",
+                    title: "Error al descomponer el objeto, favor de reportarlo"
+                }), console.log(m)
+            }
+        })
+    });
+    $("input[name=radio-venta]:radio").change(function() {
+        var a = this.value;
+        $("#txtBuscaArticuloCod").focus();
+        "c" == a ? $("#btnGeneraOrden").html("Alt+m - Generar cotizaci&oacute;n") : $("#btnGeneraOrden").html("Alt+m - Generar orden de venta")
+    });
+    $("#modalAplicaDesc").on("shown.bs.modal", function() {
+        $("#selLinDes").select2("open")
+    });
+    $("#modal-articulos-orden").on("shown.bs.modal", function() {
+        $("#txtBusCodArt").focus();
+        $("#tbArticulos> body").html("")
+    });
+    $("#modal-articulos-orden").on("shown.bs.modal", function() {
+        $("#txtBuscaArticuloDescMo").focus()
+    });
+    $("#modal-listado-cliente").on("shown.bs.modal", function() {
+        $("#txtBusDesEntOrd").focus()
+    });
+    $("#modalAplicaDesc").on("shown.bs.modal", function() {
+        $("#txtDescOrden").focus()
+    });
+    $("#modal-contato-datos").on("shown.bs.modal",
+        function() {
+            $("#cli-rfc").focus()
+        });
+    $("#modal-gen-fac-orden").on("hidden.bs.modal", function() {
+        alert("Para su consulta en men\u00fa Ventas/Consulta notas de venta");
+        $("#btnNuevaOrden").click()
+    });
+    $("#modalEntrSalEfec").on("shown.bs.modal", function() {
+        $("#txtImporteEntraSal").focus()
+    });
+    $("#modalPrinters").on("hidden.bs.modal", function() {
+        location.reload()
+    });
+    $("#showSubTotalesVta").click(function() {
+        $("#divSubTotalesVta").is(":visible") ? $("#divSubTotalesVta").hide("fold") : $("#divSubTotalesVta").show("fold")
+    });
+    $("#btnGuardaImpre").click(function() {
+        var a = jQuery(this).parents(".block");
+        if ("" == $("#txtNomImpre").val()) return alert("Escribe el nombre de la impresora"), !1;
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogos/guardaImpresoraDoc",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                idTipoComprobante: $("#cbTipoComproImp").val(),
+                impresora: $("#txtNomImpre").val(),
+                idCatFormatoImpresion: $("#cbTipoImp").val()
+            }
+        }).done(function(a) {
+            try {
+                JSON.parse(a).itemsAfect || alert("No se actualizo la impresora al documento relacionado"),
+                    $("#txtNomImpre").val(""), $("#btnBuscImpre").click()
+            } catch (k) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(k)
+            }
+        })
+    });
+    $("#btnBuscImpre").click(function() {
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogos/getTipoComprobanteImpresoras",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                a = "";
+                for (var d in b.items) {
+                    var c = b.items[d];
+                    null != c && (a += "<tr><td><label>" +
+                        c.tipoComprobante + "</label></td><td><label>" + c.impresora + "</label></td><td><label>" + c.idCatFormatoImpresion + '</label></td><td><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remover Registro" onclick="deletedPriterFile(' + c.idTipoComprobante + ')"><i class="fa fa-times"></i></button></td></tr>')
+                }
+                $("#tbPrinters > tbody").html(a)
+            } catch (n) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(n)
+            }
+        })
+    });
+    $("#btnListEntrSal").click(function() {
+        var a =
+            jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "ordenes/getListEntraSal",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                idUsuario: $("#idUsuario").val(),
+                txtDesde: $("#txtDesdeEnSa").val(),
+                txtHasta: $("#txtHastaEnSa").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                a = "";
+                for (var d in b.items) {
+                    var c = b.items[d];
+                    null != c && null == c.totalArticulos && (a += '<tr><td class="text-center"><label title="' + c.tipoComprobante + '"><span class="label label-info">' +
+                        c.tipoComprobante + '</span></label></td><td class="text-center"><label>' + c.tipoComprobanteHijo + "</label></td><td><label>" + applyCurrency(c.total) + "</label></td><td><label>" + c.fecha + "</label></td><td><label>" + c.observaciones + '</label></td><td><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Cancelar" data-idventac="' + c.idVentaC + '" data-estado="' + c.estado + '" onclick="cancelMovCaja(this)"><i class="fa fa-times"></i></button></td></tr>')
+                }
+                $("#tbMovsEntraSalCaja > tbody").html(a)
+            } catch (n) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"),
+                    console.log(n)
+            }
+        })
+    });
+    $("#btnGuardaEntrSal").click(function() {
+        if (confirm("\u00bfSon correctos los datos?")) {
+            var a = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "ordenes/saveEntradaSalida",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    total: $("#txtImporteEntraSal").val(),
+                    idTipoComprobante: $("#cbTipoCompro").val(),
+                    idTipoComprobanteHijo: $("#cbTipoComproHijo").val(),
+                    observaciones: $("#txtObsrEntraSal").val(),
+                    serie: $("#cbSerie").val()
+                }
+            }).done(function(a) {
+                try {
+                    0 ==
+                        JSON.parse(a).edo ? swal("Error al insertar la entrada/salida", "No se encuentra establecido el documento en articulos, no se guardo el movimiento", "error") : (alert("Movimiento agregado correctamente"), $("#modalEntrSalEfec").modal("toggle"), $("#txtBuscaFolVenta").focus())
+                } catch (k) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(k)
+                }
+            })
+        }
+    });
+    $("#txtObsrEntraSal").keypress(function(a) {
+        13 == a.which && $("#btnGuardaEntrSal").click()
+    });
+    $("#txtBuscaFolVenta").keypress(function(b) {
+        13 ==
+            b.which ? ($("#tipo").val("o"), localStorage.removeItem("tbOrdenVen"), tbOrdenVen = [], edoOrdenVen = "A", indexOrdenVen = -1, editaComprobante(this, !0)) : a()
+    });
+    $("#btnEntraSal").click(function() {
+        $("#modalEntrSalEfec").modal("toggle");
+        $("#cbTipoEntraSal").empty().append($("<option>", {
+            value: null,
+            text: "..."
+        })).append($("<option>", {
+            value: 24,
+            text: "Entrada"
+        })).append($("<option>", {
+            value: 25,
+            text: "Salida"
+        }));
+        $("#txtImporteEntraSal").val("");
+        $("#txtObsrEntraSal").val("")
+    });
+    $("#btnAppDesc").click(function() {
+        var a = JSON.parse(localStorage.getItem("tbOrdenVen")),
+            b = $("#selLinDes").val(),
+            d = $("#txtDesc").val(),
+            c;
+        for (c in a) {
+            var e = a[c];
+            null != e && parseInt(e.idLinea) == b && (e.desc01 = d, a[c] = e)
+        }
+        console.info("items en desc " + JSON.stringify(a));
+        localStorage.setItem("tbOrdenVen", JSON.stringify(a));
+        listadoVentArtProgreso(!0);
+        $("#modalAplicaDesc").modal("toggle")
+    });
+    $("#btnBuscaTipoDoc").click(function() {
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "ordenes/listadoOrdenes",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1,
+                    a)
+            },
+            data: $("#frmBuscaDoc").serialize()
+        }).done(function(a) {
+            $("#tblDoc").find("tbody").html("");
+            try {
+                var b = JSON.parse(a);
+                a = "";
+                $("#tblDoc").find("tbody").html("");
+                for (var d in b.items) {
+                    var c = b.items[d];
+                    if (null != c) {
+                        var f = "";
+                        null != c.nombreCliente ? f = c.nombreCliente : null != c.nombre_razon_social && (f = c.nombre_razon_social);
+                        var e = c.nomDoc,
+                            g = "";
+                        "a" == c.estado && (g = '<span class="label label-success">Activo</span>');
+                        "p" == c.estado && (g = '<span class="label label-warning">Pagado</span>');
+                        "c" == c.estado && (g = '<span class="label label-danger">Cancelado</span>');
+                        var h = c.tipoComprobante;
+                        1 == c.requiereFactura && (h += ", requiere factura", e += " FA");
+                        a += "<tr><td class='text-center'><label>" + c.folio + "</label></td><td class='text-center'><label title='" + h + "'><span class='label label-info'>" + e + "</span></label></td><td><label>" + c.fecha + "</label></td><td><label>" + f + "</label></td><td class='text-center'><label>" + applyCurrency(c.total) + "</label></td><td class='text-center'><label>" + g + "</label></td><td><label>" + c.usuario + "</label></td><td class='text-center'><div class='btn-group'><button class='btn btn-xs btn-default' type='button' data-json='" +
+                            JSON.stringify(c) + "' data-toggle='tooltip' data-table='" + c.tabla + "' data-id='" + c.id + "' data-typeid='c' title='Mostrar detalle' onclick='detalleComprobante(this)'><i class='fa fa-navicon'></i></button><button class='btn btn-xs btn-default' type='button' data-toggle='tooltip' data-col='id' data-id='" + c.id + "' data-month='" + moment(c.fecha).format("MM") + "' data-year='" + moment(c.fecha).format("YYYY") + "' data-day='" + moment(c.fecha).format("DD") + "' title='Editar comprobante' onclick='editaComprobante(this, true)'><i class='fa fa-edit'></i></button><button class='btn btn-xs btn-default' type='button' data-toggle='tooltip' data-col='id' data-id='" +
+                            c.id + "' data-month='" + moment(c.fecha).format("MM") + "' data-year='" + moment(c.fecha).format("YYYY") + "' data-day='" + moment(c.fecha).format("DD") + "' title='Copiar detalle al comprobante actual' onclick='editaComprobante(this, false)'><i class='fa fa-plus'></i></button><button class='btn btn-xs btn-default' type='button' data-json='" + JSON.stringify(c) + "' data-table='" + c.tabla + "' data-printer='" + c.impresora + "' data-toggle='tooltip' data-col='id' data-id='" + c.id + "' data-month='" + moment(c.fecha).format("MM") +
+                            "' data-year='" + moment(c.fecha).format("YYYY") + "' data-day='" + moment(c.fecha).format("DD") + "'  title='Imprimir' onclick='imprimeComprobante(this)'><i class='fa fa-print'></i></button></div></td></tr>"
+                    }
+                }
+                $("#tblDoc").find("tbody").append(a)
+            } catch (v) {
+                console.log(v)
+            }
+        })
+    });
+    $("#btnCDFIRela").click(function() {
+        $("#modOpCFDI").modal("toggle")
+    });
+    $("#txtOrdenCom").keypress(function(a) {
+        if (13 == a.which)
+            if (3 <= $("#nivelUsuario").val()) alert("No cuentas con acceso para esta operaci\u00f3n");
+            else {
+                var b = jQuery(this).parents(".block");
+                $.ajax({
+                    type: "POST",
+                    url: $("#url").val() + "ordenes/getOrdenCompra",
+                    beforeSend: function() {
+                        block_class(!0, b)
+                    },
+                    complete: function() {
+                        block_class(!1, b)
+                    },
+                    data: {
+                        idOrdenCompra: this.value,
+                        idUsuario: $("#id_usuario").val(),
+                        idTienda: $("#cbTiendasOc").val()
+                    }
+                }).done(function(a) {
+                    try {
+                        var b = JSON.parse(a),
+                            c = b.entidad;
+                        "" != b.msg ? (alert(b.msg), $("#id_compra_c").val("0")) : ($("#id_compra_c").val(b.idOrdenCNuevo), $("#id_orden").val(this.value), $("#c").val("new"), $("#radVen").prop("checked", !0), $("#btnGeneraOrden").html("Alt+m - Generar orden de venta"),
+                            $("#radCot").prop("disabled", !0), $("#txtBuscaArticuloCod").prop("disabled", !0), $("#txtBuscaArticuloDesc").prop("disabled", !0), $("#btnProductos").prop("disabled", !0), $("#radCot").prop("disabled", !0), null != c && ($("#divVentaPublico").hide(), $("#divDatosCliente").show(), $("#lblClienteRFC").html(c.rfc), $("#lblClienteNombre").html(c.nombre_razon_social), $("#lblClienteDireccion").html(c.calle + "," + c.CIUDAD), $("#txtCorreosCliente").importTags(correos), $("#fecha_ult_compra").val(c.fec_ult_com), $("#lblClienteRefPago").html(c.ref),
+                                $("#idEntidad").val(c.id_entidad), $("#hiReqFac").val(b.reqFac), $("#iReqFac").removeClass("fa-check-square").addClass("fa-close")), lista_articulos_orden(b))
+                    } catch (n) {
+                        alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(n)
+                    }
+                })
+            }
+    });
+    $("#txtDescOrden").keypress(function(a) {
+        13 == a.which && $("#btnAplicaDesOrden").click()
+    });
+    $(document.body).on("change", "#cbConPagoFac", function() {
+        if ("2" == this.value) {
+            $("#datosCredFac").show();
+            $("#txtClienteCreDispoFac").val($("#clienteCreDispo").val());
+            $("#txtClienteCreditFac").val($("#clienteCredit").val());
+            $("#txtClienteFecPagFac").val($("#clienteFecPag").val());
+            var a = parseFloat($("#clienteCreDispo").val()) - parseFloat($("#clienteSaldo").val()),
+                b = parseFloat($("#total").val());
+            console.log("credito dis " + a);
+            console.log("total " + b);
+            a < b ? ($("#btnGenFacOrden").hide(), $("#dibMensajeFac").show()) : ($("#btnGenFacOrden").show(), $("#dibMensajeFac").hide())
+        } else $("#btnGenFacOrden").show(), $("#dibMensajeFac").hide(), $("#datosCredFac").hide()
+    });
+    $(document.body).on("change",
+        "#cbConPagoPre",
+        function() {
+            if ("2" == this.value) {
+                $("#datosCredPre").show();
+                $("#txtClienteCreDispo").val($("#clienteCreDispo").val());
+                $("#txtClienteCredit").val($("#clienteCredit").val());
+                $("#txtClienteDiasCre").val($("#clienteDiasCre").val());
+                $("#txtClienteFecPag").val($("#clienteFecPag").val());
+                var a = parseFloat($("#clienteCreDispo").val()) - parseFloat($("#clienteSaldo").val()),
+                    b = parseFloat($("#total").val());
+                a < b ? ($("#divBtnsGenera").hide(), $("#divMensaje").show()) : ($("#divBtnsGenera").show(), $("#divMensaje").hide())
+            } else $("#divBtnsGenera").show(),
+                $("#divMensaje").hide(), $("#datosCredPre").hide()
+        });
+    $("#modalBuscaOrden").on("shown.bs.modal", function() {
+        $("#txtOrdenVen").focus()
+    });
+    $("#btnGenPdfDoc").click(function() {
+        generaCompFormaVenta(this)
+    });
+    $("#btnGenImpre").click(function() {
+        generaCompFormaVenta(this)
+    });
+    $("#btnGenFacOrden").click(function() {
+        if (null == $("#cbMetodoPagoFac").val()) return alert("Selecciona el m\u00e9todo de pago"), !1;
+        if (confirm("\u00bfSon correctos los datos?")) {
+            var a = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() +
+                    "formasventa/invoice",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    id_entidad: $("#idEntidad").val(),
+                    subtotal: $("#subtotal").val(),
+                    iva: $("#iva").val(),
+                    total: $("#total").val(),
+                    mPago: $("#cbMetodoPagoCli").val(),
+                    fPago: $("#cbForPagoCli").val(),
+                    cPago: $("#cbConPagoCli").val(),
+                    usoC: $("#cbUsoCFDICli").val(),
+                    mPagoT: $("#cbMetodoPagoCli option:selected").text(),
+                    fPagoT: $("#cbForPagoCli option:selected").text(),
+                    cPagoT: $("#cbConPagoCli option:selected").text(),
+                    usoCT: $("#cbUsoCFDICli option:selected").text(),
+                    nRef: $("#txtNumCuenPagoFac").val(),
+                    obs: $("#txtObserFac").val(),
+                    emisor: $("#cbEmisorFac").val(),
+                    idTienda: $("#cbEmisorFac").val(),
+                    serie: $("#cbSerieFac").val(),
+                    tipoComprobante: $("#cbTipoComFac").val(),
+                    tipoComprobanteT: $("#cbTipoComFac option:selected").text(),
+                    idOrden: $("#id_orden").val(),
+                    folOrden: $("#fol_orden").val(),
+                    tipoFactura: "D"
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    if (b.edoFac) {
+                        var c = b.file,
+                            d = b.rfcEmisor;
+                        $("#ctrFact").show();
+                        $("#folFac").html(b.folioFac);
+                        $("#imgPDF").attr("href", $("#url").val() +
+                            "formasventa/attachment/" + c + "/" + d + "/pdf");
+                        $("#imgXML").attr("href", $("#url").val() + "formasventa/attachment/" + c + "/" + d + "/xml");
+                        $("#btnGenFacOrden").hide();
+                        $("#cbConPagoFac").prop("disabled", !0);
+                        $("#cbSerieFac").prop("disabled", !0);
+                        $("#cbTipoComFac").prop("disabled", !0);
+                        $("#cbMetodoPagoFac").prop("disabled", !0);
+                        $("#cbForPagoFac").prop("disabled", !0);
+                        $("#txtNumCuenPagoFac").prop("disabled", !0);
+                        $("#txtClienteSaldo").val(b.saldoCliente)
+                    } else alert(b.msg)
+                } catch (n) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"),
+                        console.log(n)
+                }
+            })
+        }
+    });
+    $("#btnAplicaDesOrden").click(function() {});
+    $("#btnListaOrdenes").click(function() {
+        var a = $("#url").val();
+        window.location.href = a + "ordenes/lista_ordenes"
+    });
+    $("#txtOrdenVen").keypress(function(a) {
+        13 == a.which && buscarOrdenVenta()
+    });
+    $("#txtBusCodEntOrd").keypress(function(a) {
+        13 == a.which && bucarEntidadModOrd(this, "lista_entidades")
+    });
+    $("#txtBusDesEntOrd").keypress(function(a) {
+        13 == a.which && bucarEntidadModOrd(this, "listaEntidades")
+    });
+    $("#txtBusRFCEntOrd").keypress(function(a) {
+        13 == a.which &&
+            bucarEntidadModOrd(this, "listaEntidades")
+    });
+    $("#txtBuscaArticuloItem").keypress(function(a) {
+        if (13 == a.which) {
+            a = this.value;
+            if ("" == a) return !1;
+            do var b = prompt("Ingresa la cantidad", "1"); while (isNaN(b));
+            inserta_articulo_orden("", null, null, null, b, null, b, null, null, a);
+            this.value = ""
+        }
+    });
+    $("#txtBuscaArticuloCod").keypress(function(a) {
+        if (13 == a.which)
+            if (a = this.value, "" != a) {
+                var b = 0; - 1 < a.indexOf("*") && (b = "undefined" === typeof a.split("*")[0] ? 0 : a.split("*")[0], this.value = a = "undefined" === typeof a.split("*")[1] ? "" :
+                    a.split("*")[1]);
+                console.log("cantidad " + b);
+                console.log("claveArt " + a);
+                if ("" == a) return !1;
+                if (0 == b) {
+                    do b = prompt("Ingresa la cantidad", "1"); while (isNaN(b))
+                }
+                if (null == b) return !1;
+                insertaArticuloOrden(this, b);
+                this.value = ""
+            } else $("#item_0").focus().select()
+    });
+    var c = $("#orden-busca-cliente"),
+        d = $("#txtBuscaArticuloCod"),
+        e = $("#txtBuscaArticuloDesc"),
+        g = $("#txtBuscaArticuloItem");
+    g.autocomplete({
+        source: function(a, b) {
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "articulos/articuloTienda",
+                data: {
+                    term: a.term,
+                    idTienda: $("#idTienda").val(),
+                    col: "ar.item",
+                    idEntidad: $("#idEntidad").val(),
+                    typeResult: "result"
+                },
+                success: b,
+                dataType: "json"
+            })
+        },
+        select: function(a, b) {
+            do var c = prompt("Ingresa la cantidad", "1"); while (isNaN(c));
+            addArtItem(b.item, c);
+            edoOrdenVen = "A";
+            localStorage.setItem("tbOrdenVen", JSON.stringify(tbOrdenVen));
+            listadoVentArtProgreso(!0)
+        },
+        focus: function(a, b) {
+            $(this).val(b.item.label);
+            return !1
+        },
+        minLength: 1
+    });
+    g.data("ui-autocomplete")._renderItem = function(a, b) {
+        var c = $("<div>"),
+            d = applyCurrency(parseFloat(b.precio01)),
+            f = applyCurrency(parseFloat(b.precio02));
+        c.attr("data-value", b.label);
+        d = htmlOrdenDesp(b.articulo, b.existencia, b.claveArticulo, d, f, b.item);
+        c.append(d);
+        return c.appendTo(a)
+    };
+    d.autocomplete({
+        source: function(a, b) {
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "articulos/articuloTienda",
+                beforeSend: function() {},
+                complete: function() {},
+                data: {
+                    term: a.term,
+                    idTienda: $("#idTienda").val(),
+                    col: "ar.claveArticulo",
+                    idEntidad: $("#idEntidad").val(),
+                    typeResult: "result"
+                },
+                success: b,
+                dataType: "json"
+            })
+        },
+        select: function(a, b) {
+            do var c = prompt("Ingresa la cantidad", "1"); while (isNaN(c));
+            if (0 == c) return !1;
+            var d = b.item;
+            if (null != c || 0 < c) addArtItem(d, c), edoOrdenVen = "A", localStorage.setItem("tbOrdenVen", JSON.stringify(tbOrdenVen)), listadoVentArtProgreso(!0)
+        },
+        focus: function(a, b) {
+            $(this).val("");
+            return !1
+        },
+        minLength: 1
+    });
+    d.data("ui-autocomplete")._renderItem = function(a, b) {
+        console.log("request " + JSON.stringify(b));
+        var c = $("<div>"),
+            d = applyCurrency(parseFloat(b.precio01)),
+            f = applyCurrency(parseFloat(b.precio02));
+        c.attr("data-value", b.label);
+        d = htmlOrdenDesp(b.articulo, b.existencia, b.claveArticulo,
+            d, f, b.item);
+        c.append(d);
+        return c.appendTo(a)
+    };
+    e.autocomplete({
+        source: function(a, b) {
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "articulos/articuloTienda",
+                data: {
+                    term: a.term,
+                    idTienda: $("#idTienda").val(),
+                    col: "ar.articulo",
+                    idEntidad: $("#idEntidad").val(),
+                    typeResult: "result"
+                },
+                success: b,
+                dataType: "json"
+            })
+        },
+        select: function(a, b) {
+            do var c = prompt("Ingresa la cantidad", "1"); while (isNaN(c));
+            if (null == c) return !1;
+            addArtItem(b.item, c);
+            edoOrdenVen = "A";
+            localStorage.setItem("tbOrdenVen", JSON.stringify(tbOrdenVen));
+            listadoVentArtProgreso(!0)
+        },
+        focus: function(a, b) {
+            $(this).val(b.item.label);
+            return !1
+        },
+        minLength: 2
+    });
+    e.data("ui-autocomplete")._renderItem = function(a, b) {
+        var c = $("<div>"),
+            d = applyCurrency(parseFloat(b.precio01)),
+            f = applyCurrency(parseFloat(b.precio02));
+        c.attr("data-value", b.label);
+        d = htmlOrdenDesp(b.articulo, b.existencia, b.claveArticulo, d, f, b.item);
+        c.append(d);
+        return c.appendTo(a)
+    };
+    c.autocomplete({
+        source: function(a, b) {
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "ordenes/busca_cliente",
+                data: a,
+                success: b,
+                dataType: "json"
+            })
+        },
+        select: function(a,
+            b) {
+            $(this).val(b.item.label);
+            var c = b.item.id_entidad;
+            2 < $("#nivelUsuario").val() && 0 != $("#idEntidad").val() && borraArticulosVenta("Quitados por lista de precios");
+            get_entidad(c, !0);
+            $("#btnReqFac").prop("disabled", !1);
+            $("#txtBuscaArticuloCod").focus()
+        },
+        focus: function(a, b) {
+            $(this).val(b.item.label);
+            return !1
+        },
+        minLength: 4
+    });
+    c.data("ui-autocomplete")._renderItem = function(a, b) {
+        var c = $("<div>"),
+            d = null == b.rfc ? "" : b.rfc;
+        c.attr("data-value", b.label);
+        c.append("<a>" + b.label + '<br> <a style="color:blue;">RFC:' + d + "</a></a>");
+        return c.appendTo(a)
+    };
+    $("#btnServicioImp").click(function() {
+        $("#modal-est-serv-imp").modal()
+    });
+    $("#btnNuevaOrden").click(function() {
+        location.reload()
+    });
+    $("#btnGeneraOrden").click(function() {
+        generaOrdenPago()
+    });
+    $("#txtBuscaArticuloCodMo").keypress(function(a) {
+        13 == a.which && getArticulos(this)
+    });
+    $("#txtBuscaArticuloDescMo").keypress(function(a) {
+        13 == a.which && getArticulos(this)
+    });
+    $("#txtBuscaArticuloItemMo").keypress(function(a) {
+        13 == a.which && getArticulos(this)
+    });
+    $("#txtBuscaArticuloLinMo").keypress(function(a) {
+        13 ==
+            a.which && getArticulos(this)
+    });
+    $("#txtBuscaArticuloSubMo").keypress(function(a) {
+        13 == a.which && getArticulos(this)
+    });
+    $("#btnAddCantidades").click(function() {
+        var a = prompt("Ingresa la cantidad");
+        $('input[name="checkArt[]"]').map(function() {
+            this.value = a
+        }).get()
+    });
+    $("#btnAgregarArtOrden").click(function() {
+        $("#url").val();
+        jQuery(this).parents(".block");
+        $('input[name="checkArt[]"]').map(function() {
+            if ($("#idTiendaF").val() != $("#idTienda").val()) return alert("No se pueden agregar art\u00edculos de otras tiendas"),
+                !1;
+            var a = jQuery(this),
+                b = parseInt(a.val());
+            a = a.data("json");
+            if (0 < b) {
+                var c = a.existencia;
+                1 == $("#cbTipoComprobante").find(":selected").data("afecexistencia") && 1 == a.afectaExistencias ? 0 < c && addArtItem(a, b <= c ? b : c) : addArtItem(a, b)
+            }
+        }).get();
+        edoOrdenVen = "A";
+        localStorage.setItem("tbOrdenVen", JSON.stringify(tbOrdenVen));
+        listadoVentArtProgreso(!0);
+        $("#modal-articulos-orden").modal("toggle")
+    });
+    $("#tabla_articulos").editable({
+        selector: "a",
+        type: "text",
+        success: function(a, b) {
+            editXeditTable(this, b, null)
+        }
+    });
+    $("#btnReqFac").click(function() {
+        var a =
+            $("#hiReqFac").val();
+        console.log(a);
+        "0" == a ? (a = 1, $("#iReqFac").removeClass("fa-close").addClass("fa-check-square"), $("#hiReqFac").val(a), $("#optionsFactura").show()) : (a = 0, $("#iReqFac").removeClass("fa-check-square").addClass("fa-close"), $("#hiReqFac").val(a), $("#optionsFactura").hide())
+    });
+    $("#btnQuitarCliente").click(function() {
+        a()
+    });
+    $("#btnMuestraCliente").click(function() {
+        getFancyEntidad($("#idEntidad").val(), !0)
+    });
+    $("#btnListaCliente").click(function() {
+        $("#modal-listado-cliente").modal("toggle");
+        $("#listaEntidadesBody").html("")
+    });
+    $("#btnAgregaCliente").click(function() {
+        agregarCliente()
+    });
+    $("#btnProductos").click(function() {
+        $("#modal-articulos-orden").modal("toggle");
+        $("#txtBuscaArticuloCodMo").focus();
+        $("#tbArticulosBody").html("")
+    });
+    $("#btnGuardarEntidadOrden").click(function() {
+        var a = confirm("\u00bfSon correctos los datos?");
+        if ("" == $("#cli-rfc").val()) return $("#cli-rfc").focus(), alert("Ingresa el RFC"), !1;
+        if (5 >= $("#cli-nombre-razon").val().length) return alert("Ingresa un nombre correcto"),
+            $("#cli-nombre-razon").focus(), !1;
+        a && $.ajax({
+            type: "POST",
+            url: $("#url").val() + "entidades/guardar_cliente_mostrador",
+            beforeSend: function() {},
+            complete: function() {},
+            data: $("#form-cliente-orden").serialize()
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                $("#orden-busca-cliente").val(b.nombre_completo);
+                b.existeRfc ? alert(b.msg) : ($("#modal-contato-datos").modal("toggle"), get_entidad(b.id_entidad))
+            } catch (l) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(l)
+            }
+        })
+    })
+}
+
+function validaExisMultiple(a) {
+    var b = jQuery(a);
+    a = a.value;
+    b = b.data("json");
+    console.info("Existencias " + b.existencia);
+    console.info("Cantidad SOl " + a);
+    b.existencia < parseFloat(a) && 1 == b.afectaExistencias && alert("Las existencias en almac\u00e9n para el articulo " + b.claveArticulo + " solo son de " + b.existencia + ", solicitadas " + a + " solo se agregaran en caso del que el documento a generar no valide las existentes")
+}
+
+function getArticulosListaPrecios(a) {
+    var b = jQuery(a).parents(".block"),
+        c = "";
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "articulos/listaArticulos",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        data: $("#frmListArt").serialize()
+    }).done(function(a) {
+        try {
+            var b = 1,
+                d = JSON.parse(a),
+                f;
+            for (f in d.items) {
+                var h = d.items[f];
+                if (null != h) {
+                    var k = null != h.item ? h.item : "",
+                        l = null != h.medida ? h.medida : "",
+                        m = JSON.stringify(h),
+                        n = 1 == h.artActivo ? '<span class="label label-info">Activo</span>' : '<span class="label label-danger">Inactivo</span>';
+                    c += "<tr><td><input data-json='" + m + "' type='checkbox' id='checkArt' name='checkArt[]' value='0'></td><td><label>" + h.claveArticulo + "</label></td><td data-id='" + h.idArticulo + "' onclick='showfichaArt(this)' class='font-w600'><label><a>" + h.articulo + "</a></label></td><td class='text-center'><label>" + k + "</label></td><td class='text-center'><label>" + l + "</label></td><td class='text-center'><label>" + applyCurrency(h.precio01) + "</label></td><td class='text-center'><label>" + applyCurrency(h.precio02) + "</label></td><td class='text-center'><label>" +
+                        n + "</label></td><td class='text-center'><label>" + h.existencia + "</label></td></tr>"
+                }
+                b++
+            }
+            dataTableByID(c, "tbArticulos")
+        } catch (p) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(p)
+        }
+    })
+}
+
+function getArticulos(a) {
+    console.info("Articulos desde orden de venta");
+    var b = jQuery(a).parents(".block"),
+        c = "";
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "articulos/listaArticulos",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        data: $("#frmListArt").serialize()
+    }).done(function(a) {
+        try {
+            var b = 1,
+                d = JSON.parse(a),
+                f;
+            for (f in d.items) {
+                var h = d.items[f];
+                if (null != h) {
+                    var k = null != h.item ? h.item : "",
+                        l = null != h.medida ? h.medida : "",
+                        m = JSON.stringify(h),
+                        n = 1 == h.artActivo ? '<span class="label label-info">Activo</span>' :
+                        '<span class="label label-danger">Inactivo</span>';
+                    c += "<tr><td><input type='text' data-json='" + m + "' class='text-center' style='width: 90%;' id='checkArt' name='checkArt[]' value='0' onkeypress='keyPressAddArtsOV(event)' onfocusout='validaExisMultiple(this)'></td><td><label>" + h.claveArticulo + "</label></td><td data-id='" + h.idArticulo + "' onclick='showfichaArt(this)' class='font-w600'><label><a>" + h.articulo + "</a></label></td><td class='text-center'><label>" + k + "</label></td><td class='text-center'><label>" +
+                        l + "</label></td><td class='text-center'><label>" + applyCurrency(h.precio01) + "</label></td><td class='text-center'><label>" + applyCurrency(h.precio02) + "</label></td><td class='text-center'><label>" + n + "</label></td><td class='text-center'><label>" + h.existencia + "</label></td></tr>"
+                }
+                b++
+            }
+            dataTableByID(c, "tbArticulos")
+        } catch (p) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(p)
+        }
+    })
+}
+
+function artiProvee(a) {
+    var b = jQuery(a).parents(".block"),
+        c = jQuery(a).data("dest"),
+        d = "";
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "articulos/listArtiProveedor",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        data: $("#frmFiltArt").serialize()
+    }).done(function(a) {
+        a = JSON.parse(a);
+        var b = [],
+            e;
+        for (e in a.items) {
+            var h = a.items[e];
+            if (null != h) {
+                var k = null != h.costoProm ? h.costoProm : h.costo,
+                    l = $("#checkExist").is(":checked") ? h.existencia : "--",
+                    m = "p1" == $("input[name='rPrecio']:checked").val() ?
+                    h.precio01 : h.precio02,
+                    n = parseInt((parseFloat(m) - parseFloat(k)) / parseFloat(k) * 100);
+                n = isNaN(n) ? 0 : n;
+                m -= k;
+                var p = null != h.familia ? h.familia : "",
+                    r = null != h.sublinea ? h.sublinea : "",
+                    u = null != h.color ? h.color : "",
+                    v = null != h.medida ? h.medida : "",
+                    q = null != h.ubicacion ? h.ubicacion : "",
+                    t = null != h.ubicacionMaster ? h.ubicacionMaster : "";
+                "exp" == c ? b.push({
+                        Clave_Articulo: h.claveArticulo,
+                        Descripcion: h.articulo,
+                        Existencia: l,
+                        Precio_Mayoreo: h.precio02,
+                        Precio_Menudeo: h.precio01,
+                        Costo: k,
+                        Utilidad: m,
+                        Utilidad_Porciento: n
+                    }) : "proveedorUtilidad" ==
+                    $("#nombreReporte").val() ? d += "<tr><td><label>" + h.claveArticulo + "</label></td><td><label>" + h.articulo + "</label></td><td class='text-center'><label>" + l + "</label></td><td class='text-center'><label>" + applyCurrency(h.precio02) + "</label></td><td class='text-center'><label>" + applyCurrency(h.precio01) + "</label></td><td class='text-center'><label>" + applyCurrency(k) + "</label></td><td class='text-center'><label>" + applyCurrency(m) + "</label></td><td class='text-center'><label>" + n + "</label></td></tr>" : "conteos" ==
+                    $("#nombreReporte").val() && (d += "<tr><td><label>" + h.claveArticulo + "</label></td><td><label>" + h.articulo + "</label></td><td class='text-center'><label>" + h.existencia + "</label></td><td class='text-center'><label>" + p + "</label></td><td class='text-center'><label>" + r + "</label></td><td class='text-center'><label>" + u + "</label></td><td class='text-center'><label>" + v + "</label></td><td class='text-center'><label>" + q + "</label></td><td class='text-center'><label>" + t + "</label></td></tr>")
+            }
+        }
+        "exp" == c ? $("#dvjson").excelexportjs({
+            containerid: "dvjson",
+            datatype: "json",
+            dataset: b,
+            columns: getColumns(b)
+        }) : dataTableByID(d, "tblArticulos")
+    })
+}
+
+function borraArtVentaClie(a) {
+    notify_info("danger", a);
+    $("#itemsArticulosCliente").val("");
+    listadoVentArtProgreso(!0)
+}
+
+function get_entidad(a, b) {
+    if (b) {
+        var c = $("#url").val();
+        $.ajax({
+            type: "POST",
+            url: c + "entidades/mostrarEntidadId",
+            beforeSend: function() {},
+            complete: function() {},
+            data: {
+                id_entidad: a,
+                idTienda: $("#idTienda").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a),
+                    c = b.entidad,
+                    d = c.tipo_precio ? c.tipo_precio : "";
+                $("#itemsArticulosCliente").val(JSON.stringify(b.itemsArticulos));
+                console.info("idEntidadSel " + $("#idEntidad").val());
+                console.info("idEntidadNue " + c.id_entidad);
+                0 != $("#idEntidad").val() && ($("#idEntidad").val() !=
+                    c.id_entidad ? borraArtVentaClie("El cliente es diferente al seleccionado, se ha cambiado la lista de precioss") : listadoVentArtProgreso(!0));
+                $("#divVentaPublico").hide();
+                $("#divDatosCliente").show();
+                $("#lblClienteRFC").html(c.rfc);
+                $("#lblClienteNombre").html(c.nombre_razon_social);
+                $("#lblClienteDireccion").html(c.CP);
+                $("#fecha_ult_compra").val(c.fec_ult_com);
+                $("#tipoPrecio").val(d);
+                $("#descuento_cliente").val(c.DESCUENTO);
+                $("#diasCredito").val(c.dias_credito);
+                $("#montoCredito").val(c.monto_credito);
+                $("#saldoCliente").val(c.SALDO);
+                $("#debe").val(c.debe);
+                $("#idEntidad").val(c.id_entidad);
+                $("#lblClienteRefPago").html(c.ref);
+                $("#nombreEntidadImpoVen").val(c.cod_entidad);
+                $("#idEntidadImporVen").val(c.id_entidad);
+                $("#codEntidadImporVen").val(c.cod_entidad);
+                1 == $("#idTipoComprobante").val() ? $("#hiReqFac").val(1) : ($("#iReqFac").removeClass("fa-check-square").addClass("fa-close"), $("#hiReqFac").val(0));
+                $("#txtClienteCredit").val(applyCurrency(c.monto_credito));
+                var h = c.monto_credito - c.debe;
+                $("#txtClienteCreDispo").val(applyCurrency(h));
+                $("#haber").val(h);
+                $("#txtBuscaArticuloCod").focus()
+            } catch (k) {
+                console.log(k)
+            }
+        })
+    }
+}
+
+function setClienteOrden(a, b) {
+    get_entidad(a, !0);
+    $("#orden-busca-cliente").val(b);
+    $("#modal-listado-cliente").modal("toggle")
+}
+
+function listaPreciosEntidad(a) {
+    var b = $("#url").val(),
+        c = "";
+    $.ajax({
+        type: "POST",
+        url: b + "listaprecios/listaPreciosEntidad",
+        beforeSend: function() {
+            block_class(!0, a)
+        },
+        complete: function() {
+            block_class(!1, a)
+        },
+        data: {
+            idEntidad: $("#idEntidad").val()
+        }
+    }).done(function(a) {
+        try {
+            var b = 1,
+                d = JSON.parse(a),
+                f = d.entidad,
+                h = d.items;
+            a = !1;
+            $("#cli-cod").val(f.cod_entidad);
+            $("#cli-nombre-razon").val(f.nombre_razon_social);
+            $("#cli-rfc").val(f.rfc);
+            $("#cli-calle").val(f.calle);
+            $("#cli-ult-fe-com").val(null != f.fec_ult_com ? f.fec_ult_com :
+                "");
+            for (var k in h) {
+                var l = h[k];
+                if (null != l) {
+                    var m = parseInt((parseFloat(l.precioCliente) - parseFloat(l.costo)) / parseFloat(l.ult_costo_ac) * 100);
+                    f = '<span class="label label-success">--</span>';
+                    d = 0;
+                    var n = "success";
+                    15 > m && (n = "warning");
+                    $item.costo != $item.costo && (f = '<span class="label label-warning">Cost</span>', d++, a = !0);
+                    $item.precio02 != $item.precio02 && (f = '<span class="label label-warning">P2</span>', d++, a = !0);
+                    2 == d && (f = '<span class="label label-danger">Cost,P2</span>');
+                    c += "<tr" + f + "><td>" + l.clave_art + "</td><td>" +
+                        l.descripcion + "</td><td>" + currency(null != l.precio_cliente ? l.precio_cliente : 0, 1) + "</td><td>" + currency(null != l.PRECIO2 ? l.PRECIO2 : 0, 1) + "</td><td>" + currency(null != l.ult_costo_ac ? l.ult_costo_ac : 0, 1) + "</td><td><span class='label label-" + n + "'>" + m + " %</span></td><td>" + currency(null != l.ult_costo ? l.ult_costo : 0, 1) + "</td><td>" + f + "</td><td><a class='btn btn-xs btn-default' type='button' data-toggle='tooltip' title='Eliminar' onclick='eliminarListaPrecio(" + l.id_articulo_cliente + ");'><i class='fa fa-close'></i></a><a class='btn btn-xs btn-default' type='button' data-toggle='tooltip' title='Editar' onclick='editarListaPrecio(" +
+                        l.id_articulo_cliente + ");'><i class='fa  fa-edit'></i></a></td></tr>"
+                }
+                b++
+            }
+            a ? $("#lblEstaPrecios").show() : $("#lblEstaPrecios").hide();
+            dataTableApp(c)
+        } catch (p) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(p)
+        }
+    })
+}
+
+function eliminarListaPrecio(a) {
+    confirm("\u00bfConfirma eliminar el registro de la lista de precios?") && (a = jQuery(a).data("json"), $.ajax({
+        type: "POST",
+        url: $("#url").val() + "listaprecios/eliminaListaPrecio",
+        beforeSend: function() {},
+        complete: function() {},
+        data: {
+            id_art_cli: a.idArticuloCliente
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            notify_info(b.type, b.msg);
+            location.reload()
+        } catch (d) {
+            alert("Error interno, favor de reportarlo"), console.log(d)
+        }
+    }))
+}
+
+function editarListaPrecio(a) {
+    a = jQuery(a).data("json");
+    $("#idArticuloCliente").val(a.idArticuloCliente);
+    $("#enti-art").empty().append('<option value="' + a.idArticulo + '">' + a.articulo + "</option>").val(a.idArticulo).trigger("change");
+    $("#enti-art-utl").val(0);
+    $("#enti-art-precl").val(a.precioCliente);
+    $("#enti-art-cos").val(a.costo);
+    $("#enti-art-pre2").val(a.precio02);
+    $("#enti-art-ultp2").val(a.precio02);
+    $("#id_articulo_cliente").val(a.idArticuloCliente);
+    $("#enti-claveart").val(a.claveArticulo);
+    $("#modal-precios").modal("toggle")
+}
+
+function listaPrecios(a) {
+    var b = $("#url").val(),
+        c = {
+            criterio: $("#buscaEntidad").val(),
+            col: $("#art-lista-column").val()
+        },
+        d = "";
+    $.ajax({
+        type: "POST",
+        url: b + "listaprecios/listEntidadPrecios",
+        beforeSend: function() {
+            block_class(!0, a)
+        },
+        complete: function() {
+            block_class(!1, a)
+        },
+        data: c
+    }).done(function(a) {
+        try {
+            var c = 1,
+                e = JSON.parse(a),
+                h;
+            for (h in e.items) {
+                var k = e.items[h];
+                null != k && (d += '<tr><td class="text-center"><img class="img-avatar img-avatar48" src="../../assets/img/user.jpg" alt=""></td><td>' + k.cod_entidad + "</td><td>" +
+                    k.nombre_razon_social + "</td><td>" + (null != k.fec_ult_com ? k.fec_ult_com : "") + '</td><td><div class="text-center"><a class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Ver" href="' + b + "listaprecios/viewPreciosEntidad/" + k.id_entidad + '"><i class="fa fa-pencil"></i></a></div></td></tr>');
+                c++
+            }
+            dataTableApp(d)
+        } catch (l) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(l)
+        }
+    })
+}
+
+function agregarCliente() {
+    $("#cli-nombre-nombre").val("");
+    $("#cli-nombre-paterno").val("");
+    $("#cli-nombre-materno").val("");
+    $("#cli-persona-fisica").show();
+    $("#opt_persona_fisica").prop("checked", !0);
+    $("#cli-persona-moral").hide();
+    $("#cli-nombre-razon").val("");
+    $("#opt_tipo_persona").val("");
+    $("#cli-rfc").val("");
+    $("#cli-calle").val("");
+    $("#cli-num-ext").val("");
+    $("#cli-num-int").val("");
+    $("#cli-colonia").val("");
+    $("#cli-localidad").val("");
+    $("#cli-referencia").val("");
+    $("#cli-pais").val("");
+    $("#cli-poblacion").val("");
+    $("#cli-estado").val("");
+    $("#cli-ciudad").val("");
+    $("#cli-cp").val("");
+    $("#cli-correos").importTags("");
+    $("#cli-telefonos").importTags("");
+    $("#c_entidad").val("new");
+    $("#id_entidad").val("0");
+    $("#cli-rfc").focus();
+    $("#cli-cod").val("");
+    $("#modal-contato-datos").modal("toggle")
+}
+
+function generaCompFormaVenta(a) {
+    var b = $("#idEntidad").val(),
+        c = $("#idTipoComp").val();
+    $("#divBlockTipoCom");
+    $("#url").val();
+    $data = jQuery(a);
+    formato = $data.data("formato");
+    0 == $("#cbConPagoPre").val() ? alert("Selecciona la condici\u00f3n de pago") : (5 == formato && 0 != b && alert("Para generar el presupuesto es necesario agregar el cliente"), 4 == c ? "pdf" == formato && generaPDFcotizacion(formato) : 5 == c && ("pdf" == formato ? generaPDFpresupuesto(formato) : imprimeTxtFormato("Presupuesto")))
+}
+
+function generaPDFcotizacion(a) {
+    a = {
+        id_orden_c: $("#id_orden").val(),
+        folio: $("#folioDoc").val(),
+        formato: a,
+        id_tienda: $("#id_tienda").val()
+    };
+    OpenWindowWithPost($("#url").val() + "ordenes/pdf_cotizacion", "width=1300,height=700,left=100,top=100,resizable=no,scrollbars=yes", "NewFile", a)
+}
+
+function cancelarOrden(a) {
+    var b = jQuery(a),
+        c = jQuery(a).parents(".block");
+    a = b.data("idorden");
+    b = b.data("folpresu");
+    confirm("\u00bfDesea cancelar la orden?") && $.ajax({
+        type: "POST",
+        url: $("#url").val() + "ordenes/cancelaDocumento",
+        beforeSend: function() {
+            block_class(!0, c)
+        },
+        complete: function() {
+            block_class(!1, c)
+        },
+        data: {
+            idOrden: a,
+            idKardex: 9,
+            folPre: b,
+            tipo: "PR-"
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            notify_info(b.type, b.msg);
+            $("#btnBuscar").click()
+        } catch (g) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"),
+                console.log(g)
+        }
+    })
+}
+
+function facturaOrdenVenta(a) {
+    $("#modal-gen-fac-orden").modal()
+}
+
+function calculaProrrateo(a) {
+    var b = $("#url").val();
+    a = jQuery(a);
+    parseInt(a.data("articulos"));
+    parseFloat(a.data("total"));
+    a = parseInt(a.data("idorden"));
+    confirm("Desea autorizar descuento") && $.ajax({
+        type: "POST",
+        url: b + "articulos/autorizaDesc",
+        beforeSend: function() {},
+        complete: function() {},
+        data: {
+            idOrdenC: a
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            notify_info(b.type, b.msg);
+            $("#btnBuscar").click()
+        } catch (e) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+        }
+    })
+}
+
+function buscarOrdenVenta(a) {
+    var b = $("#blockList");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "ordenes/recupera_orden",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        data: {
+            folOrden: $("#txtOrdenVen").val(),
+            fecha: $("#txtFechaOr").val(),
+            id_tienda: $("#id_tienda").val(),
+            idOrdenActual: $("#id_orden").val()
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a),
+                c = b.estatus;
+            $("#id_compra_c").val("0");
+            if ("" != c) return notify_info(b.estatus, b.msg), $("#modalBuscaOrden").modal("toggle"), !1;
+            var g =
+                b.entidad,
+                f = b.correos;
+            $("#c").val(b.c);
+            $("#lblNumOrden").html("Orden : " + b.fol_orden);
+            "edit" == b.c ? ($("#id_orden").val(b.idOrndenC), $("#fol_orden").val(b.fol_orden), $("#folioDoc").val(b.fol_orden)) : ($("#fol_orden").val(""), $("#lblNumOrden").html("Orden : "));
+            null != g && ($("#divVentaPublico").hide(), $("#divDatosCliente").show(), $("#lblClienteRFC").html(g.rfc), $("#lblClienteNombre").html(g.nombre_razon_social), $("#lblClienteDireccion").html(g.calle + "," + g.CIUDAD), $("#txtCorreosCliente").importTags(f), $("#fecha_ult_compra").val(g.fec_ult_com),
+                $("#lblClienteRefPago").html(g.ref), $("#idEntidad").val(g.id_entidad), $("#hiReqFac").val(b.reqFac), $("#txtClienteCredit").html(applyCurrency(g.monto_credito)), $("#txtClienteCreDispo").html(applyCurrency(g.SALDO)), "1" == b.reqFac ? $("#iReqFac").removeClass("fa-close").addClass("fa-check-square") : $("#iReqFac").removeClass("fa-check-square").addClass("fa-close"));
+            $("#txtOrdenVen").val("");
+            $("#txtBuscaArticuloCod").focus();
+            lista_articulos_orden(b);
+            $("#modalBuscaOrden").modal("toggle")
+        } catch (h) {
+            alert("Error interno, favor de reportarlo"),
+                console.log(h)
+        }
+    })
+}
+
+function moReimprimirNota() {}
+
+function buscarOrdenVentaModal() {
+    3 <= $("#nivelUsuario").val() || ($("#modalBuscaOrden").modal("toggle"), $("#txtOrdenVen").val(""))
+}
+
+function aplicaPreMayOrdenVenta() {
+    if (confirm("\u00bfDesea autorizar precio mayoreo?")) {
+        var a = JSON.parse(localStorage.getItem("tbOrdenVen")),
+            b;
+        for (b in a) {
+            var c = a[b];
+            null != c && (c.aplicaMay = 1, a[b] = c)
+        }
+        localStorage.setItem("tbOrdenVen", JSON.stringify(a));
+        listadoVentArtProgreso(!0)
+    }
+}
+
+function generaPDFpresupuesto(a) {
+    a = {
+        id_orden_c: $("#id_orden").val(),
+        folio: $("#folioDoc").val(),
+        formato: a,
+        id_tienda: $("#id_tienda").val(),
+        descAlma: $("#descAlmacen").val(),
+        idCondPago: $("#cbConPagoPre").val()
+    };
+    OpenWindowWithPost($("#url").val() + "formasventa/pdfPresupuesto", "width=1300,height=700,left=100,top=100,resizable=no,scrollbars=yes", "NewFile", a)
+}
+
+function lista_vendedores() {
+    var a = $("#url").val(),
+        b = $("#selTiendas").val();
+    $.ajax({
+        type: "POST",
+        url: a + "ordenes/lista_vendedores",
+        beforeSend: function() {},
+        complete: function() {},
+        data: {
+            id_tienda: b
+        }
+    }).done(function(a) {
+        try {
+            var b = 1,
+                c = JSON.parse(a);
+            $("#selVendedores").empty();
+            for (var g in c) {
+                var f = c[g];
+                1 == b && $("#selVendedores").append($("<option>", {
+                    value: "0",
+                    text: "--Todos--"
+                }));
+                $("#selVendedores").append($("<option>", {
+                    value: f.id_usuario,
+                    text: f.nombre_completo
+                }));
+                b += 1
+            }
+        } catch (h) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"),
+                console.log(h)
+        }
+    })
+}
+
+function modalConsultaFactura(a) {
+    var b = jQuery(a);
+    a = b.data("file");
+    b = b.data("rfcemisor");
+    $("#imgPDF").attr("href", $("#url").val() + "formasventa/attachment/" + a + "/" + b + "/pdf");
+    $("#imgXML").attr("href", $("#url").val() + "formasventa/attachment/" + a + "/" + b + "/xml");
+    $("#modal-con-fac-ordenes").modal("toggle")
+}
+
+function cancelDocument(a) {
+    if (2 < $("#usuarioNivel").val()) return swal({
+        type: "error",
+        title: "Error de validaci\u00f3n",
+        text: "Usuario restringido"
+    }), !1;
+    var b = jQuery(a),
+        c = b.data("json");
+    "a" == b.data("estado") ? swal({
+        title: "\u00bfDesea cancelar el documento?",
+        text: "Motivo de la cancelacion",
+        type: "input",
+        showCancelButton: !0,
+        closeOnConfirm: !1,
+        showLoaderOnConfirm: !0,
+        inputPlaceholder: ""
+    }, function(a) {
+        if (!1 === a) return !1;
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "ordenes/cancelaDocumento",
+            data: {
+                id: b.data("id"),
+                tabla: b.data("tabla"),
+                idTipoComprobanteHijo: b.data("idtipocomprobantehijo"),
+                idTipoComprobante: c.idTipoComprobante,
+                timbrado: c.timbrado,
+                observaciones: a,
+                uuid: b.data("uuid"),
+                nombreArchivo: b.data("nombrearchivo")
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                swal({
+                    type: b.edo,
+                    title: "Cancelaci\u00f3n de documento",
+                    text: b.msg
+                })
+            } catch (f) {
+                swal({
+                    type: "error",
+                    title: "Error en cancelar",
+                    text: "Error interno favor de reportarlo"
+                }), console.log(f)
+            } finally {
+                $("#btnBuscaDoc").click()
+            }
+        })
+    }) : swal({
+        type: "info",
+        title: "Error de cancelaci\u00f3n",
+        text: "El documento ya fue pagado o se encentra cancelado"
+    })
+}
+
+function ListadoOrdenes() {
+    $(document.body).on("change", "#cbTipoComprobantes", function() {
+        $("#btnBuscaDoc").click()
+    });
+    $("#txtHasta").change(function() {
+        $("#btnBuscaDoc").click()
+    });
+    $("#btnExporDocumento").click(function(a) {
+        var b = $(this);
+        a = jQuery(this);
+        a.data("idtipocomprobante");
+        a.parents(".block-content");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "ordenesrest/getReporteDocumento",
+            beforeSend: function() {
+                $(b).buttonLoader("start");
+                $(b).prop("disabled", !0)
+            },
+            complete: function() {
+                $(b).buttonLoader("stop");
+                $(b).prop("disabled",
+                    !1)
+            },
+            error: function(a, b, e) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error interno, favor de reportarlo"
+                })
+            },
+            data: {
+                idTipoComprobante: $("#cbTipoComprobantes").val(),
+                txtDesde: $("#txtDesde").val(),
+                txtHasta: $("#txtHasta").val(),
+                idKey: $("#idKey").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = a.item,
+                    c = $("#base_url").val() + b;
+                console.log("descarga " + c)
+            } catch (g) {
+                swal({
+                    type: "error",
+                    title: "Error",
+                    text: "Error interno, favor de reportarlo"
+                }), console.log(g)
+            }
+        })
+    });
+    $("#btnBuscaDoc").click(function() {
+        if (!$("#cbTipoComprobantes").val() &&
+            "" == $("#tipoReporte").val()) return alert("Selecciona un tipo de documento"), !1;
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "ordenes/listadoOrdenes",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: $("#frmBuscaDoc").serialize()
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                a = "";
+                var d = 0,
+                    e;
+                for (e in b.items) {
+                    var g = b.items[e];
+                    if (null != g) {
+                        var f = "";
+                        "a" == g.estado && (1 == g.idTipoComprobante ? 1 == g.timbrado ? (f = '<span class="label label-info">Timbrado</span>',
+                            d += parseFloat(g.total)) : f = '<span class="label label-warning">Sin Timbre</span>' : (f = '<span class="label label-info">Activo</span>', d += parseFloat(g.total)));
+                        "p" == g.estado && (f = '<span class="label label-success">Pagado</span>', d += parseFloat(g.total));
+                        "c" == g.estado && (f = '<span class="label label-danger">Cancelado</span>');
+                        var h = null != g.nombre_razon_social ? g.nombre_razon_social : "Venta de mostrador",
+                            k = g.nomDoc,
+                            l = g.tipoComprobante,
+                            m = null != g.vendedor ? g.vendedor : g.usuario;
+                        1 == g.requiereFactura && (l += ", requiere factura",
+                            k += " FA");
+                        a += "<tr><td class='text-center'><label>" + g.folio + "-" + g.serie + "</label></td><td class='text-center'><label title='" + l + "'><span class='label label-info'>" + k + "</span></label></td><td><label>" + g.fecha + "</label></td><td><label>" + h + "</label></td><td class='text-center'><label>" + applyCurrency(g.total) + "</label></td><td class='text-center'><label>" + f + "</label></td><td><label>" + m + "</label></td><td class='text-center'><div class='btn-group'><button class='btn btn-xs btn-default' type='button' data-toggle='tooltip' title='Mostrar comprobante' data-json='" +
+                            JSON.stringify(g) + "' onclick='getPrintPDF(this)'><i class='fa fa-eye'></i></button><button class='btn btn-xs btn-default' type='button' data-toggle='tooltip' data-tabla='" + g.tabla + "'  data-json='" + JSON.stringify(g) + "' data-id='" + g.id + "' data-idTipoComprobanteHijo='" + g.idTipoComprobanteHijo + "' data-uuid='" + g.uuid + "' data-nombrearchivo='" + g.nombreArchivo + "' data-estado='" + g.estado + "' title='Cancelar comprobante' onclick='cancelDocument(this)'><i class='fa fa-times-circle'></i></button><button class='btn btn-xs btn-default' type='button' data-toggle='tooltip' data-table='" +
+                            g.tabla + "'  data-json='" + JSON.stringify(g) + "' data-id='" + g.id + "' data-typeid='c' title='Mostrar detalle' onclick='detalleComprobante(this)'><i class='fa fa-navicon'></i></button></div></td></tr>"
+                    }
+                }
+                dataTableByID(a, "tblDoc");
+                $("#lblTotal").html(applyCurrency(d))
+            } catch (n) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(n)
+            }
+        })
+    })
+}
+
+function generaOrdenPorFactura() {
+    if (!(3 <= $("#nivelUsuario").val()) && confirm("\u00bfSon correctos los datos?")) {
+        var a = $("#idEntidad").val();
+        $("#txtCorreosFac").importTags("");
+        if ("0" == a) alert("Selecciona un cliente para poder facturar");
+        else {
+            var b = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "ordenes/actualiza_orden",
+                beforeSend: function() {
+                    block_class(!0, b)
+                },
+                complete: function() {
+                    block_class(!1, b)
+                },
+                data: {
+                    id_orden: $("#id_orden").val(),
+                    total_articulos: $("#total_articulos").val(),
+                    descuento: $("#descuento").val(),
+                    descuento_factor: $("#descuento_factor").val(),
+                    hiReqFac: $("#hiReqFac").val(),
+                    idEntidad: $("#idEntidad").val(),
+                    id_tienda: $("#id_tienda").val(),
+                    tipo_descuento: $("#tipo_descuento").val(),
+                    id_usuario: $("#id_usuario").val(),
+                    diasCredito: $("#diasCredito").val(),
+                    usuario: $("#usuario").val(),
+                    c: $("#c").val(),
+                    fol_orden: $("#fol_orden").val(),
+                    idComprobante: 1,
+                    idMetodoPago: $("#cbMetodoPagoCli").val(),
+                    idFormaPago: $("#cbForPagoCli").val(),
+                    idCondicionesPago: $("#cbConPagoCli").val(),
+                    idUsoCDFI: $("#cbUsoCFDICli").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b =
+                        JSON.parse(a),
+                        c = b.entidad;
+                    $("#modal-gen-fac-orden").modal("toggle");
+                    $("#cbConPagoFac").val(1);
+                    $("#datosCredFac").hide();
+                    $("#dibMensajeFac").hide();
+                    var g = parseFloat(c.monto_credito) - parseFloat(c.SALDO);
+                    $("#clienteCreDispo").val(g);
+                    $("#clienteCredit").val(c.monto_credito);
+                    $("#clienteDiasCre").val(c.dias_credito);
+                    $("#clienteFecPag").val(b.fechaVence);
+                    $("#lblSubTotalFaMo").html(b.subTotal);
+                    $("#lblIVAFaMo").html(b.iva);
+                    $("#lblTotalFaMo").html(b.total);
+                    $("#subtotal").val(b.subTotal);
+                    $("#iva").val(b.iva);
+                    $("#total").val(b.total);
+                    $("#c").val("edit");
+                    $("#fol_orden").val(b.fol_orden);
+                    $("#cbMetodoPagoFac").val($("#cbMetodoPagoCli").val());
+                    $("#txtNumCuenPagoFac").val($("#lblClienteRefPago").html())
+                } catch (f) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+                }
+            })
+        }
+    }
+}
+
+function getModalDocumento(a, b) {
+    $("#tipo").val(b);
+    $("#modal-buscadoc").modal("toggle");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "ordenes/getTipoComprobante",
+        beforeSend: function() {},
+        complete: function() {},
+        data: {
+            tabla: a
+        }
+    }).done(function(a) {
+        $("#cbTipoComprobantes").empty();
+        try {
+            a = JSON.parse(a);
+            var b = [],
+                c;
+            for (c in a) {
+                var g = a[c];
+                null != g && ($("#cbTipoComprobantes").append('<option value="' + g.idTipoComprobante + '">' + g.tipoComprobante + "</option>"), 8 != g.idTipoComprobante && 1 != g.idTipoComprobante || b.push(g.idTipoComprobante))
+            }
+            $("#cbTipoComprobantes").select2("val",
+                b)
+        } catch (f) {
+            alert("Error interno favor de reportarlo"), console.log(f)
+        }
+        $("#btnBuscaTipoDoc").click()
+    })
+}
+
+function generaFormaVenta(a, b, c, d, e, g, f) {
+    $("#folio").val(e);
+    title = "c" == d ? "Generar Cotizaci&oacute;n" : "Generar Presupuesto";
+    $("#tipo").val(d);
+    $("#modal-title-cliente").html(title);
+    $("#txtNombreClienteEnvia").val(c);
+    $("#txtCorreosClienteEnvia").importTags("");
+    $("#id_entidad").val(b);
+    $("#id_orden_c").val(a);
+    $("#id_tienda").val(f);
+    if (0 != b) {
+        var h = $("#contListaOr");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "entidades/getEntidadSaldosCorreo",
+            beforeSend: function() {
+                block_class(!0, h)
+            },
+            complete: function() {
+                block_class(!1,
+                    h)
+            },
+            data: {
+                id_entidad: b
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a),
+                    c = b.entidad;
+                $("#modal-cotizacion-arti").modal("toggle");
+                $("#txtCorreosClienteEnvia").importTags(b.correos);
+                $("#txtClienteCredit").val();
+                var e = parseFloat(c.monto_credito) - parseFloat(c.SALDO);
+                $("#txtClienteCreDispo").val(currency(e, 1));
+                $("#txtClienteCredit").val(currency(parseFloat(c.monto_credito), 1));
+                $("#txtClienteImpo").val(currency(g, 1));
+                $("#dibBtnsGenera").show();
+                $("#dibMensaje").hide();
+                "p" == d && e < parseFloat(g) && ($("#dibBtnsGenera").hide(),
+                    $("#dibMensaje").show())
+            } catch (p) {
+                alert("Error interno, favor de reportarlo"), console.log(p)
+            }
+        })
+    } else alert("La orden de compra no tiene cliente favor de asign\u00e1rselo")
+}
+
+function valida_orden() {
+    var a = $("#id_orden").val(),
+        b = $("#id_tienda").val(),
+        c = $("#idEntidad").val(),
+        d = $("#c").val(),
+        e = $("#blockList");
+    "edit" == d && (a = {
+        id_orden: a,
+        id_tienda: b,
+        id_cliente: c
+    }, $.ajax({
+        type: "POST",
+        url: $("#url").val() + "ordenes/recupera_orden",
+        beforeSend: function() {
+            block_class(!0, e)
+        },
+        complete: function() {
+            block_class(!1, e)
+        },
+        data: a
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a),
+                c = b.entidad,
+                d = b.tipoComprobante;
+            null != c && ($("#divVentaPublico").hide(), $("#divDatosCliente").show(), $("#lblClienteRFC").html(c.rfc),
+                $("#lblClienteNombre").html(c.nombre_razon_social), $("#lblClienteRefPago").html(c.ref), $("#txtClienteCredit").html(applyCurrency(c.monto_credito)), $("#txtClienteCreDispo").html(applyCurrency(c.SALDO)), "1" == $("#hiReqFac").val() ? $("#iReqFac").removeClass("fa-close").addClass("fa-check-square") : $("#iReqFac").removeClass("fa-check-square").addClass("fa-close"));
+            4 == d ? ($("#radCot").prop("checked", !0), $("#btnGeneraOrden").html("Alt+m - Generar cotizaci&oacute;n"), $("#radVen").prop("disabled", !0)) : $("#radCot").prop("disabled",
+                !0);
+            lista_articulos_orden(b)
+        } catch (l) {
+            alert("Error interno, favor de reportarlo"), console.log(l)
+        }
+    }))
+}
+
+function getPrintPDF(a) {
+    $data = jQuery(a);
+    a = $data.data("json");
+    a = $("#base_url").val() + "/upload/" + a.path + "/" + a.rfcTienda + "/" + a.nombreArchivo + ".pdf";
+    console.log("file " + a);
+    $("#modalShowPDF").modal({
+        backdrop: "static",
+        keyboard: !1
+    });
+    $("#showPDF").attr("data", a)
+}
+
+function getPrintPDFComplemento(a) {
+    $data = jQuery(a);
+    a = $data.data("json");
+    a = $("#base_url").val() + "upload/" + a.path + "/" + a.rfcTienda + "/complemento_pago/" + a.nombreArchivo + ".pdf";
+    console.log("file " + a);
+    $("#modalShowPDF").modal({
+        backdrop: "static",
+        keyboard: !1
+    });
+    $("#showPDF").attr("data", a)
+}
+
+function showPrintPDF(a) {
+    console.log("impresion por PDF");
+    console.log("url " + a);
+    $("#modalMostrarPDF").modal({
+        backdrop: "static",
+        keyboard: !1
+    });
+    $("#showPDF").attr("data", a)
+}
+
+function printMatriz(a, b) {
+    console.log("impresion por " + b);
+    console.log("url " + a);
+    var c = $("#base_url").val() + "upload/" + a;
+    $.get(c, function(a) {
+        console.log(a)
+    }, "text");
+    var d = qz.configs.create(b);
+    qz.print(d, [{
+        type: "raw",
+        format: "file",
+        data: c
+    }])["catch"](displayError)
+}
+
+function printThermal(a, b) {
+    console.log("impresion por termica de ticket");
+    var c = qz.configs.create(b),
+        d = "\u001b@" + $("#razonSocialTienda").val() + "\nCLIENTE DE MOSTRADOR\n\nVENDEDOR :" + $("#nombreUsuario").val() + "\nORDEN    :" + a.folio + "\nFECHA    :" + a.fecha + "\n\nCANT.    ART.     DESCRIPCION\n----------------------------------------\n",
+        e = JSON.parse(localStorage.getItem("tbOrdenVen")),
+        g;
+    for (g in e) {
+        var f = e[g];
+        null != f && (d += "  " + f.cantidad + "      " + f.claveArticulo + "    " + f.item + "  LOCAL. " + f.ubicacion + "\n" +
+            f.articulo + "\n\n")
+    }
+    d += "\n\n\n\n\n\n\n\u001bi";
+    console.log(d);
+    qz.print(c, [{
+        type: "raw",
+        data: d,
+        options: {
+            language: "escp"
+        }
+    }])["catch"](displayError)
+}
+
+function generaOrdenPago() {
+    var a = "";
+    if (0 != $("#idCompraC").val()) {
+        var b = JSON.parse(localStorage.getItem("tbOrdenVen"));
+        for (h in b) {
+            var c = b[h];
+            null != c && 0 == c.cantidad && (a += c.claveArticulo + " " + c.articulo + "\n")
+        }
+        if ("" != a && !confirm("\u00bfLos siguientes articulos solicitados en la compra no se marcaron con existencia, continuar?\n" + a)) return !1
+    }
+    if (0 == $("#totalArticulos").val()) return !1;
+    if ("PPD" == $("#cbMetodoPagoCli").val() && (a = parseFloat($("#montoCredito").val() - parseFloat($("#debe").val())), parseFloat($("#total").val()) >
+            a)) return alert("Cr\u00e9dito insuficiente para realizar la venta"), !1;
+    a = $("#cbTipoComprobante").val();
+    b = $("#idEntidad").val();
+    $("input:radio[name ='radio-venta']:checked").val();
+    var d = localStorage.getItem("tbOrdenVen"),
+        e = window.onkeydown,
+        g = $("#cbTipoComprobante").find(":selected").data("json");
+    if ((4 == a || 5 == a || 1 == a) && 0 == b) return alert("Selecciona un cliente"), $("#orden-busca-cliente").focus(), !1;
+    b = "\u00bfSon correctos los datos?";
+    var f = "Ingresa el nombre del cliente a mostrar";
+    var h = "";
+    if (22 == a ||
+        23 == a) {
+        h = "";
+        "01" == $("#cbForPagoCli").val() && (b = f = "Ingresa el total con el que paga el cliente");
+        if ("04" == $("#cbForPagoCli").val() || "28" == $("#cbForPagoCli").val()) b = f = "Ingresa el n\u00famero de referencia";
+        "02" == $("#cbForPagoCli").val() && (b = f = "Ingresa el n\u00famero de cheque");
+        "03" == $("#cbForPagoCli").val() && (b = f = "Ingresa el n\u00famero de referencia")
+    } else 8 == a && 0 != $("#idEntidad").val() && (h = $("#lblClienteNombre").html());
+    a = JSON.parse(d);
+    if (null != a) {
+        if (0 == a.length) return alert("El detalle de la venta no puede estar vacio"),
+            !1
+    } else return alert("El detalle de la venta no puede estar vacio"), !1;
+    swal({
+        title: "Total : " + $("#hImporteTotalArt").html(),
+        text: b,
+        type: "input",
+        showCancelButton: !0,
+        closeOnConfirm: !1,
+        showLoaderOnConfirm: !0,
+        inputPlaceholder: f,
+        inputValue: h
+    }, function(a) {
+        window.onkeydown = e;
+        if (!1 === a) return !1;
+        var b = null,
+            c = null;
+        "01" == $("#cbForPagoCli").val() && (b = parseFloat("" == a ? 0 : a));
+        if ("04" == $("#cbForPagoCli").val() || "28" == $("#cbForPagoCli").val()) b = a;
+        "02" == $("#cbForPagoCli").val() && (f = "Ingresa el n\u00famero de cheque",
+            b = a);
+        "03" == $("#cbForPagoCli").val() && (f = "Ingresa el n\u00famero de referencia", b = a);
+        if (8 == g.idTipoComprobanteHijo || 5 == g.idTipoComprobanteHijo) c = a.toUpperCase();
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "ordenes/actualizaOrden",
+            data: {
+                referenciaPago: b,
+                tbOrdenVenta: d,
+                idOrdenC: $("#idOrdenC").val(),
+                idVentaC: $("#idVentaC").val(),
+                idEntidad: $("#idEntidad").val(),
+                idTienda: $("#idTienda").val(),
+                nombreCliente: c,
+                totalArticulos: $("#totalArticulos").val(),
+                factorDescuento: $("#factorDescuento").val(),
+                total: $("#total").val(),
+                idUsuario: $("#idUsuario").val(),
+                estado: "a",
+                codFormaPago: $("#cbForPagoCli").val(),
+                codFormaPagoTxt: $("#cbForPagoCli option:selected").text(),
+                codMetodoPago: $("#cbMetodoPagoCli").val(),
+                codMetodoPagoTxt: $("#cbMetodoPagoCli option:selected").text(),
+                folio: $("#folOrden").val(),
+                codUsoCFDI: $("#cbUsoCFDICli").val(),
+                codUsoCFDITxt: $("#cbUsoCFDICli option:selected").text(),
+                diasCredito: $("#diasCredito").val(),
+                idCatFormatoImpresion: g.idCatFormatoImpresion,
+                serie: $("#cbSerie").val(),
+                requiereFactura: $("#hiReqFac").val(),
+                tipoComprobante: $("#cbTipoComprobante").find(":selected").data("json"),
+                codTipoRelacion: $("#codTipoRelacion").val(),
+                UUIDSRelacionados: $("#facturasRela").val(),
+                idTipoComprobanteHijo: g.menu,
+                idCatEntidadDireccion: $("#idCatEntidadDireccion").val(),
+                condicionesDePago: $("#condicionesDePago").val(),
+                idUsuarioVendedor: $("#idUsuarioVendedor").val()
+            }
+        }).done(function(a) {
+            try {
+                var c = JSON.parse(a),
+                    d = c.idTipoComprobante,
+                    e = $("#cbTipoComprobante").find(":selected").data("json"),
+                    f = c.folder + "/" + c.rfcTienda + "/" + c.nameFile;
+                $("#urlFile").val(f);
+                if (8 == d || 10 == d) swal({
+                    title: "Orden de Venta",
+                    text: "<h1>" + c.folio + "</h1>",
+                    timer: 2E3,
+                    showConfirmButton: !1,
+                    html: !0
+                }), $("#lblNumOrden").html("Orden : "), "termica" == e.idCatFormatoImpresion && printThermal(c, e.impresora), limpiaValoresOrden();
+                else if (1 == d || 2 == d || 13 == d || 22 == e.menu)
+                    if (1 == $("#hiReqFac").val())
+                        if ("error" == c.comprobante.estadoComprobante) swal("Error al timbrar el XML", c.comprobante.comprobante, "error");
+                        else {
+                            if (0 == $("#idCompraC").val()) {
+                                var g = "Generando documento " + $("#cbTipoComprobante option:selected").text(),
+                                    h = "<h1>" + c.folio + "</h1>";
+                                if (22 == e.idTipoComprobanteHijo) {
+                                    var k = 0 != b ? applyCurrency(parseFloat(b) - parseFloat($("#total").val())) : 0;
+                                    g = "Cambio";
+                                    h = "<h1>" + k + "</h1>"
+                                }
+                                swal({
+                                    title: g,
+                                    text: h,
+                                    timer: 3E3,
+                                    showConfirmButton: !1,
+                                    html: !0
+                                })
+                            }
+                            var l = $("#base_url").val() + "/upload/" + c.folder + "/" + c.rfcTienda + "/" + c.nameFile;
+                            showPrintPDF(l);
+                            $("#btnReGenPDF").data("id", c.idVentaC);
+                            $("#btnReGenPDF").data("idtienda", $("#idTienda").val());
+                            $("#btnReGenPDF").data("tipo", "v")
+                        }
+                else {
+                    g = "Imprimiendo documento";
+                    var m = "<h1>" + c.folio + "</h1>";
+                    "01" == $("#cbForPagoCli").val() && (k = 0 != b ? applyCurrency(parseFloat(b) - parseFloat($("#total").val())) : 0, g = "Cambio", m = "<h1>" + k + "</h1>");
+                    swal({
+                        title: g,
+                        text: m,
+                        timer: 5E3,
+                        closeOnConfirm: !0,
+                        html: !0
+                    });
+                    printMatriz(c.nameFile, e.impresora);
+                    setTimeout(function() {
+                        window.location.reload(1)
+                    }, 5E3)
+                } else 0 != $("#idCompraC").val() && 4 != d || swal({
+                    title: "Generando documento " + $("#cbTipoComprobante option:selected").text(),
+                    text: "<h1>" + c.folio + "</h1>",
+                    timer: 1500,
+                    showConfirmButton: !1,
+                    html: !0
+                }), $("#cbForImpre").val(), $("#btnGeneraOrden").prop("disabled",
+                    !0), "laser" == e.idCatFormatoImpresion || 4 == d ? (l = $("#base_url").val() + "/upload/" + c.folder + "/" + c.rfcTienda + "/" + c.nameFile, showPrintPDF(l), $("#btnReGenPDF").data("id", c.idOrdenC), $("#btnReGenPDF").data("idtienda", $("#idTienda").val()), $("#btnReGenPDF").data("tipo", "o")) : "termica" == e.idCatFormatoImpresion ? printThermal(c, e.impresora) : "matriz" == e.idCatFormatoImpresion ? printMatriz(c.nameFile, e.impresora) : alert("Formato de impresi\u00f3n no compatible, favor de reportarlo");
+                $("#txtBuscaArticuloCod").focus();
+                $("#btnGeneraOrden").prop("disabled", !0)
+            } catch (z) {
+                swal("Error interno, favor de reportarlo", "", "error"), $("#btnGeneraOrden").prop("disabled", !0), console.log(z)
+            }
+        })
+    })
+}
+
+function limpiaValoresOrden() {
+    $("#idOrdenC").val("0");
+    $("#idVentaC").val("0");
+    $("#idCompraC").val("0");
+    $("#lScrollTop").val("0");
+    $("#orden-busca-cliente").val("");
+    $("#tabla_articulos").html("");
+    $("#txtBuscaArticuloCod").val("");
+    $("#txtBuscaArticuloDesc").val("");
+    $("#c").val("new");
+    $("#hTotalArt").html("$0.00");
+    $("#total_articulos").val("0");
+    $("#hDescuentoArt").html("$0.00");
+    $("#descuento_cliente").val("0");
+    $("#hSubTotalArt").html("$0.00");
+    $("#hImporteTotalArt").html("$0.00");
+    $("#total").val("0");
+    $("#hiReqFac").val("0");
+    $("#iReqFac").removeClass("fa-check-square").addClass("fa-close");
+    $("#idEntidad").val("0");
+    $("#divVentaPublico").show();
+    $("#divDatosCliente").hide();
+    $("#alert-beneficio").hide();
+    $("#btnGeneraOrden").prop("disabled", !1);
+    $("#btnProductos").prop("disabled", !1);
+    $("#txtBuscaArticuloCod").prop("disabled", !1);
+    $("#txtBuscaArticuloDesc").prop("disabled", !1);
+    $("#txtBuscaArticuloItem").prop("disabled", !1);
+    $("#hTotalArt").html(0);
+    $("#hSubtotalArt").html(applyCurrency(0));
+    $("#hDescuentoArt").html(applyCurrency(0));
+    $("#hSuDescuentoArt").html(applyCurrency(0));
+    $("#himpTrasladado").html(applyCurrency(0));
+    $("#himpRetenido").html(applyCurrency(-0));
+    $("#itemsArticulosCliente").val("");
+    localStorage.removeItem("tbOrdenVen");
+    tbOrdenVen = [];
+    edoOrdenVen = "A";
+    indexOrdenVen = -1
+}
+
+function insertaArticuloOrden(a, b) {
+    var c = jQuery(a).data("col"),
+        d = a.value,
+        e = $("#blockList");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "articulos/articuloTienda",
+        beforeSend: function() {
+            block_class(!0, e);
+            $("#colArticuloDetalle").toggleClass("block-opt-refresh");
+            $("#txtBuscaArticuloCod").prop("disabled", !0);
+            $("#txtBuscaArticuloDesc").prop("disabled", !0)
+        },
+        complete: function() {
+            block_class(!1, e);
+            $("#colArticuloDetalle").removeClass("block-opt-refresh");
+            $("#txtBuscaArticuloCod").prop("disabled", !1);
+            $("#txtBuscaArticuloDesc").prop("disabled",
+                !1);
+            $("#txtBuscaArticuloCod").focus()
+        },
+        data: {
+            col: c,
+            idTienda: $("#idTienda").val(),
+            term: d,
+            idEntidad: $("#idEntidad").val(),
+            typeResult: "row"
+        }
+    }).done(function(a) {
+        try {
+            var c = JSON.parse(a);
+            if (null != c) {
+                var d = $("#cbTipoComprobante").find(":selected").data("afecexistencia");
+                console.log("valida si descuenta existencia " + d);
+                0 >= c.existencia && 1 == d && 1 == c.afectaExistencia ? alert("No hay existencia para completar la venta") : (addArtItem(c, b), edoOrdenVen = "A", localStorage.setItem("tbOrdenVen", JSON.stringify(tbOrdenVen)),
+                    listadoVentArtProgreso(!0))
+            } else notify_info("danger", "No existe el art\u00edculo");
+            $("#txtBuscaArticuloCod").focus()
+        } catch (k) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(k)
+        }
+    })
+}
+
+function validateCodEntArt(a) {
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "articulos/getArtCostTien",
+        beforeSend: function() {
+            block_class(!0, a)
+        },
+        complete: function() {
+            block_class(!1, a)
+        },
+        data: {
+            codArt: $("#txtCod").val()
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            1 == b.edo ? ($("#txtCod").val(b.claveArticulo), $("#txtArt").val(b.articulo), $("#txtItem").val(b.item), $("#txtCosto").val(applyCurrency(b.costo)), $("#idArticulo").val(b.idArticulo), $("#txtInner").focus(), $("#btnSavEntArt").prop("disabled", !1)) : ($("#btnSavEntArt").prop("disabled",
+                !0), notify_info("danger", "No existe el art\u00edculo"))
+        } catch (d) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+        }
+    })
+}
+
+function ArticuloProveedor() {
+    $("#btnEliEntArt").click(function() {
+        if (confirm("\u00bfDesea eliminar el registro de forma permanente?")) {
+            var a = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "articulos/deleteEntArt",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    idArticulo: $("#idArticulo").val(),
+                    idEntidad: $("#idEntidad").val()
+                }
+            }).done(function(a) {
+                try {
+                    $("#txtCod").val(""), $("#txtArt").val(""), $("#txtItem").val(""), $("#txtCosto").val(""), $("#idArticulo").val(""),
+                        $("#txtInner").val(""), $("#txtMaster").val(""), $("#txtInner").focus()
+                } catch (c) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(c)
+                }
+            })
+        }
+    });
+    $("#txtCod").keypress(function(a) {
+        13 == a.which && (a = jQuery(this).parents(".block"), validateCodEntArt(a))
+    });
+    $("#txtCod").blur(function() {
+        var a = jQuery(this).parents(".block");
+        validateCodEntArt(a)
+    });
+    $("#btnSavEntArt").click(function() {
+        var a = jQuery(this).parents(".block");
+        if (!$.isNumeric($("#txtInner").val())) return notify_info("danger",
+            "El valor del inner debe de ser num\u00e9rico o no estar vac\u00edo"), !1;
+        if (!$.isNumeric($("#txtMaster").val())) return notify_info("danger", "El valor del master debe de ser num\u00e9rico o no estar vac\u00edo"), !1;
+        $("#frmArtPro")[0].checkValidity() ? confirm("Son correctos los datos") && $.ajax({
+            type: "POST",
+            url: $("#url").val() + "articulos/saveArtProveedor",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: $("#frmArtPro").serialize()
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                notify_info(b.type, b.msg)
+            } catch (d) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+            }
+        }) : notify_info("danger", "Codigo articulo, Inner y Master son obligatorios")
+    });
+    $("#btnCanEntArt").click(function() {
+        window.location.href = $("#url").val() + "articulos/getArticulosProveedor/" + $("#idEntidad").val()
+    })
+}
+
+function getURlArtPro(a) {
+    a = jQuery(a).data("idarticulo");
+    var b = $("#idEntidad").val();
+    window.location.href = $("#url").val() + "/articulos/artProveedor/" + a + "/" + b
+}
+
+function ListArtProv() {
+    $(".editListEnti").click(function() {
+        getURlArtPro(this)
+    });
+    $("#btnListArt").click(function() {
+        getURlArtPro(this)
+    });
+    $("#btnExpImpArtPro").click(function() {
+        $.fancybox.open({
+            href: $("#url").val() + "attachfile/attFileEntArt/proArt/" + $("#idEntidad").val() + "/" + $("#idTienda").val(),
+            type: "iframe",
+            autoSize: !1,
+            width: "50%",
+            height: "70%",
+            padding: 0,
+            afterClose: function(a) {}
+        })
+    })
+}
+
+function lista_articulos_orden_mostrador() {
+    var a = $("#url").val(),
+        b = $("#blockList");
+    $.ajax({
+        type: "POST",
+        url: a + "articulos/lista_articulos_orden",
+        beforeSend: function() {
+            $("#colArticuloDetalle").toggleClass("block-opt-refresh");
+            block_class(!0, b)
+        },
+        complete: function() {
+            $("#colArticuloDetalle").removeClass("block-opt-refresh");
+            block_class(!1, b)
+        },
+        data: {
+            id_orden: $("#id_orden").val(),
+            id_tienda: $("#id_tienda").val()
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            lista_articulos_orden(b);
+            $(window).scrollTop($("#lScrollTop").val())
+        } catch (e) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"),
+                console.log(e)
+        }
+    })
+}
+
+function lista_articulos_orden(a, b) {
+    b = void 0 === b ? !0 : b;
+    var c = "",
+        d = 0,
+        e = 0,
+        g = a.total,
+        f = $("#url").val() + "articulos/edita_cantidad_mostrador",
+        h = $("#url").val() + "articulos/edita_descuento_mostrador",
+        k = $("#url").val() + "articulos/edita_precio_mostrador",
+        l = a.msg,
+        m = a.tipo_descuento;
+    $("#estado").val();
+    $("#c").val();
+    console.log("articu " + a);
+    0 != m ? $("#tipo_descuento").val(m) : $("#tipo_descuento").val();
+    m = $("#nivelUsuario").val();
+    var n;
+    "" != l && alert(l);
+    nItera = 1;
+    for (var p in a.articulos) {
+        l = a.articulos[p];
+        var r = n = !1,
+            u = "";
+        if (null != l) {
+            d += parseInt(l.cantidad);
+            e += parseFloat(l.descuento_total);
+            var v = null != l.ITEM ? l.ITEM : "",
+                q = "";
+            null != l.exist_soli && (q = title = "Cant Solicitada; " + l.exist_soli + " , Cant Almacen;" + l.cantidad);
+            2 >= m && (n = r = !0);
+            n = n && b ? '<a href="#" data-type="text" data-validate-number="true" data-value="' + l.precio + '" data-pk="' + l.id + '" data-cantidad="' + l.cantidad + '" data-name="precio" data-url="' + k + '" data-title="Precio" class="xeditable editable editable-click" >' + currency(l.precio, 1) + "</a>" : currency(l.precio,
+                1);
+            td_des = r && b ? '<a href="#" data-type="text" data-validate-number="true" data-pk="' + l.id + '" data-value="' + l.descuento + '" data-name="descuento" data-url="' + h + '" data-title="Descuento" class="xeditable editable editable-click">' + l.descuento + "%</a>" : l.descuento + "%";
+            td_can = b ? "<a " + q + ' href="#" data-type="text" data-validate-number="true" data-pk="' + l.id + '" data-name="cantidad" data-url="' + f + '" data-title="Cantidad" class="xeditable editable editable-click">' + l.cantidad + "</a>" : l.cantidad;
+            div_men = b ? '<div class="btn-group"><button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Remover Registro" onclick="eliminar_orden_articulo(' +
+                l.id + "," + l.cantidad + "," + l.total + ')"><i class="fa fa-times"></i></button></div>' : "";
+            switch (l.tipo_precio) {
+                case "p1":
+                    u = '<span class="label label-success">P1</span>';
+                    break;
+                case "p2":
+                    u = '<span class="label label-info">P2</span>';
+                    break;
+                case "pa":
+                    u = '<span class="label label-danger">PA</span>';
+                    break;
+                case "pc":
+                    u = '<span class="label label-pc">PC</span>';
+                    break;
+                case "pl":
+                    u = '<span class="label label-warning">PL</span>'
+            }
+            c += "<tr><td>" + l.CLAVE_ART + '</td><td class="text-center">' + td_can + "</td><td>" + v + "</td><td>" +
+                l.descripcion + '</td><td class="text-center">' + n + '</td><td class="text-center">' + u + '</td><td class="text-center">' + td_des + '</td><td bgcolor="#B4F7B9" class="text-center">' + currency(l.total, 1) + '</td><td class="text-center">' + div_men + "</td></tr>"
+        }
+        nItera++
+    }
+    $("#tabla_articulos").html(c);
+    $("#txtBuscaArticuloCod").val("");
+    $("#txtBuscaArticuloDesc").val("");
+    JSON.parse(0);
+    $("#hTotalArt").html(d);
+    $("#totalArticulos").val(d);
+    $("#hDescuentoArt").html(currency(e, 1));
+    $("#descuento").val(currency(e, 0));
+    $("#hSubTotalArt").html(currency(0,
+        1));
+    $("#iva").val(currency(0, 0));
+    $("#hImporteTotalArt").html(currency(g, 1));
+    $("#total").val(currency(g, 0))
+}
+
+function eliminar_orden_articulo(a) {
+    $("#blockList");
+    var b = $(window).scrollTop();
+    a = jQuery(a);
+    a = parseInt(a.data("indextabla"));
+    tbOrdenVen.splice(a, 1);
+    localStorage.setItem("tbOrdenVen", JSON.stringify(tbOrdenVen));
+    listadoVentArtProgreso(!0);
+    $(window).scrollTop(b)
+}
+
+function eliminar_entidad(a) {
+    var b = $("#url").val();
+    a = {
+        id_entidad: jQuery(a).data("identidad")
+    };
+    confirm("\u00bfConfirma eliminar el registro?") && $.ajax({
+        type: "POST",
+        url: b + "entidades/eliminar",
+        beforeSend: function() {
+            $("#block_entidad_propiedad").toggleClass("block-opt-refresh")
+        },
+        complete: function() {
+            $("#block_entidad_propiedad").removeClass("block-opt-refresh")
+        },
+        data: a
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            $("#txtBusDesEnt").keypress();
+            alert(b.message)
+        } catch (e) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"),
+                console.log(e)
+        }
+    })
+}
+
+function eliminar_propiedad(a) {
+    var b = $("#url").val();
+    a = {
+        id_entidad_propiedad: a
+    };
+    confirm("\u00bfConfirma eliminar el registro?") && $.ajax({
+        type: "POST",
+        url: b + "entidades/eliminar_propiedad",
+        beforeSend: function() {
+            $("#block_entidad_propiedad").toggleClass("block-opt-refresh")
+        },
+        complete: function() {
+            $("#block_entidad_propiedad").removeClass("block-opt-refresh")
+        },
+        data: a
+    }).done(function(a) {
+        try {
+            JSON.parse(a), $("#btn_refresh_entidad_prop").click()
+        } catch (d) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+        }
+    })
+}
+
+function editar_articulo_almacen(a) {
+    var b = $("#url").val();
+    $.ajax({
+        type: "POST",
+        url: b + "articulos/ver_articulo_almacen",
+        beforeSend: function() {
+            $("#block_articulos").toggleClass("block-opt-refresh")
+        },
+        complete: function() {
+            $("#block_articulos").removeClass("block-opt-refresh")
+        },
+        data: {
+            id_articulo_almacen: a
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            $("#id_tienda").val(b.id_tienda);
+            $("#art-sucursal").val(b.id_tienda);
+            $("#idOrdenCompra").val(b.id_compra_d);
+            $("#art-existecia").val(b.EXISTENCIA);
+            $("#art-lugaralmacen").val(b.LOCALIZ);
+            $("#art-nivelmin").val(b.NIVEL_MIN);
+            $("#art-nivelmax").val(b.NIVEL_MAX);
+            $("#art-costo").val(b.costo);
+            $("#c_articulo_almacen").val("edit");
+            $("#id_articulo_almacen").val(b.id_articulo_almacen);
+            $("#modal-title-articulo-propiedad").html(b.sucursal);
+            $("#modal-modificar-producto").modal("toggle");
+            var c = 1 == b.activo ? !0 : !1;
+            $("#articulo_activo").prop("checked", c);
+            $("#art-sucursal").prop("disabled", !0)
+        } catch (g) {
+            alert("Error interno, favor de reportarlo al administrador del sistema. Menso"), console.log(g)
+        }
+    })
+}
+
+function editar_propiedad(a) {
+    var b = $("#url").val();
+    $.ajax({
+        type: "POST",
+        url: b + "entidades/ver_propiedad",
+        beforeSend: function() {
+            $("#block_entidad_propiedad").toggleClass("block-opt-refresh")
+        },
+        complete: function() {
+            $("#block_entidad_propiedad").removeClass("block-opt-refresh")
+        },
+        data: {
+            id_entidad_propiedad: a
+        }
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            $("#cli-select-tipo-contacto").val(b.id_propiedad_tipo);
+            $("#cli-prop-nombre").val(b.valor);
+            $("#cli-pro-tipo").val(b.tipo);
+            $("#c_entidad_prop").val("edit");
+            $("#id_entidad_propiedad").val(b.id_entidad_propiedad);
+            $("#modal-pro-contacto").modal("toggle")
+        } catch (e) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+        }
+    })
+}
+
+function truncaDecimales(a) {
+    a = parseFloat(a);
+    return (Math.floor(100 * a) / 100).toFixed(2)
+}
+
+function showDetTable(a) {
+    var b = $("#tableSecDoc");
+    a = jQuery(a).parent("tbody");
+    a.hasClass("open") || jQuery("tbody", b).removeClass("open");
+    a.toggleClass("open")
+}
+
+function setPropTienda(a) {
+    a = jQuery(a);
+    $("#txtFolFac").val("");
+    $("#txtSucursal").val(a.data("nombrecompleto"));
+    $("#txtRFC").val(a.data("rfc"));
+    $("#txtKeyFac").val(a.data("key"));
+    $("#txtRepLegal").val(a.data("replegal"));
+    $("#txtDireccion").val(a.data("direccion"));
+    $("#txtTels").val(a.data("telefonos"));
+    $("#txtCorreos").val(a.data("correos"));
+    $("#idTienda").val(a.data("idtienda"))
+}
+
+function setPropCorreo(a) {
+    a = jQuery(a);
+    $("#cbTiendaCo").val(a.data("idtienda"));
+    $("#cbTipoComCo").val(a.data("idtipocomprobante"));
+    $("#cbSerieCo").val(a.data("serie"));
+    $("#txtTemplateCo").val(a.data("template"));
+    $("#txtSMTP").val(a.data("smtp"));
+    $("#txtPuerto").val(a.data("port"));
+    $("#txtUsuario").val(a.data("user"));
+    $("#txtPw").val(a.data("pw"));
+    $("#txtSubject").val(a.data("subject"));
+    $("#txtBody").val(a.data("body"));
+    $("#c_propco").val("edit");
+    $("#txtProtCo").val(a.data("protocol"))
+}
+
+function getAllComprobantes(a) {
+    var b = jQuery(a).parents(".block");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "catalogos/getAllComprobantes",
+        beforeSend: function() {
+            block_class(!0, b)
+        },
+        complete: function() {
+            block_class(!1, b)
+        },
+        data: {}
+    }).done(function(a) {
+        try {
+            var b = JSON.parse(a);
+            a = 1;
+            $("#cbTipoComCo").empty();
+            $("#cbTipoComCo").append('<option value="0">--Selecciona--</option>');
+            $("#cbTipoComCo").trigger("chosen:updated");
+            for (var c in b.items) {
+                var g = b.items[c];
+                null != g && ($("#cbTipoComCo").append('<option value="' +
+                    g.idTipoComprobante + '">' + g.tipoComprobante + "</option>"), $("#cbTipoComCo").trigger("chosen:updated"));
+                a++
+            }
+        } catch (f) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(f)
+        }
+    })
+}
+
+function settingsFunctions() {
+    $("#btnAgregarPropCp").click(function() {
+        $("#cbTiendaCo").val(0);
+        $("#cbTipoComCo").val(0);
+        $("#cbSerieCo").val(0);
+        $("#cbSerieCo").val(0);
+        $("#txtSMTP").val("");
+        $("#txtPuerto").val("");
+        $("#txtUsuario").val("");
+        $("#txtPw").val("");
+        $("#txtSubject").val("");
+        $("#txtBody").val("");
+        $("#txtTemplateCo").val("");
+        $("#c_propco").val("new")
+    });
+    $("#btbBusFol").click(function() {
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogos/getFolDoc",
+            beforeSend: function() {
+                block_class(!0,
+                    a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                id_tienda: $("#idTienda").val(),
+                idTipoComprobante: 1,
+                serie: "A"
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a).item;
+                null != b ? ($("#txtFolFac").val(b.folio), $("#txtFolFac").focus()) : alert("No existe el folio")
+            } catch (d) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+            }
+        })
+    });
+    $("#btnActFol").click(function() {
+        var a = $.isNumeric($("#txtFolFac").val());
+        console.log("es num " + a);
+        if (!a) return alert("El folio debe ser num\u00e9rico"),
+            !1;
+        var b = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogos/updateFolDoc",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {
+                id_tienda: $("#idTienda").val(),
+                idTipoComprobante: 1,
+                serie: "A",
+                folio: $("#txtFolFac").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                notify_info(b.type, b.msg)
+            } catch (e) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(e)
+            }
+        })
+    });
+    $("#btnAcListaPropCo").click(function() {
+        var a = "",
+            b = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogos/getListPropCorreos",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {}
+        }).done(function(b) {
+            try {
+                var c = 1,
+                    e = JSON.parse(b),
+                    g;
+                for (g in e.items) {
+                    var f = e.items[g];
+                    null != f && (a += '<tr data-idtipocomprobante="' + f.idTipoComprobante + '" data-serie = "' + f.serie + '" data-idtienda = "' + f.idTienda + '" data-smtp = "' + f.smtpHost + '" data-port = "' + f.smtpPort + '" data-user = "' + f.smtpUser + '" data-pw = "' +
+                        f.smtpPass + '" data-subject = "' + f.subject + '" data-body = "' + f.body + '" data-template = "' + f.template + '" data-protocol = "' + f.protocol + '" onclick="javascript:setPropCorreo(this);"><td>' + f.tipoComprobante + "</td><td>" + f.template + "</td><td>" + f.subject + "</td><td>" + f.smtpHost + "</td><td>" + f.smtpPort + "</td><td>" + f.protocol + "</td></tr>");
+                    c++
+                }
+                $("#tabla_propCorreo").html(a)
+            } catch (h) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(h)
+            }
+        })
+    });
+    $("#btnGuardaPropCo").click(function() {
+        var a =
+            jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogos/savePropCorreo",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                id_tienda: $("#cbTiendaCo").val(),
+                idTipoComprobante: $("#cbTipoComCo").val(),
+                serie: $("#cbSerieCo").val(),
+                smtp: $("#txtSMTP").val(),
+                puerto: $("#txtPuerto").val(),
+                usuario: $("#txtUsuario").val(),
+                pw: $("#txtPw").val(),
+                template: $("#txtTemplateCo").val(),
+                asunto: $("#txtSubject").val(),
+                body: $("#txtBody").val(),
+                c: $("#c_propco").val(),
+                protocol: $("#txtProtCo").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                notify_info(b.type, b.msg);
+                $("#btnBuscaTiendas").click()
+            } catch (d) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+            }
+        })
+    });
+    $(document.body).on("change", "#cbTipoComCo", function() {
+        if (0 != this.value) {
+            var a = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "catalogos/getAllSeries",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    id_tienda: $("#cbTiendaCo").val(),
+                    id_tipo_comprobante: $("#cbTipoComCo").val()
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    a = 1;
+                    $("#cbSerieCo").empty();
+                    $("#cbSerieCo").append('<option value="0">--Selecciona--</option>');
+                    $("#cbSerieCo").trigger("chosen:updated");
+                    for (var d in b.items) {
+                        var e = b.items[d];
+                        null != e && ($("#cbSerieCo").append('<option value="' + e.serie + '">' + e.serie + "</option>"), $("#cbSerieCo").trigger("chosen:updated"));
+                        a++
+                    }
+                } catch (g) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(g)
+                }
+            })
+        }
+    });
+    $(document.body).on("change", "#cbTiendaSe", function() {
+        if (0 != this.value) {
+            var a = jQuery(this).parents(".block");
+            $.ajax({
+                type: "POST",
+                url: $("#url").val() + "catalogos/getExtrasTimbrado",
+                beforeSend: function() {
+                    block_class(!0, a)
+                },
+                complete: function() {
+                    block_class(!1, a)
+                },
+                data: {
+                    idTienda: this.value
+                }
+            }).done(function(a) {
+                try {
+                    var b = JSON.parse(a);
+                    null != b ? ($("#divShowextras").html(b.responseHtml), $("#tDispo").val(b.disponibles), $("#tEmi").val(b.emitidos)) : alert("No se pueden mostar los datos, favor de reportarlo al administrador del sistema")
+                } catch (d) {
+                    alert("Error interno, favor de reportarlo al administrador del sistema"),
+                        console.log(d)
+                }
+            })
+        } else $("#divShowextras").html("")
+    });
+    $("#btnSaveTienda").click(function() {
+        var a = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogos/saveDataTienda",
+            beforeSend: function() {
+                block_class(!0, a)
+            },
+            complete: function() {
+                block_class(!1, a)
+            },
+            data: {
+                idTienda: $("#idTienda").val(),
+                nombreCompleto: $("#txtSucursal").val(),
+                direccion: $("#txtDireccion").val(),
+                rfc: $("#txtRFC").val(),
+                repLegal: $("#txtRepLegal").val(),
+                apiKey: $("#txtKeyFac").val(),
+                telefono: $("#txtTels").val(),
+                correo: $("#txtCorreos").val(),
+                nombreCorto: $("#nombreCorto").val()
+            }
+        }).done(function(a) {
+            try {
+                var b = JSON.parse(a);
+                notify_info(b.type, b.msg);
+                $("#btnBuscaTiendas").click()
+            } catch (d) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(d)
+            }
+        })
+    });
+    $("#btnBuscaTiendas").click(function() {
+        var a = "",
+            b = jQuery(this).parents(".block");
+        $.ajax({
+            type: "POST",
+            url: $("#url").val() + "catalogos/getListTiendas",
+            beforeSend: function() {
+                block_class(!0, b)
+            },
+            complete: function() {
+                block_class(!1, b)
+            },
+            data: {}
+        }).done(function(b) {
+            try {
+                var c =
+                    1,
+                    e = JSON.parse(b),
+                    g;
+                for (g in e.items) {
+                    var f = e.items[g];
+                    null != f && (a += '<tr data-idtienda="' + f.id_tienda + '" data-nombrecompleto = "' + f.nombre_completo + '" data-rfc = "' + f.rfc + '" data-key = "' + f.api_key + '" data-replegal = "' + f.rep_legal + '" data-direccion = "' + f.direccion + '" data-telefonos = "' + f.telefono + '" data-correos = "' + f.correo + '" onclick="javascript:setPropTienda(this);"><td>' + f.nombre_completo + "</td><td>" + f.rfc + "</td><td>" + f.rep_legal + "</td><td>" + f.api_key + "</td><td>" + (null != f.telefono ? f.telefono :
+                        "") + "</td><td>" + (null != f.correo ? f.correo : "") + "</td></tr>");
+                    c++
+                }
+                $("#table_tiendas").html(a)
+            } catch (h) {
+                alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(h)
+            }
+        })
+    });
+    $("#btnSaveTienda").click(function() {})
+}
+
+function documentoPorDocumento(a) {}
+
+function documentoPorVendedor(a) {}
+
+function getSubMenuReporteUrl(a) {
+    var b = jQuery(a);
+    a = $("input[name='rPrecio']:checked").val();
+    var c = b.data("url");
+    b = b.data("segme");
+    c = $("#url").val() + c + "/" + a + "/" + b;
+    "mo" == a ? $.fancybox.open({
+        href: c,
+        type: "iframe",
+        autoSize: !1,
+        width: "100%",
+        height: "100%",
+        padding: 0,
+        afterClose: function(a) {}
+    }) : "ta" == a && window.open(c)
+}
+
+function getSubMenuReporte(a) {
+    var b = "";
+    a = jQuery(a);
+    var c = a.parents(".block");
+    $.ajax({
+        type: "POST",
+        url: $("#url").val() + "reportes/getSubMenuReporte",
+        beforeSend: function() {
+            block_class(!0, c)
+        },
+        complete: function() {
+            block_class(!1, c)
+        },
+        data: {
+            idMenuReporteC: a.data("id")
+        }
+    }).done(function(a) {
+        try {
+            var c = 1,
+                d = JSON.parse(a),
+                f;
+            for (f in d.items) {
+                var h = d.items[f];
+                null != h && (b += '<a class="list-group-item" data-segme="' + h.segmentNombreCorto + '" data-url="' + h.url + '" href="#" onclick="getSubMenuReporteUrl(this)"><i class="fa fa-fw ' +
+                    h.icon + ' push-5-r"></i> ' + h.menuReporte + "</a>");
+                c++
+            }
+            $("#listSubMenRep").html(b)
+        } catch (k) {
+            alert("Error interno, favor de reportarlo al administrador del sistema"), console.log(k)
+        }
+    })
+}
+
+function block_class(a, b) {
+    var c = b instanceof jQuery ? b : jQuery(b);
+    a ? c.toggleClass("block-opt-refresh") : c.removeClass("block-opt-refresh")
+}
+
+function notify_info(a, b) {
+    jQuery.notify({
+        icon: "fa fa-comment",
+        message: b,
+        url: ""
+    }, {
+        element: "body",
+        type: a,
+        allow_dismiss: !0,
+        newest_on_top: !0,
+        showProgressbar: !1,
+        placement: {
+            from: "top",
+            align: "right"
+        },
+        offset: 20,
+        spacing: 10,
+        z_index: 1031,
+        delay: 3E3,
+        timer: 700,
+        animate: {
+            enter: "animated fadeIn",
+            exit: "animated fadeOutDown"
+        }
+    })
+}
+
+function OpenWindowWithPost(a, b, c, d) {
+    var e = document.createElement("form");
+    e.setAttribute("method", "post");
+    e.setAttribute("action", a);
+    e.setAttribute("target", c);
+    for (var g in d) d.hasOwnProperty(g) && (a = document.createElement("input"), a.type = "hidden", a.name = g, a.value = d[g], e.appendChild(a));
+    document.body.appendChild(e);
+    window.open("post.htm", c, b);
+    e.submit();
+    document.body.removeChild(e)
+}
+
+function padToFour(a) {
+    9999 >= a && (a = ("000" + a).slice(-4));
+    return a
+}
+
+function getSecondPart(a) {
+    return a.split("*")[1]
+}
+
+function isEmptyObj(a) {
+    for (var b in a)
+        if (a.hasOwnProperty(b)) return !1;
+    return !0
+};

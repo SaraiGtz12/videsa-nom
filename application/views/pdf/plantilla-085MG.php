@@ -241,14 +241,127 @@
 
         <div style="text-align: center; margin-top: 30px;">
             <p>Firma Electrónica</p>
-             {!! $qr !!}
-            <p>Escanea para verificar</p>
+         
         </div>
         <?php $this->load->view('pdf/recursos/footerCaratula'); ?>
 
 
         <div style="page-break-before: always;"></div>
         <?php $this->load->view('pdf/recursos/headerCaratula'); ?>
+        <table style="margin-top: 40px;margin-left: auto;">
+            <tr>
+            
+                <td class="col-1">
+                    Número de informe:<br>
+                    Orden de servicio:<br>
+                    Fecha de evaluación:<br>
+                    Recepción:<br>
+                    Fecha de informe:
+                </td>
+                <td class="col-2">
+                    <?= $numero_informe ?><br>
+                    <?= $orden_servicio ?><br>
+                    <?= $fecha_evaluacion ?><br>
+                    <?= $recepcion ?><br>
+                    <?= $fecha_informe ?>
+                </td>
+        
+            </tr>
+        </table>
+
+         <table class="result-table " >
+            <tr>
+                <th colspan="6" style = "text-align: center">TABLA DE RESULTADOS</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>NOx ppmv</td>
+                <td>CO ppmv</td>
+                <td>O2% vol</td>
+                <td>CO2%vol</td>
+                <td>TEMP. En el coducto C</td>
+            </tr>
+            <tr>
+                <td>Promedio de los valores obtenidos</td>
+                <td>8.59</td>
+                <td>7.80</td>
+                <td>16.42</td>
+                <td>1.88</td>
+                <td>95.1</td>
+            </tr>
+            <tr>
+            <td>Valores corregidos por gas efluente</td>
+                <td>8.06</td>
+                <td>7.45</td>
+                <td>16.33</td>
+                <td>N/A</td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+            <td>Valores corregidos al 5% de O2</td>
+                <td>21.73</td>
+                <td>20.08</td>
+                <td>N/A</td>
+                <td>5.08</td>
+                <td>N/A</td>
+            </tr>
+        </table>
+        <table style="margin: 20px auto; text-align: center;">
+            <tr>
+                <td class="col-1">
+                    C_R=20.9-0-R/<br>
+                    20.9-0_M*C_M<br>
+                </td>
+                <td class="col-2">
+                    CR=&nbsp; 20.9-5.0<br>
+                    &nbsp;--------------<br>
+                    &nbsp; 20.9-15.00<br>
+                </td>
+                <td class="col-2">
+                    *
+                </td>
+                <td class="col-2">
+                    8.06 = 21.73 ppmv
+                </td>
+            </tr>
+        </table>
+         <table class="evaluated-equipment-table">
+            <tr>
+                <td>Concentración de referencia del O2</td>
+                <td></td>
+                <td>Valores de referencia</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Nivel de referencia para el O2 (5%) </td>
+                <td>5.0</td>
+                <td></td>
+                <td>O2%</td>
+            </tr>
+            <tr>
+                <td>Valor medido para O2 (%)</td>
+                <td>15.0</td>
+                <td></td>
+                <td>OR%</td>
+            </tr>
+            <tr>
+                <td>Concentración medida</td>
+                <td>8.1</td>
+                <td></td>
+                <td>OM%</td>
+            </tr>
+        </table>
+        <div style="margin-top: 20px; font-size: 8px;">
+            *Para valores de OM medidos entre 15.1% y 20.9%, se utilizará un valor de OM de 15%
+            <br><br><br>
+            Método 3A EPA-2008 &nbsp; Determinación de oxígeno (O2) y bióxido de carbono (CO2) en los gases que 
+            fluyen por un conducto. Método instrumenta
+            <br>
+            Método 10 EPA-2008&nbsp;Para el caso de CO y NOx los límites se establecen como concentraciones en volumen y en base seca, 
+            en condiciones de referencia de 25°C, 101 325 Pa (1 atm) y 5 % de
+            Método 7 EPA-2008&nbsp;Determinación de óxidos de nitrógeno, en los gases que fluyen por un conducto.
+            Método de quimiluminiscencia
+        </div>
         <?php $this->load->view('pdf/recursos/footerCaratula'); ?>
 
 
@@ -264,6 +377,48 @@
 
          <div style="page-break-before: always;"></div>
         <?php $this->load->view('pdf/recursos/headerGeneral'); ?>
+        <div style="margin-top: 20px;">
+            <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="width: 50%; vertical-align: top;">
+                            <table style="width: 100%; margin-top: 40px; border-collapse: collapse; border: 1px solid black;">
+                                <thead>
+                                    <tr>
+                                        <th colspan="5" style="text-align: center; border: 1px solid black; padding: 8px;">ANALITO</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="border: 1px solid black; padding: 6px;">No.</th>
+                                        <th style="border: 1px solid black; padding: 6px;">CO (ppmv)</th>
+                                        <th style="border: 1px solid black; padding: 6px;">O2%</th>
+                                        <th style="border: 1px solid black; padding: 6px;">CO2 %</th>
+                                        <th style="border: 1px solid black; padding: 6px;">TEMP, °C</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($registrosCampos as $index => $campo): ?>
+                                    <tr>
+                                        <td style="border: 1px solid black; padding: 6px;"><?= $index + 1 ?></td>
+                                        <td style="border: 1px solid black; padding: 6px;"><?= $campo['co'] ?></td>
+                                        <td style="border: 1px solid black; padding: 6px;"><?= $campo['o2'] ?></td>
+                                        <td style="border: 1px solid black; padding: 6px;"><?= $campo['co2'] ?></td>
+                                        <td style="border: 1px solid black; padding: 6px;"><?= $campo['temp'] ?></td>
+                                    </tr>
+                                    <?php endforeach; ?>
+
+                                </tbody>
+                            </table>
+                        </td>
+                        <!-- Gráficas -->
+                        <td style="width: 50%; vertical-align: top; padding-left: 20px;">
+                            <img src="<?php echo base_url($grafica_co) ?>" width="300" style="display: block; margin-bottom: 20px;">
+                            <img src="<?= $grafica_o2 ?>" width="300" style="display: block; margin-bottom: 20px;">
+                            <img src="<?= $grafica_co2 ?>" width="300" style="display: block;">
+
+                        </td>
+                      
+                    </tr>
+                </table>
+        </div>
         <?php $this->load->view('pdf/recursos/footerGeneral'); ?>
 
 
@@ -271,7 +426,7 @@
         <?php $this->load->view('pdf/recursos/headerGeneral'); ?>
         <?php $this->load->view('pdf/recursos/footerGeneral'); ?>
 
-        
+
          <div style="page-break-before: always;"></div>
         <?php $this->load->view('pdf/recursos/headerGeneral'); ?>
         <?php $this->load->view('pdf/recursos/footerGeneral'); ?>
