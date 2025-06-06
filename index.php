@@ -43,7 +43,7 @@ define('PROJECT_FOLDER', '');
 define('APP_DESCRIPTION', 'VIDESA');
 define('API_KEY', 'videsa_v1');
 define('SHOW_MULTI_CUENTA', FALSE); 
-$GLOBALS['DEFAULT_SCHEMA'] = 'videsa_app';
+$GLOBALS['DEFAULT_SCHEMA'] = 'videsa-nom';
 
 /*
  * ---------------------------------------------------------------
