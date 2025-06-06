@@ -363,7 +363,7 @@
             Método de quimiluminiscencia
         </div>
 
-        
+
         <?php $this->load->view('pdf/recursos/footerCaratula'); ?>
 
 
@@ -412,7 +412,7 @@
                         </td>
                         <!-- Gráficas -->
                         <td style="width: 50%; vertical-align: top; padding-left: 20px;">
-                            <img src="<?php echo base_url($grafica_co) ?>" width="300" style="display: block; margin-bottom: 20px;">
+                            <img src="<?= $grafica_co ?>" width="300" style="display: block; margin-bottom: 20px;">
                             <img src="<?= $grafica_o2 ?>" width="300" style="display: block; margin-bottom: 20px;">
                             <img src="<?= $grafica_co2 ?>" width="300" style="display: block;">
 

@@ -811,6 +811,25 @@
                 value: JSON.stringify(datos.registrosCampos2)
               }));
 
+              form.append($('<input>', {
+                type: 'hidden',
+                name: 'grafica_co',
+                value: datosCompletos.grafica_co
+              }));
+
+              form.append($('<input>', {
+                type: 'hidden',
+                name: 'grafica_o2',
+                value: datosCompletos.grafica_o2
+              }));
+
+              form.append($('<input>', {
+                type: 'hidden',
+                name: 'grafica_co2',
+                value: datosCompletos.grafica_co2
+              }));
+
+
               $('body').append(form);
               form.submit();
               form.remove();
@@ -831,35 +850,37 @@
 });
 
 function crearGrafica(id, label, datos) {
-  return new Promise(resolve => {
-    const canvas = document.createElement('canvas');
-    canvas.id = id;
-    canvas.width = 400;
-    canvas.height = 200;
-    canvas.style.display = 'none';
-    document.body.appendChild(canvas);
-
-    new Chart(canvas.getContext('2d'), {
+  return new Promise((resolve, reject) => {
+    const chartConfig = {
       type: 'line',
       data: {
-        labels: datos.map((_, i) => i + 1),
+        labels: datos.map((_, i) => `Punto ${i + 1}`),
         datasets: [{
           label: label,
           data: datos,
           borderColor: 'rgba(75, 192, 192, 1)',
-          borderWidth: 2,
           fill: false
         }]
-      },
-      options: { responsive: false, animation: false }
-    });
+      }
+    };
 
-    setTimeout(() => {
-      html2canvas(canvas).then(canvasCaptured => {
-        resolve(canvasCaptured.toDataURL('image/png')); // <-- CORREGIDO
-        canvas.remove();
+    const chartUrl = 'https://quickchart.io/chart';
+    const fullUrl = `${chartUrl}?c=${encodeURIComponent(JSON.stringify(chartConfig))}&format=png&bkg=white`;
+
+    fetch(fullUrl)
+      .then(res => res.blob())
+      .then(blob => {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          resolve(reader.result); 
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      })
+      .catch(err => {
+        console.error('Error al generar gráfica:', err);
+        reject(err);
       });
-    }, 500);
   });
 }
 
